@@ -4,22 +4,22 @@
 > Read this file first whenever resuming EventV. Update it **in the same commit/PR** as every meaningful repository change. Historical research files remain references, not the live project status.
 >
 > **Last reviewed:** 2026-11-05 (Asia/Kathmandu)  
-> **Checkpoint:** Eleventh editorial pilot built — Steam Couch Co-op Fest 2027 household setup hub  
-> **Status:** **11 SOURCE-VERIFIED INDEX-READY PILOT HUBS MERGED TO MAIN; LIVE DEPLOYMENT NOT PERFORMED**
+> **Checkpoint:** Twelfth editorial pilot prepared — Microsoft Build 2027 developer status and migration hub  
+> **Status:** **TOPIC #12 PREPARED ON FEATURE BRANCH; PR/CI/MAIN MERGE PENDING; LIVE DEPLOYMENT NOT PERFORMED**
 
 ## 1. Current verified state
 
 | Area | Status | Verified detail |
 |---|---|---|
 | GitHub repo | **Working** | [`aprashnasuraj2-dev/eventv`](https://github.com/aprashnasuraj2-dev/eventv), default branch `main` |
-| Most recent feature change | **Merged** | [PR #16](https://github.com/aprashnasuraj2-dev/eventv/pull/16), squash commit [`0aee565`](https://github.com/aprashnasuraj2-dev/eventv/commit/0aee565ff85faea72e35a4c4f6d94a81ebf59666) — Steam Couch Co-op Fest 2027 pilot |
-| CI at feature checkpoint | **PR #16 checks passed** | [GitHub Actions run 42026196214](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42026196214); initial run 42026104402 failed only on event-name capitalization and was corrected without weakening validation |
+| Most recent feature change | **Last merged feature: PR #16; Topic #12 branch in progress** | [PR #16](https://github.com/aprashnasuraj2-dev/eventv/pull/16), squash commit [`0aee565`](https://github.com/aprashnasuraj2-dev/eventv/commit/0aee565ff85faea72e35a4c4f6d94a81ebf59666) — Steam Couch Co-op Fest 2027 pilot |
+| CI at feature checkpoint | **Last merged feature CI passed; Topic #12 CI pending** | [GitHub Actions run 42026196214](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42026196214) was the prior feature check |
 | Candidate event topics | **50 defined** | [`data/events-50.json`](data/events-50.json), [ranked topics](TOP_50_TOPICS.md); eclipses excluded |
 | Search intents | **1,000 generated hypotheses** | [`research/search-intents-1000.csv`](research/search-intents-1000.csv); **not** verified keyword volumes, demand or attainable rankings |
 | Canonical event routes | **200 mapped** | [`research/routes-200.csv`](research/routes-200.csv) |
 | Generated static pages | **202 HTML files** | 50 event hubs + 50 planning + 50 during + 50 after = **200** event pages; 2 index/navigation pages |
-| Build and validation | **PR #16 passed build + validation + checkpoint enforcement after one validator-caught naming correction; merged `main` source reverified** | `node scripts/build.mjs`, `node scripts/validate.mjs` on Node 22 |
-| Individual SEO-ready event pages | **11 source-verified hubs registered on main** | Eleven hubs are merged on main; Steam Couch Co-op Fest 2027 retains Valve-confirmed Feb 8–15 dates, exact clock unverified, lineup/discounts unknown, household controller/Remote Play/shortlist/rotation tools, compact references and `index,follow`; **not deployed live** |
+| Build and validation | **Prior feature passed; Topic #12 branch validation pending** | `node scripts/build.mjs`, `node scripts/validate.mjs` on Node 22 |
+| Individual SEO-ready event pages | **11 source-verified hubs on main + Topic #12 candidate on feature branch** | Eleven prior hubs remain merged on main; Microsoft Build 2027 is prepared on the feature branch with date/location/keynote/registration held at TBA, historical timing explicitly non-predictive, source-scope differences preserved, and developer time/maturity/baseline/migration tools; **not deployed live** |
 | Subdomains | **Proposed only** | 50 optional names in manifest; **no** DNS/TLS/host routing configured |
 | Website deployment | **Not performed** | No deployment to aafnaipatro.com, Cloudflare, Pages, or standalone event host verified |
 | Adsterra monetization | **Not implemented in EventV** | No event ad scripts, verified paid impressions or realized CPM measured by this repo |
@@ -50,7 +50,7 @@
 | **P1** | Launch **only approved URLs** after staging QA | HTTP checks, user-visible functionality, metadata/schema/source checks, production click tests, no regressions, smoke-test log | **TODO** |
 | **P2** | Repeat for more event clusters based on observed performance | Actual GSC impressions/clicks, engaged visits, verified paid ads and content-hours ROI; stop low-value clusters | **TODO** |
 
-**Next action to execute:** Continue sequentially with Topic #12 Microsoft Build 2027. Verify Microsoft’s current official event status first; keep 2027 date/location/keynote/registration TBA unless officially published; build differentiated developer planning tools rather than duplicating keynote news. Never deploy live; keep all unfinished routes `noindex`; 189 event routes remain unapproved.
+**Next action to execute:** Complete Topic #12 Microsoft Build 2027 through PR → CI → merge → main verification. Then continue sequentially with Topic #13 Cyber Monday 2027, verifying the calendar derivation while keeping retailer-specific prices, start times, stock and deal claims unknown until sourced. Never deploy live; keep all unfinished routes `noindex`; main currently has 189 unapproved event routes, falling to 188 only if Topic #12 merges.
 
 ## 4. Implementation files and run commands
 
@@ -83,6 +83,7 @@ For any new feature, create a branch from current `main`, make the change, updat
 
 | Date | Change | Verified evidence |
 |---|---|---|
+| 2026-11-05 | Topic #12 Microsoft Build 2027 prepared on feature branch: official date/location/keynote/registration remain TBA; current Build site remains 2026 archive; historical 2024–2026 timing non-predictive; 2026 session-catalog Jun 2–4 scope kept separate from Build Live Jun 2–3 coverage; blank verified-time converter, maturity ledger, pre/post baseline diff and migration/pricing triage added | PR/CI/merge pending; no live deployment |
 | 2026-11-05 | Built eleventh pilot: Steam Couch Co-op Fest 2027 with Valve-confirmed Feb 8–15 and same-device local co-op criterion; event-specific doc currently errors so exact clock remains unverified; no final lineup or title-specific discounts asserted; household setup checker, Remote Play evidence interpreter, browser-local game shortlist and fair-turn rotation planner added | [PR #16](https://github.com/aprashnasuraj2-dev/eventv/pull/16) merged as `0aee565`; initial CI 42026104402 caught canonical event-name capitalization mismatch; corrected branch passed [CI 42026196214](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42026196214); merged `main` re-read confirms 11 approvals and all three Couch Co-op spokes remain `noindex`; no live deployment |
 | 2026-11-05 | Built tenth pilot: Black Friday 2027 with Nov 26 transparently derived from OPM Thanksgiving Nov 25; no retailer-specific 2027 times/prices/stock asserted; deal-math checker, total-cost comparator, browser-local price-evidence ledger, return/shipping checklist, compact official references | [PR #14](https://github.com/aprashnasuraj2-dev/eventv/pull/14) merged as `dffb6d9`; [passing PR CI 42024907394](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42024907394); merged `main` re-read confirms 10 approvals and all three Black Friday spokes remain `noindex`; no live deployment |
 | 2026-11-05 | Built ninth pilot: Google I/O 2027 status hub with official 2027 date/time/venue/registration held at TBA; historical 2023/2025/2026 timing explicitly non-predictive; blank-by-default timezone converter, browser-local announced-vs-shipped ledger, developer change triage, current Gemini API baseline, compact official references | [PR #12](https://github.com/aprashnasuraj2-dev/eventv/pull/12) merged as `032de38`; [passing PR CI 42020985065](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42020985065); merged `main` re-read confirms 9 approvals and Google I/O route; no live deployment |
