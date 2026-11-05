@@ -7,7 +7,7 @@ const intents=fs.readFileSync('research/search-intents-1000.csv','utf8').trim().
 assert.equal(data.length,50);assert.equal(new Set(data.map(e=>e.slug)).size,50);
 assert.equal(rows.length,201);assert.equal(intents.length,1001);
 assert.equal(data.filter(e=>e.slug.includes('eclipse')).length,0);
-assert.equal(approvals.length,5,'Pilot release currently expects exactly five index-approved routes');
+assert.equal(approvals.length,6,'Pilot release currently expects exactly six index-approved routes');
 for(const e of data){assert.equal(e.facets.length,5);for(const p of ['hub','planning','during','after']){
   const filepath='events/'+e.slug+'/'+(p==='hub'?'':p+'/')+'index.html';
   assert.ok(fs.existsSync(filepath),filepath);
@@ -40,16 +40,28 @@ assert.ok(fs.existsSync('assets/apple-wwdc-2027-social.svg'));
 assert.ok(fs.existsSync('assets/steam-summer-sale-2027.css'));
 assert.ok(fs.existsSync('assets/steam-summer-sale-2027.js'));
 assert.ok(fs.existsSync('assets/steam-summer-sale-2027-social.svg'));
+assert.ok(fs.existsSync('assets/gamescom-2027.css'));
+assert.ok(fs.existsSync('assets/gamescom-2027.js'));
+assert.ok(fs.existsSync('assets/gamescom-2027-social.svg'));
 const wwdc=fs.readFileSync('events/apple-wwdc-2027/index.html','utf8');
 assert.ok(wwdc.includes('WWDC27 date not announced'),'WWDC27 page must preserve explicit unannounced status');
 assert.ok(wwdc.includes('Official date</span><strong>TBA'),'WWDC27 official date must remain TBA until source update');
 assert.ok(wwdc.includes('Official keynote time</span><strong>TBA'),'WWDC27 keynote time must remain TBA until source update');
 assert.ok(!wwdc.includes('"@type":"Event"'),'WWDC27 must not use Event schema before date announcement');
 assert.ok(fs.existsSync('index.html')&&fs.existsSync('events/index.html'));
-console.log('Validated: 50 clusters; 1000 intent rows; 200 event pages; 202 HTML total; 5 source-verified pilot hubs index-ready; all remaining event pages noindex');
+console.log('Validated: 50 clusters; 1000 intent rows; 200 event pages; 202 HTML total; 6 source-verified pilot hubs index-ready; all remaining event pages noindex');
 const summer=fs.readFileSync('events/steam-summer-sale-2027/index.html','utf8');
 assert.ok(summer.includes('June 24–July 8, 2027'),'Summer Sale page must preserve official date range');
 assert.ok(summer.includes('Exact start time</span><strong>TBA'),'Summer Sale exact clock must remain TBA until source update');
 assert.ok(!summer.includes('"@type":"Event"'),'Summer Sale hub does not use Event schema');
 assert.ok(summer.includes('id="refund"'),'Summer Sale refund planning utility missing');
 assert.ok(summer.includes('id="capacity"')&&summer.includes('id="cart"'),'Summer Sale money/time planning utilities missing');
+
+const gamescom=fs.readFileSync('events/gamescom-2027/index.html','utf8');
+assert.ok(gamescom.includes('August 23–29, 2027'),'Gamescom page must preserve official week');
+assert.ok(gamescom.includes('General public: August 26–29.'),'Gamescom page must preserve public-date distinction');
+assert.ok(gamescom.includes('10:00–20:00')&&gamescom.includes('09:00–20:00'),'Gamescom public opening hours missing');
+assert.ok(gamescom.includes('"@type":"Event"'),'Gamescom physical event should retain Event schema');
+assert.ok(gamescom.includes('Messeplatz 1'),'Gamescom venue address missing');
+assert.ok(gamescom.includes('official pages currently describe gamescom dev as August 23–24')||gamescom.includes('official Gamescom pages are inconsistent'),'Gamescom official source inconsistency note missing');
+assert.ok(gamescom.includes('id="day-planner"')&&gamescom.includes('id="budget"'),'Gamescom planning utilities missing');

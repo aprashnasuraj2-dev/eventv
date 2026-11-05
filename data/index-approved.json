@@ -84,6 +84,25 @@
         "https://partner.steamgames.com/doc/marketing/wishlist",
         "https://store.steampowered.com/steam_refunds/"
       ]
+    },
+    {
+      "slug": "gamescom-2027",
+      "page_type": "hub",
+      "output_path": "events/gamescom-2027/index.html",
+      "source_path": "content/pilots/gamescom-2027.html",
+      "robots": "index,follow,max-image-preview:large",
+      "editorial_status": "pilot-index-ready",
+      "source_verified_on": "2026-11-05",
+      "factual_scope": "Official Aug 23-29 week, Aug 24 ONL evening, Aug 25 Business & Media Day, Aug 26-29 public dates/hours, Koelnmesse location/access and age rules; ticket prices, final lineup, hall allocation, 2027 transport disruptions and exact gamescom dev end date remain unverified or internally inconsistent.",
+      "sources": [
+        "https://www.gamescom.global/en",
+        "https://www.gamescom.global/en/info/opening-times",
+        "https://www.gamescom.global/en/tickets",
+        "https://www.gamescom.global/en/info/arrival",
+        "https://www.gamescom.global/en/info/arrival/arrival-by-train",
+        "https://www.gamescom.global/en/info/trade-visitors",
+        "https://www.koelnmesse.com/contact/"
+      ]
     }
   ]
 }
