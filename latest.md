@@ -4,8 +4,8 @@
 > Read this file first whenever resuming EventV. Update it **in the same commit/PR** as every meaningful repository change. Historical research files remain references, not the live project status.
 >
 > **Last reviewed:** 2026-11-05 (Asia/Kathmandu)  
-> **Checkpoint:** Second editorial pilot built — Steam Winter Sale 2026 hub  
-> **Status:** **2 SOURCE-VERIFIED INDEX-READY PILOT HUBS IN REPO; LIVE DEPLOYMENT NOT PERFORMED**
+> **Checkpoint:** Third editorial pilot built — Steam Next Fest June 2027 hub  
+> **Status:** **3 SOURCE-VERIFIED INDEX-READY PILOT HUBS IN REPO; LIVE DEPLOYMENT NOT PERFORMED**
 
 ## 1. Current verified state
 
@@ -19,7 +19,7 @@
 | Canonical event routes | **200 mapped** | [`research/routes-200.csv`](research/routes-200.csv) |
 | Generated static pages | **202 HTML files** | 50 event hubs + 50 planning + 50 during + 50 after = **200** event pages; 2 index/navigation pages |
 | Build and validation | **Passing at feature checkpoint** | `node scripts/build.mjs`, `node scripts/validate.mjs` on Node 22 |
-| Individual SEO-ready event pages | **2 pilot hubs approved in repo** | Steam Next Fest Feb 2027 + Steam Winter Sale 2026 are source-verified, visually designed, interactive, structured, reference-backed and `index,follow`; **not deployed live** |
+| Individual SEO-ready event pages | **3 pilot hubs approved in repo** | Steam Next Fest Feb 2027 + Steam Winter Sale 2026 + Steam Next Fest June 2027 are source-verified, visually designed, interactive, structured, reference-backed and `index,follow`; **not deployed live** |
 | Subdomains | **Proposed only** | 50 optional names in manifest; **no** DNS/TLS/host routing configured |
 | Website deployment | **Not performed** | No deployment to aafnaipatro.com, Cloudflare, Pages, or standalone event host verified |
 | Adsterra monetization | **Not implemented in EventV** | No event ad scripts, verified paid impressions or realized CPM measured by this repo |
@@ -50,7 +50,7 @@
 | **P1** | Launch **only approved URLs** after staging QA | HTTP checks, user-visible functionality, metadata/schema/source checks, production click tests, no regressions, smoke-test log | **TODO** |
 | **P2** | Repeat for more event clusters based on observed performance | Actual GSC impressions/clicks, engaged visits, verified paid ads and content-hours ROI; stop low-value clusters | **TODO** |
 
-**Next action to execute:** Complete query-level SERP validation for both approved Steam pilots (US/UK/CA/AU desktop + mobile), then verify production AafnaiPatro/Cloudflare route parity before deployment. Keep the other 198 event pages `noindex` until individually approved.
+**Next action to execute:** Complete query-level SERP validation for all three approved Steam pilots (US/UK/CA/AU desktop + mobile), then verify production AafnaiPatro/Cloudflare route parity before deployment. Keep the other 197 event pages `noindex` until individually approved.
 
 ## 4. Implementation files and run commands
 
@@ -87,3 +87,5 @@ For any new feature, create a branch from current `main`, make the change, updat
 | 2026-11-05 | Added canonical `latest.md` resume-point ledger and CI enforcement requiring status updates alongside code changes | Passed GitHub Actions on main | 
 | 2026-11-05 | Built first real pilot: Steam Next Fest February 2027 source-verified hub, responsive visual design, time-zone/countdown utility, local demo shortlist, SEO metadata/Article+Breadcrumb structured data, compact bottom references; only this route is index-ready in source | [PR #2](https://github.com/aprashnasuraj2-dev/eventv/pull/2) merged as `ee59e68`; [main CI passed](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42005528032); no live deployment |
 | 2026-11-05 | Built second pilot: Steam Winter Sale 2026 source-verified hub with local time/countdown, discount calculator, private budget planner, Steam seasonal-sale mechanics, Steam Awards placeholder discipline, SEO metadata and compact bottom references | [PR #3](https://github.com/aprashnasuraj2-dev/eventv/pull/3) merged as `1ff5d54`; [main CI passed](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42006505833); no live deployment |
+
+| 2026-11-05 | Built third pilot: Steam Next Fest June 2027 source-verified hub with local clock/countdown, June-vs-February comparison, demo-capacity calculator, persistent seven-day priority sprint planner, developer workback, SEO metadata and compact bottom references | Feature PR/CI to be verified before merge; no live deployment |

@@ -7,7 +7,7 @@ const intents=fs.readFileSync('research/search-intents-1000.csv','utf8').trim().
 assert.equal(data.length,50);assert.equal(new Set(data.map(e=>e.slug)).size,50);
 assert.equal(rows.length,201);assert.equal(intents.length,1001);
 assert.equal(data.filter(e=>e.slug.includes('eclipse')).length,0);
-assert.equal(approvals.length,2,'Pilot release currently expects exactly two index-approved routes');
+assert.equal(approvals.length,3,'Pilot release currently expects exactly three index-approved routes');
 for(const e of data){assert.equal(e.facets.length,5);for(const p of ['hub','planning','during','after']){
   const filepath='events/'+e.slug+'/'+(p==='hub'?'':p+'/')+'index.html';
   assert.ok(fs.existsSync(filepath),filepath);
@@ -31,5 +31,8 @@ assert.ok(fs.existsSync('assets/steam-next-fest-feb-2027-social.svg'));
 assert.ok(fs.existsSync('assets/steam-winter-sale-2026.css'));
 assert.ok(fs.existsSync('assets/steam-winter-sale-2026.js'));
 assert.ok(fs.existsSync('assets/steam-winter-sale-2026-social.svg'));
+assert.ok(fs.existsSync('assets/steam-next-fest-june-2027.css'));
+assert.ok(fs.existsSync('assets/steam-next-fest-june-2027.js'));
+assert.ok(fs.existsSync('assets/steam-next-fest-june-2027-social.svg'));
 assert.ok(fs.existsSync('index.html')&&fs.existsSync('events/index.html'));
-console.log('Validated: 50 clusters; 1000 intent rows; 200 event pages; 202 HTML total; 2 source-verified pilot hubs index-ready; all remaining event pages noindex');
+console.log('Validated: 50 clusters; 1000 intent rows; 200 event pages; 202 HTML total; 3 source-verified pilot hubs index-ready; all remaining event pages noindex');
