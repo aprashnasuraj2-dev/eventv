@@ -7,7 +7,7 @@ const intents=fs.readFileSync('research/search-intents-1000.csv','utf8').trim().
 assert.equal(data.length,50);assert.equal(new Set(data.map(e=>e.slug)).size,50);
 assert.equal(rows.length,201);assert.equal(intents.length,1001);
 assert.equal(data.filter(e=>e.slug.includes('eclipse')).length,0);
-assert.equal(approvals.length,11,'Pilot release currently expects exactly eleven index-approved routes');
+assert.equal(approvals.length,12,'Pilot release currently expects exactly twelve index-approved routes');
 for(const e of data){assert.equal(e.facets.length,5);for(const p of ['hub','planning','during','after']){
   const filepath='events/'+e.slug+'/'+(p==='hub'?'':p+'/')+'index.html';
   assert.ok(fs.existsSync(filepath),filepath);
@@ -52,7 +52,7 @@ assert.ok(wwdc.includes('Official date</span><strong>TBA'),'WWDC27 official date
 assert.ok(wwdc.includes('Official keynote time</span><strong>TBA'),'WWDC27 keynote time must remain TBA until source update');
 assert.ok(!wwdc.includes('"@type":"Event"'),'WWDC27 must not use Event schema before date announcement');
 assert.ok(fs.existsSync('index.html')&&fs.existsSync('events/index.html'));
-console.log('Validated: 50 clusters; 1000 intent rows; 200 event pages; 202 HTML total; 11 source-verified pilot hubs index-ready; all remaining event pages noindex');
+console.log('Validated: 50 clusters; 1000 intent rows; 200 event pages; 202 HTML total; 12 source-verified pilot hubs index-ready; all remaining event pages noindex');
 const summer=fs.readFileSync('events/steam-summer-sale-2027/index.html','utf8');
 assert.ok(summer.includes('June 24–July 8, 2027'),'Summer Sale page must preserve official date range');
 assert.ok(summer.includes('Exact start time</span><strong>TBA'),'Summer Sale exact clock must remain TBA until source update');
@@ -127,3 +127,17 @@ assert.ok(couch.includes('event-specific Couch Co-Op Fest 2027 documentation URL
 assert.ok(!couch.includes('"@type":"Event"'),'Couch Co-Op themed sale guide must not use Event schema');
 for(const ext of ['css','js'])assert.ok(fs.existsSync('assets/steam-couch-coop-fest-2027.'+ext),'Missing Couch Co-Op asset '+ext);
 assert.ok(fs.existsSync('assets/steam-couch-coop-fest-2027-social.svg'),'Missing Couch Co-Op social image');
+
+const msbuild=fs.readFileSync('events/microsoft-build-2027/index.html','utf8');
+assert.ok(msbuild.includes('Official 2027 date</span><strong>TBA'),'Microsoft Build 2027 date must remain TBA');
+assert.ok(msbuild.includes('Location / format</span><strong>TBA'),'Microsoft Build 2027 location/format must remain TBA');
+assert.ok(msbuild.includes('Opening keynote</span><strong>TBA'),'Microsoft Build 2027 keynote must remain TBA');
+assert.ok(msbuild.includes('Registration / pricing</span><strong>TBA'),'Microsoft Build 2027 registration/pricing must remain TBA');
+for(const id of ['time-tool','ledger','baseline','triage','references'])assert.ok(msbuild.includes('id="'+id+'"'),'Microsoft Build tool/evidence section missing: '+id);
+assert.ok(msbuild.includes('Do not extrapolate.'),'Microsoft Build history must explicitly reject 2027 extrapolation');
+assert.ok(msbuild.includes('June 2–3, 2026 / San Francisco and online')||msbuild.includes('Jun 2–3, 2026 / San Francisco and online'),'Microsoft Build live-blog scope note missing');
+assert.ok(msbuild.includes('Tuesday June 2, Wednesday June 3 and Thursday June 4'),'Microsoft Build session-catalog day scope missing');
+assert.ok(msbuild.includes('No live Microsoft monitoring is active.'),'Microsoft Build no-live-monitoring warning missing');
+assert.ok(!msbuild.includes('"@type":"Event"'),'Microsoft Build 2027 must not use Event schema before official date');
+for(const ext of ['css','js'])assert.ok(fs.existsSync('assets/microsoft-build-2027.'+ext),'Missing Microsoft Build asset '+ext);
+assert.ok(fs.existsSync('assets/microsoft-build-2027-social.svg'),'Missing Microsoft Build social image');
