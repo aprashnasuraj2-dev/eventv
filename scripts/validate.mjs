@@ -7,7 +7,7 @@ const intents=fs.readFileSync('research/search-intents-1000.csv','utf8').trim().
 assert.equal(data.length,50);assert.equal(new Set(data.map(e=>e.slug)).size,50);
 assert.equal(rows.length,201);assert.equal(intents.length,1001);
 assert.equal(data.filter(e=>e.slug.includes('eclipse')).length,0);
-assert.equal(approvals.length,10,'Pilot release currently expects exactly ten index-approved routes');
+assert.equal(approvals.length,11,'Pilot release currently expects exactly eleven index-approved routes');
 for(const e of data){assert.equal(e.facets.length,5);for(const p of ['hub','planning','during','after']){
   const filepath='events/'+e.slug+'/'+(p==='hub'?'':p+'/')+'index.html';
   assert.ok(fs.existsSync(filepath),filepath);
@@ -52,7 +52,7 @@ assert.ok(wwdc.includes('Official date</span><strong>TBA'),'WWDC27 official date
 assert.ok(wwdc.includes('Official keynote time</span><strong>TBA'),'WWDC27 keynote time must remain TBA until source update');
 assert.ok(!wwdc.includes('"@type":"Event"'),'WWDC27 must not use Event schema before date announcement');
 assert.ok(fs.existsSync('index.html')&&fs.existsSync('events/index.html'));
-console.log('Validated: 50 clusters; 1000 intent rows; 200 event pages; 202 HTML total; 10 source-verified pilot hubs index-ready; all remaining event pages noindex');
+console.log('Validated: 50 clusters; 1000 intent rows; 200 event pages; 202 HTML total; 11 source-verified pilot hubs index-ready; all remaining event pages noindex');
 const summer=fs.readFileSync('events/steam-summer-sale-2027/index.html','utf8');
 assert.ok(summer.includes('June 24–July 8, 2027'),'Summer Sale page must preserve official date range');
 assert.ok(summer.includes('Exact start time</span><strong>TBA'),'Summer Sale exact clock must remain TBA until source update');
@@ -115,3 +115,15 @@ assert.ok(bf.includes('No live retailer feed is active.'),'Black Friday no-live-
 assert.ok(!bf.includes('"@type":"Event"'),'Black Friday guide must not use Event schema');
 for(const ext of ['css','js'])assert.ok(fs.existsSync('assets/black-friday-2027.'+ext),'Missing Black Friday asset '+ext);
 assert.ok(fs.existsSync('assets/black-friday-2027-social.svg'),'Missing Black Friday social image');
+
+const couch=fs.readFileSync('events/steam-couch-coop-fest-2027/index.html','utf8');
+assert.ok(couch.includes('February 8–15, 2027'),'Couch Co-Op Fest official date window missing');
+assert.ok(couch.includes('Exact start/end clock</span><strong>Unverified'),'Couch Co-Op exact clock must remain unverified');
+assert.ok(couch.includes('2027 lineup / discounts</span><strong>Unknown'),'Couch Co-Op lineup/discounts must remain unknown');
+assert.ok(couch.includes('games must support <strong>local co-op</strong>')||couch.includes('games must support local co-op'),'Couch Co-Op eligibility criterion missing');
+for(const id of ['setup','remote','shortlist','rotation','references'])assert.ok(couch.includes('id="'+id+'"'),'Couch Co-Op tool/evidence section missing: '+id);
+assert.ok(couch.includes('only the host needs to own and install the game'),'Remote Play ownership baseline missing');
+assert.ok(couch.includes('event-specific Couch Co-Op Fest 2027 documentation URL exists')||couch.includes('event-specific documentation URL exists'),'Couch Co-Op source limitation note missing');
+assert.ok(!couch.includes('"@type":"Event"'),'Couch Co-Op themed sale guide must not use Event schema');
+for(const ext of ['css','js'])assert.ok(fs.existsSync('assets/steam-couch-coop-fest-2027.'+ext),'Missing Couch Co-Op asset '+ext);
+assert.ok(fs.existsSync('assets/steam-couch-coop-fest-2027-social.svg'),'Missing Couch Co-Op social image');
