@@ -103,6 +103,26 @@
         "https://www.gamescom.global/en/info/trade-visitors",
         "https://www.koelnmesse.com/contact/"
       ]
+    },
+    {
+      "slug": "tour-de-france-uk-2027",
+      "page_type": "hub",
+      "output_path": "events/tour-de-france-uk-2027/index.html",
+      "source_path": "content/pilots/tour-de-france-uk-2027.html",
+      "robots": "index,follow,max-image-preview:large",
+      "editorial_status": "pilot-index-ready",
+      "source_verified_on": "2026-11-05",
+      "factual_scope": "Official July 2-4 British Grand Départ stages, route anchors, intermediate sprint towns, road-closure requirement and roadside/publicity-caravan guidance; local pass times, closure/reopening times, parking and accessible viewing remain location-specific or pending.",
+      "sources": [
+        "https://www.letour.fr/en/the-race/grands-departs/grand-depart-2027",
+        "https://www.letour.fr/en/overall-route",
+        "https://www.letourgb.com/tdfroutes/",
+        "https://www.letourgb.com/tdfroutes/stage-1/",
+        "https://www.letourgb.com/tdfroutes/stage-2/",
+        "https://www.letourgb.com/tdfroutes/stage-3/",
+        "https://www.letourgb.com/resident-info/",
+        "https://www.edinburgh.gov.uk/events-venues/tour-de-france-grande-depart-2027"
+      ]
     }
   ]
 }
