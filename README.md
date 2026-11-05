@@ -9,7 +9,7 @@
 - 200 static event HTML pages = 50 overviews + 50 planning pages + 50 during-event verification pages + 50 after-event templates; plus root and event directory: **202 HTML files**.
 - 200 canonical route mappings in `research/routes-200.csv`; 50 optional subdomain names in the JSON manifest.
 - `scripts/build.mjs` regenerates HTML/CSS/CSVs. `scripts/validate.mjs` checks counts and safeguards.
-- **196 event pages remain `noindex,follow`.** Four source-verified pilot hubs are marked `index,follow` in the repository: Steam Next Fest February 2027, Steam Winter Sale 2026, Steam Next Fest June 2027, and WWDC 2027. All include original browser-side utilities and still require deployment/route and SERP validation before live release. This is not a claim that 200 pages are SEO-ready.
+- **195 event pages remain `noindex,follow`.** Five source-verified pilot hubs are marked `index,follow` in the repository: Steam Next Fest February 2027, Steam Winter Sale 2026, Steam Next Fest June 2027, WWDC 2027, and Steam Summer Sale 2027. All include original browser-side utilities and still require deployment/route and SERP validation before live release. This is not a claim that 200 pages are SEO-ready.
 - No real ads, false live content, forced interactions or impression-generation scripts.
 
 ## Routing
