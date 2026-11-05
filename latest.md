@@ -4,22 +4,22 @@
 > Read this file first whenever resuming EventV. Update it **in the same commit/PR** as every meaningful repository change. Historical research files remain references, not the live project status.
 >
 > **Last reviewed:** 2026-11-05 (Asia/Kathmandu)  
-> **Checkpoint:** Seventh editorial pilot built — Tour de France UK Grand Départ 2027 spectator hub  
-> **Status:** **7 SOURCE-VERIFIED INDEX-READY PILOT HUBS IN REPO; LIVE DEPLOYMENT NOT PERFORMED**
+> **Checkpoint:** Eighth editorial pilot built — Steam Spring Sale 2027 source-backed buying planner  
+> **Status:** **8 EDITORIAL PILOT HUBS ON TOPIC #8 FEATURE BRANCH; CI/PR/MAIN MERGE PENDING; LIVE DEPLOYMENT NOT PERFORMED**
 
 ## 1. Current verified state
 
 | Area | Status | Verified detail |
 |---|---|---|
 | GitHub repo | **Working** | [`aprashnasuraj2-dev/eventv`](https://github.com/aprashnasuraj2-dev/eventv), default branch `main` |
-| Most recent feature change | **Merged** | [PR #9](https://github.com/aprashnasuraj2-dev/eventv/pull/9), squash commit [`abbdbea`](https://github.com/aprashnasuraj2-dev/eventv/commit/abbdbea4e3d1c03c287b47b515add6ce6af21163) — Tour de France UK Grand Départ 2027 pilot |
-| CI at feature checkpoint | **Passed** | [GitHub Actions run 42018556149](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42018556149) on merged Tour de France UK pilot commit |
+| Most recent feature change | **PR #9 merged; Topic #8 feature branch pending PR** | [PR #9](https://github.com/aprashnasuraj2-dev/eventv/pull/9), squash commit [`abbdbea`](https://github.com/aprashnasuraj2-dev/eventv/commit/abbdbea4e3d1c03c287b47b515add6ce6af21163) — Tour de France UK Grand Départ 2027 pilot |
+| CI at feature checkpoint | **Last verified main passed; Topic #8 CI pending** | [GitHub Actions run 42018556149](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42018556149) on merged Tour de France UK pilot commit |
 | Candidate event topics | **50 defined** | [`data/events-50.json`](data/events-50.json), [ranked topics](TOP_50_TOPICS.md); eclipses excluded |
 | Search intents | **1,000 generated hypotheses** | [`research/search-intents-1000.csv`](research/search-intents-1000.csv); **not** verified keyword volumes, demand or attainable rankings |
 | Canonical event routes | **200 mapped** | [`research/routes-200.csv`](research/routes-200.csv) |
 | Generated static pages | **202 HTML files** | 50 event hubs + 50 planning + 50 during + 50 after = **200** event pages; 2 index/navigation pages |
-| Build and validation | **Passing at feature checkpoint** | `node scripts/build.mjs`, `node scripts/validate.mjs` on Node 22 |
-| Individual SEO-ready event pages | **7 pilot hubs approved in repo** | Steam Next Fest Feb 2027 + Steam Winter Sale 2026 + Steam Next Fest June 2027 + WWDC 2027 + Steam Summer Sale 2027 + Gamescom 2027 + Tour de France UK 2027 are source-verified, visually designed, interactive, structured, reference-backed and `index,follow`; **not deployed live** |
+| Build and validation | **Passed on prior main commit; Topic #8 branch pending verification** | `node scripts/build.mjs`, `node scripts/validate.mjs` on Node 22 |
+| Individual SEO-ready event pages | **7 main-approved hubs + eighth hub prepared on feature branch pending CI** | Steam Next Fest Feb 2027 + Steam Winter Sale 2026 + Steam Next Fest June 2027 + WWDC 2027 + Steam Summer Sale 2027 + Gamescom 2027 + Tour de France UK 2027 are source-verified, visually designed, interactive, structured, reference-backed and `index,follow`; **not deployed live** |
 | Subdomains | **Proposed only** | 50 optional names in manifest; **no** DNS/TLS/host routing configured |
 | Website deployment | **Not performed** | No deployment to aafnaipatro.com, Cloudflare, Pages, or standalone event host verified |
 | Adsterra monetization | **Not implemented in EventV** | No event ad scripts, verified paid impressions or realized CPM measured by this repo |
@@ -50,7 +50,7 @@
 | **P1** | Launch **only approved URLs** after staging QA | HTTP checks, user-visible functionality, metadata/schema/source checks, production click tests, no regressions, smoke-test log | **TODO** |
 | **P2** | Repeat for more event clusters based on observed performance | Actual GSC impressions/clicks, engaged visits, verified paid ads and content-hours ROI; stop low-value clusters | **TODO** |
 
-**Next action to execute:** Complete query-level SERP validation for all seven approved pilots (US/UK/CA/AU desktop + mobile), adding Tour de France UK spectator/route/road-closure intent alongside Gamescom travel/ticket and the existing Steam/WWDC checks, then verify production AafnaiPatro/Cloudflare route parity before deployment. Keep the other 193 event pages `noindex` until individually approved.
+**Next action to execute:** Complete query-level SERP validation for all seven approved main pilots plus Topic #8 when merged (US/UK/CA/AU desktop + mobile), adding Tour de France UK spectator/route/road-closure intent alongside Gamescom travel/ticket and the existing Steam/WWDC checks, then verify production AafnaiPatro/Cloudflare route parity before deployment. Keep the 193 other main-branch pages `noindex` (192 remaining after Topic #8 is accepted) until individually approved.
 
 ## 4. Implementation files and run commands
 
@@ -80,6 +80,8 @@ For any new feature, create a branch from current `main`, make the change, updat
 7. **Start future sessions by reading `latest.md` before making changes**, then confirm its claims against repository HEAD and CI. Treat this document as a living ledger, not as proof by itself.
 
 ## 6. Last completed work log
+
+| 2026-11-05 | Topic #8 Steam Spring Sale 2027 prepared on feature branch: officially confirmed March 18–25 calendar, exact sale clock and product discounts expressly unconfirmed. Original visual, user-input discount checker, browser-local budget/playtime cart and refund rule precheck, compact references, schema and no live deployment. | PR/CI/merge not yet verified in this checkpoint; official Valve documentation checked November 5. |
 
 | Date | Change | Verified evidence |
 |---|---|---|
