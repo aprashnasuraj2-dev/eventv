@@ -32,6 +32,22 @@
         "https://partner.steamgames.com/doc/marketing/discounts",
         "https://store.steampowered.com/notifications"
       ]
+    },
+    {
+      "slug": "steam-next-fest-june-2027",
+      "page_type": "hub",
+      "output_path": "events/steam-next-fest-june-2027/index.html",
+      "source_path": "content/pilots/steam-next-fest-june-2027.html",
+      "robots": "index,follow,max-image-preview:large",
+      "editorial_status": "pilot-index-ready",
+      "source_verified_on": "2026-11-05",
+      "factual_scope": "Official June 14-21 timing, developer/press timeline, eligibility, visibility behavior and post-Fest demo availability caveat; no final June lineup or best-demo claims.",
+      "sources": [
+        "https://partner.steamgames.com/doc/marketing/upcoming_events/nextfest/june_2027",
+        "https://partner.steamgames.com/doc/marketing/upcoming_events/nextfest",
+        "https://partner.steamgames.com/doc/marketing/upcoming_events/nextfest/tips",
+        "https://partner.steamgames.com/doc/marketing/upcoming_events"
+      ]
     }
   ]
 }
