@@ -37,14 +37,22 @@ const css=":root{color-scheme:light;font-family:system-ui,-apple-system,Segoe UI
 const csv=(rows,heads)=>heads.join(",")+"\n"+rows.map(row=>heads.map(k=>`"${String(row[k]??"").replace(/"/g,'""')}"`).join(",")).join("\n")+"\n";
 const data=JSON.parse(fs.readFileSync('data/events-50.json','utf8'));
 const events=data.events;
+const approvedData=fs.existsSync('data/index-approved.json')?JSON.parse(fs.readFileSync('data/index-approved.json','utf8')):{approved:[]};
+const approved=new Map((approvedData.approved||[]).map(x=>[x.slug+'|'+x.page_type,x]));
 if(events.length!==50 || new Set(events.map(e=>e.slug)).size!==50 || events.some(e=>e.facets.length!==5)) throw new Error('Invalid event manifest');
 const write=(p,text)=>{fs.mkdirSync(path.dirname(p),{recursive:true});fs.writeFileSync(p,text)};
-for(const e of events) for(const p of ['hub','planning','during','after'])write(pagePath(e,p),render(e,p));
+for(const e of events) for(const p of ['hub','planning','during','after']){
+  const override=approved.get(e.slug+'|'+p);
+  if(override){
+    if(!fs.existsSync(override.source_path)) throw new Error('Missing approved source: '+override.source_path);
+    write(pagePath(e,p),fs.readFileSync(override.source_path,'utf8'));
+  } else write(pagePath(e,p),render(e,p));
+}
 write('index.html',renderIndex(events,false));
 write('events/index.html',renderIndex(events,true));
 write('assets/eventv.css',css+'\n');
 const intents=events.flatMap(e=>['pre','compare','live','post'].flatMap(p=>phrases(e,p).map(x=>({event_slug:e.slug,topic:e.name,category:e.category,phase:x.phase,facet_number:x.facet,search_intent:x.intent,query_hypothesis:x.query,canonical_url:'https://aafnaipatro.com'+x.path,validation_status:'unvalidated',geo:e.geo.join(' ')}))));
-const routes=events.flatMap(e=>['hub','planning','during','after'].map(p=>({event_slug:e.slug,page_type:p,output_path:pagePath(e,p),canonical_url:'https://aafnaipatro.com'+root(e)+(p==='hub'?'':p+'/'),robots:'noindex,follow',editorial_status:'research-draft'})));
+const routes=events.flatMap(e=>['hub','planning','during','after'].map(p=>{const override=approved.get(e.slug+'|'+p);return {event_slug:e.slug,page_type:p,output_path:pagePath(e,p),canonical_url:'https://aafnaipatro.com'+root(e)+(p==='hub'?'':p+'/'),robots:override?.robots||'noindex,follow',editorial_status:override?.editorial_status||'research-draft'}}));
 write('research/search-intents-1000.csv',csv(intents,['event_slug','topic','category','phase','facet_number','search_intent','query_hypothesis','canonical_url','validation_status','geo']));
 write('research/routes-200.csv',csv(routes,['event_slug','page_type','output_path','canonical_url','robots','editorial_status']));
-console.log('Generated '+events.length+' clusters / '+intents.length+' intents / '+routes.length+' event HTML pages / 202 HTML total');
+console.log('Generated '+events.length+' clusters / '+intents.length+' intents / '+routes.length+' event HTML pages / 202 HTML total / '+approved.size+' editorial override(s)');
