@@ -53,7 +53,7 @@
   if (!Array.isArray(items)) items=[];
 
   const list=$('demo-list'), empty=$('empty-state'), count=$('planner-count');
-  const save=()=>localStorage.setItem(KEY,JSON.stringify(items));
+  const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(items));return true;}catch(_){return false;}};
   const escapeText=(s)=>String(s).slice(0,100);
 
   function renderList(){
