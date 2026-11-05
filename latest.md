@@ -4,8 +4,8 @@
 > Read this file first whenever resuming EventV. Update it **in the same commit/PR** as every meaningful repository change. Historical research files remain references, not the live project status.
 >
 > **Last reviewed:** 2026-11-05 (Asia/Kathmandu)  
-> **Checkpoint:** Sixth editorial pilot deepened — Gamescom 2027 multi-day/accessibility visitor hub  
-> **Status:** **6 SOURCE-VERIFIED INDEX-READY PILOT HUBS IN REPO; LIVE DEPLOYMENT NOT PERFORMED**
+> **Checkpoint:** Seventh editorial pilot built — Tour de France UK Grand Départ 2027 spectator hub  
+> **Status:** **7 SOURCE-VERIFIED INDEX-READY PILOT HUBS IN REPO; LIVE DEPLOYMENT NOT PERFORMED**
 
 ## 1. Current verified state
 
@@ -19,7 +19,7 @@
 | Canonical event routes | **200 mapped** | [`research/routes-200.csv`](research/routes-200.csv) |
 | Generated static pages | **202 HTML files** | 50 event hubs + 50 planning + 50 during + 50 after = **200** event pages; 2 index/navigation pages |
 | Build and validation | **Passing at feature checkpoint** | `node scripts/build.mjs`, `node scripts/validate.mjs` on Node 22 |
-| Individual SEO-ready event pages | **6 pilot hubs approved in repo** | Steam Next Fest Feb 2027 + Steam Winter Sale 2026 + Steam Next Fest June 2027 + WWDC 2027 + Steam Summer Sale 2027 + Gamescom 2027 are source-verified, visually designed, interactive, structured, reference-backed and `index,follow`; **not deployed live** |
+| Individual SEO-ready event pages | **7 pilot hubs approved in repo** | Steam Next Fest Feb 2027 + Steam Winter Sale 2026 + Steam Next Fest June 2027 + WWDC 2027 + Steam Summer Sale 2027 + Gamescom 2027 + Tour de France UK 2027 are source-verified, visually designed, interactive, structured, reference-backed and `index,follow`; **not deployed live** |
 | Subdomains | **Proposed only** | 50 optional names in manifest; **no** DNS/TLS/host routing configured |
 | Website deployment | **Not performed** | No deployment to aafnaipatro.com, Cloudflare, Pages, or standalone event host verified |
 | Adsterra monetization | **Not implemented in EventV** | No event ad scripts, verified paid impressions or realized CPM measured by this repo |
@@ -50,7 +50,7 @@
 | **P1** | Launch **only approved URLs** after staging QA | HTTP checks, user-visible functionality, metadata/schema/source checks, production click tests, no regressions, smoke-test log | **TODO** |
 | **P2** | Repeat for more event clusters based on observed performance | Actual GSC impressions/clicks, engaged visits, verified paid ads and content-hours ROI; stop low-value clusters | **TODO** |
 
-**Next action to execute:** Complete query-level SERP validation for all six approved pilots (US/UK/CA/AU desktop + mobile), adding Gamescom travel/ticket/visitor-intent competition to the existing Steam and WWDC checks, then verify production AafnaiPatro/Cloudflare route parity before deployment. Keep the other 194 event pages `noindex` until individually approved.
+**Next action to execute:** Complete query-level SERP validation for all seven approved pilots (US/UK/CA/AU desktop + mobile), adding Tour de France UK spectator/route/road-closure intent alongside Gamescom travel/ticket and the existing Steam/WWDC checks, then verify production AafnaiPatro/Cloudflare route parity before deployment. Keep the other 193 event pages `noindex` until individually approved.
 
 ## 4. Implementation files and run commands
 
@@ -92,3 +92,4 @@ For any new feature, create a branch from current `main`, make the change, updat
 | 2026-11-05 | Built fifth pilot: Steam Summer Sale 2027 source-verified hub with confirmed June 24–July 8 dates, explicit TBA clock, money+playtime purchase-capacity model, persistent cart planner, wishlist-notification rule checker, standard refund-window precheck, SEO metadata and compact bottom references | [PR #6](https://github.com/aprashnasuraj2-dev/eventv/pull/6) merged as `1fe939c`; [main CI passed](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42009969906); no live deployment |
 | 2026-11-05 | Built sixth pilot: Gamescom 2027 source-verified Cologne hub with Aug 23–29 week, public Aug 26–29 distinction, exact public hours, official-source inconsistency warning for gamescom dev, persistent day-capacity itinerary, trip-cost estimator, venue/arrival/age guidance, Event schema, SEO metadata and compact bottom references | [PR #7](https://github.com/aprashnasuraj2-dev/eventv/pull/7) merged as `92a7078`; [main CI passed](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42016279462); no live deployment |
 | 2026-11-05 | Deepened Gamescom 2027 with public/Wildcard/trade access-mode selector, multi-day official-hours capacity calculator, barrier-free entrance/toilet/parking guidance, 2027 hall-plan freshness warning and explicit update radar for ticket prices, exhibitors, ONL time, transit notices and source conflicts | [PR #8](https://github.com/aprashnasuraj2-dev/eventv/pull/8) merged as `4403a44`; [main CI passed](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42017012549); no live deployment |
+| 2026-11-05 | Built seventh pilot: Tour de France UK Grand Départ 2027 source-verified spectator hub covering Jul 2–4 Edinburgh→Carlisle, Keswick→Liverpool and Welshpool→Cardiff; stage finder, confirmed route anchors/sprints, persistent one-position-per-stage roadside planner, pass-time buffer calculator, closure-readiness checklist, free-roadside vs ticketed-ceremony distinction, source-conflict radar, SEO metadata and compact bottom references | Feature PR/CI to be verified before merge; no live deployment |
