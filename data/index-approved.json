@@ -157,6 +157,22 @@
         "https://blog.google/company-news/inside-google/io-2023-save-the-date-puzzle/",
         "https://ai.google.dev/gemini-api/docs/interactions-overview"
       ]
+    },
+    {
+      "slug": "black-friday-2027",
+      "page_type": "hub",
+      "output_path": "events/black-friday-2027/index.html",
+      "source_path": "content/pilots/black-friday-2027.html",
+      "robots": "index,follow,max-image-preview:large",
+      "editorial_status": "pilot-index-ready",
+      "source_verified_on": "2026-11-05",
+      "factual_scope": "Black Friday 2027 is transparently rule-derived as Friday Nov 26 from OPM's official Thanksgiving Day 2027 date of Thursday Nov 25. No universal retailer start/end time, 2027 product prices, stock or best-deal claims asserted. Page includes user-entered deal arithmetic, total checkout-cost comparison, browser-local price evidence ledger and FTC-grounded shopping/return checklist.",
+      "sources": [
+        "https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/",
+        "https://consumer.ftc.gov/articles/online-shopping",
+        "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-233",
+        "https://www.ftc.gov/business-guidance/advertising-marketing"
+      ]
     }
   ]
 }
