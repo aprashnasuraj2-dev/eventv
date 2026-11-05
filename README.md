@@ -1,4 +1,6 @@
 # EventV — 50 event clusters and 1,000 SEO intent hypotheses
+
+> **Resume work:** [`latest.md`](latest.md) is the sole maintained project checkpoint: verified status, blockers, next tasks and handoff procedure. Update it in the same commit as each meaningful project change.
 **Research-stage static release candidate · 2026-11-05 · no deployed website**
 
 ## Scope and counts
