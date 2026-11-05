@@ -140,6 +140,23 @@
         "https://store.steampowered.com/steam_refunds/",
         "https://help.steampowered.com/en/faqs/view/4c10-b32a-137d-0945"
       ]
+    },
+    {
+      "slug": "google-io-2027",
+      "page_type": "hub",
+      "output_path": "events/google-io-2027/index.html",
+      "source_path": "content/pilots/google-io-2027.html",
+      "robots": "index,follow,max-image-preview:large",
+      "editorial_status": "pilot-index-ready",
+      "source_verified_on": "2026-11-05",
+      "factual_scope": "Google I/O 2027 date, keynote time, venue, registration and 2027 product slate remain unannounced in official sources checked. Historical 2023/2025/2026 timing is labeled context only. Page includes a blank-by-default verified-time converter, browser-local announced-vs-shipped ledger, developer change triage and the current Gemini Interactions API baseline without predicting 2027 changes.",
+      "sources": [
+        "https://io.google/2026/",
+        "https://blog.google/innovation-and-ai/technology/developers-tools/io-2026-save-the-date/",
+        "https://blog.google/feed/google-io-2025-save-the-date/",
+        "https://blog.google/company-news/inside-google/io-2023-save-the-date-puzzle/",
+        "https://ai.google.dev/gemini-api/docs/interactions-overview"
+      ]
     }
   ]
 }
