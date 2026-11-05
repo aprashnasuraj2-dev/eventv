@@ -48,6 +48,25 @@
         "https://partner.steamgames.com/doc/marketing/upcoming_events/nextfest/tips",
         "https://partner.steamgames.com/doc/marketing/upcoming_events"
       ]
+    },
+    {
+      "slug": "apple-wwdc-2027",
+      "page_type": "hub",
+      "output_path": "events/apple-wwdc-2027/index.html",
+      "source_path": "content/pilots/apple-wwdc-2027.html",
+      "robots": "index,follow,max-image-preview:large",
+      "editorial_status": "pilot-index-ready",
+      "source_verified_on": "2026-11-05",
+      "factual_scope": "WWDC27 date/keynote remain unannounced; page uses official 2023-2026 announcement history, WWDC26 baseline, April 2027 SDK submission requirements and current Apple beta guidance without predicting 2027 APIs or dates.",
+      "sources": [
+        "https://developer.apple.com/news/?id=yi8qj25k",
+        "https://www.apple.com/newsroom/2025/03/apples-worldwide-developers-conference-returns-the-week-of-june-9/",
+        "https://www.apple.com/newsroom/2024/03/apples-worldwide-developers-conference-returns-june-10-2024/",
+        "https://www.apple.com/newsroom/2023/03/apples-worldwide-developers-conference-returns-june-5/",
+        "https://developer.apple.com/videos/play/wwdc2026/394/",
+        "https://developer.apple.com/support/install-beta",
+        "https://developer.apple.com/news/?id=k1mtkt1k"
+      ]
     }
   ]
 }
