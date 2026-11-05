@@ -4,8 +4,8 @@
 > Read this file first whenever resuming EventV. Update it **in the same commit/PR** as every meaningful repository change. Historical research files remain references, not the live project status.
 >
 > **Last reviewed:** 2026-11-05 (Asia/Kathmandu)  
-> **Checkpoint:** Fifth editorial pilot built — Steam Summer Sale 2027 buying-capacity hub  
-> **Status:** **5 SOURCE-VERIFIED INDEX-READY PILOT HUBS IN REPO; LIVE DEPLOYMENT NOT PERFORMED**
+> **Checkpoint:** Sixth editorial pilot built — Gamescom 2027 Cologne visitor-planning hub  
+> **Status:** **6 SOURCE-VERIFIED INDEX-READY PILOT HUBS IN REPO; LIVE DEPLOYMENT NOT PERFORMED**
 
 ## 1. Current verified state
 
@@ -19,7 +19,7 @@
 | Canonical event routes | **200 mapped** | [`research/routes-200.csv`](research/routes-200.csv) |
 | Generated static pages | **202 HTML files** | 50 event hubs + 50 planning + 50 during + 50 after = **200** event pages; 2 index/navigation pages |
 | Build and validation | **Passing at feature checkpoint** | `node scripts/build.mjs`, `node scripts/validate.mjs` on Node 22 |
-| Individual SEO-ready event pages | **5 pilot hubs approved in repo** | Steam Next Fest Feb 2027 + Steam Winter Sale 2026 + Steam Next Fest June 2027 + WWDC 2027 + Steam Summer Sale 2027 are source-verified, visually designed, interactive, structured, reference-backed and `index,follow`; **not deployed live** |
+| Individual SEO-ready event pages | **6 pilot hubs approved in repo** | Steam Next Fest Feb 2027 + Steam Winter Sale 2026 + Steam Next Fest June 2027 + WWDC 2027 + Steam Summer Sale 2027 + Gamescom 2027 are source-verified, visually designed, interactive, structured, reference-backed and `index,follow`; **not deployed live** |
 | Subdomains | **Proposed only** | 50 optional names in manifest; **no** DNS/TLS/host routing configured |
 | Website deployment | **Not performed** | No deployment to aafnaipatro.com, Cloudflare, Pages, or standalone event host verified |
 | Adsterra monetization | **Not implemented in EventV** | No event ad scripts, verified paid impressions or realized CPM measured by this repo |
@@ -50,7 +50,7 @@
 | **P1** | Launch **only approved URLs** after staging QA | HTTP checks, user-visible functionality, metadata/schema/source checks, production click tests, no regressions, smoke-test log | **TODO** |
 | **P2** | Repeat for more event clusters based on observed performance | Actual GSC impressions/clicks, engaged visits, verified paid ads and content-hours ROI; stop low-value clusters | **TODO** |
 
-**Next action to execute:** Complete query-level SERP validation for all five approved pilots (US/UK/CA/AU desktop + mobile), including Summer Sale commercial SERP competition and WWDC official-source dominance, then verify production AafnaiPatro/Cloudflare route parity before deployment. Keep the other 195 event pages `noindex` until individually approved.
+**Next action to execute:** Complete query-level SERP validation for all six approved pilots (US/UK/CA/AU desktop + mobile), adding Gamescom travel/ticket/visitor-intent competition to the existing Steam and WWDC checks, then verify production AafnaiPatro/Cloudflare route parity before deployment. Keep the other 194 event pages `noindex` until individually approved.
 
 ## 4. Implementation files and run commands
 
@@ -90,3 +90,4 @@ For any new feature, create a branch from current `main`, make the change, updat
 | 2026-11-05 | Built third pilot: Steam Next Fest June 2027 source-verified hub with local clock/countdown, June-vs-February comparison, demo-capacity calculator, persistent seven-day priority sprint planner, developer workback, SEO metadata and compact bottom references | [PR #4](https://github.com/aprashnasuraj2-dev/eventv/pull/4) merged as `d6e75d5`; [main CI passed](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42007730950); no live deployment |
 | 2026-11-05 | Built fourth pilot: WWDC 2027 source-verified status hub with explicit TBA date/keynote, official 2023–2026 announcement history, historical lead-time calculations, April 2027 SDK baseline, beta-readiness checklist, private developer watchlist, SEO metadata and compact bottom references | [PR #5](https://github.com/aprashnasuraj2-dev/eventv/pull/5) merged as `04dbcee`; [main CI passed](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42008734646); no live deployment |
 | 2026-11-05 | Built fifth pilot: Steam Summer Sale 2027 source-verified hub with confirmed June 24–July 8 dates, explicit TBA clock, money+playtime purchase-capacity model, persistent cart planner, wishlist-notification rule checker, standard refund-window precheck, SEO metadata and compact bottom references | [PR #6](https://github.com/aprashnasuraj2-dev/eventv/pull/6) merged as `1fe939c`; [main CI passed](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42009969906); no live deployment |
+| 2026-11-05 | Built sixth pilot: Gamescom 2027 source-verified Cologne hub with Aug 23–29 week, public Aug 26–29 distinction, exact public hours, official-source inconsistency warning for gamescom dev, persistent day-capacity itinerary, trip-cost estimator, venue/arrival/age guidance, Event schema, SEO metadata and compact bottom references | Feature PR/CI to be verified before merge; no live deployment |
