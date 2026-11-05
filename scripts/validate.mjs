@@ -91,4 +91,5 @@ const spring=fs.readFileSync('events/steam-spring-sale-2027/index.html','utf8');
 assert.ok(spring.includes('March 18–25')&&spring.includes('Exact start/end clock'),'Spring sale date/unknown clock must be explicit');
 for(const id of ['compare','plan','refund','references'])assert.ok(spring.includes('id="'+id+'"'),'Spring tool or evidence missing: '+id);
 assert.ok(!spring.includes('"@type":"Event"'),'Sale hub uses editorial schema, not physical event schema');
-for(const ext of ['css','js','social.svg'])assert.ok(fs.existsSync('assets/steam-spring-sale-2027.'+ext),'Missing spring asset '+ext);
+for(const ext of ['css','js'])assert.ok(fs.existsSync('assets/steam-spring-sale-2027.'+ext),'Missing spring asset '+ext);
+assert.ok(fs.existsSync('assets/steam-spring-sale-2027-social.svg'),'Missing Spring Sale social illustration');
