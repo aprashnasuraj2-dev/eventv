@@ -1,0 +1,20 @@
+{
+  "version": "2026-11-05",
+  "approved": [
+    {
+      "slug": "steam-next-fest-february-2027",
+      "page_type": "hub",
+      "output_path": "events/steam-next-fest-february-2027/index.html",
+      "source_path": "content/pilots/steam-next-fest-february-2027.html",
+      "robots": "index,follow,max-image-preview:large",
+      "editorial_status": "pilot-index-ready",
+      "source_verified_on": "2026-11-05",
+      "factual_scope": "Official event dates/times, format, eligibility and Steam discovery behavior; no final February game lineup asserted.",
+      "sources": [
+        "https://partner.steamgames.com/doc/marketing/upcoming_events/nextfest/feb_2027",
+        "https://partner.steamgames.com/doc/marketing/upcoming_events/nextfest",
+        "https://partner.steamgames.com/doc/marketing/upcoming_events/nextfest/tips"
+      ]
+    }
+  ]
+}

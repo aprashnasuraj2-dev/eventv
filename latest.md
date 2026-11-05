@@ -4,8 +4,8 @@
 > Read this file first whenever resuming EventV. Update it **in the same commit/PR** as every meaningful repository change. Historical research files remain references, not the live project status.
 >
 > **Last reviewed:** 2026-11-05 (Asia/Kathmandu)  
-> **Checkpoint:** EventV v0.1.0 static staging merged and verified on `main`  
-> **Status:** **RESEARCH / STATIC SCAFFOLD COMPLETE; EDITORIAL AND PRODUCTION RELEASE NOT STARTED**
+> **Checkpoint:** First editorial pilot built — Steam Next Fest February 2027 hub  
+> **Status:** **1 SOURCE-VERIFIED INDEX-READY PILOT IN REPO; LIVE DEPLOYMENT NOT PERFORMED**
 
 ## 1. Current verified state
 
@@ -19,7 +19,7 @@
 | Canonical event routes | **200 mapped** | [`research/routes-200.csv`](research/routes-200.csv) |
 | Generated static pages | **202 HTML files** | 50 event hubs + 50 planning + 50 during + 50 after = **200** event pages; 2 index/navigation pages |
 | Build and validation | **Passing at feature checkpoint** | `node scripts/build.mjs`, `node scripts/validate.mjs` on Node 22 |
-| Individual SEO-ready event pages | **0 confirmed** | Generated pages are research scaffolds; all have `noindex,follow`; no verified original utility or completed editorial review |
+| Individual SEO-ready event pages | **1 pilot approved in repo** | `events/steam-next-fest-february-2027/index.html` is source-verified, visually designed, has local-time/countdown utility + private demo shortlist, structured data, bottom references and `index,follow`; **not deployed live** |
 | Subdomains | **Proposed only** | 50 optional names in manifest; **no** DNS/TLS/host routing configured |
 | Website deployment | **Not performed** | No deployment to aafnaipatro.com, Cloudflare, Pages, or standalone event host verified |
 | Adsterra monetization | **Not implemented in EventV** | No event ad scripts, verified paid impressions or realized CPM measured by this repo |
@@ -42,7 +42,7 @@
 | Priority | Task | Acceptance evidence | Status |
 |---|---|---|---|
 | **P0** | **Revalidate candidate dates and pick 3–5 pilot clusters** against official organizers and current US/UK/CA/AU Google SERPs | Source/date ledger with checked date; query-level SERP competitors, features and clickability; reasons to choose or drop | **TODO** |
-| **P0** | **Build actual original utility for first pilot** (recommended to evaluate Steam Next Fest / Steam sale comparisons, but make final choice evidence-based) | Interactive functional game/demo discovery or validated comparison tool with sources, accessibility and unique user benefit | **TODO** |
+| **P0** | **Build actual original utility for first pilot** | Steam Next Fest February 2027 hub now includes browser-local countdown/time conversion and private demo shortlist; source references and accessibility included | **DONE IN REPO; NOT DEPLOYED** |
 | **P0** | Replace first 4–8 pilot HTML scaffolds with independently sourced, edited pages; deduplicate intents | Source-supported content, editorial reviewer, targeted keyword-to-URL plan; per-URL quality and legal review | **TODO** |
 | **P0** | Audit existing AafnaiPatro Cloudflare and static route parity before release | Written path inventory, collision test and rollback plan; existing production routes preserved | **TODO** |
 | **P1** | Establish SEO and analytics baseline | GSC verified property, current target-country organic queries/clicks; GA4 session definitions; measured ad metrics where authorized | **TODO** |
@@ -50,7 +50,7 @@
 | **P1** | Launch **only approved URLs** after staging QA | HTTP checks, user-visible functionality, metadata/schema/source checks, production click tests, no regressions, smoke-test log | **TODO** |
 | **P2** | Repeat for more event clusters based on observed performance | Actual GSC impressions/clicks, engaged visits, verified paid ads and content-hours ROI; stop low-value clusters | **TODO** |
 
-**Next action to execute:** Audit live search competition and date/source accuracy for the top 10 candidates; choose one evidence-backed pilot; create the first real interactive, uniquely useful event utility. **Do not deploy or remove `noindex` for the 200 scaffolds.**
+**Next action to execute:** Complete query-level SERP validation for the Steam Next Fest pilot (US/UK/CA/AU desktop + mobile), then verify production AafnaiPatro/Cloudflare route parity before any deployment. Keep the other 199 event pages `noindex` until individually approved.
 
 ## 4. Implementation files and run commands
 
@@ -84,4 +84,5 @@ For any new feature, create a branch from current `main`, make the change, updat
 | Date | Change | Verified evidence |
 |---|---|---|
 | 2026-11-05 | Generated 50 active (non-eclipse) event clusters, 1,000 intent hypotheses, 200 event HTML plus 2 navigation HTML | [Merged PR #1](https://github.com/aprashnasuraj2-dev/eventv/pull/1); [passing main validation](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42001822022) |
-| 2026-11-05 | Added canonical `latest.md` resume-point ledger and CI enforcement requiring status updates alongside code changes | This commit; verify the associated GitHub Actions run before treating it as passed |
+| 2026-11-05 | Added canonical `latest.md` resume-point ledger and CI enforcement requiring status updates alongside code changes | Passed GitHub Actions on main | 
+| 2026-11-05 | Built first real pilot: Steam Next Fest February 2027 source-verified hub, responsive visual design, time-zone/countdown utility, local demo shortlist, SEO metadata/Article+Breadcrumb structured data, compact bottom references; only this route is index-ready in source | PR #2 initial CI passed; final accessibility/SEO polish pending merge; no live deployment |
