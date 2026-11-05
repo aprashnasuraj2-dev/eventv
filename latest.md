@@ -5,15 +5,15 @@
 >
 > **Last reviewed:** 2026-11-05 (Asia/Kathmandu)  
 > **Checkpoint:** Eighth editorial pilot built — Steam Spring Sale 2027 source-backed buying planner  
-> **Status:** **8 EDITORIAL PILOT HUBS ON TOPIC #8 FEATURE BRANCH; CI/PR/MAIN MERGE PENDING; LIVE DEPLOYMENT NOT PERFORMED**
+> **Status:** **8 EDITORIAL PILOT HUBS ON TOPIC #8 FEATURE BRANCH; CI/MAIN MERGE PENDING; LIVE DEPLOYMENT NOT PERFORMED**
 
 ## 1. Current verified state
 
 | Area | Status | Verified detail |
 |---|---|---|
 | GitHub repo | **Working** | [`aprashnasuraj2-dev/eventv`](https://github.com/aprashnasuraj2-dev/eventv), default branch `main` |
-| Most recent feature change | **PR #9 merged; Topic #8 feature branch pending PR** | [PR #9](https://github.com/aprashnasuraj2-dev/eventv/pull/9), squash commit [`abbdbea`](https://github.com/aprashnasuraj2-dev/eventv/commit/abbdbea4e3d1c03c287b47b515add6ce6af21163) — Tour de France UK Grand Départ 2027 pilot |
-| CI at feature checkpoint | **Last verified main passed; Topic #8 CI pending** | [GitHub Actions run 42018556149](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42018556149) on merged Tour de France UK pilot commit |
+| Most recent feature change | **PR #10 open, not merged** | [PR #9](https://github.com/aprashnasuraj2-dev/eventv/pull/9), squash commit [`abbdbea`](https://github.com/aprashnasuraj2-dev/eventv/commit/abbdbea4e3d1c03c287b47b515add6ce6af21163) — Tour de France UK Grand Départ 2027 pilot |
+| CI at feature checkpoint | **PR #10 initial CI failed on asset-path test; fixed and rerun pending** | [GitHub Actions run 42018556149](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42018556149) on merged Tour de France UK pilot commit |
 | Candidate event topics | **50 defined** | [`data/events-50.json`](data/events-50.json), [ranked topics](TOP_50_TOPICS.md); eclipses excluded |
 | Search intents | **1,000 generated hypotheses** | [`research/search-intents-1000.csv`](research/search-intents-1000.csv); **not** verified keyword volumes, demand or attainable rankings |
 | Canonical event routes | **200 mapped** | [`research/routes-200.csv`](research/routes-200.csv) |
@@ -81,10 +81,9 @@ For any new feature, create a branch from current `main`, make the change, updat
 
 ## 6. Last completed work log
 
-| 2026-11-05 | Topic #8 Steam Spring Sale 2027 prepared on feature branch: officially confirmed March 18–25 calendar, exact sale clock and product discounts expressly unconfirmed. Original visual, user-input discount checker, browser-local budget/playtime cart and refund rule precheck, compact references, schema and no live deployment. | PR/CI/merge not yet verified in this checkpoint; official Valve documentation checked November 5. |
-
 | Date | Change | Verified evidence |
 |---|---|---|
+| 2026-11-05 | Topic #8 Steam Spring Sale 2027 pilot prepared on PR #10 with verified March 18–25 calendar, unknown clock and deals; visual buying guide, price comparison, local cart, refund check and compact references | [PR #10](https://github.com/aprashnasuraj2-dev/eventv/pull/10); [first CI run 42019855263](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42019855263) exposed an incorrectly named social asset assertion, corrected on branch; final CI and merge pending; no live deployment |
 | 2026-11-05 | Generated 50 active (non-eclipse) event clusters, 1,000 intent hypotheses, 200 event HTML plus 2 navigation HTML | [Merged PR #1](https://github.com/aprashnasuraj2-dev/eventv/pull/1); [passing main validation](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42001822022) |
 | 2026-11-05 | Added canonical `latest.md` resume-point ledger and CI enforcement requiring status updates alongside code changes | Passed GitHub Actions on main | 
 | 2026-11-05 | Built first real pilot: Steam Next Fest February 2027 source-verified hub, responsive visual design, time-zone/countdown utility, local demo shortlist, SEO metadata/Article+Breadcrumb structured data, compact bottom references; only this route is index-ready in source | [PR #2](https://github.com/aprashnasuraj2-dev/eventv/pull/2) merged as `ee59e68`; [main CI passed](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42005528032); no live deployment |
