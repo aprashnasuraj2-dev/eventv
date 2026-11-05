@@ -15,6 +15,23 @@
         "https://partner.steamgames.com/doc/marketing/upcoming_events/nextfest",
         "https://partner.steamgames.com/doc/marketing/upcoming_events/nextfest/tips"
       ]
+    },
+    {
+      "slug": "steam-winter-sale-2026",
+      "page_type": "hub",
+      "output_path": "events/steam-winter-sale-2026/index.html",
+      "source_path": "content/pilots/steam-winter-sale-2026.html",
+      "robots": "index,follow,max-image-preview:large",
+      "editorial_status": "pilot-index-ready",
+      "source_verified_on": "2026-11-05",
+      "factual_scope": "Official sale dates/timing, seasonal sale mechanics, discount-rule summaries and wishlist notification behavior; no game-specific 2026 deal claims.",
+      "sources": [
+        "https://partner.steamgames.com/doc/marketing/upcoming_events/2026_winter_sale",
+        "https://partner.steamgames.com/doc/marketing/upcoming_events",
+        "https://partner.steamgames.com/doc/marketing/discounts/seasonalsales",
+        "https://partner.steamgames.com/doc/marketing/discounts",
+        "https://store.steampowered.com/notifications"
+      ]
     }
   ]
 }
