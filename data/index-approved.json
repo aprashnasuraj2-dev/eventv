@@ -67,6 +67,23 @@
         "https://developer.apple.com/support/install-beta",
         "https://developer.apple.com/news/?id=k1mtkt1k"
       ]
+    },
+    {
+      "slug": "steam-summer-sale-2027",
+      "page_type": "hub",
+      "output_path": "events/steam-summer-sale-2027/index.html",
+      "source_path": "content/pilots/steam-summer-sale-2027.html",
+      "robots": "index,follow,max-image-preview:large",
+      "editorial_status": "pilot-index-ready",
+      "source_verified_on": "2026-11-05",
+      "factual_scope": "Official June 24-July 8 date range, seasonal-sale mechanics, discount/wishlist rules and Steam refund policy; exact sale clock and game-specific discounts remain unannounced/unverified.",
+      "sources": [
+        "https://partner.steamgames.com/doc/marketing/upcoming_events",
+        "https://partner.steamgames.com/doc/marketing/discounts/seasonalsales",
+        "https://partner.steamgames.com/doc/marketing/discounts",
+        "https://partner.steamgames.com/doc/marketing/wishlist",
+        "https://store.steampowered.com/steam_refunds/"
+      ]
     }
   ]
 }
