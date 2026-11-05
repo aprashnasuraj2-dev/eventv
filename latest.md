@@ -4,22 +4,22 @@
 > Read this file first whenever resuming EventV. Update it **in the same commit/PR** as every meaningful repository change. Historical research files remain references, not the live project status.
 >
 > **Last reviewed:** 2026-11-05 (Asia/Kathmandu)  
-> **Checkpoint:** Tenth editorial pilot prepared — Black Friday 2027 evidence-first buying hub  
-> **Status:** **TOPIC #10 PREPARED ON FEATURE BRANCH; PR/CI/MAIN MERGE PENDING; LIVE DEPLOYMENT NOT PERFORMED**
+> **Checkpoint:** Tenth editorial pilot built — Black Friday 2027 evidence-first buying hub  
+> **Status:** **10 SOURCE-VERIFIED INDEX-READY PILOT HUBS MERGED TO MAIN; LIVE DEPLOYMENT NOT PERFORMED**
 
 ## 1. Current verified state
 
 | Area | Status | Verified detail |
 |---|---|---|
 | GitHub repo | **Working** | [`aprashnasuraj2-dev/eventv`](https://github.com/aprashnasuraj2-dev/eventv), default branch `main` |
-| Most recent feature change | **Last merged feature: PR #12; Topic #10 branch in progress** | [PR #12](https://github.com/aprashnasuraj2-dev/eventv/pull/12), squash commit [`032de38`](https://github.com/aprashnasuraj2-dev/eventv/commit/032de3834f1ddc69783edc1a679a2c2d6f8ab8cd) — Google I/O 2027 pilot |
-| CI at feature checkpoint | **Last merged feature CI passed; Topic #10 CI pending** | [GitHub Actions run 42020985065](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42020985065) was the prior feature check |
+| Most recent feature change | **Merged** | [PR #14](https://github.com/aprashnasuraj2-dev/eventv/pull/14), squash commit [`dffb6d9`](https://github.com/aprashnasuraj2-dev/eventv/commit/dffb6d921982143e3a212217351c5f0ae621b6f3) — Black Friday 2027 pilot |
+| CI at feature checkpoint | **PR #14 checks passed** | [GitHub Actions run 42024907394](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42024907394); merged `main` source re-read confirms route and noindex spokes |
 | Candidate event topics | **50 defined** | [`data/events-50.json`](data/events-50.json), [ranked topics](TOP_50_TOPICS.md); eclipses excluded |
 | Search intents | **1,000 generated hypotheses** | [`research/search-intents-1000.csv`](research/search-intents-1000.csv); **not** verified keyword volumes, demand or attainable rankings |
 | Canonical event routes | **200 mapped** | [`research/routes-200.csv`](research/routes-200.csv) |
 | Generated static pages | **202 HTML files** | 50 event hubs + 50 planning + 50 during + 50 after = **200** event pages; 2 index/navigation pages |
-| Build and validation | **Prior feature passed; Topic #10 branch validation pending** | `node scripts/build.mjs`, `node scripts/validate.mjs` on Node 22 |
-| Individual SEO-ready event pages | **9 source-verified hubs on main + Topic #10 candidate on feature branch** | Nine prior hubs remain merged on main; Black Friday 2027 is prepared on the feature branch with a rule-derived Nov 26 date, explicit unknown retailer times/prices/stock, and evidence-first buying tools; **not deployed live** |
+| Build and validation | **PR #14 passed build + validation + checkpoint enforcement; merged `main` source reverified** | `node scripts/build.mjs`, `node scripts/validate.mjs` on Node 22 |
+| Individual SEO-ready event pages | **10 source-verified hubs registered on main** | Ten hubs are now merged on main; Black Friday 2027 retains the rule-derived Nov 26 date, unknown retailer times/prices/stock, evidence-first buying tools, compact references and `index,follow`; **not deployed live** |
 | Subdomains | **Proposed only** | 50 optional names in manifest; **no** DNS/TLS/host routing configured |
 | Website deployment | **Not performed** | No deployment to aafnaipatro.com, Cloudflare, Pages, or standalone event host verified |
 | Adsterra monetization | **Not implemented in EventV** | No event ad scripts, verified paid impressions or realized CPM measured by this repo |
@@ -50,7 +50,7 @@
 | **P1** | Launch **only approved URLs** after staging QA | HTTP checks, user-visible functionality, metadata/schema/source checks, production click tests, no regressions, smoke-test log | **TODO** |
 | **P2** | Repeat for more event clusters based on observed performance | Actual GSC impressions/clicks, engaged visits, verified paid ads and content-hours ROI; stop low-value clusters | **TODO** |
 
-**Next action to execute:** Complete Topic #10 Black Friday 2027 through PR → CI → merge → main verification. Then continue sequentially with Topic #11 Steam Couch Co-op Fest 2027, revalidating its official dates and building differentiated local-multiplayer compatibility/planning tools. Never deploy live; keep all unfinished routes `noindex`; main currently has 191 unapproved event routes, falling to 190 only if Topic #10 merges.
+**Next action to execute:** Continue sequentially with Topic #11 Steam Couch Co-op Fest 2027. Revalidate its official dates from Valve, build differentiated local-multiplayer/controller/household compatibility tools, and preserve uncertainty around actual 2027 participating games and discounts. Never deploy live; keep all unfinished routes `noindex`; 190 event routes remain unapproved.
 
 ## 4. Implementation files and run commands
 
@@ -83,7 +83,7 @@ For any new feature, create a branch from current `main`, make the change, updat
 
 | Date | Change | Verified evidence |
 |---|---|---|
-| 2026-11-05 | Topic #10 Black Friday 2027 prepared on feature branch: Nov 26 transparently derived from OPM Thanksgiving Nov 25; no retailer-specific 2027 times/prices/stock asserted; deal-math checker, total-cost comparator, browser-local price-evidence ledger, return/shipping checklist, compact official references | PR/CI/merge pending; no live deployment |
+| 2026-11-05 | Built tenth pilot: Black Friday 2027 with Nov 26 transparently derived from OPM Thanksgiving Nov 25; no retailer-specific 2027 times/prices/stock asserted; deal-math checker, total-cost comparator, browser-local price-evidence ledger, return/shipping checklist, compact official references | [PR #14](https://github.com/aprashnasuraj2-dev/eventv/pull/14) merged as `dffb6d9`; [passing PR CI 42024907394](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42024907394); merged `main` re-read confirms 10 approvals and all three Black Friday spokes remain `noindex`; no live deployment |
 | 2026-11-05 | Built ninth pilot: Google I/O 2027 status hub with official 2027 date/time/venue/registration held at TBA; historical 2023/2025/2026 timing explicitly non-predictive; blank-by-default timezone converter, browser-local announced-vs-shipped ledger, developer change triage, current Gemini API baseline, compact official references | [PR #12](https://github.com/aprashnasuraj2-dev/eventv/pull/12) merged as `032de38`; [passing PR CI 42020985065](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42020985065); merged `main` re-read confirms 9 approvals and Google I/O route; no live deployment |
 | 2026-11-05 | Topic #8 Steam Spring Sale 2027 pilot prepared on PR #10 with verified March 18–25 calendar, unknown clock and deals; visual buying guide, price comparison, local cart, refund check and compact references | [PR #10](https://github.com/aprashnasuraj2-dev/eventv/pull/10); [first CI run 42019855263](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42019855263) exposed an incorrectly named social asset assertion, corrected on branch; [passing PR CI 42020030163](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42020030163); [merged PR #10](https://github.com/aprashnasuraj2-dev/eventv/pull/10) as `29eb7be`; no live deployment |
 | 2026-11-05 | Generated 50 active (non-eclipse) event clusters, 1,000 intent hypotheses, 200 event HTML plus 2 navigation HTML | [Merged PR #1](https://github.com/aprashnasuraj2-dev/eventv/pull/1); [passing main validation](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42001822022) |
