@@ -1,0 +1,1431 @@
+{
+  "version": "2026-11-05",
+  "scope": "research-informed editorial candidate portfolio, not measured rankings",
+  "indexing": "none until approved",
+  "domains": "50 optional subdomains; canonical subdirectories",
+  "events": [
+    {
+      "rank": 1,
+      "name": "Steam Winter Sale 2026",
+      "slug": "steam-winter-sale-2026",
+      "start": "2026-12-17",
+      "end": "2027-01-04",
+      "category": "Gaming",
+      "geo": [
+        "US",
+        "UK",
+        "CA",
+        "AU",
+        "DE"
+      ],
+      "source": "https://partner.steamgames.com/doc/marketing/upcoming_events",
+      "date_status": "confirmed",
+      "job": "Help players compare real savings and purchase compatibility rather than repeat discount headlines.",
+      "facets": [
+        "sale start and end times by region",
+        "historical discount comparison for wishlisted games",
+        "Steam Deck compatibility before purchase",
+        "bundle versus individual game pricing",
+        "refund and DLC ownership rules"
+      ],
+      "score": 8.7,
+      "state": "draft-research",
+      "custom_subdomain": "steam-winter-sale-2026.aafnaipatro.com",
+      "canonical_root": "https://aafnaipatro.com/events/steam-winter-sale-2026/"
+    },
+    {
+      "rank": 2,
+      "name": "Steam Spring Sale 2027",
+      "slug": "steam-spring-sale-2027",
+      "start": "2027-03-18",
+      "end": "2027-03-25",
+      "category": "Gaming",
+      "geo": [
+        "US",
+        "UK",
+        "CA",
+        "AU",
+        "DE"
+      ],
+      "source": "https://partner.steamgames.com/doc/marketing/upcoming_events",
+      "date_status": "confirmed",
+      "job": "Turn a short sale window into a budgeted purchase plan with evidence rather than guessed discounts.",
+      "facets": [
+        "sale opening and closing times",
+        "winter versus spring discount patterns",
+        "Steam Deck verified compatibility",
+        "co-op games under a set budget",
+        "edition and DLC cost comparison"
+      ],
+      "score": 8.4,
+      "state": "draft-research",
+      "custom_subdomain": "steam-spring-sale-2027.aafnaipatro.com",
+      "canonical_root": "https://aafnaipatro.com/events/steam-spring-sale-2027/"
+    },
+    {
+      "rank": 3,
+      "name": "Steam Summer Sale 2027",
+      "slug": "steam-summer-sale-2027",
+      "start": "2027-06-24",
+      "end": "2027-07-08",
+      "category": "Gaming",
+      "geo": [
+        "US",
+        "UK",
+        "CA",
+        "AU",
+        "DE"
+      ],
+      "source": "https://partner.steamgames.com/doc/marketing/upcoming_events",
+      "date_status": "confirmed",
+      "job": "Serve users who need verified value comparisons across editions platforms and wishlists.",
+      "facets": [
+        "summer sale dates in local time",
+        "price history and genuine lowest price",
+        "PC hardware and Steam Deck performance",
+        "multiplayer bundle buying decisions",
+        "refund windows and purchase checklist"
+      ],
+      "score": 8.5,
+      "state": "draft-research",
+      "custom_subdomain": "steam-summer-sale-2027.aafnaipatro.com",
+      "canonical_root": "https://aafnaipatro.com/events/steam-summer-sale-2027/"
+    },
+    {
+      "rank": 4,
+      "name": "Steam Next Fest February 2027",
+      "slug": "steam-next-fest-february-2027",
+      "start": "2027-02-22",
+      "end": "2027-03-01",
+      "category": "Gaming",
+      "geo": [
+        "US",
+        "UK",
+        "CA",
+        "AU",
+        "EU"
+      ],
+      "source": "https://partner.steamgames.com/doc/marketing/upcoming_events",
+      "date_status": "confirmed",
+      "job": "Make free demo discovery useful with an independently curated genre and accessibility matrix.",
+      "facets": [
+        "free demo discovery by game genre",
+        "demo download size and hardware needs",
+        "controller and Steam Deck demo support",
+        "demo end date and saves continuity",
+        "wishlist priorities after trying demos"
+      ],
+      "score": 8.8,
+      "state": "draft-research",
+      "custom_subdomain": "steam-next-fest-february-2027.aafnaipatro.com",
+      "canonical_root": "https://aafnaipatro.com/events/steam-next-fest-february-2027/"
+    },
+    {
+      "rank": 5,
+      "name": "Steam Next Fest June 2027",
+      "slug": "steam-next-fest-june-2027",
+      "start": "2027-06-14",
+      "end": "2027-06-21",
+      "category": "Gaming",
+      "geo": [
+        "US",
+        "UK",
+        "CA",
+        "AU",
+        "EU"
+      ],
+      "source": "https://partner.steamgames.com/doc/marketing/upcoming_events",
+      "date_status": "confirmed",
+      "job": "Create repeat-use genre browsing and demo selection guidance without publishing unverifiable rankings.",
+      "facets": [
+        "summer demo availability and deadlines",
+        "indie game demo genre finder",
+        "co-op and local multiplayer demos",
+        "performance settings on older laptops",
+        "carryover progress and release windows"
+      ],
+      "score": 8.7,
+      "state": "draft-research",
+      "custom_subdomain": "steam-next-fest-june-2027.aafnaipatro.com",
+      "canonical_root": "https://aafnaipatro.com/events/steam-next-fest-june-2027/"
+    },
+    {
+      "rank": 6,
+      "name": "Steam Couch Co-op Fest 2027",
+      "slug": "steam-couch-coop-fest-2027",
+      "start": "2027-02-08",
+      "end": "2027-02-15",
+      "category": "Gaming",
+      "geo": [
+        "US",
+        "UK",
+        "CA",
+        "AU",
+        "EU"
+      ],
+      "source": "https://partner.steamgames.com/doc/marketing/upcoming_events",
+      "date_status": "confirmed",
+      "job": "Compare local multiplayer requirements for households sharing one device.",
+      "facets": [
+        "two controller requirements",
+        "split screen versus shared screen",
+        "four player local co-op options",
+        "Steam Remote Play Together support",
+        "family accessibility and age ratings"
+      ],
+      "score": 8.3,
+      "state": "draft-research",
+      "custom_subdomain": "steam-couch-coop-fest-2027.aafnaipatro.com",
+      "canonical_root": "https://aafnaipatro.com/events/steam-couch-coop-fest-2027/"
+    },
+    {
+      "rank": 7,
+      "name": "Steam Racing Fest 2027",
+      "slug": "steam-racing-fest-2027",
+      "start": "2027-04-12",
+      "end": "2027-04-19",
+      "category": "Gaming",
+      "geo": [
+        "US",
+        "UK",
+        "CA",
+        "AU",
+        "DE"
+      ],
+      "source": "https://partner.steamgames.com/doc/marketing/upcoming_events",
+      "date_status": "confirmed",
+      "job": "Give buyers a verifiable peripheral compatibility and gameplay-format checklist.",
+      "facets": [
+        "steering wheel compatibility",
+        "simulator versus arcade driving games",
+        "controller assist and accessibility settings",
+        "multiplayer racing requirements",
+        "historical discounts and DLC packs"
+      ],
+      "score": 8,
+      "state": "draft-research",
+      "custom_subdomain": "steam-racing-fest-2027.aafnaipatro.com",
+      "canonical_root": "https://aafnaipatro.com/events/steam-racing-fest-2027/"
+    },
+    {
+      "rank": 8,
+      "name": "Steam RTS Fest 2027",
+      "slug": "steam-rts-fest-2027",
+      "start": "2027-05-10",
+      "end": "2027-05-17",
+      "category": "Gaming",
+      "geo": [
+        "US",
+        "UK",
+        "CA",
+        "AU",
+        "DE"
+      ],
+      "source": "https://partner.steamgames.com/doc/marketing/upcoming_events",
+      "date_status": "confirmed",
+      "job": "Help players assess CPU requirements multiplayer modes and learning curve.",
+      "facets": [
+        "beginner RTS game selection",
+        "offline skirmish availability",
+        "co-op campaigns and online player modes",
+        "CPU requirements on low end PCs",
+        "expansion bundles versus base games"
+      ],
+      "score": 7.9,
+      "state": "draft-research",
+      "custom_subdomain": "steam-rts-fest-2027.aafnaipatro.com",
+      "canonical_root": "https://aafnaipatro.com/events/steam-rts-fest-2027/"
+    },
+    {
+      "rank": 9,
+      "name": "Steam Fighting Fest 2027",
+      "slug": "steam-fighting-fest-2027",
+      "start": "2027-04-26",
+      "end": "2027-05-03",
+      "category": "Gaming",
+      "geo": [
+        "US",
+        "UK",
+        "CA",
+        "AU",
+        "EU"
+      ],
+      "source": "https://partner.steamgames.com/doc/marketing/upcoming_events",
+      "date_status": "confirmed",
+      "job": "Compare practical local-play and input-latency needs before buying.",
+      "facets": [
+        "rollback netcode availability",
+        "crossplay and online matchmaking",
+        "local versus online multiplayer",
+        "fight stick and controller compatibility",
+        "complete edition character DLC costs"
+      ],
+      "score": 8,
+      "state": "draft-research",
+      "custom_subdomain": "steam-fighting-fest-2027.aafnaipatro.com",
+      "canonical_root": "https://aafnaipatro.com/events/steam-fighting-fest-2027/"
+    },
+    {
+      "rank": 10,
+      "name": "Steam Rhythm Fest 2027",
+      "slug": "steam-rhythm-fest-2027",
+      "start": "2027-03-08",
+      "end": "2027-03-15",
+      "category": "Gaming",
+      "geo": [
+        "US",
+        "UK",
+        "CA",
+        "AU",
+        "EU"
+      ],
+      "source": "https://partner.steamgames.com/doc/marketing/upcoming_events",
+      "date_status": "confirmed",
+      "job": "Focus on accessibility input timing and song-pack value in rhythm games.",
+      "facets": [
+        "keyboard versus controller play support",
+        "accessibility and timing calibration",
+        "licensed songs and content availability",
+        "PC performance and latency",
+        "music packs and edition comparison"
+      ],
+      "score": 7.6,
+      "state": "draft-research",
+      "custom_subdomain": "steam-rhythm-fest-2027.aafnaipatro.com",
+      "canonical_root": "https://aafnaipatro.com/events/steam-rhythm-fest-2027/"
+    },
+    {
+      "rank": 11,
+      "name": "Steam Dinos vs Robots Fest 2027",
+      "slug": "steam-dinos-vs-robots-fest-2027",
+      "start": "2027-03-29",
+      "end": "2027-04-05",
+      "category": "Gaming",
+      "geo": [
+        "US",
+        "UK",
+        "CA",
+        "AU",
+        "EU"
+      ],
+      "source": "https://partner.steamgames.com/doc/marketing/upcoming_events",
+      "date_status": "confirmed",
+      "job": "Build a small discovery guide anchored in clear genre and play-style filters.",
+      "facets": [
+        "dinosaur games by genre",
+        "robot strategy versus action games",
+        "co-op dinosaur robot experiences",
+        "demo versus paid game availability",
+        "hardware requirements and bundle values"
+      ],
+      "score": 7.2,
+      "state": "draft-research",
+      "custom_subdomain": "steam-dinos-vs-robots-fest-2027.aafnaipatro.com",
+      "canonical_root": "https://aafnaipatro.com/events/steam-dinos-vs-robots-fest-2027/"
+    },
+    {
+      "rank": 12,
+      "name": "Gamescom 2027",
+      "slug": "gamescom-2027",
+      "start": "2027-08-23",
+      "end": "2027-08-29",
+      "category": "Technology",
+      "geo": [
+        "DE",
+        "UK",
+        "US",
+        "CA",
+        "AU"
+      ],
+      "source": "https://www.gamescom.global/en",
+      "date_status": "confirmed",
+      "job": "Make the trade-show schedule actionable for viewers across time zones and for attendees navigating Cologne.",
+      "facets": [
+        "Opening Night Live viewing times",
+        "public versus trade day eligibility",
+        "Cologne rail and venue transit planning",
+        "game announcement verification tracker",
+        "ticket categories and accessibility"
+      ],
+      "score": 8.5,
+      "state": "draft-research",
+      "custom_subdomain": "gamescom-2027.aafnaipatro.com",
+      "canonical_root": "https://aafnaipatro.com/events/gamescom-2027/"
+    },
+    {
+      "rank": 13,
+      "name": "Game Developers Conference 2027",
+      "slug": "gdc-2027",
+      "start": "2027-03-01",
+      "end": "2027-03-05",
+      "category": "Technology",
+      "geo": [
+        "US",
+        "CA",
+        "UK",
+        "DE",
+        "AU"
+      ],
+      "source": "https://gdconf.com/",
+      "date_status": "research-needed",
+      "job": "Provide an attendee planning checklist and differentiate verified session updates from speculation.",
+      "facets": [
+        "indie developer ticket and pass decisions",
+        "conference schedule versus expo access",
+        "San Francisco transit to venue",
+        "post talk slides and recordings access",
+        "developer networking and portfolio planning"
+      ],
+      "score": 7.6,
+      "state": "draft-research",
+      "custom_subdomain": "gdc-2027.aafnaipatro.com",
+      "canonical_root": "https://aafnaipatro.com/events/gdc-2027/"
+    },
+    {
+      "rank": 14,
+      "name": "PAX East 2027",
+      "slug": "pax-east-2027",
+      "start": "2027-04-22",
+      "end": "2027-04-25",
+      "category": "Technology",
+      "geo": [
+        "US",
+        "CA",
+        "UK",
+        "AU"
+      ],
+      "source": "https://east.paxsite.com/",
+      "date_status": "research-needed",
+      "job": "Answer practical show-floor questions where official schedules do not resolve individual priorities.",
+      "facets": [
+        "demo queue and time allocation",
+        "ticket and badge pickup procedures",
+        "accessible venue routes",
+        "Boston transit and nearby parking",
+        "publisher booth showcase checklist"
+      ],
+      "score": 7.8,
+      "state": "draft-research",
+      "custom_subdomain": "pax-east-2027.aafnaipatro.com",
+      "canonical_root": "https://aafnaipatro.com/events/pax-east-2027/"
+    },
+    {
+      "rank": 15,
+      "name": "Summer Game Fest 2027",
+      "slug": "summer-game-fest-2027",
+      "start": null,
+      "end": null,
+      "category": "Technology",
+      "geo": [
+        "US",
+        "UK",
+        "CA",
+        "AU",
+        "DE"
+      ],
+      "source": "https://www.summergamefest.com/",
+      "date_status": "unannounced",
+      "job": "Track confirmed showcases and time-zone conversions without inventing an event date.",
+      "facets": [
+        "official showcase announcement times",
+        "regional livestream start times",
+        "confirmed versus rumored game reveals",
+        "PC and console release-platform matrix",
+        "where to replay individual reveals legally"
+      ],
+      "score": 8.1,
+      "state": "draft-research",
+      "custom_subdomain": "summer-game-fest-2027.aafnaipatro.com",
+      "canonical_root": "https://aafnaipatro.com/events/summer-game-fest-2027/"
+    },
+    {
+      "rank": 16,
+      "name": "The Game Awards 2026",
+      "slug": "the-game-awards-2026",
+      "start": "2026-12-10",
+      "end": "2026-12-10",
+      "category": "Technology",
+      "geo": [
+        "US",
+        "UK",
+        "CA",
+        "AU",
+        "EU"
+      ],
+      "source": "https://thegameawards.com/faq",
+      "date_status": "confirmed",
+      "job": "Help viewers understand show timing voting eligibility and verified game announcements.",
+      "facets": [
+        "start time in UK Europe and Australia",
+        "nominee category and eligibility criteria",
+        "official voting deadlines and rules",
+        "confirmed trailers versus unannounced rumors",
+        "replay chapter and release-date tracker"
+      ],
+      "score": 8.1,
+      "state": "draft-research",
+      "custom_subdomain": "the-game-awards-2026.aafnaipatro.com",
+      "canonical_root": "https://aafnaipatro.com/events/the-game-awards-2026/"
+    },
+    {
+      "rank": 17,
+      "name": "CES 2027",
+      "slug": "ces-2027",
+      "start": "2027-01-06",
+      "end": "2027-01-09",
+      "category": "Technology",
+      "geo": [
+        "US",
+        "UK",
+        "DE",
+        "CA",
+        "AU"
+      ],
+      "source": "https://www.ces.tech/plan-your-visit/dates-and-hours",
+      "date_status": "confirmed",
+      "job": "Distinguish prototypes announcements and actually available consumer products.",
+      "facets": [
+        "announced versus shipping product tracker",
+        "consumer laptop compatibility features",
+        "trade show attendance and registration",
+        "Las Vegas transportation planning",
+        "software subscription and launch availability"
+      ],
+      "score": 7.7,
+      "state": "draft-research",
+      "custom_subdomain": "ces-2027.aafnaipatro.com",
+      "canonical_root": "https://aafnaipatro.com/events/ces-2027/"
+    },
+    {
+      "rank": 18,
+      "name": "Apple WWDC 2027",
+      "slug": "apple-wwdc-2027",
+      "start": null,
+      "end": null,
+      "category": "Technology",
+      "geo": [
+        "US",
+        "UK",
+        "CA",
+        "AU",
+        "DE"
+      ],
+      "source": "https://developer.apple.com/wwdc/",
+      "date_status": "unannounced",
+      "job": "Help developers distinguish beta announcements requirements and supported devices once officially released.",
+      "facets": [
+        "developer keynote timezone conversion",
+        "device compatibility by OS version",
+        "developer beta enrollment rules",
+        "API migration and breaking changes",
+        "stable release versus beta availability"
+      ],
+      "score": 8.6,
+      "state": "draft-research",
+      "custom_subdomain": "apple-wwdc-2027.aafnaipatro.com",
+      "canonical_root": "https://aafnaipatro.com/events/apple-wwdc-2027/"
+    },
+    {
+      "rank": 19,
+      "name": "Google I/O 2027",
+      "slug": "google-io-2027",
+      "start": null,
+      "end": null,
+      "category": "Technology",
+      "geo": [
+        "US",
+        "UK",
+        "CA",
+        "AU",
+        "DE"
+      ],
+      "source": "https://io.google/",
+      "date_status": "unannounced",
+      "job": "Explain release eligibility and developer migration impact rather than duplicate keynote news.",
+      "facets": [
+        "keynote stream local times",
+        "Android preview eligible phones",
+        "Gemini API feature availability",
+        "developer pricing changes and migration",
+        "announced versus shipped capability checklist"
+      ],
+      "score": 8.4,
+      "state": "draft-research",
+      "custom_subdomain": "google-io-2027.aafnaipatro.com",
+      "canonical_root": "https://aafnaipatro.com/events/google-io-2027/"
+    },
+    {
+      "rank": 20,
+      "name": "Microsoft Build 2027",
+      "slug": "microsoft-build-2027",
+      "start": null,
+      "end": null,
+      "category": "Technology",
+      "geo": [
+        "US",
+        "UK",
+        "CA",
+        "AU",
+        "EU"
+      ],
+      "source": "https://build.microsoft.com/",
+      "date_status": "unannounced",
+      "job": "Translate developer announcements into actionable compatibility and pricing checks.",
+      "facets": [
+        "session timetable across time zones",
+        "Windows Copilot feature availability",
+        "Azure pricing and credit changes",
+        "SDK minimum versions and migration",
+        "preview versus generally available services"
+      ],
+      "score": 8.3,
+      "state": "draft-research",
+      "custom_subdomain": "microsoft-build-2027.aafnaipatro.com",
+      "canonical_root": "https://aafnaipatro.com/events/microsoft-build-2027/"
+    },
+    {
+      "rank": 21,
+      "name": "Adobe MAX 2027",
+      "slug": "adobe-max-2027",
+      "start": null,
+      "end": null,
+      "category": "Technology",
+      "geo": [
+        "US",
+        "UK",
+        "CA",
+        "AU",
+        "DE"
+      ],
+      "source": "https://max.adobe.com/",
+      "date_status": "unannounced",
+      "job": "Compare software feature claims with plans platform support and rollout regions.",
+      "facets": [
+        "Creative Cloud new features shipping status",
+        "Firefly credit allowance changes",
+        "Photoshop versus Express capabilities",
+        "desktop versus mobile release eligibility",
+        "subscription feature pricing and limits"
+      ],
+      "score": 8.1,
+      "state": "draft-research",
+      "custom_subdomain": "adobe-max-2027.aafnaipatro.com",
+      "canonical_root": "https://aafnaipatro.com/events/adobe-max-2027/"
+    },
+    {
+      "rank": 22,
+      "name": "SXSW 2027",
+      "slug": "sxsw-2027",
+      "start": "2027-03-15",
+      "end": "2027-03-21",
+      "category": "Technology",
+      "geo": [
+        "US",
+        "UK",
+        "CA",
+        "AU",
+        "EU"
+      ],
+      "source": "https://sxsw.com/2026/south-by-southwest-2027-dates-announced/",
+      "date_status": "confirmed",
+      "job": "Provide cross-track attendee scheduling and Austin transport comparisons.",
+      "facets": [
+        "film music innovation schedule overlap",
+        "badge types and access restrictions",
+        "venue-to-venue transit planning",
+        "conference networking preparation",
+        "streaming access and recorded sessions"
+      ],
+      "score": 8,
+      "state": "draft-research",
+      "custom_subdomain": "sxsw-2027.aafnaipatro.com",
+      "canonical_root": "https://aafnaipatro.com/events/sxsw-2027/"
+    },
+    {
+      "rank": 23,
+      "name": "Web Summit 2027",
+      "slug": "web-summit-2027",
+      "start": null,
+      "end": null,
+      "category": "Technology",
+      "geo": [
+        "PT",
+        "UK",
+        "DE",
+        "US",
+        "CA"
+      ],
+      "source": "https://websummit.com/",
+      "date_status": "unannounced",
+      "job": "Target travel planning and startup networking with verified track access.",
+      "facets": [
+        "Lisbon event and stage schedules",
+        "startup ticket eligibility",
+        "rail and metro transit advice",
+        "investor meeting preparation",
+        "onsite versus online session access"
+      ],
+      "score": 7.7,
+      "state": "draft-research",
+      "custom_subdomain": "web-summit-2027.aafnaipatro.com",
+      "canonical_root": "https://aafnaipatro.com/events/web-summit-2027/"
+    },
+    {
+      "rank": 24,
+      "name": "Black Friday 2026",
+      "slug": "black-friday-2026",
+      "start": "2026-11-27",
+      "end": "2026-11-27",
+      "category": "Commerce",
+      "geo": [
+        "US",
+        "UK",
+        "CA",
+        "AU",
+        "DE"
+      ],
+      "source": "https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/",
+      "date_status": "rule-derived",
+      "job": "Test a genuine price-verification workflow at small scale before the 2027 cycle.",
+      "facets": [
+        "real discount versus inflated list price",
+        "return deadline by retailer country",
+        "delivery costs and sales tax",
+        "refurbished versus new products",
+        "Black Friday versus Cyber Monday timing"
+      ],
+      "score": 7.5,
+      "state": "draft-research",
+      "custom_subdomain": "black-friday-2026.aafnaipatro.com",
+      "canonical_root": "https://aafnaipatro.com/events/black-friday-2026/"
+    },
+    {
+      "rank": 25,
+      "name": "Cyber Monday 2026",
+      "slug": "cyber-monday-2026",
+      "start": "2026-11-30",
+      "end": "2026-11-30",
+      "category": "Commerce",
+      "geo": [
+        "US",
+        "UK",
+        "CA",
+        "AU",
+        "EU"
+      ],
+      "source": "https://www.timeanddate.com/holidays/us/cyber-monday",
+      "date_status": "rule-derived",
+      "job": "Focus on digital-service terms and exact total checkout costs rather than generic bestseller lists.",
+      "facets": [
+        "software subscription renewal surprises",
+        "annual versus monthly SaaS pricing",
+        "price matching after Black Friday",
+        "cross-border VAT and sales tax",
+        "refund and cancellation terms"
+      ],
+      "score": 7.7,
+      "state": "draft-research",
+      "custom_subdomain": "cyber-monday-2026.aafnaipatro.com",
+      "canonical_root": "https://aafnaipatro.com/events/cyber-monday-2026/"
+    },
+    {
+      "rank": 26,
+      "name": "Boxing Day 2026",
+      "slug": "boxing-day-2026",
+      "start": "2026-12-26",
+      "end": "2026-12-26",
+      "category": "Commerce",
+      "geo": [
+        "UK",
+        "CA",
+        "AU",
+        "NZ"
+      ],
+      "source": "https://www.gov.uk/bank-holidays",
+      "date_status": "rule-derived",
+      "job": "Compare regional holiday delivery and return practices where timing is genuinely different.",
+      "facets": [
+        "Boxing Day shops opening uncertainty",
+        "returns after Christmas purchases",
+        "UK versus Canada sales timing",
+        "public transport holiday schedules",
+        "online versus in-store discounts"
+      ],
+      "score": 7.7,
+      "state": "draft-research",
+      "custom_subdomain": "boxing-day-2026.aafnaipatro.com",
+      "canonical_root": "https://aafnaipatro.com/events/boxing-day-2026/"
+    },
+    {
+      "rank": 27,
+      "name": "Black Friday 2027",
+      "slug": "black-friday-2027",
+      "start": "2027-11-26",
+      "end": "2027-11-26",
+      "category": "Commerce",
+      "geo": [
+        "US",
+        "UK",
+        "CA",
+        "AU",
+        "DE"
+      ],
+      "source": "https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/",
+      "date_status": "rule-derived",
+      "job": "Build original price evidence before presenting any best-deal claim.",
+      "facets": [
+        "verified 90 day price comparison",
+        "gaming laptop specification matching",
+        "VAT and shipping inclusive price",
+        "retailer return rules by region",
+        "historical Black Friday versus Cyber Monday price"
+      ],
+      "score": 8.4,
+      "state": "draft-research",
+      "custom_subdomain": "black-friday-2027.aafnaipatro.com",
+      "canonical_root": "https://aafnaipatro.com/events/black-friday-2027/"
+    },
+    {
+      "rank": 28,
+      "name": "Cyber Monday 2027",
+      "slug": "cyber-monday-2027",
+      "start": "2027-11-29",
+      "end": "2027-11-29",
+      "category": "Commerce",
+      "geo": [
+        "US",
+        "UK",
+        "CA",
+        "AU",
+        "DE"
+      ],
+      "source": "https://www.timeanddate.com/holidays/us/cyber-monday",
+      "date_status": "rule-derived",
+      "job": "Use real subscription price audits and comparison calculators.",
+      "facets": [
+        "SaaS free trial converted to paid plan",
+        "one year versus lifetime license",
+        "regional software prices after VAT",
+        "Black Friday versus Cyber Monday verification",
+        "automatic renewal cancellation checklist"
+      ],
+      "score": 8.3,
+      "state": "draft-research",
+      "custom_subdomain": "cyber-monday-2027.aafnaipatro.com",
+      "canonical_root": "https://aafnaipatro.com/events/cyber-monday-2027/"
+    },
+    {
+      "rank": 29,
+      "name": "Amazon Prime Day 2027",
+      "slug": "amazon-prime-day-2027",
+      "start": null,
+      "end": null,
+      "category": "Commerce",
+      "geo": [
+        "US",
+        "UK",
+        "CA",
+        "AU",
+        "DE"
+      ],
+      "source": "https://www.aboutamazon.com/prime-day",
+      "date_status": "unannounced",
+      "job": "Only publish independently sourced comparison methods until Amazon announces dates.",
+      "facets": [
+        "official event date and regional eligibility",
+        "Prime membership purchase break-even",
+        "price history versus promotional list price",
+        "return rules by marketplace country",
+        "Amazon alternatives and delivery charges"
+      ],
+      "score": 7.7,
+      "state": "draft-research",
+      "custom_subdomain": "amazon-prime-day-2027.aafnaipatro.com",
+      "canonical_root": "https://aafnaipatro.com/events/amazon-prime-day-2027/"
+    },
+    {
+      "rank": 30,
+      "name": "Back to School 2027",
+      "slug": "back-to-school-2027",
+      "start": "2027-07-01",
+      "end": "2027-09-30",
+      "category": "Commerce",
+      "geo": [
+        "US",
+        "UK",
+        "CA",
+        "AU"
+      ],
+      "source": "https://www.usa.gov/school",
+      "date_status": "seasonal-window",
+      "job": "Compare school-specific purchasing requirements not fabricated nationwide start dates.",
+      "facets": [
+        "US school district supply calendars",
+        "UK September school term variation",
+        "laptop performance for student workloads",
+        "refurbished versus new student laptops",
+        "student discount eligibility and software"
+      ],
+      "score": 8.2,
+      "state": "draft-research",
+      "custom_subdomain": "back-to-school-2027.aafnaipatro.com",
+      "canonical_root": "https://aafnaipatro.com/events/back-to-school-2027/"
+    },
+    {
+      "rank": 31,
+      "name": "US Thanksgiving 2027",
+      "slug": "us-thanksgiving-2027",
+      "start": "2027-11-25",
+      "end": "2027-11-25",
+      "category": "Commerce",
+      "geo": [
+        "US",
+        "CA",
+        "UK"
+      ],
+      "source": "https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/",
+      "date_status": "confirmed",
+      "job": "Give planners practical closure and travel comparisons while avoiding fabricated store hours.",
+      "facets": [
+        "holiday shipping cutoff and delivery",
+        "airport travel crowd planning",
+        "retail and grocery open status sources",
+        "school break scheduling",
+        "Thanksgiving versus Black Friday timing"
+      ],
+      "score": 7.5,
+      "state": "draft-research",
+      "custom_subdomain": "us-thanksgiving-2027.aafnaipatro.com",
+      "canonical_root": "https://aafnaipatro.com/events/us-thanksgiving-2027/"
+    },
+    {
+      "rank": 32,
+      "name": "Halloween 2027",
+      "slug": "halloween-2027",
+      "start": "2027-10-31",
+      "end": "2027-10-31",
+      "category": "Commerce",
+      "geo": [
+        "US",
+        "UK",
+        "CA",
+        "AU"
+      ],
+      "source": "https://www.timeanddate.com/holidays/us/halloween",
+      "date_status": "rule-derived",
+      "job": "Provide family logistics and original printable planning tools rather than generic holiday definitions.",
+      "facets": [
+        "age appropriate event planning",
+        "budget decoration alternatives",
+        "trick or treat timing by locality",
+        "inclusive and sensory friendly costumes",
+        "last minute party supply calculator"
+      ],
+      "score": 7.7,
+      "state": "draft-research",
+      "custom_subdomain": "halloween-2027.aafnaipatro.com",
+      "canonical_root": "https://aafnaipatro.com/events/halloween-2027/"
+    },
+    {
+      "rank": 33,
+      "name": "Easter 2027",
+      "slug": "easter-2027",
+      "start": "2027-03-28",
+      "end": "2027-03-28",
+      "category": "Commerce",
+      "geo": [
+        "US",
+        "UK",
+        "CA",
+        "AU",
+        "EU"
+      ],
+      "source": "https://www.timeanddate.com/holidays/uk/easter-sunday",
+      "date_status": "rule-derived",
+      "job": "Center local weekend closures and actionable family itineraries.",
+      "facets": [
+        "Good Friday versus Easter Monday closures",
+        "UK school holiday differences",
+        "family travel and weather packing",
+        "Easter meal cost planning",
+        "public transport by city"
+      ],
+      "score": 7.8,
+      "state": "draft-research",
+      "custom_subdomain": "easter-2027.aafnaipatro.com",
+      "canonical_root": "https://aafnaipatro.com/events/easter-2027/"
+    },
+    {
+      "rank": 34,
+      "name": "US Memorial Day 2027",
+      "slug": "us-memorial-day-2027",
+      "start": "2027-05-31",
+      "end": "2027-05-31",
+      "category": "Commerce",
+      "geo": [
+        "US"
+      ],
+      "source": "https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/",
+      "date_status": "confirmed",
+      "job": "Focus on long weekend logistics and government versus private-service hours.",
+      "facets": [
+        "official observance versus business hours",
+        "holiday weekend road trip planning",
+        "shipping and bank cutoff times",
+        "family outdoor event preparation",
+        "Memorial Day versus July Fourth buying"
+      ],
+      "score": 7.4,
+      "state": "draft-research",
+      "custom_subdomain": "us-memorial-day-2027.aafnaipatro.com",
+      "canonical_root": "https://aafnaipatro.com/events/us-memorial-day-2027/"
+    },
+    {
+      "rank": 35,
+      "name": "US Daylight Saving Starts 2027",
+      "slug": "us-daylight-saving-start-2027",
+      "start": "2027-03-14",
+      "end": "2027-03-14",
+      "category": "Calendar",
+      "geo": [
+        "US",
+        "CA"
+      ],
+      "source": "https://www.nist.gov/pml/time-and-frequency-division/popular-links/daylight-saving-time-dst",
+      "date_status": "rule-derived",
+      "job": "Give cross-border meeting conversion and device alarm reliability tests.",
+      "facets": [
+        "Eastern Pacific Central clock changes",
+        "meeting time between US and Europe",
+        "overnight shift pay scheduling questions",
+        "phone alarm and smart device behavior",
+        "flight arrival time calculations"
+      ],
+      "score": 8,
+      "state": "draft-research",
+      "custom_subdomain": "us-daylight-saving-start-2027.aafnaipatro.com",
+      "canonical_root": "https://aafnaipatro.com/events/us-daylight-saving-start-2027/"
+    },
+    {
+      "rank": 36,
+      "name": "US Daylight Saving Ends 2027",
+      "slug": "us-daylight-saving-end-2027",
+      "start": "2027-11-07",
+      "end": "2027-11-07",
+      "category": "Calendar",
+      "geo": [
+        "US",
+        "CA"
+      ],
+      "source": "https://www.nist.gov/pml/time-and-frequency-division/popular-links/daylight-saving-time-dst",
+      "date_status": "rule-derived",
+      "job": "Explain ambiguous repeated-hour scheduling using timezone data.",
+      "facets": [
+        "repeated hour calendar event behavior",
+        "US versus Europe DST gap weeks",
+        "flight and train timetable interpretation",
+        "overnight work shift time accounting",
+        "device automatic clock updates"
+      ],
+      "score": 8,
+      "state": "draft-research",
+      "custom_subdomain": "us-daylight-saving-end-2027.aafnaipatro.com",
+      "canonical_root": "https://aafnaipatro.com/events/us-daylight-saving-end-2027/"
+    },
+    {
+      "rank": 37,
+      "name": "UK Clocks Go Forward 2027",
+      "slug": "uk-clocks-forward-2027",
+      "start": "2027-03-28",
+      "end": "2027-03-28",
+      "category": "Calendar",
+      "geo": [
+        "UK",
+        "IE"
+      ],
+      "source": "https://www.gov.uk/when-do-the-clocks-change",
+      "date_status": "rule-derived",
+      "job": "Offer precise timezone conversion for UK US and Europe overlap periods.",
+      "facets": [
+        "BST switch in local time",
+        "UK versus US changing dates",
+        "international meeting schedule conflicts",
+        "rail and airline timestamp confusion",
+        "children sleep and school routine planning"
+      ],
+      "score": 7.7,
+      "state": "draft-research",
+      "custom_subdomain": "uk-clocks-forward-2027.aafnaipatro.com",
+      "canonical_root": "https://aafnaipatro.com/events/uk-clocks-forward-2027/"
+    },
+    {
+      "rank": 38,
+      "name": "UK Clocks Go Back 2027",
+      "slug": "uk-clocks-back-2027",
+      "start": "2027-10-31",
+      "end": "2027-10-31",
+      "category": "Calendar",
+      "geo": [
+        "UK",
+        "IE"
+      ],
+      "source": "https://www.gov.uk/when-do-the-clocks-change",
+      "date_status": "rule-derived",
+      "job": "Make repeated local-hour ambiguity clear to travelers and remote teams.",
+      "facets": [
+        "GMT switch and overnight hourly repeats",
+        "UK and US daylight saving mismatch",
+        "international video call conversion",
+        "alarm and shift scheduling",
+        "airport local arrival and departure times"
+      ],
+      "score": 7.7,
+      "state": "draft-research",
+      "custom_subdomain": "uk-clocks-back-2027.aafnaipatro.com",
+      "canonical_root": "https://aafnaipatro.com/events/uk-clocks-back-2027/"
+    },
+    {
+      "rank": 39,
+      "name": "Rugby World Cup 2027",
+      "slug": "rugby-world-cup-2027",
+      "start": "2027-10-01",
+      "end": "2027-11-13",
+      "category": "Sports",
+      "geo": [
+        "AU",
+        "UK",
+        "IE",
+        "FR",
+        "NZ"
+      ],
+      "source": "https://www.rugbyworldcup.com/2027/en",
+      "date_status": "confirmed",
+      "job": "Avoid live-score competition and build timezone transport ticket policy and fixture interpretation utilities.",
+      "facets": [
+        "fixture kickoff times by fan country",
+        "Australian host city rail transfers",
+        "official resale and ticket transfer",
+        "legal broadcast services by region",
+        "knockout qualification consequences"
+      ],
+      "score": 8.3,
+      "state": "draft-research",
+      "custom_subdomain": "rugby-world-cup-2027.aafnaipatro.com",
+      "canonical_root": "https://aafnaipatro.com/events/rugby-world-cup-2027/"
+    },
+    {
+      "rank": 40,
+      "name": "Tour de France UK Grand Depart 2027",
+      "slug": "tour-de-france-uk-2027",
+      "start": "2027-07-02",
+      "end": "2027-07-04",
+      "category": "Sports",
+      "geo": [
+        "UK",
+        "FR",
+        "BE",
+        "NL"
+      ],
+      "source": "https://www.letour.fr/en/the-race/grands-departs/grand-depart-2027",
+      "date_status": "confirmed",
+      "job": "Concentrate on Edinburgh Liverpool Cardiff travel tasks not cycling score widgets.",
+      "facets": [
+        "Edinburgh Carlisle stage roadside access",
+        "Keswick Liverpool rail alternatives",
+        "Welshpool Cardiff parking restrictions",
+        "road reopening times by council",
+        "accessible viewing and family logistics"
+      ],
+      "score": 8.5,
+      "state": "draft-research",
+      "custom_subdomain": "tour-de-france-uk-2027.aafnaipatro.com",
+      "canonical_root": "https://aafnaipatro.com/events/tour-de-france-uk-2027/"
+    },
+    {
+      "rank": 41,
+      "name": "FIFA Womens World Cup 2027",
+      "slug": "fifa-womens-world-cup-2027",
+      "start": "2027-06-24",
+      "end": "2027-07-25",
+      "category": "Sports",
+      "geo": [
+        "US",
+        "UK",
+        "AU",
+        "EU",
+        "BR"
+      ],
+      "source": "https://www.fifa.com/en/tournaments/womens/womensworldcup/brazil-2027/articles/everything-you-need-to-know",
+      "date_status": "confirmed",
+      "job": "Help international supporters with city transfers broadcast rights and time zones.",
+      "facets": [
+        "Brazil host city match-day transit",
+        "US UK Australia kickoff conversions",
+        "ticket official release stages",
+        "legal viewing platforms by country",
+        "group qualification and match schedule"
+      ],
+      "score": 7.9,
+      "state": "draft-research",
+      "custom_subdomain": "fifa-womens-world-cup-2027.aafnaipatro.com",
+      "canonical_root": "https://aafnaipatro.com/events/fifa-womens-world-cup-2027/"
+    },
+    {
+      "rank": 42,
+      "name": "FIBA Basketball World Cup 2027",
+      "slug": "fiba-world-cup-2027",
+      "start": "2027-08-27",
+      "end": "2027-09-12",
+      "category": "Sports",
+      "geo": [
+        "US",
+        "CA",
+        "EU",
+        "AU"
+      ],
+      "source": "https://about.fiba.basketball/en/our-sport/basketball/national-team-competition-systems/fiba-basketball-world-cup",
+      "date_status": "confirmed",
+      "job": "Explain format qualification and country-dependent viewing times.",
+      "facets": [
+        "group schedule in US and Europe",
+        "qualification bracket impact",
+        "host city access and venues",
+        "legal broadcaster availability by country",
+        "ticket packages and budget planning"
+      ],
+      "score": 7.6,
+      "state": "draft-research",
+      "custom_subdomain": "fiba-world-cup-2027.aafnaipatro.com",
+      "canonical_root": "https://aafnaipatro.com/events/fiba-world-cup-2027/"
+    },
+    {
+      "rank": 43,
+      "name": "ICC Cricket World Cup 2027",
+      "slug": "icc-cricket-world-cup-2027",
+      "start": "2027-10-02",
+      "end": "2027-11-21",
+      "category": "Sports",
+      "geo": [
+        "UK",
+        "AU",
+        "NZ",
+        "ZA",
+        "IN"
+      ],
+      "source": "https://www.icc-cricket.com/news/icc-men-s-cricket-world-cup-2027-schedule-revealed-and-ballot-system-opens",
+      "date_status": "confirmed",
+      "job": "Serve English and Australian fans traveling to South Africa Namibia and Zimbabwe.",
+      "facets": [
+        "ticket ballot and verified resale",
+        "Cape Town versus Johannesburg travel routes",
+        "UK Australian kickoff conversion",
+        "visa and stadium travel sources",
+        "group to Super 7 qualification paths"
+      ],
+      "score": 7.8,
+      "state": "draft-research",
+      "custom_subdomain": "icc-cricket-world-cup-2027.aafnaipatro.com",
+      "canonical_root": "https://aafnaipatro.com/events/icc-cricket-world-cup-2027/"
+    },
+    {
+      "rank": 44,
+      "name": "Wimbledon 2027",
+      "slug": "wimbledon-2027",
+      "start": "2027-06-28",
+      "end": "2027-07-11",
+      "category": "Sports",
+      "geo": [
+        "UK",
+        "US",
+        "CA",
+        "AU",
+        "EU"
+      ],
+      "source": "https://www.wimbledon.com/en_GB/atoz/dates.html",
+      "date_status": "confirmed",
+      "job": "Focus on queue travel accessibility and official ticket rules not scores.",
+      "facets": [
+        "queue ticket procedures and entry",
+        "London public transport to grounds",
+        "rain delay timetable policies",
+        "accessible seating and entrances",
+        "replay viewing rights by country"
+      ],
+      "score": 7.3,
+      "state": "draft-research",
+      "custom_subdomain": "wimbledon-2027.aafnaipatro.com",
+      "canonical_root": "https://aafnaipatro.com/events/wimbledon-2027/"
+    },
+    {
+      "rank": 45,
+      "name": "Boston Marathon 2027",
+      "slug": "boston-marathon-2027",
+      "start": "2027-04-19",
+      "end": "2027-04-19",
+      "category": "Sports",
+      "geo": [
+        "US",
+        "CA",
+        "UK",
+        "EU"
+      ],
+      "source": "https://www.baa.org/races/boston-marathon/",
+      "date_status": "confirmed",
+      "job": "Guide spectators and applicants using official registration and route rules.",
+      "facets": [
+        "spectator spots by transit station",
+        "road closures and crossing options",
+        "qualification cutoff explanation",
+        "charity runner eligibility and fees",
+        "runner tracking versus live result sources"
+      ],
+      "score": 8,
+      "state": "draft-research",
+      "custom_subdomain": "boston-marathon-2027.aafnaipatro.com",
+      "canonical_root": "https://aafnaipatro.com/events/boston-marathon-2027/"
+    },
+    {
+      "rank": 46,
+      "name": "Coachella 2027",
+      "slug": "coachella-2027",
+      "start": "2027-04-09",
+      "end": "2027-04-18",
+      "category": "Culture",
+      "geo": [
+        "US",
+        "CA",
+        "UK",
+        "AU"
+      ],
+      "source": "https://www.coachella.com/hotel-packages",
+      "date_status": "confirmed",
+      "job": "Serve desert logistics and real ticket policy questions with official sourced updates.",
+      "facets": [
+        "weekend one versus weekend two choice",
+        "official hotel shuttle packages",
+        "heat and accessibility packing",
+        "ticket transfer and resale rules",
+        "stage conflicts and transport after closing"
+      ],
+      "score": 7.6,
+      "state": "draft-research",
+      "custom_subdomain": "coachella-2027.aafnaipatro.com",
+      "canonical_root": "https://aafnaipatro.com/events/coachella-2027/"
+    },
+    {
+      "rank": 47,
+      "name": "Eurovision 2027",
+      "slug": "eurovision-2027",
+      "start": "2027-05-11",
+      "end": "2027-05-15",
+      "category": "Culture",
+      "geo": [
+        "UK",
+        "DE",
+        "FR",
+        "SE",
+        "NO",
+        "EU"
+      ],
+      "source": "https://www.eurovision.com/newsroom/release/burgas-to-host-eurovision-song-contest-2027/",
+      "date_status": "confirmed",
+      "job": "Localize Burgas attendance and viewing guides without replicating official scoreboard.",
+      "facets": [
+        "Burgas arena travel and accessibility",
+        "semi final start by UK US time",
+        "legal free viewing by country",
+        "ticket sale and package guidance",
+        "voting rules and country eligibility"
+      ],
+      "score": 8.1,
+      "state": "draft-research",
+      "custom_subdomain": "eurovision-2027.aafnaipatro.com",
+      "canonical_root": "https://aafnaipatro.com/events/eurovision-2027/"
+    },
+    {
+      "rank": 48,
+      "name": "Super Bowl LXI 2027",
+      "slug": "super-bowl-2027",
+      "start": "2027-02-14",
+      "end": "2027-02-14",
+      "category": "Sports",
+      "geo": [
+        "US",
+        "CA",
+        "UK",
+        "AU"
+      ],
+      "source": "https://operations.nfl.com/calendar-events/nfl-important-dates",
+      "date_status": "confirmed",
+      "job": "Focus on attendance transport and legitimate watch planning rather than result widgets.",
+      "facets": [
+        "SoFi Stadium parking and shuttle",
+        "legal stream access by country",
+        "kickoff time and time zone conversion",
+        "family watch party food schedule",
+        "ticket package authenticity and resale"
+      ],
+      "score": 7.4,
+      "state": "draft-research",
+      "custom_subdomain": "super-bowl-2027.aafnaipatro.com",
+      "canonical_root": "https://aafnaipatro.com/events/super-bowl-2027/"
+    },
+    {
+      "rank": 49,
+      "name": "US Open Tennis 2027",
+      "slug": "us-open-tennis-2027",
+      "start": null,
+      "end": null,
+      "category": "Sports",
+      "geo": [
+        "US",
+        "CA",
+        "UK",
+        "AU",
+        "EU"
+      ],
+      "source": "https://www.usopen.org/",
+      "date_status": "unannounced",
+      "job": "Target stadium admission policies and local logistics after dates are confirmed.",
+      "facets": [
+        "Queens subway transfers to grounds",
+        "ticket session versus day access",
+        "heat and weather reschedule rules",
+        "accessible venue entries",
+        "night-session local time and replays"
+      ],
+      "score": 7.4,
+      "state": "draft-research",
+      "custom_subdomain": "us-open-tennis-2027.aafnaipatro.com",
+      "canonical_root": "https://aafnaipatro.com/events/us-open-tennis-2027/"
+    },
+    {
+      "rank": 50,
+      "name": "British Grand Prix 2027",
+      "slug": "british-grand-prix-2027",
+      "start": null,
+      "end": null,
+      "category": "Sports",
+      "geo": [
+        "UK",
+        "IE",
+        "EU",
+        "US"
+      ],
+      "source": "https://www.formula1.com/",
+      "date_status": "unannounced",
+      "job": "Explain Silverstone access and transport once the official race calendar is fixed.",
+      "facets": [
+        "Silverstone shuttle versus car parking",
+        "camping and family ticket access",
+        "race weekend arrival windows",
+        "accessible grandstand transport",
+        "legal race replay options by country"
+      ],
+      "score": 7.5,
+      "state": "draft-research",
+      "custom_subdomain": "british-grand-prix-2027.aafnaipatro.com",
+      "canonical_root": "https://aafnaipatro.com/events/british-grand-prix-2027/"
+    }
+  ]
+}
