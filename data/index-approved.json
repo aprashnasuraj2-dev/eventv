@@ -173,6 +173,25 @@
         "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-233",
         "https://www.ftc.gov/business-guidance/advertising-marketing"
       ]
+    },
+    {
+      "slug": "steam-couch-coop-fest-2027",
+      "page_type": "hub",
+      "output_path": "events/steam-couch-coop-fest-2027/index.html",
+      "source_path": "content/pilots/steam-couch-coop-fest-2027.html",
+      "robots": "index,follow,max-image-preview:large",
+      "editorial_status": "pilot-index-ready",
+      "source_verified_on": "2026-11-05",
+      "factual_scope": "Valve confirms Steam Couch Co-Op Fest Feb 8–15, 2027 and same-device local co-op eligibility. Exact start/end clock remains unverified because the event-specific documentation page returned an error during checking. No final lineup or game-specific discounts asserted. Page includes household input-capacity checker, Remote Play Together evidence interpreter, browser-local verified-game shortlist and fair-turn rotation planner.",
+      "sources": [
+        "https://partner.steamgames.com/doc/marketing/upcoming_events",
+        "https://partner.steamgames.com/doc/marketing/upcoming_events/themed_sales",
+        "https://partner.steamgames.com/doc/marketing/upcoming_events/themed_sales/couch_coop_2027",
+        "https://partner.steamgames.com/doc/features/remoteplay",
+        "https://partner.steamgames.com/doc/features/steam_controller",
+        "https://partner.steamgames.com/doc/features/steam_controller/device",
+        "https://partner.steamgames.com/doc/marketing/discounts"
+      ]
     }
   ]
 }
