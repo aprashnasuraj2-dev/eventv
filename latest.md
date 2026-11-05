@@ -4,7 +4,7 @@
 > Read this file first whenever resuming EventV. Update it **in the same commit/PR** as every meaningful repository change. Historical research files remain references, not the live project status.
 >
 > **Last reviewed:** 2026-11-05 (Asia/Kathmandu)  
-> **Checkpoint:** Sixth editorial pilot built — Gamescom 2027 Cologne visitor-planning hub  
+> **Checkpoint:** Sixth editorial pilot deepened — Gamescom 2027 multi-day/accessibility visitor hub  
 > **Status:** **6 SOURCE-VERIFIED INDEX-READY PILOT HUBS IN REPO; LIVE DEPLOYMENT NOT PERFORMED**
 
 ## 1. Current verified state
@@ -91,3 +91,4 @@ For any new feature, create a branch from current `main`, make the change, updat
 | 2026-11-05 | Built fourth pilot: WWDC 2027 source-verified status hub with explicit TBA date/keynote, official 2023–2026 announcement history, historical lead-time calculations, April 2027 SDK baseline, beta-readiness checklist, private developer watchlist, SEO metadata and compact bottom references | [PR #5](https://github.com/aprashnasuraj2-dev/eventv/pull/5) merged as `04dbcee`; [main CI passed](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42008734646); no live deployment |
 | 2026-11-05 | Built fifth pilot: Steam Summer Sale 2027 source-verified hub with confirmed June 24–July 8 dates, explicit TBA clock, money+playtime purchase-capacity model, persistent cart planner, wishlist-notification rule checker, standard refund-window precheck, SEO metadata and compact bottom references | [PR #6](https://github.com/aprashnasuraj2-dev/eventv/pull/6) merged as `1fe939c`; [main CI passed](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42009969906); no live deployment |
 | 2026-11-05 | Built sixth pilot: Gamescom 2027 source-verified Cologne hub with Aug 23–29 week, public Aug 26–29 distinction, exact public hours, official-source inconsistency warning for gamescom dev, persistent day-capacity itinerary, trip-cost estimator, venue/arrival/age guidance, Event schema, SEO metadata and compact bottom references | [PR #7](https://github.com/aprashnasuraj2-dev/eventv/pull/7) merged as `92a7078`; [main CI passed](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42016279462); no live deployment |
+| 2026-11-05 | Deepened Gamescom 2027 with public/Wildcard/trade access-mode selector, multi-day official-hours capacity calculator, barrier-free entrance/toilet/parking guidance, 2027 hall-plan freshness warning and explicit update radar for ticket prices, exhibitors, ONL time, transit notices and source conflicts | Feature PR/CI to be verified before merge; no live deployment |
