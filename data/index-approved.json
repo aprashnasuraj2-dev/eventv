@@ -123,6 +123,23 @@
         "https://www.letourgb.com/resident-info/",
         "https://www.edinburgh.gov.uk/events-venues/tour-de-france-grande-depart-2027"
       ]
+    },
+    {
+      "slug": "steam-spring-sale-2027",
+      "page_type": "hub",
+      "output_path": "events/steam-spring-sale-2027/index.html",
+      "source_path": "content/pilots/steam-spring-sale-2027.html",
+      "robots": "index,follow,max-image-preview:large",
+      "editorial_status": "pilot-index-ready",
+      "source_verified_on": "2026-11-05",
+      "factual_scope": "Valve confirmed March 18–25, 2027 calendar dates. Exact sale clock and individual title discounts unknown. User-entered price difference, local cart and Steam refund-rule precheck; no live price feed.",
+      "sources": [
+        "https://partner.steamgames.com/doc/marketing/upcoming_events",
+        "https://partner.steamgames.com/doc/marketing/discounts/seasonalsales",
+        "https://partner.steamgames.com/doc/marketing/wishlist",
+        "https://store.steampowered.com/steam_refunds/",
+        "https://help.steampowered.com/en/faqs/view/4c10-b32a-137d-0945"
+      ]
     }
   ]
 }
