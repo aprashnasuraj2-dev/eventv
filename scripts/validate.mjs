@@ -65,3 +65,12 @@ assert.ok(gamescom.includes('"@type":"Event"'),'Gamescom physical event should r
 assert.ok(gamescom.includes('Messeplatz 1'),'Gamescom venue address missing');
 assert.ok(gamescom.includes('official pages currently describe gamescom dev as August 23–24')||gamescom.includes('official Gamescom pages are inconsistent'),'Gamescom official source inconsistency note missing');
 assert.ok(gamescom.includes('id="day-planner"')&&gamescom.includes('id="budget"'),'Gamescom planning utilities missing');
+
+const gamescomDeep=fs.readFileSync('events/gamescom-2027/index.html','utf8');
+assert.ok(gamescomDeep.includes('id="visit-mode"'),'Gamescom visitor-mode selector missing');
+assert.ok(gamescomDeep.includes('id="multi-day"'),'Gamescom multi-day capacity tool missing');
+assert.ok(gamescomDeep.includes('id="accessibility"'),'Gamescom accessibility guidance missing');
+assert.ok(gamescomDeep.includes('id="update-radar"'),'Gamescom 2027 update radar missing');
+assert.ok(gamescomDeep.includes('Entrance North recommended'),'Gamescom wheelchair entrance guidance missing');
+assert.ok(gamescomDeep.includes('Do not navigate from the 2026 hall map in 2027'),'Gamescom hall-plan freshness warning missing');
+assert.ok(gamescomDeep.includes('2026-ONLY'),'Gamescom transit staleness marker missing');

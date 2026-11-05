@@ -46,3 +46,43 @@ Verified: 2026-11-05
 8. https://www.koelnmesse.com/contact/
 
 The page uses Event structured data because Gamescom 2027 is a physical event with confirmed dates and venue. The schema describes the overall scheduled event and does not imply ticket availability or prices.
+
+
+## Deepening pass — 2026-11-05
+
+Additional official Gamescom material was reviewed to make the page useful for multi-day and accessibility planning.
+
+### Accessibility
+Official Gamescom accessibility guidance currently says:
+- some areas of the venue are not fully accessible;
+- information staff can help visitors find suitable routes and can accompany visitors if needed;
+- accessible toilets are available in every hall;
+- most elevators are accessible and shown on the hall plan;
+- Entrance North is recommended for wheelchair users and is served by taxis;
+- visitors arriving by public transport are advised to use Entrance South or Entrance East;
+- special accessible parking is available at Entrances North, South and East.
+
+The page does not reuse exact 2026 hall positions as 2027 positions. The official hall-plan page currently labels the displayed allocation as 2026.
+
+### Visitor-mode logic
+The page now distinguishes:
+- private/public visitors: Aug 26–29;
+- limited Wildcard private access on Aug 25 from 13:00;
+- trade visitors: 09:00 access with business/entertainment-area hours varying by day; business area closed after Friday.
+
+### Multi-day capacity
+The new multi-day calculator uses only the official private/Wildcard opening windows and subtracts a user-defined daily buffer. It does not predict queue times.
+
+### 2027 update radar
+Items explicitly kept pending/stale/conflicted:
+- 2027 ticket prices: pending;
+- 2027 hall allocation: pending (current page shows 2026);
+- exhibitor/game roster: pending;
+- exact ONL show time: pending;
+- transit disruption notices: current page is explicitly for 2026 and last updated 12 Aug 2026;
+- gamescom dev end date: conflicting official pages.
+
+Additional primary sources:
+9. https://www.gamescom.global/en/info/barrier-free-trade-fair-visit
+10. https://www.gamescom.global/en/info/hall-plan
+11. https://www.gamescom.global/en/info/arrival/public-transport-information-for-gamescom

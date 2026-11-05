@@ -54,4 +54,53 @@
     $('trip-total').textContent=curr+total.toFixed(2);$('hotel-total').textContent=curr+hotelTotal.toFixed(2);$('food-total').textContent=curr+foodTotal.toFixed(2);
   }
   ['trip-currency','cost-ticket','cost-travel','cost-hotel','hotel-nights','cost-food','trip-days','cost-other'].forEach(id=>$(id)?.addEventListener('input',renderBudget));renderBudget();
+
+  const MODE_COPY={
+    public:{
+      access:'Aug 26–29',
+      entry:'Thu/Fri 10:00 · Sat/Sun 09:00',
+      area:'Public entertainment-area visit',
+      copy:'Best fit for a normal attendee planning the consumer-facing show. Ticket prices and availability must still be checked in the official 2027 ticket shop.'
+    },
+    wildcard:{
+      access:'Aug 25',
+      entry:'13:00–19:00',
+      area:'Limited private access on Business & Media Day',
+      copy:'Wildcard holders may receive private-visitor access to the entertainment area from 13:00. This is limited access, not a normal public day, and availability must be verified in the 2027 ticket shop.'
+    },
+    trade:{
+      access:'Aug 25–29',
+      entry:'09:00 on trade-access days',
+      area:'Business + entertainment access varies by day',
+      copy:'Trade visitors have 09:00 access on Aug 25–27 to the business and entertainment areas; the business area closes after Friday while the entertainment area remains open through Sunday. Trade accreditation/ticket rules apply.'
+    }
+  };
+  function renderMode(mode){
+    const m=MODE_COPY[mode]||MODE_COPY.public,box=$('mode-result');if(!box)return;
+    box.innerHTML='<div><span>ACCESS WINDOW</span><strong>'+m.access+'</strong></div><div><span>EARLIEST ENTRY</span><strong>'+m.entry+'</strong></div><div><span>AREA LOGIC</span><strong>'+m.area+'</strong></div><p>'+m.copy+'</p>';
+  }
+  document.querySelectorAll('[data-mode]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-mode]').forEach(x=>x.classList.toggle('active',x===b));renderMode(b.dataset.mode)}));
+  renderMode('public');
+
+  function renderMultiDay(){
+    const selected=[...document.querySelectorAll('[data-multi-day]:checked')];
+    const buffer=Math.max(0,Number($('multi-buffer')?.value)||0);
+    const total=selected.reduce((sum,box)=>sum+(DAYS[box.dataset.multiDay]?.minutes||0),0);
+    const totalBuffer=Math.min(total,buffer*selected.length);
+    const usable=Math.max(0,total-totalBuffer);
+    if($('multi-count')) $('multi-count').textContent=selected.length;
+    if($('multi-open')) $('multi-open').textContent=formatMinutes(total);
+    if($('multi-usable')) $('multi-usable').textContent=formatMinutes(usable);
+    if($('multi-note')) $('multi-note').textContent='after '+formatMinutes(totalBuffer)+' total buffer';
+    if($('multi-warning')){
+      const labels=selected.map(x=>DAYS[x.dataset.multiDay]?.label).filter(Boolean);
+      $('multi-warning').textContent=selected.length
+        ?labels.join(' + ')+' provide '+formatMinutes(total)+' of official access. After '+formatMinutes(totalBuffer)+' of total buffer, '+formatMinutes(usable)+' remains for planned activities.'
+        :'Select at least one public/Wildcard day to calculate total capacity.';
+    }
+  }
+  document.querySelectorAll('[data-multi-day]').forEach(x=>x.addEventListener('change',renderMultiDay));
+  $('multi-buffer')?.addEventListener('input',renderMultiDay);
+  renderMultiDay();
+
 })();

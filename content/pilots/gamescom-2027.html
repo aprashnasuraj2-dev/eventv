@@ -85,9 +85,10 @@
     <nav aria-label="Primary">
       <a href="/events/">Events</a>
       <a href="#week">Week</a>
+      <a href="#visit-mode">Access mode</a>
       <a href="#day-planner">Day planner</a>
-      <a href="#budget">Trip budget</a>
-      <a href="#arrival">Arrival</a>
+      <a href="#multi-day">Multi-day</a>
+      <a href="#accessibility">Accessibility</a>
       <a href="#faq">FAQ</a>
     </nav>
   </div>
@@ -182,6 +183,56 @@
           <div class="longest"><span>SUN · AUG 29</span><strong>09:00–20:00</strong><b>11 hours</b><small>Longest official window.</small></div>
         </div>
         <p class="fine-note">Trade-visitor access differs: trade visitors can enter from 09:00 on Aug 25–27, and the business area closes after Friday. Use the official trade-visitor page if your trip is primarily B2B.</p>
+      </section>
+
+
+      <section class="content-section mode-section" id="visit-mode">
+        <div class="section-heading">
+          <p class="eyebrow">Choose the right access mode</p>
+          <h2>Public visitor, Wildcard or trade visitor?</h2>
+          <p>Gamescom’s opening hours differ by visitor type. This selector turns the official access rules into a simple decision view without implying ticket availability.</p>
+        </div>
+        <div class="mode-shell">
+          <div class="mode-tabs" role="group" aria-label="Gamescom visitor type">
+            <button type="button" class="active" data-mode="public">Public visitor</button>
+            <button type="button" data-mode="wildcard">Wildcard</button>
+            <button type="button" data-mode="trade">Trade visitor</button>
+          </div>
+          <div class="mode-result" id="mode-result" aria-live="polite">
+            <div><span>ACCESS WINDOW</span><strong>Aug 26–29</strong></div>
+            <div><span>EARLIEST ENTRY</span><strong>Thu/Fri 10:00 · Sat/Sun 09:00</strong></div>
+            <div><span>AREA LOGIC</span><strong>Public entertainment-area visit</strong></div>
+            <p>Best fit for a normal attendee planning the consumer-facing show. Ticket prices and availability must still be checked in the official 2027 ticket shop.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section multi-section" id="multi-day">
+        <div class="section-heading">
+          <p class="eyebrow">Multi-day capacity</p>
+          <h2>How much Gamescom time do you actually have across several days?</h2>
+          <p>Select the days you expect to attend and reserve a daily buffer for security, queues, walking, meals and unscheduled discovery. The result uses the official private-visitor opening windows.</p>
+        </div>
+        <div class="multi-shell">
+          <div class="multi-days">
+            <label><input type="checkbox" data-multi-day="2027-08-25"><span><strong>Wed 25 · Wildcard</strong><small>13:00–19:00 · 6h</small></span></label>
+            <label><input type="checkbox" data-multi-day="2027-08-26"><span><strong>Thu 26</strong><small>10:00–20:00 · 10h</small></span></label>
+            <label><input type="checkbox" data-multi-day="2027-08-27"><span><strong>Fri 27</strong><small>10:00–20:00 · 10h</small></span></label>
+            <label><input type="checkbox" data-multi-day="2027-08-28" checked><span><strong>Sat 28</strong><small>09:00–20:00 · 11h</small></span></label>
+            <label><input type="checkbox" data-multi-day="2027-08-29" checked><span><strong>Sun 29</strong><small>09:00–20:00 · 11h</small></span></label>
+          </div>
+          <div class="multi-controls">
+            <label>Daily non-scheduled buffer
+              <span><input id="multi-buffer" type="number" min="0" max="600" step="15" value="180"><b>minutes/day</b></span>
+            </label>
+          </div>
+          <div class="multi-output" aria-live="polite">
+            <div><span>Selected days</span><strong id="multi-count">2</strong><small>days</small></div>
+            <div><span>Official open time</span><strong id="multi-open">22h</strong><small>before buffers</small></div>
+            <div><span>Usable planning time</span><strong id="multi-usable">16h</strong><small id="multi-note">after 6h total buffer</small></div>
+          </div>
+          <p class="multi-warning" id="multi-warning">Saturday + Sunday provide 22 official public hours. After a 3h/day buffer, 16h remains for planned activities.</p>
+        </div>
       </section>
 
       <section class="content-section planner-section" id="day-planner">
@@ -280,6 +331,25 @@
         </div>
       </section>
 
+
+      <section class="content-section access-section" id="accessibility">
+        <div class="section-heading">
+          <p class="eyebrow">Accessibility planning</p>
+          <h2>Gamescom accessibility: choose the entrance and route before you arrive</h2>
+          <p>Gamescom says some parts of the venue are not fully accessible, so route planning matters. The organizer also provides staff assistance and accessible infrastructure across the halls.</p>
+        </div>
+        <div class="access-grid">
+          <div><span>WHEELCHAIR / TAXI</span><strong>Entrance North recommended</strong><p>The organizer recommends Entrance North for wheelchair users, and taxis can stop there.</p></div>
+          <div><span>PUBLIC TRANSPORT</span><strong>Entrance South or East</strong><p>Gamescom’s accessibility guidance recommends these entrances when arriving by public transport.</p></div>
+          <div><span>ACCESSIBLE PARKING</span><strong>North · South · East</strong><p>Special parking spaces are currently listed at all three entrances.</p></div>
+          <div><span>TOILETS</span><strong>Accessible toilets in every hall</strong><p>Locations are shown on the hall plan; most elevators are also marked as accessible.</p></div>
+        </div>
+        <div class="access-caution">
+          <strong>Do not navigate from the 2026 hall map in 2027.</strong>
+          <p>The current Gamescom hall-plan page is still showing the 2026 allocation. Accessibility infrastructure is useful context, but exact 2027 hall positions and area assignments should be re-checked after the 2027 plan is published.</p>
+        </div>
+      </section>
+
       <section class="content-section family-section">
         <div class="section-heading">
           <p class="eyebrow">Age-access basics</p>
@@ -291,6 +361,25 @@
           <div><span>AGE 4–6</span><strong>Free entry</strong><small>Subject to the organizer’s current admission policy.</small></div>
           <div><span>AGE 4–12</span><strong>Adult required</strong><small>Must be accompanied by an adult.</small></div>
           <div><span>AGE 12+</span><strong>May attend without adult supervision</strong><small>Current organizer rule; youth-protection rules still apply to content.</small></div>
+        </div>
+      </section>
+
+
+      <section class="content-section radar-section" id="update-radar">
+        <div class="section-heading">
+          <p class="eyebrow">2027 update radar</p>
+          <h2>What is safe to book around now—and what still needs an official update?</h2>
+          <p>This is the page’s change-control layer. It separates stable planning facts from items that can materially change a trip.</p>
+        </div>
+        <div class="radar-grid">
+          <div class="radar-card ready"><span>CONFIRMED</span><strong>Week + public dates</strong><p>Aug 23–29 overall; public Aug 26–29.</p></div>
+          <div class="radar-card ready"><span>CONFIRMED</span><strong>Public opening hours</strong><p>Thu/Fri 10–20; Sat/Sun 09–20; Wildcard Wed 13–19.</p></div>
+          <div class="radar-card pending"><span>PENDING</span><strong>2027 ticket prices</strong><p>Official ticket page is still inviting visitors to sign up for ticket-shop opening news.</p></div>
+          <div class="radar-card pending"><span>PENDING</span><strong>2027 hall allocation</strong><p>The hall-plan page currently shows the 2026 allocation.</p></div>
+          <div class="radar-card pending"><span>PENDING</span><strong>Exhibitors + game lineup</strong><p>Do not use the 2026 exhibitor/game roster as a 2027 promise.</p></div>
+          <div class="radar-card pending"><span>PENDING</span><strong>Exact ONL show time</strong><p>Aug 24 evening is confirmed; exact clock is not asserted here.</p></div>
+          <div class="radar-card stale"><span>2026-ONLY</span><strong>Transit disruption notices</strong><p>The current disruption page is explicitly about gamescom 2026 and was last updated Aug 12, 2026.</p></div>
+          <div class="radar-card conflict"><span>CONFLICT</span><strong>gamescom dev end date</strong><p>Official visitor/home pages say Aug 23–24; trade-visitor page currently says Aug 23–25.</p></div>
         </div>
       </section>
 
@@ -336,6 +425,8 @@
         <details><summary>Are Gamescom 2027 ticket prices available?</summary><p>The current official ticket page is promoting notification for the opening of the 2027 ticket shop. This guide does not publish a price until the organizer’s 2027 admission prices are verified.</p></details>
         <details><summary>Where is Gamescom held?</summary><p>At Koelnmesse in Cologne, Germany. Koelnmesse’s official address is Messeplatz 1, 50679 Cologne.</p></details>
         <details><summary>Which train station is closest to Gamescom?</summary><p>Gamescom’s current arrival guidance highlights Köln Messe/Deutz, with the halls within walking distance via the South Entrance.</p></details>
+        <details><summary>Which entrance is best for wheelchair users?</summary><p>Gamescom’s current accessibility guidance recommends Entrance North for wheelchair users; when arriving by public transport, it recommends Entrance South or East. Some parts of the venue are not fully accessible, so re-check the 2027 hall plan and accessibility page before travel.</p></details>
+        <details><summary>Is the current Gamescom hall map already for 2027?</summary><p>No. The official hall-plan page currently labels the displayed allocation as 2026. This guide does not reuse 2026 hall positions as a 2027 floor plan.</p></details>
         <details><summary>Is August 25 open to normal visitors?</summary><p>August 25 is Business & Media Day. The organizer says it may grant a limited number of private visitors access to the entertainment area from 13:00 with a Wildcard.</p></details>
         <details><summary>Why does this page avoid a fixed gamescom dev end date?</summary><p>The current official Gamescom pages are inconsistent: visitor/home pages describe gamescom dev as Aug 23–24, while the trade-visitor page currently says Aug 23–25. Check the dedicated dev site before making a dev-specific booking.</p></details>
       </section>
@@ -357,9 +448,11 @@
         <p>Public: Aug 26–29<br>Koelnmesse · Cologne</p>
         <hr>
         <a href="#week">Week structure</a>
+        <a href="#visit-mode">Visitor mode</a>
         <a href="#day-planner">Day planner</a>
-        <a href="#budget">Trip budget</a>
-        <a href="#arrival">Arrival</a>
+        <a href="#multi-day">Multi-day capacity</a>
+        <a href="#accessibility">Accessibility</a>
+        <a href="#update-radar">Update radar</a>
         <a href="#faq">FAQ</a>
         <small>Last source check<br><b>Nov 5, 2026</b></small>
       </div>
