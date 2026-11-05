@@ -12,8 +12,8 @@
 | Area | Status | Verified detail |
 |---|---|---|
 | GitHub repo | **Working** | [`aprashnasuraj2-dev/eventv`](https://github.com/aprashnasuraj2-dev/eventv), default branch `main` |
-| Most recent feature change | **Merged** | [PR #1](https://github.com/aprashnasuraj2-dev/eventv/pull/1), squash commit [`86b7984`](https://github.com/aprashnasuraj2-dev/eventv/commit/86b798479c23936f64d9345120031f2f25539347) |
-| CI at feature checkpoint | **Passed** | [GitHub Actions run 42001822022](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42001822022) |
+| Most recent feature change | **Merged** | [PR #2](https://github.com/aprashnasuraj2-dev/eventv/pull/2), squash commit [`ee59e68`](https://github.com/aprashnasuraj2-dev/eventv/commit/ee59e68a0d3fe79f2866665a6dbba5801da73524) — Steam Next Fest February 2027 pilot |
+| CI at feature checkpoint | **Passed** | [GitHub Actions run 42005528032](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42005528032) on merged pilot commit |
 | Candidate event topics | **50 defined** | [`data/events-50.json`](data/events-50.json), [ranked topics](TOP_50_TOPICS.md); eclipses excluded |
 | Search intents | **1,000 generated hypotheses** | [`research/search-intents-1000.csv`](research/search-intents-1000.csv); **not** verified keyword volumes, demand or attainable rankings |
 | Canonical event routes | **200 mapped** | [`research/routes-200.csv`](research/routes-200.csv) |
@@ -85,4 +85,4 @@ For any new feature, create a branch from current `main`, make the change, updat
 |---|---|---|
 | 2026-11-05 | Generated 50 active (non-eclipse) event clusters, 1,000 intent hypotheses, 200 event HTML plus 2 navigation HTML | [Merged PR #1](https://github.com/aprashnasuraj2-dev/eventv/pull/1); [passing main validation](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42001822022) |
 | 2026-11-05 | Added canonical `latest.md` resume-point ledger and CI enforcement requiring status updates alongside code changes | Passed GitHub Actions on main | 
-| 2026-11-05 | Built first real pilot: Steam Next Fest February 2027 source-verified hub, responsive visual design, time-zone/countdown utility, local demo shortlist, SEO metadata/Article+Breadcrumb structured data, compact bottom references; only this route is index-ready in source | PR #2 initial CI passed; final accessibility/SEO polish pending merge; no live deployment |
+| 2026-11-05 | Built first real pilot: Steam Next Fest February 2027 source-verified hub, responsive visual design, time-zone/countdown utility, local demo shortlist, SEO metadata/Article+Breadcrumb structured data, compact bottom references; only this route is index-ready in source | [PR #2](https://github.com/aprashnasuraj2-dev/eventv/pull/2) merged as `ee59e68`; [main CI passed](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42005528032); no live deployment |
