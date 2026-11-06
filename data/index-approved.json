@@ -325,6 +325,27 @@
         "https://blog.adobe.com/en/publish/2024/02/15/mark-your-calendars-adobe-max-2024-miami-beach",
         "https://blog.adobe.com/en/topics/adobe-max"
       ]
+    },
+    {
+      "slug": "eurovision-2027",
+      "page_type": "hub",
+      "output_path": "events/eurovision-2027/index.html",
+      "source_path": "content/pilots/eurovision-2027.html",
+      "robots": "index,follow,max-image-preview:large",
+      "editorial_status": "pilot-index-ready",
+      "source_verified_on": "2026-11-06",
+      "factual_scope": "Eurovision Song Contest 2027 is confirmed for Arena Burgas with Live Shows on May 11, 13 and 15 at 21:00 CEST, equivalent to 22:00 EEST in Burgas. Tickets for three Live Shows plus six Preview Shows are expected early 2027 but are not yet on sale; Eurofan account required, prices/categories/accessibility pending. Oct 28 snapshot has 36 confirmed broadcasters, 31 current semifinal entries and five pre-qualified entries, while Spain and Slovenia remain undecided until December and January semifinal allocation is pending. Detailed 2027 voting methods/caps remain pending beyond confirmed jury+viewer structure. Tools provide official show-time conversion, stay-window arithmetic, ticket-readiness checklist, browser-local entry evidence and qualifier/result evidence without predicting outcomes.",
+      "sources": [
+        "https://www.eurovision.com/newsroom/release/burgas-to-host-eurovision-song-contest-2027/",
+        "https://www.ebu.ch/news/2026/08/burgas-to-host-eurovision-song-contest-2027",
+        "https://www.eurovision.com/vote-and-watch/",
+        "https://www.eurovision.com/tickets/",
+        "https://www.eurovision.com/newsroom/frequently-asked-questions/faqs-burgas-2027/",
+        "https://www.eurovision.com/newsroom/release/36-broadcasters-compete-at-71st-eurovision-burgas/",
+        "https://www.eurovision.com/eurovision-song-contest/burgas-2027/participants/",
+        "https://info.gotoburgas.com/en/events/music/eurovision-2027",
+        "https://info.gotoburgas.com/en/news/burgas-easy-to-reach-from-europe-and-the-world"
+      ]
     }
   ]
 }
