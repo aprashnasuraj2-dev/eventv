@@ -99,7 +99,7 @@ event_slug,page_type,output_path,canonical_url,robots,editorial_status
 "cyber-monday-2026","planning","events/cyber-monday-2026/planning/index.html","https://aafnaipatro.com/events/cyber-monday-2026/planning/","noindex,follow","research-draft"
 "cyber-monday-2026","during","events/cyber-monday-2026/during/index.html","https://aafnaipatro.com/events/cyber-monday-2026/during/","noindex,follow","research-draft"
 "cyber-monday-2026","after","events/cyber-monday-2026/after/index.html","https://aafnaipatro.com/events/cyber-monday-2026/after/","noindex,follow","research-draft"
-"boxing-day-2026","hub","events/boxing-day-2026/index.html","https://aafnaipatro.com/events/boxing-day-2026/","noindex,follow","research-draft"
+"boxing-day-2026","hub","events/boxing-day-2026/index.html","https://aafnaipatro.com/events/boxing-day-2026/","index,follow,max-image-preview:large","pilot-index-ready"
 "boxing-day-2026","planning","events/boxing-day-2026/planning/index.html","https://aafnaipatro.com/events/boxing-day-2026/planning/","noindex,follow","research-draft"
 "boxing-day-2026","during","events/boxing-day-2026/during/index.html","https://aafnaipatro.com/events/boxing-day-2026/during/","noindex,follow","research-draft"
 "boxing-day-2026","after","events/boxing-day-2026/after/index.html","https://aafnaipatro.com/events/boxing-day-2026/after/","noindex,follow","research-draft"
