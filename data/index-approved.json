@@ -245,6 +245,27 @@
         "https://www.rugbyworldcup.com/news/1019915/eight-state-of-the-art-venues-across-australia-to-host-mens-rugby-world-cup-2027",
         "https://www.rugbyworldcup.com/2027/en/news/1048131/more-than-half-of-tickets-secured-as-australia-marks-one-year-to-go-before-mens-rugby-world-cup-2027"
       ]
+    },
+    {
+      "slug": "back-to-school-2027",
+      "page_type": "hub",
+      "output_path": "events/back-to-school-2027/index.html",
+      "source_path": "content/pilots/back-to-school-2027.html",
+      "robots": "index,follow,max-image-preview:large",
+      "editorial_status": "pilot-index-ready",
+      "source_verified_on": "2026-11-06",
+      "factual_scope": "July 1-September 30 is explicitly an EventV editorial planning season, not a universal school or retail window. Official examples show LAUSD Aug 12, Portsmouth Sep 1, Oxfordshire Sep 6, Leicestershire Aug 25, NSW school-year start in February with Term 3 Jul 20, and Queensland school-year start Jan 27 with Term 3 Jul 12. Texas 2027 sales-tax holiday Aug 6-8 is scoped only to Texas with under-$100 qualifying-item rules, exclusions and shipping-price caveat. Tools provide school-date buffer math, browser-local supply budget and price history, Texas tax baseline and user-entered device minimum-fit checks; no live school, price, stock, discount or device feed.",
+      "sources": [
+        "https://www.gov.uk/school-term-holiday-dates",
+        "https://www.lausd.org/calendar",
+        "https://www.oxfordshire.gov.uk/schools/term-dates-and-holidays",
+        "https://www.portsmouth.gov.uk/services/schools-and-learning/schools/school-term-dates",
+        "https://www.leicestershire.gov.uk/education-and-children/schools-colleges-and-academies/school-term-dates",
+        "https://education.nsw.gov.au/schooling/calendars/2027",
+        "https://education.qld.gov.au/about-us/calendar/future-dates",
+        "https://comptroller.texas.gov/taxes/publications/98-490/",
+        "https://consumer.ftc.gov/articles/online-shopping"
+      ]
     }
   ]
 }
