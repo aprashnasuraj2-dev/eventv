@@ -365,6 +365,27 @@
         "https://partner.steamgames.com/doc/features/steam_controller/steam_input_gamepad_emulation_bestpractices",
         "https://partner.steamgames.com/doc/store/application/demos"
       ]
+    },
+    {
+      "slug": "steam-fighting-fest-2027",
+      "page_type": "hub",
+      "output_path": "events/steam-fighting-fest-2027/index.html",
+      "source_path": "content/pilots/steam-fighting-fest-2027.html",
+      "robots": "index,follow,max-image-preview:large",
+      "editorial_status": "pilot-index-ready",
+      "source_verified_on": "2026-11-06",
+      "factual_scope": "Valve confirms Steam Fighting Fest 2027 for Apr 26-May 3 and explicitly describes eligibility as Fighting Games like those the FGC play, not merely games about fighting. Dedicated Fighting Fest 2027 docs currently return an error, so exact official clock and event-specific exceptions remain unverified. Generic themed-sale rules keep discounts optional while prioritizing discounted released games; eligible demos, Coming Soon and F2P titles can participate unless event-specific docs say otherwise, while Steam Playtests are excluded. Buyer tools separately track fight-stick/leverless/gamepad setup, local vs Remote Play Together vs native online/rollback/cross-play evidence, roster/edition/character-pass total cost and current wishlist-notification thresholds without fabricating lineup, netcode quality or deals.",
+      "sources": [
+        "https://partner.steamgames.com/doc/marketing/upcoming_events",
+        "https://partner.steamgames.com/doc/marketing/upcoming_events/themed_sales/fighting_2027",
+        "https://partner.steamgames.com/doc/marketing/upcoming_events/themed_sales",
+        "https://partner.steamgames.com/doc/features/steam_controller/device",
+        "https://partner.steamgames.com/doc/features/steam_controller/getting_started_for_devs",
+        "https://partner.steamgames.com/doc/features/remoteplay",
+        "https://partner.steamgames.com/doc/marketing/discounts",
+        "https://partner.steamgames.com/doc/marketing/wishlist",
+        "https://partner.steamgames.com/doc/store/application/demos"
+      ]
     }
   ]
 }
