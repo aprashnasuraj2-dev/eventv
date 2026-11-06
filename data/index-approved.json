@@ -411,6 +411,28 @@
         "https://sxsw.com/reservation-policies/",
         "https://sxsw.com/accessibility/"
       ]
+    },
+    {
+      "slug": "web-summit-2027",
+      "page_type": "hub",
+      "output_path": "events/web-summit-2027/index.html",
+      "source_path": "content/pilots/web-summit-2027.html",
+      "robots": "index,follow,max-image-preview:large",
+      "editorial_status": "pilot-index-ready",
+      "source_verified_on": "2026-11-06",
+      "factual_scope": "Web Summit Lisbon 2027 is confirmed for Nov 8-11, 2027 at MEO Arena. The dedicated 2027 page describes 17 content tracks plus Centre Stage and general-ticket access to talks, masterclasses, roundtables, curated meetups, exhibition, Night Summit, partner perks and the mobile app. A current 2027 2-for-1 page advertises two tickets for €950 total with no verified expiry date; this is not converted into a €475 standalone-ticket claim. The 2027 page still links to the 2026 schedule, so no 2027 speakers, stage times or complete venue footprint are asserted. Startup applications are open for 2027; current organizer guidance says successful startup applicants receive three tickets and uses an ALPHA/BETA/GROWTH selection framework, but acceptance and exact 2027 package price/deadlines remain discretionary/pending. Lisbon 2027 investor-ticket price/availability and 2027 online/replay access remain unverified. MEO Arena and Lisbon Metro provide a current Oriente/Red-line/airport baseline, while 2026 event shuttles, registration hours and other event-specific travel details are not carried forward. Browser-local tools cover agenda conflicts, access-path comparison, startup framework fit, user-buffered transit planning and networking evidence.",
+      "sources": [
+        "https://websummit.com/web-summit-2027/",
+        "https://websummit.com/2-for-1/",
+        "https://websummit.com/startups/startup-journey/",
+        "https://websummit.com/blog/startups-investors/how-we-select-our-startups/",
+        "https://websummit.com/terms-and-conditions/",
+        "https://websummit.com/investor-accreditation-policy/",
+        "https://arena.meo.pt/contactos/",
+        "https://arena.meo.pt/planear-visita/como-chegar/",
+        "https://www.metrolisboa.pt/en/lisboa-by-metro-from-airport/",
+        "https://www.metrolisboa.pt/en/travel/timetables-and-frequency/"
+      ]
     }
   ]
 }
