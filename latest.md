@@ -4,22 +4,22 @@
 > Read this file first whenever resuming EventV. Update it **in the same commit/PR** as every meaningful repository change. Historical research files remain references, not the live project status.
 >
 > **Last reviewed:** 2026-11-06 (Asia/Kathmandu)  
-> **Checkpoint:** Eighteenth editorial pilot built — Adobe MAX 2027 announcement-status, session, workflow and budget-planning hub  
-> **Status:** **18 SOURCE-VERIFIED INDEX-READY PILOT HUBS MERGED TO MAIN; LIVE DEPLOYMENT NOT PERFORMED**
+> **Checkpoint:** Nineteenth editorial pilot prepared — Eurovision 2027 Burgas show-time, ticket, participant and result-evidence hub  
+> **Status:** **TOPIC #19 PREPARED ON FEATURE BRANCH; PR/CI/MAIN MERGE PENDING; LIVE DEPLOYMENT NOT PERFORMED**
 
 ## 1. Current verified state
 
 | Area | Status | Verified detail |
 |---|---|---|
 | GitHub repo | **Working** | [`aprashnasuraj2-dev/eventv`](https://github.com/aprashnasuraj2-dev/eventv), default branch `main` |
-| Most recent feature change | **Merged** | [PR #30](https://github.com/aprashnasuraj2-dev/eventv/pull/30), squash commit [`4add771`](https://github.com/aprashnasuraj2-dev/eventv/commit/4add7711ad976c6537c0630ada53ae67217aaf8d) — Adobe MAX 2027 pilot |
-| CI at feature checkpoint | **PR #30 checks passed** | [GitHub Actions run 42179363969](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42179363969); merged `main` source re-read confirms hub, 18 approvals and noindex spokes |
+| Most recent feature change | **Last merged feature: PR #30; Topic #19 branch in progress** | [PR #30](https://github.com/aprashnasuraj2-dev/eventv/pull/30), squash commit [`4add771`](https://github.com/aprashnasuraj2-dev/eventv/commit/4add7711ad976c6537c0630ada53ae67217aaf8d) — Adobe MAX 2027 pilot |
+| CI at feature checkpoint | **Last merged feature CI passed; Topic #19 CI pending** | [GitHub Actions run 42179363969](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42179363969) was the prior feature check |
 | Candidate event topics | **50 defined** | [`data/events-50.json`](data/events-50.json), [ranked topics](TOP_50_TOPICS.md); eclipses excluded |
 | Search intents | **1,000 generated hypotheses** | [`research/search-intents-1000.csv`](research/search-intents-1000.csv); **not** verified keyword volumes, demand or attainable rankings |
 | Canonical event routes | **200 mapped** | [`research/routes-200.csv`](research/routes-200.csv) |
 | Generated static pages | **202 HTML files** | 50 event hubs + 50 planning + 50 during + 50 after = **200** event pages; 2 index/navigation pages |
-| Build and validation | **PR #30 passed build + validation + checkpoint enforcement; merged `main` source reverified** | `node scripts/build.mjs`, `node scripts/validate.mjs` on Node 22 |
-| Individual SEO-ready event pages | **18 source-verified hubs registered on main** | Eighteen hubs are merged on main; Adobe MAX 2027 keeps date/city/venue/registration/pricing/keynote/catalog at TBA, 2024–26 history explicitly non-predictive, 2026 prices and hands-on limits historical-only, browser-local time/session/workflow/budget tools, compact references and `index,follow`; **not deployed live** |
+| Build and validation | **Prior feature passed; Topic #19 branch validation pending** | `node scripts/build.mjs`, `node scripts/validate.mjs` on Node 22 |
+| Individual SEO-ready event pages | **18 source-verified hubs on main + Topic #19 candidate on feature branch** | Eighteen prior hubs remain merged on main; Eurovision 2027 is prepared on the feature branch with confirmed May 11/13/15 Arena Burgas Live Shows, 21:00 CEST vs 22:00 EEST distinction, early-2027 nine-show ticket sale still unopened, current 36/31/5 broadcaster structure timestamped with Spain/Slovenia pending, and browser-local show-time/stay/ticket/entry/result tools; **not deployed live** |
 | Subdomains | **Proposed only** | 50 optional names in manifest; **no** DNS/TLS/host routing configured |
 | Website deployment | **Not performed** | No deployment to aafnaipatro.com, Cloudflare, Pages, or standalone event host verified |
 | Adsterra monetization | **Not implemented in EventV** | No event ad scripts, verified paid impressions or realized CPM measured by this repo |
@@ -50,7 +50,7 @@
 | **P1** | Launch **only approved URLs** after staging QA | HTTP checks, user-visible functionality, metadata/schema/source checks, production click tests, no regressions, smoke-test log | **TODO** |
 | **P2** | Repeat for more event clusters based on observed performance | Actual GSC impressions/clicks, engaged visits, verified paid ads and content-hours ROI; stop low-value clusters | **TODO** |
 
-**Next action to execute:** Continue sequentially with Topic #19 Eurovision 2027. Revalidate the official May 11–15 event window, host city/venue, ticketing and show structure from Eurovision/EBU primary sources and build differentiated show-time, travel and result-evidence tools without fabricating running order, qualifiers or winners. Never deploy live; keep all unfinished routes `noindex`; 182 event routes remain unapproved.
+**Next action to execute:** Complete Topic #19 Eurovision 2027 through PR → CI → merge → main verification. Then continue sequentially with Topic #20 Steam Racing Fest 2027, revalidating official Apr 12–19 dates, exact clock if available, eligibility/discount behavior and building differentiated racing-input, demo/discount and wishlist planning tools without fabricating lineup or deals. Never deploy live; keep all unfinished routes `noindex`; main currently has 182 unapproved event routes, falling to 181 only if Topic #19 merges.
 
 ## 4. Implementation files and run commands
 
@@ -83,6 +83,7 @@ For any new feature, create a branch from current `main`, make the change, updat
 
 | Date | Change | Verified evidence |
 |---|---|---|
+| 2026-11-06 | Topic #19 Eurovision 2027 prepared on feature branch: May 11/13/15 Arena Burgas Live Shows and 21:00 CEST broadcast times confirmed, with explicit 22:00 EEST Burgas-local conversion; nine-show ticket sale expected early 2027 but not yet open and Eurofan required; Oct 28 snapshot holds 36 confirmed broadcasters / 31 current semifinal entries / five pre-qualified while Spain and Slovenia remain undecided until December and January draw is pending; show-time converter, stay planner, ticket-readiness checklist, entry ledger and result-evidence ledger added | PR/CI/merge pending; no live deployment |
 | 2026-11-06 | Built eighteenth pilot: Adobe MAX 2027 with official 2027 date/city/venue/registration/pricing/keynote/session catalog held at TBA; current site remains MAX 2026 Nov 10–12 Miami Beach + online with Nov 8–9 preconference; 2024/2025/2026 date-city history remains explicitly non-predictive; 2026 prices and lab/photowalk limits stay historical-only; verified-time converter, session conflict planner, workflow maturity ledger and user-entered cost/value model added | [PR #30](https://github.com/aprashnasuraj2-dev/eventv/pull/30) merged as `4add771`; [passing PR CI 42179363969](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42179363969); merged `main` re-read confirms 18 approvals and all three Adobe MAX spokes remain `noindex`; no live deployment |
 | 2026-11-06 | Built seventeenth pilot: The Game Awards 2026 with Dec 10 Peacock Theater event and 4:30pm PT / 7:30pm ET opening confirmed; Peacock doors 3:30pm; Oct 29 public-ticket sale verified but inventory/prices remain dynamic; official homepage still says nominees coming mid-November; 90% jury/10% fan blend, Dec 9 6pm PT fan-vote close, Nov 20 9pm PT main eligibility and Nov 30 Players’ Voice cutoffs preserved; timezone, arrival, eligibility, nominee and result-evidence tools added | [PR #28](https://github.com/aprashnasuraj2-dev/eventv/pull/28) merged as `de11d7b`; [passing PR CI 42177989867](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42177989867); merged `main` re-read confirms 17 approvals and all three TGA spokes remain `noindex`; no live deployment |
 | 2026-11-06 | Built sixteenth pilot: Summer Game Fest 2027 with official date, city/venue, flagship time, ticketing and participants held at TBA; current SGF site remains the 2026 archive and only supports month-level “every June” context; historical 2026 directory examples span Jun 1–9 and remain explicitly non-predictive; showcase ledger, verified-time converter, overlap checker and confirmed-vs-rumored reveal matrix added | [PR #26](https://github.com/aprashnasuraj2-dev/eventv/pull/26) merged as `e09663a`; [passing PR CI 42177279813](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42177279813); merged `main` re-read confirms 16 approvals and all three SGF spokes remain `noindex`; no live deployment |
