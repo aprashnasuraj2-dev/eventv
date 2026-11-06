@@ -7,7 +7,7 @@ const intents=fs.readFileSync('research/search-intents-1000.csv','utf8').trim().
 assert.equal(data.length,50);assert.equal(new Set(data.map(e=>e.slug)).size,50);
 assert.equal(rows.length,201);assert.equal(intents.length,1001);
 assert.equal(data.filter(e=>e.slug.includes('eclipse')).length,0);
-assert.equal(approvals.length,13,'Pilot release currently expects exactly thirteen index-approved routes');
+assert.equal(approvals.length,14,'Pilot release currently expects exactly fourteen index-approved routes');
 for(const e of data){assert.equal(e.facets.length,5);for(const p of ['hub','planning','during','after']){
   const filepath='events/'+e.slug+'/'+(p==='hub'?'':p+'/')+'index.html';
   assert.ok(fs.existsSync(filepath),filepath);
@@ -52,7 +52,7 @@ assert.ok(wwdc.includes('Official date</span><strong>TBA'),'WWDC27 official date
 assert.ok(wwdc.includes('Official keynote time</span><strong>TBA'),'WWDC27 keynote time must remain TBA until source update');
 assert.ok(!wwdc.includes('"@type":"Event"'),'WWDC27 must not use Event schema before date announcement');
 assert.ok(fs.existsSync('index.html')&&fs.existsSync('events/index.html'));
-console.log('Validated: 50 clusters; 1000 intent rows; 200 event pages; 202 HTML total; 13 source-verified pilot hubs index-ready; all remaining event pages noindex');
+console.log('Validated: 50 clusters; 1000 intent rows; 200 event pages; 202 HTML total; 14 source-verified pilot hubs index-ready; all remaining event pages noindex');
 const summer=fs.readFileSync('events/steam-summer-sale-2027/index.html','utf8');
 assert.ok(summer.includes('June 24–July 8, 2027'),'Summer Sale page must preserve official date range');
 assert.ok(summer.includes('Exact start time</span><strong>TBA'),'Summer Sale exact clock must remain TBA until source update');
@@ -153,3 +153,21 @@ assert.ok(cyber.includes('five-day shopping period'),'Cyber Monday NRF calendar 
 assert.ok(!cyber.includes('"@type":"Event"'),'Cyber Monday commerce guide must not use Event schema');
 for(const ext of ['css','js'])assert.ok(fs.existsSync('assets/cyber-monday-2027.'+ext),'Missing Cyber Monday asset '+ext);
 assert.ok(fs.existsSync('assets/cyber-monday-2027-social.svg'),'Missing Cyber Monday social image');
+
+const rwc=fs.readFileSync('events/rugby-world-cup-2027/index.html','utf8');
+assert.ok(rwc.includes('October 1–November 13, 2027'),'RWC 2027 tournament window missing');
+assert.ok(rwc.includes('24 teams · six pools · Round of 16')||rwc.includes('24 teams</strong>'),'RWC 2027 format summary missing');
+assert.ok(rwc.includes('all 52 matches')||rwc.includes('52-match schedule'),'RWC 2027 confirmed full schedule missing');
+assert.ok(rwc.includes('Seven host cities')||rwc.includes('Seven cities. Eight stadiums.'),'RWC 2027 host-city scope missing');
+for(const venue of ['Adelaide Oval','Brisbane Stadium','Docklands Stadium','Newcastle Stadium','Perth Stadium','Stadium Australia','Sydney Football Stadium','North Queensland Stadium'])assert.ok(rwc.includes(venue),'RWC venue missing: '+venue);
+for(const id of ['schedule-tool','team-path','itinerary','cities','tickets','references'])assert.ok(rwc.includes('id="'+id+'"'),'RWC tool/evidence section missing: '+id);
+assert.ok(rwc.includes('Tickets on sale now'),'RWC current official ticket status snapshot missing');
+assert.ok(rwc.includes('Per-match ticket inventory')||rwc.includes('per-match ticket inventory'),'RWC ticket availability caveat missing');
+assert.ok(rwc.includes('gate-opening')&&rwc.includes('closer to the tournament'),'RWC unknown gate-opening status missing');
+assert.ok(rwc.includes('appears stale for general ticketing'),'RWC official-source freshness conflict note missing');
+assert.ok(rwc.includes('No live score, ticket-inventory, transport or broadcaster feed is active.'),'RWC no-live-feed warning missing');
+assert.ok(!rwc.includes('"@type":"Event"'),'RWC multi-venue tournament hub intentionally avoids Event schema');
+const rwcjs=fs.readFileSync('assets/rugby-world-cup-2027.js','utf8');
+assert.ok((rwcjs.match(/\['(?:pool|r16|qf|sf|bronze|final)'/g)||[]).length===52,'RWC embedded schedule must contain exactly 52 matches');
+for(const ext of ['css','js'])assert.ok(fs.existsSync('assets/rugby-world-cup-2027.'+ext),'Missing RWC asset '+ext);
+assert.ok(fs.existsSync('assets/rugby-world-cup-2027-social.svg'),'Missing RWC social image');
