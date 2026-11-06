@@ -4,22 +4,22 @@
 > Read this file first whenever resuming EventV. Update it **in the same commit/PR** as every meaningful repository change. Historical research files remain references, not the live project status.
 >
 > **Last reviewed:** 2026-11-06 (Asia/Kathmandu)  
-> **Checkpoint:** Thirteenth editorial pilot prepared — Cyber Monday 2027 online-buying verification hub  
-> **Status:** **TOPIC #13 PREPARED ON FEATURE BRANCH; PR/CI/MAIN MERGE PENDING; LIVE DEPLOYMENT NOT PERFORMED**
+> **Checkpoint:** Thirteenth editorial pilot built — Cyber Monday 2027 online-buying verification hub  
+> **Status:** **13 SOURCE-VERIFIED INDEX-READY PILOT HUBS MERGED TO MAIN; LIVE DEPLOYMENT NOT PERFORMED**
 
 ## 1. Current verified state
 
 | Area | Status | Verified detail |
 |---|---|---|
 | GitHub repo | **Working** | [`aprashnasuraj2-dev/eventv`](https://github.com/aprashnasuraj2-dev/eventv), default branch `main` |
-| Most recent feature change | **Last merged feature: PR #18; Topic #13 branch in progress** | [PR #18](https://github.com/aprashnasuraj2-dev/eventv/pull/18), squash commit [`9e2c9ce`](https://github.com/aprashnasuraj2-dev/eventv/commit/9e2c9ce02dea3192a1e2b3195b2f93358a8f8e19) — Microsoft Build 2027 pilot |
-| CI at feature checkpoint | **Last merged feature CI passed; Topic #13 CI pending** | [GitHub Actions run 42027633190](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42027633190) was the prior feature check |
+| Most recent feature change | **Merged** | [PR #20](https://github.com/aprashnasuraj2-dev/eventv/pull/20), squash commit [`05bedb2`](https://github.com/aprashnasuraj2-dev/eventv/commit/05bedb2eba5daf02c802360a1d3bc19c14b53d58) — Cyber Monday 2027 pilot |
+| CI at feature checkpoint | **PR #20 checks passed** | [GitHub Actions run 42153672476](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42153672476); merged `main` source re-read confirms hub and noindex spokes |
 | Candidate event topics | **50 defined** | [`data/events-50.json`](data/events-50.json), [ranked topics](TOP_50_TOPICS.md); eclipses excluded |
 | Search intents | **1,000 generated hypotheses** | [`research/search-intents-1000.csv`](research/search-intents-1000.csv); **not** verified keyword volumes, demand or attainable rankings |
 | Canonical event routes | **200 mapped** | [`research/routes-200.csv`](research/routes-200.csv) |
 | Generated static pages | **202 HTML files** | 50 event hubs + 50 planning + 50 during + 50 after = **200** event pages; 2 index/navigation pages |
-| Build and validation | **Prior feature passed; Topic #13 branch validation pending** | `node scripts/build.mjs`, `node scripts/validate.mjs` on Node 22 |
-| Individual SEO-ready event pages | **12 source-verified hubs on main + Topic #13 candidate on feature branch** | Twelve prior hubs remain merged on main; Cyber Monday 2027 is prepared on the feature branch with Nov 29 transparently rule-derived from OPM + NRF, retailer clock/prices/stock unknown, and BF-vs-CM/subscription/delivery/return verification tools; **not deployed live** |
+| Build and validation | **PR #20 passed build + validation + checkpoint enforcement; merged `main` source reverified** | `node scripts/build.mjs`, `node scripts/validate.mjs` on Node 22 |
+| Individual SEO-ready event pages | **13 source-verified hubs registered on main** | Thirteen hubs are merged on main; Cyber Monday 2027 retains Nov 29 transparently rule-derived from OPM + NRF, retailer clock/prices/stock unknown, BF-vs-CM/subscription/delivery/return verification tools, compact references and `index,follow`; **not deployed live** |
 | Subdomains | **Proposed only** | 50 optional names in manifest; **no** DNS/TLS/host routing configured |
 | Website deployment | **Not performed** | No deployment to aafnaipatro.com, Cloudflare, Pages, or standalone event host verified |
 | Adsterra monetization | **Not implemented in EventV** | No event ad scripts, verified paid impressions or realized CPM measured by this repo |
@@ -50,7 +50,7 @@
 | **P1** | Launch **only approved URLs** after staging QA | HTTP checks, user-visible functionality, metadata/schema/source checks, production click tests, no regressions, smoke-test log | **TODO** |
 | **P2** | Repeat for more event clusters based on observed performance | Actual GSC impressions/clicks, engaged visits, verified paid ads and content-hours ROI; stop low-value clusters | **TODO** |
 
-**Next action to execute:** Complete Topic #13 Cyber Monday 2027 through PR → CI → merge → main verification. Then continue sequentially with Topic #14 Rugby World Cup 2027, revalidating official tournament dates and building differentiated match/travel planning tools without inventing kickoff times, ticket availability or team progression. Never deploy live; keep all unfinished routes `noindex`; main currently has 188 unapproved event routes, falling to 187 only if Topic #13 merges.
+**Next action to execute:** Continue sequentially with Topic #14 Rugby World Cup 2027. Revalidate official tournament dates and host-city/stadium facts from Rugby World Cup / World Rugby primary sources, build differentiated match/travel planning tools, and do not invent kickoff times, ticket availability, prices or team progression. Never deploy live; keep all unfinished routes `noindex`; 187 event routes remain unapproved.
 
 ## 4. Implementation files and run commands
 
@@ -83,7 +83,7 @@ For any new feature, create a branch from current `main`, make the change, updat
 
 | Date | Change | Verified evidence |
 |---|---|---|
-| 2026-11-06 | Topic #13 Cyber Monday 2027 prepared on feature branch: Nov 29 transparently derived from OPM Thanksgiving Nov 25 plus NRF five-day shopping-period definition; no universal retailer clock, 2027 prices/coupons/stock asserted; BF-vs-CM comparator, subscription renewal/lifetime audit, delivery-buffer planner, return-deadline calculator and seller checklist added | PR/CI/merge pending; no live deployment |
+| 2026-11-06 | Built thirteenth pilot: Cyber Monday 2027 with Nov 29 transparently derived from OPM Thanksgiving Nov 25 plus NRF five-day shopping-period definition; no universal retailer clock, 2027 prices/coupons/stock asserted; BF-vs-CM comparator, subscription renewal/lifetime audit, delivery-buffer planner, return-deadline calculator and seller checklist added | [PR #20](https://github.com/aprashnasuraj2-dev/eventv/pull/20) merged as `05bedb2`; [passing PR CI 42153672476](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42153672476); merged `main` re-read confirms 13 approvals and all three Cyber Monday spokes remain `noindex`; no live deployment |
 | 2026-11-05 | Built twelfth pilot: Microsoft Build 2027 with official date/location/keynote/registration held at TBA; current Build site remains 2026 archive; historical 2024–2026 timing non-predictive; 2026 session-catalog Jun 2–4 scope kept separate from Build Live Jun 2–3 coverage; blank verified-time converter, maturity ledger, pre/post baseline diff and migration/pricing triage added | [PR #18](https://github.com/aprashnasuraj2-dev/eventv/pull/18) merged as `9e2c9ce`; [passing PR CI 42027633190](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42027633190); merged `main` re-read confirms 12 approvals and all three Build spokes remain `noindex`; no live deployment |
 | 2026-11-05 | Built eleventh pilot: Steam Couch Co-op Fest 2027 with Valve-confirmed Feb 8–15 and same-device local co-op criterion; event-specific doc currently errors so exact clock remains unverified; no final lineup or title-specific discounts asserted; household setup checker, Remote Play evidence interpreter, browser-local game shortlist and fair-turn rotation planner added | [PR #16](https://github.com/aprashnasuraj2-dev/eventv/pull/16) merged as `0aee565`; initial CI 42026104402 caught canonical event-name capitalization mismatch; corrected branch passed [CI 42026196214](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42026196214); merged `main` re-read confirms 11 approvals and all three Couch Co-op spokes remain `noindex`; no live deployment |
 | 2026-11-05 | Built tenth pilot: Black Friday 2027 with Nov 26 transparently derived from OPM Thanksgiving Nov 25; no retailer-specific 2027 times/prices/stock asserted; deal-math checker, total-cost comparator, browser-local price-evidence ledger, return/shipping checklist, compact official references | [PR #14](https://github.com/aprashnasuraj2-dev/eventv/pull/14) merged as `dffb6d9`; [passing PR CI 42024907394](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42024907394); merged `main` re-read confirms 10 approvals and all three Black Friday spokes remain `noindex`; no live deployment |
