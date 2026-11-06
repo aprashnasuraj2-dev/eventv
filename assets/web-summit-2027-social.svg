@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+<title id="title">Web Summit 2027 Lisbon planning hub</title><desc id="desc">Independent EventV graphic for Web Summit 2027 ticket, startup, networking and transit planning.</desc>
+<rect width="1200" height="630" fill="#081c2c"/>
+<g opacity=".18" stroke="#57d4d8" stroke-width="5"><path d="M760 0l440 440M650 0l550 550M870 0l330 330M980 0l220 220"/><path d="M1200 30L630 600M1200 150L750 600M1200 270L870 600"/></g>
+<circle cx="1020" cy="135" r="145" fill="#ffd34e"/>
+<rect x="80" y="82" width="18" height="18" transform="rotate(45 89 91)" fill="#57d4d8"/><rect x="107" y="82" width="18" height="18" transform="rotate(45 116 91)" fill="#ff6a4d"/>
+<text x="145" y="102" font-family="Arial, sans-serif" font-size="27" font-weight="700" fill="#f5f1e7" letter-spacing="3">EVENTV · AAFNAIPATRO</text>
+<text x="80" y="245" font-family="Arial, sans-serif" font-size="100" font-weight="900" fill="#f5f1e7">WEB SUMMIT</text>
+<text x="80" y="335" font-family="Arial, sans-serif" font-size="88" font-weight="900" fill="#57d4d8">2027 · LISBON</text>
+<text x="80" y="397" font-family="Arial, sans-serif" font-size="31" font-weight="700" fill="#c9d8e1">ticket · startup · schedule · transit · networking</text>
+<g font-family="Arial, sans-serif" font-weight="700"><rect x="80" y="455" rx="20" width="250" height="60" fill="#ffd34e"/><text x="104" y="493" font-size="22" fill="#081c2c">NOV 8–11</text><rect x="350" y="455" rx="20" width="300" height="60" fill="#57d4d8"/><text x="375" y="493" font-size="22" fill="#081c2c">MEO ARENA</text><rect x="670" y="455" rx="20" width="360" height="60" fill="#ff6a4d"/><text x="696" y="493" font-size="22" fill="#fff">SCHEDULE PENDING</text></g>
+<text x="80" y="570" font-family="Arial, sans-serif" font-size="22" fill="#8faabb">official-source snapshot · browser-side planning · no live feed</text>
+</svg>
