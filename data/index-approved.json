@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-05",
+  "version": "2026-11-06",
   "approved": [
     {
       "slug": "steam-next-fest-february-2027",
@@ -208,6 +208,23 @@
         "https://news.microsoft.com/build-2026-live-blog/microsoft-build-2026-live/",
         "https://news.microsoft.com/microsoft-events/",
         "https://news.microsoft.com/build-2024-book-of-news/"
+      ]
+    },
+    {
+      "slug": "cyber-monday-2027",
+      "page_type": "hub",
+      "output_path": "events/cyber-monday-2027/index.html",
+      "source_path": "content/pilots/cyber-monday-2027.html",
+      "robots": "index,follow,max-image-preview:large",
+      "editorial_status": "pilot-index-ready",
+      "source_verified_on": "2026-11-06",
+      "factual_scope": "Cyber Monday 2027 is transparently rule-derived as Monday Nov 29 from OPM's official Thanksgiving Day Nov 25 date and NRF's definition of the five-day Thanksgiving shopping period continuing through the following Monday. No universal retailer start/end time, 2027 prices, coupons, inventory or best-deal claims asserted. Page includes BF-vs-CM same-item total comparison, subscription renewal/lifetime cost audit, delivery-buffer planner, return-deadline calculator and seller verification checklist.",
+      "sources": [
+        "https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/",
+        "https://cdn.nrf.com/research-insights/holiday-data-and-trends/winter-holidays/winter-holiday-faqs",
+        "https://consumer.ftc.gov/articles/online-shopping",
+        "https://www.ftc.gov/legal-library/browse/rules/mail-internet-or-telephone-order-merchandise-rule",
+        "https://consumer.ftc.gov/articles/buying-online-marketplace"
       ]
     }
   ]
