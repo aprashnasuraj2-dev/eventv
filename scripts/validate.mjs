@@ -495,3 +495,46 @@ for(const stage of ['planning','during','after']){
   const spoke=fs.readFileSync('events/black-friday-2027/'+stage+'/index.html','utf8');
   assert.ok(spoke.includes('noindex,follow'),'Black Friday 2027 unfinished '+stage+' route must remain noindex,follow');
 }
+
+
+const cyberMonday27Data=data.find(e=>e.slug==='cyber-monday-2027');
+assert.equal(cyberMonday27Data.start,'2027-11-29','Cyber Monday 2027 manifest date must remain Nov 29, 2027');
+assert.equal(cyberMonday27Data.end,'2027-11-29','Cyber Monday 2027 manifest must remain single-day');
+assert.equal(cyberMonday27Data.date_status,'rule-derived','Cyber Monday 2027 must remain rule-derived');
+assert.equal(cyberMonday27Data.source,'https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/','Cyber Monday 2027 manifest must use primary OPM Thanksgiving anchor');
+const cyberMonday27=fs.readFileSync('events/cyber-monday-2027/index.html','utf8');
+const cyberMonday27Source=fs.readFileSync('content/pilots/cyber-monday-2027.html','utf8');
+const cyberMonday27Js=fs.readFileSync('assets/cyber-monday-2027.js','utf8');
+assert.equal(cyberMonday27,cyberMonday27Source,'Cyber Monday 2027 approved output must byte-match editorial source');
+assert.ok(cyberMonday27.includes('Thursday, November 25')||cyberMonday27.includes('Thu · Nov 25'),'Cyber Monday 2027 Thanksgiving anchor missing');
+assert.ok(cyberMonday27.includes('Monday, November 29')||cyberMonday27.includes('Mon · Nov 29'),'Cyber Monday 2027 rule-derived date missing');
+assert.ok(cyberMonday27.includes('exact-plan fingerprint')||cyberMonday27.includes('exact plan fingerprint'),'Cyber Monday 2027 exact-plan comparison missing');
+for(const field of ['Plan / tier','Seats / users','Billing term months','Storage / usage allowance','Support level','AI/API credits','Commercial rights','Version / edition','Seller / billing channel'])assert.ok(cyberMonday27.includes(field),'Cyber Monday 2027 plan fingerprint missing field: '+field);
+assert.ok(cyberMonday27.includes('Lower first-term price ≠ lower contract cost'),'Cyber Monday 2027 contract-cost counterexample missing');
+assert.ok(cyberMonday27.includes('Trial-conversion and renewal timeline'),'Cyber Monday 2027 free-trial conversion tool missing');
+assert.ok(cyberMonday27Js.includes('firstCharge=addDays(start,trialDays)')&&cyberMonday27Js.includes('cancelTarget=addDays(firstCharge,-buffer)'),'Cyber Monday 2027 trial charge/cancel timing logic missing');
+assert.ok(cyberMonday27.includes('Subscription vs perpetual-license horizon comparator'),'Cyber Monday 2027 lifetime/perpetual comparator missing');
+assert.ok(cyberMonday27.includes('“Lifetime” is not treated as a universal legal or technical duration'),'Cyber Monday 2027 lifetime non-assumption missing');
+assert.ok(cyberMonday27.includes('Lower cumulative cash ≠ equivalent product scope'),'Cyber Monday 2027 component-vs-system scope counterexample missing');
+assert.ok(cyberMonday27.includes('VAT / GST / FX checkout normalizer'),'Cyber Monday 2027 regional gross-cost tool missing');
+assert.ok(cyberMonday27.includes('A$75,000'),'Cyber Monday 2027 Australia digital-GST threshold missing');
+assert.ok(cyberMonday27.includes('Jan 1, 2027 OSS/IOSS clarifications'),'Cyber Monday 2027 EU ViDA boundary missing');
+assert.ok(cyberMonday27.includes('usual place of residence and province'),'Cyber Monday 2027 Canada GST/HST location logic missing');
+assert.ok(cyberMonday27.includes('Renewal and cancellation evidence ledger'),'Cyber Monday 2027 cancellation ledger missing');
+assert.ok(cyberMonday27Js.includes("eventv:cyber-monday-2027:cancellation-evidence:v2"),'Cyber Monday 2027 cancellation localStorage key missing');
+assert.ok(cyberMonday27.includes('does not cancel the service, send reminders or access your account'),'Cyber Monday 2027 cancellation capability boundary missing');
+assert.ok(cyberMonday27.includes('future-law revalidation gate'),'Cyber Monday 2027 legal revalidation gate missing');
+assert.ok(cyberMonday27.includes('2024 amended Negative Option Rule was vacated')&&cyberMonday27.includes('prior rule was reinstated'),'Cyber Monday 2027 current US negative-option status missing');
+assert.ok(cyberMonday27.includes('expected in Spring 2027')&&cyberMonday27.includes('detailed 2026 regulations are still draft'),'Cyber Monday 2027 UK future-law uncertainty missing');
+assert.ok(cyberMonday27.includes('does not treat them as operative Nov 2027 law until reverified'),'Cyber Monday 2027 UK non-assumption missing');
+assert.ok(cyberMonday27.includes('No live software-price, coupon, subscription-status, renewal, tax, FX or cancellation feed is active.'),'Cyber Monday 2027 no-live-feed warning missing');
+assert.ok(cyberMonday27.includes('Any claim about the operative U.S. or UK subscription regime on Nov 29, 2027 must be revalidated'),'Cyber Monday 2027 future-law source warning missing');
+for(const id of ['delta','trial','license','regional','cancel','legal','calendar','faq','freshness','references'])assert.ok(cyberMonday27.includes('id="'+id+'"'),'Cyber Monday 2027 tool/evidence section missing: '+id);
+assert.ok(!cyberMonday27.includes('"@type":"Event"'),'Cyber Monday 2027 retail-calendar guide must not misuse Event schema');
+for(const ext of ['css','js'])assert.ok(fs.existsSync('assets/cyber-monday-2027.'+ext),'Missing Cyber Monday 2027 asset '+ext);
+assert.ok(fs.existsSync('assets/cyber-monday-2027-social.svg'),'Missing Cyber Monday 2027 social image');
+for(const stage of ['planning','during','after']){
+  const spoke=fs.readFileSync('events/cyber-monday-2027/'+stage+'/index.html','utf8');
+  assert.ok(spoke.includes('noindex,follow'),'Cyber Monday 2027 unfinished '+stage+' route must remain noindex,follow');
+  assert.ok(spoke.includes('https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/'),'Cyber Monday 2027 '+stage+' route must use OPM date anchor');
+}
