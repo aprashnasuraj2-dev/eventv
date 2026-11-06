@@ -645,8 +645,8 @@
       "rank": 23,
       "name": "Web Summit 2027",
       "slug": "web-summit-2027",
-      "start": null,
-      "end": null,
+      "start": "2027-11-08",
+      "end": "2027-11-11",
       "category": "Technology",
       "geo": [
         "PT",
@@ -655,8 +655,8 @@
         "US",
         "CA"
       ],
-      "source": "https://websummit.com/",
-      "date_status": "unannounced",
+      "source": "https://websummit.com/web-summit-2027/",
+      "date_status": "confirmed",
       "job": "Target travel planning and startup networking with verified track access.",
       "facets": [
         "Lisbon event and stage schedules",
