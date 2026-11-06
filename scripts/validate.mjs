@@ -7,7 +7,7 @@ const intents=fs.readFileSync('research/search-intents-1000.csv','utf8').trim().
 assert.equal(data.length,50);assert.equal(new Set(data.map(e=>e.slug)).size,50);
 assert.equal(rows.length,201);assert.equal(intents.length,1001);
 assert.equal(data.filter(e=>e.slug.includes('eclipse')).length,0);
-assert.equal(approvals.length,14,'Pilot release currently expects exactly fourteen index-approved routes');
+assert.equal(approvals.length,15,'Pilot release currently expects exactly fifteen index-approved routes');
 for(const e of data){assert.equal(e.facets.length,5);for(const p of ['hub','planning','during','after']){
   const filepath='events/'+e.slug+'/'+(p==='hub'?'':p+'/')+'index.html';
   assert.ok(fs.existsSync(filepath),filepath);
@@ -52,7 +52,7 @@ assert.ok(wwdc.includes('Official date</span><strong>TBA'),'WWDC27 official date
 assert.ok(wwdc.includes('Official keynote time</span><strong>TBA'),'WWDC27 keynote time must remain TBA until source update');
 assert.ok(!wwdc.includes('"@type":"Event"'),'WWDC27 must not use Event schema before date announcement');
 assert.ok(fs.existsSync('index.html')&&fs.existsSync('events/index.html'));
-console.log('Validated: 50 clusters; 1000 intent rows; 200 event pages; 202 HTML total; 14 source-verified pilot hubs index-ready; all remaining event pages noindex');
+console.log('Validated: 50 clusters; 1000 intent rows; 200 event pages; 202 HTML total; 15 source-verified pilot hubs index-ready; all remaining event pages noindex');
 const summer=fs.readFileSync('events/steam-summer-sale-2027/index.html','utf8');
 assert.ok(summer.includes('June 24–July 8, 2027'),'Summer Sale page must preserve official date range');
 assert.ok(summer.includes('Exact start time</span><strong>TBA'),'Summer Sale exact clock must remain TBA until source update');
@@ -171,3 +171,19 @@ const rwcjs=fs.readFileSync('assets/rugby-world-cup-2027.js','utf8');
 assert.ok((rwcjs.match(/\['(?:pool|r16|qf|sf|bronze|final)'/g)||[]).length===52,'RWC embedded schedule must contain exactly 52 matches');
 for(const ext of ['css','js'])assert.ok(fs.existsSync('assets/rugby-world-cup-2027.'+ext),'Missing RWC asset '+ext);
 assert.ok(fs.existsSync('assets/rugby-world-cup-2027-social.svg'),'Missing RWC social image');
+
+const bts=fs.readFileSync('events/back-to-school-2027/index.html','utf8');
+assert.ok(bts.includes('July 1–September 30')&&bts.includes('editorial planning season'),'Back to School seasonal window must remain editorial-only');
+assert.ok(bts.includes('Universal school date</span><strong>None'),'Back to School must reject a universal school date');
+assert.ok(bts.includes('Universal sale period</span><strong>None'),'Back to School must reject a universal sale period');
+assert.ok(bts.includes('LAUSD')&&bts.includes('August 12, 2027'),'LAUSD 2027 calendar example missing');
+assert.ok(bts.includes('September 6')&&bts.includes('Oxfordshire'),'Oxfordshire 2027 calendar example missing');
+assert.ok(bts.includes('NSW')&&bts.includes('Term 3 starts July 20'),'NSW Southern Hemisphere counterexample missing');
+assert.ok(bts.includes('Queensland')&&bts.includes('Term 3 starts July 12'),'Queensland Southern Hemisphere counterexample missing');
+assert.ok(bts.includes('Aug 6–8, 2027'),'Texas 2027 tax holiday dates missing');
+assert.ok(bts.includes('computers, software and textbooks do not qualify'),'Texas tax-holiday exclusions missing');
+for(const id of ['calendar','supply','prices','tax','device','references'])assert.ok(bts.includes('id="'+id+'"'),'Back to School tool/evidence section missing: '+id);
+assert.ok(bts.includes('No live school-calendar, retailer-price, stock, tax, student-discount or device-catalog feed is active.'),'Back to School no-live-feed warning missing');
+assert.ok(!bts.includes('"@type":"Event"'),'Back to School seasonal guide must not use Event schema');
+for(const ext of ['css','js'])assert.ok(fs.existsSync('assets/back-to-school-2027.'+ext),'Missing Back to School asset '+ext);
+assert.ok(fs.existsSync('assets/back-to-school-2027-social.svg'),'Missing Back to School social image');
