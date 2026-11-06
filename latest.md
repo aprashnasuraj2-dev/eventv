@@ -4,22 +4,22 @@
 > Read this file first whenever resuming EventV. Update it **in the same commit/PR** as every meaningful repository change. Historical research files remain references, not the live project status.
 >
 > **Last reviewed:** 2026-11-06 (Asia/Kathmandu)  
-> **Checkpoint:** Nineteenth editorial pilot built — Eurovision 2027 Burgas show-time, ticket, participant and result-evidence hub  
-> **Status:** **19 SOURCE-VERIFIED INDEX-READY PILOT HUBS MERGED TO MAIN; LIVE DEPLOYMENT NOT PERFORMED**
+> **Checkpoint:** Twentieth editorial pilot prepared — Steam Racing Fest 2027 wheel, demo, discount and wishlist-evidence hub  
+> **Status:** **TOPIC #20 PREPARED ON FEATURE BRANCH; PR/CI/MAIN MERGE PENDING; LIVE DEPLOYMENT NOT PERFORMED**
 
 ## 1. Current verified state
 
 | Area | Status | Verified detail |
 |---|---|---|
 | GitHub repo | **Working** | [`aprashnasuraj2-dev/eventv`](https://github.com/aprashnasuraj2-dev/eventv), default branch `main` |
-| Most recent feature change | **Merged** | [PR #32](https://github.com/aprashnasuraj2-dev/eventv/pull/32), squash commit [`d123557`](https://github.com/aprashnasuraj2-dev/eventv/commit/d123557d8c820fa66d2231e51646690a9cec8d68) — Eurovision 2027 pilot |
-| CI at feature checkpoint | **PR #32 checks passed** | [GitHub Actions run 42180262457](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42180262457); merged `main` source re-read confirms hub, 19 approvals and noindex spokes |
+| Most recent feature change | **Last merged feature: PR #32; Topic #20 branch in progress** | [PR #32](https://github.com/aprashnasuraj2-dev/eventv/pull/32), squash commit [`d123557`](https://github.com/aprashnasuraj2-dev/eventv/commit/d123557d8c820fa66d2231e51646690a9cec8d68) — Eurovision 2027 pilot |
+| CI at feature checkpoint | **Last merged feature CI passed; Topic #20 CI pending** | [GitHub Actions run 42180262457](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42180262457) was the prior feature check |
 | Candidate event topics | **50 defined** | [`data/events-50.json`](data/events-50.json), [ranked topics](TOP_50_TOPICS.md); eclipses excluded |
 | Search intents | **1,000 generated hypotheses** | [`research/search-intents-1000.csv`](research/search-intents-1000.csv); **not** verified keyword volumes, demand or attainable rankings |
 | Canonical event routes | **200 mapped** | [`research/routes-200.csv`](research/routes-200.csv) |
 | Generated static pages | **202 HTML files** | 50 event hubs + 50 planning + 50 during + 50 after = **200** event pages; 2 index/navigation pages |
-| Build and validation | **PR #32 passed build + validation + checkpoint enforcement; merged `main` source reverified** | `node scripts/build.mjs`, `node scripts/validate.mjs` on Node 22 |
-| Individual SEO-ready event pages | **19 source-verified hubs registered on main** | Nineteen hubs are merged on main; Eurovision 2027 retains confirmed May 11/13/15 Arena Burgas Live Shows, 21:00 CEST vs 22:00 EEST distinction, early-2027 nine-show ticket sale still unopened, current 36/31/5 broadcaster structure timestamped with Spain/Slovenia pending, browser-local show-time/stay/ticket/entry/result tools, compact references and `index,follow`; **not deployed live** |
+| Build and validation | **Prior feature passed; Topic #20 branch validation pending** | `node scripts/build.mjs`, `node scripts/validate.mjs` on Node 22 |
+| Individual SEO-ready event pages | **19 source-verified hubs on main + Topic #20 candidate on feature branch** | Nineteen prior hubs remain merged on main; Steam Racing Fest 2027 is prepared on the feature branch with Apr 12–19 confirmed, exact Valve clock held unverified because the dedicated Racing page currently errors, Racing-primary eligibility and generic themed-sale rules preserved, and browser-local wheel/FFB, driving-fit, demo/deal and wishlist tools; **not deployed live** |
 | Subdomains | **Proposed only** | 50 optional names in manifest; **no** DNS/TLS/host routing configured |
 | Website deployment | **Not performed** | No deployment to aafnaipatro.com, Cloudflare, Pages, or standalone event host verified |
 | Adsterra monetization | **Not implemented in EventV** | No event ad scripts, verified paid impressions or realized CPM measured by this repo |
@@ -50,7 +50,7 @@
 | **P1** | Launch **only approved URLs** after staging QA | HTTP checks, user-visible functionality, metadata/schema/source checks, production click tests, no regressions, smoke-test log | **TODO** |
 | **P2** | Repeat for more event clusters based on observed performance | Actual GSC impressions/clicks, engaged visits, verified paid ads and content-hours ROI; stop low-value clusters | **TODO** |
 
-**Next action to execute:** Continue sequentially with Topic #20 Steam Racing Fest 2027. Revalidate official Apr 12–19 dates, exact clock if available, eligibility/discount behavior and build differentiated racing-input, demo/discount and wishlist planning tools without fabricating lineup or deals. Never deploy live; keep all unfinished routes `noindex`; 181 event routes remain unapproved.
+**Next action to execute:** Complete Topic #20 Steam Racing Fest 2027 through PR → CI → merge → main verification. Then continue sequentially with Topic #21 Steam Fighting Fest 2027, revalidating official Apr 26–May 3 dates, event-specific eligibility and discount behavior and building differentiated controller/FGC-mode, demo/discount and local-vs-online play planning tools without fabricating lineup or deals. Never deploy live; keep all unfinished routes `noindex`; main currently has 181 unapproved event routes, falling to 180 only if Topic #20 merges.
 
 ## 4. Implementation files and run commands
 
@@ -83,6 +83,7 @@ For any new feature, create a branch from current `main`, make the change, updat
 
 | Date | Change | Verified evidence |
 |---|---|---|
+| 2026-11-06 | Topic #20 Steam Racing Fest 2027 prepared on feature branch: Apr 12–19 confirmed from Valve; dedicated Racing Fest documentation route currently errors so exact official clock and event-specific exceptions remain unverified; Racing tag + primary-theme eligibility, optional discounts, demos/upcoming/F2P participation and playtest exclusion preserved from generic themed-sale docs; wheel support kept device/game-specific because Valve says Steam Input does not remap racing wheels as generic DirectInput devices; wheel/FFB matrix, subjective driving-fit tool, demo/edition/DLC ledger and wishlist-notification checker added | PR/CI/merge pending; no live deployment |
 | 2026-11-06 | Built nineteenth pilot: Eurovision 2027 with May 11/13/15 Arena Burgas Live Shows and 21:00 CEST broadcast times confirmed, with explicit 22:00 EEST Burgas-local conversion; nine-show ticket sale expected early 2027 but not yet open and Eurofan required; Oct 28 snapshot holds 36 confirmed broadcasters / 31 current semifinal entries / five pre-qualified while Spain and Slovenia remain undecided until December and January draw is pending; show-time converter, stay planner, ticket-readiness checklist, entry ledger and result-evidence ledger added | [PR #32](https://github.com/aprashnasuraj2-dev/eventv/pull/32) merged as `d123557`; [passing PR CI 42180262457](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42180262457); merged `main` re-read confirms 19 approvals and all three Eurovision spokes remain `noindex`; no live deployment |
 | 2026-11-06 | Built eighteenth pilot: Adobe MAX 2027 with official 2027 date/city/venue/registration/pricing/keynote/session catalog held at TBA; current site remains MAX 2026 Nov 10–12 Miami Beach + online with Nov 8–9 preconference; 2024/2025/2026 date-city history remains explicitly non-predictive; 2026 prices and lab/photowalk limits stay historical-only; verified-time converter, session conflict planner, workflow maturity ledger and user-entered cost/value model added | [PR #30](https://github.com/aprashnasuraj2-dev/eventv/pull/30) merged as `4add771`; [passing PR CI 42179363969](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42179363969); merged `main` re-read confirms 18 approvals and all three Adobe MAX spokes remain `noindex`; no live deployment |
 | 2026-11-06 | Built seventeenth pilot: The Game Awards 2026 with Dec 10 Peacock Theater event and 4:30pm PT / 7:30pm ET opening confirmed; Peacock doors 3:30pm; Oct 29 public-ticket sale verified but inventory/prices remain dynamic; official homepage still says nominees coming mid-November; 90% jury/10% fan blend, Dec 9 6pm PT fan-vote close, Nov 20 9pm PT main eligibility and Nov 30 Players’ Voice cutoffs preserved; timezone, arrival, eligibility, nominee and result-evidence tools added | [PR #28](https://github.com/aprashnasuraj2-dev/eventv/pull/28) merged as `de11d7b`; [passing PR CI 42177989867](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42177989867); merged `main` re-read confirms 17 approvals and all three TGA spokes remain `noindex`; no live deployment |
