@@ -386,6 +386,31 @@
         "https://partner.steamgames.com/doc/marketing/wishlist",
         "https://partner.steamgames.com/doc/store/application/demos"
       ]
+    },
+    {
+      "slug": "sxsw-2027",
+      "page_type": "hub",
+      "output_path": "events/sxsw-2027/index.html",
+      "source_path": "content/pilots/sxsw-2027.html",
+      "robots": "index,follow,max-image-preview:large",
+      "editorial_status": "pilot-index-ready",
+      "source_verified_on": "2026-11-06",
+      "factual_scope": "SXSW Conferences & Festivals are confirmed for Mar 15–21, 2027 in Austin; Conference Mar 15–20, Music and Film & TV Mar 15–21, Comedy Mar 17–20. Registration is open. Current Nov 6 cart snapshot: Platinum $1,495, Innovation $995, Film & TV $850, Music $625; prices may change and stale Oct 29 savings copy is preserved as a source conflict. Reservations open Mar 9 (Platinum 11am CT; all badges 2pm CT) with 3/day Platinum and 2/day core vertical badges; Mar 14 expands non-conflicting Film screening reservations. Credentials do not guarantee admission. 340+ PanelPicker sessions and first keynote/featured sessions are announced while Film & TV title lineup remains pending. 2027 clubhouses, Film venues, housing/travel guidance and Feb 27 accessibility deadline are sourced. Tools use user-entered transfer/queue buffers and localStorage; no session, speaker, artist, screening, walking time, inventory or availability is fabricated.",
+      "sources": [
+        "https://sxsw.com/2026/south-by-southwest-2027-dates-announced/",
+        "https://cart.sxsw.com/",
+        "https://support.sxsw.com/hc/en-us/articles/47980297853581-Reservations",
+        "https://sxsw.com/attend-registration-terms-and-conditions/",
+        "https://sxsw.com/2026/everything-you-need-to-know-about-sxsw-2027/",
+        "https://schedule.sxsw.com/",
+        "https://sxsw.com/2026/panelpicker-sessions-announced-for-sxsw-2027/",
+        "https://sxsw.com/keynotes/",
+        "https://sxsw.com/festivals-film-lineup/",
+        "https://sxsw.com/hotels/",
+        "https://sxsw.com/travel/",
+        "https://sxsw.com/reservation-policies/",
+        "https://sxsw.com/accessibility/"
+      ]
     }
   ]
-}
+}\n
