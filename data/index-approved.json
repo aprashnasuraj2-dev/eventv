@@ -306,6 +306,25 @@
         "https://www.peacocktheater.com/events/detail/the-game-awards-121026",
         "https://www.peacocktheater.com/directions"
       ]
+    },
+    {
+      "slug": "adobe-max-2027",
+      "page_type": "hub",
+      "output_path": "events/adobe-max-2027/index.html",
+      "source_path": "content/pilots/adobe-max-2027.html",
+      "robots": "index,follow,max-image-preview:large",
+      "editorial_status": "pilot-index-ready",
+      "source_verified_on": "2026-11-06",
+      "factual_scope": "Adobe MAX 2027 date, city/venue, registration, pricing, keynote time, speakers, session catalog, online schedule and 2027 hands-on session limits remain unannounced in official Adobe sources checked. Current MAX site is the Nov 10-12, 2026 Miami Beach + online event with Nov 8-9 preconference, 200+ sessions and free 2026 online attendance. Historical 2024 Miami Beach Oct 14-16, 2025 Los Angeles Oct 28-30 and 2026 Miami Beach Nov 10-12 are explicitly non-predictive. Tools provide blank verified-time conversion, browser-local session conflict planning, product/workflow maturity tracking and user-entered conference cost/value modeling without copying 2026 prices or rules forward.",
+      "sources": [
+        "https://max.adobe.com/",
+        "https://max.adobe.com/faq/",
+        "https://max.adobe.com/max-online",
+        "https://max.adobe.com/pricing/",
+        "https://blog.adobe.com/en/publish/2025/05/12/registration-is-now-open-for-max-2025",
+        "https://blog.adobe.com/en/publish/2024/02/15/mark-your-calendars-adobe-max-2024-miami-beach",
+        "https://blog.adobe.com/en/topics/adobe-max"
+      ]
     }
   ]
 }

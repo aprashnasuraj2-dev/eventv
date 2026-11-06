@@ -7,7 +7,7 @@ const intents=fs.readFileSync('research/search-intents-1000.csv','utf8').trim().
 assert.equal(data.length,50);assert.equal(new Set(data.map(e=>e.slug)).size,50);
 assert.equal(rows.length,201);assert.equal(intents.length,1001);
 assert.equal(data.filter(e=>e.slug.includes('eclipse')).length,0);
-assert.equal(approvals.length,17,'Pilot release currently expects exactly seventeen index-approved routes');
+assert.equal(approvals.length,18,'Pilot release currently expects exactly eighteen index-approved routes');
 for(const e of data){assert.equal(e.facets.length,5);for(const p of ['hub','planning','during','after']){
   const filepath='events/'+e.slug+'/'+(p==='hub'?'':p+'/')+'index.html';
   assert.ok(fs.existsSync(filepath),filepath);
@@ -52,7 +52,7 @@ assert.ok(wwdc.includes('Official date</span><strong>TBA'),'WWDC27 official date
 assert.ok(wwdc.includes('Official keynote time</span><strong>TBA'),'WWDC27 keynote time must remain TBA until source update');
 assert.ok(!wwdc.includes('"@type":"Event"'),'WWDC27 must not use Event schema before date announcement');
 assert.ok(fs.existsSync('index.html')&&fs.existsSync('events/index.html'));
-console.log('Validated: 50 clusters; 1000 intent rows; 200 event pages; 202 HTML total; 17 source-verified pilot hubs index-ready; all remaining event pages noindex');
+console.log('Validated: 50 clusters; 1000 intent rows; 200 event pages; 202 HTML total; 18 source-verified pilot hubs index-ready; all remaining event pages noindex');
 const summer=fs.readFileSync('events/steam-summer-sale-2027/index.html','utf8');
 assert.ok(summer.includes('June 24–July 8, 2027'),'Summer Sale page must preserve official date range');
 assert.ok(summer.includes('Exact start time</span><strong>TBA'),'Summer Sale exact clock must remain TBA until source update');
@@ -220,3 +220,20 @@ assert.ok(tga.includes('"@type":"Event"'),'TGA confirmed physical event should u
 assert.ok(tga.includes('777 Chick Hearn Court'),'TGA venue address missing');
 for(const ext of ['css','js'])assert.ok(fs.existsSync('assets/the-game-awards-2026.'+ext),'Missing TGA asset '+ext);
 assert.ok(fs.existsSync('assets/the-game-awards-2026-social.svg'),'Missing TGA social image');
+
+const adobeMax=fs.readFileSync('events/adobe-max-2027/index.html','utf8');
+assert.ok(adobeMax.includes('Official 2027 date</span><strong>TBA'),'Adobe MAX 2027 date must remain TBA');
+assert.ok(adobeMax.includes('City / venue</span><strong>TBA'),'Adobe MAX 2027 city/venue must remain TBA');
+assert.ok(adobeMax.includes('Registration / pricing</span><strong>TBA'),'Adobe MAX 2027 registration/pricing must remain TBA');
+assert.ok(adobeMax.includes('Session catalog</span><strong>TBA'),'Adobe MAX 2027 session catalog must remain TBA');
+assert.ok(adobeMax.includes('Nov 10–12 · Miami Beach + online'),'Adobe MAX 2026 current-site baseline missing');
+assert.ok(adobeMax.includes('Oct 14–16 · Miami Beach')&&adobeMax.includes('Oct 28–30 · Los Angeles')&&adobeMax.includes('Nov 10–12 · Miami Beach'),'Adobe MAX historical cadence missing');
+assert.ok(adobeMax.includes('Do not extrapolate.'),'Adobe MAX history must explicitly reject 2027 extrapolation');
+assert.ok(adobeMax.includes('2026-only price baseline'),'Adobe MAX 2026 historical price labeling missing');
+assert.ok(adobeMax.includes('2026-only reference'),'Adobe MAX 2026 lab/photowalk rule labeling missing');
+assert.ok(adobeMax.includes('Demo ≠ GA'),'Adobe MAX product maturity distinction missing');
+for(const id of ['time-tool','schedule','workflow','budget','history','references'])assert.ok(adobeMax.includes('id="'+id+'"'),'Adobe MAX tool/evidence section missing: '+id);
+assert.ok(adobeMax.includes('No live Adobe MAX schedule, registration, pricing, session, product-release or Creative Cloud entitlement feed is active.'),'Adobe MAX no-live-feed warning missing');
+assert.ok(!adobeMax.includes('"@type":"Event"'),'Adobe MAX 2027 must not use Event schema before an official date');
+for(const ext of ['css','js'])assert.ok(fs.existsSync('assets/adobe-max-2027.'+ext),'Missing Adobe MAX asset '+ext);
+assert.ok(fs.existsSync('assets/adobe-max-2027-social.svg'),'Missing Adobe MAX social image');
