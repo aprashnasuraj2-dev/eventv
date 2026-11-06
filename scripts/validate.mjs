@@ -7,7 +7,7 @@ const intents=fs.readFileSync('research/search-intents-1000.csv','utf8').trim().
 assert.equal(data.length,50);assert.equal(new Set(data.map(e=>e.slug)).size,50);
 assert.equal(rows.length,201);assert.equal(intents.length,1001);
 assert.equal(data.filter(e=>e.slug.includes('eclipse')).length,0);
-assert.equal(approvals.length,21,'Pilot release currently expects exactly twenty-one index-approved routes');
+assert.equal(approvals.length,22,'Pilot release currently expects exactly twenty-two index-approved routes');
 for(const e of data){assert.equal(e.facets.length,5);for(const p of ['hub','planning','during','after']){
   const filepath='events/'+e.slug+'/'+(p==='hub'?'':p+'/')+'index.html';
   assert.ok(fs.existsSync(filepath),filepath);
@@ -52,7 +52,7 @@ assert.ok(wwdc.includes('Official date</span><strong>TBA'),'WWDC27 official date
 assert.ok(wwdc.includes('Official keynote time</span><strong>TBA'),'WWDC27 keynote time must remain TBA until source update');
 assert.ok(!wwdc.includes('"@type":"Event"'),'WWDC27 must not use Event schema before date announcement');
 assert.ok(fs.existsSync('index.html')&&fs.existsSync('events/index.html'));
-console.log('Validated: 50 clusters; 1000 intent rows; 200 event pages; 202 HTML total; 21 source-verified pilot hubs index-ready; all remaining event pages noindex');
+console.log('Validated: 50 clusters; 1000 intent rows; 200 event pages; 202 HTML total; 22 source-verified pilot hubs index-ready; all remaining event pages noindex');
 const summer=fs.readFileSync('events/steam-summer-sale-2027/index.html','utf8');
 assert.ok(summer.includes('June 24–July 8, 2027'),'Summer Sale page must preserve official date range');
 assert.ok(summer.includes('Exact start time</span><strong>TBA'),'Summer Sale exact clock must remain TBA until source update');
@@ -295,3 +295,25 @@ assert.ok(fighting.includes('No live Steam catalog, price, discount, demo, roste
 assert.ok(!fighting.includes('"@type":"Event"'),'Fighting Fest digital themed-sale guide intentionally avoids Event schema');
 for(const ext of ['css','js'])assert.ok(fs.existsSync('assets/steam-fighting-fest-2027.'+ext),'Missing Fighting Fest asset '+ext);
 assert.ok(fs.existsSync('assets/steam-fighting-fest-2027-social.svg'),'Missing Fighting Fest social image');
+
+
+const sxsw=fs.readFileSync('events/sxsw-2027/index.html','utf8');
+assert.ok(sxsw.includes('March 15–21, 2027')||sxsw.includes('Mar 15–21'),'SXSW 2027 confirmed event window missing');
+assert.ok(sxsw.includes('March 15–20')||sxsw.includes('Mar 15–20'),'SXSW 2027 Conference window missing');
+assert.ok(sxsw.includes('Platinum $1,495')&&sxsw.includes('Innovation $995')&&sxsw.includes('Film & TV $850')&&sxsw.includes('Music $625'),'SXSW current Nov 6 badge-price snapshot missing');
+assert.ok(sxsw.includes('October 29 savings deadline is past'),'SXSW stale deadline conflict must remain explicit');
+assert.ok(sxsw.includes('Badge ≠ guaranteed session entry'),'SXSW badge-vs-admission counterexample missing');
+assert.ok(sxsw.includes('Small gap ≠ feasible venue transfer'),'SXSW transfer-gap counterexample missing');
+assert.ok(sxsw.includes('340+ PanelPicker sessions'),'SXSW current program-state evidence missing');
+assert.ok(sxsw.includes('Film & TV title lineup')&&sxsw.includes('PENDING'),'SXSW Film & TV pending lineup state missing');
+assert.ok(sxsw.includes('AFS Cinema — not serviced by the SXSW Film shuttle'),'SXSW AFS shuttle exception missing');
+assert.ok(sxsw.includes('February 27, 2027'),'SXSW accessibility accommodation deadline missing');
+for(const id of ['planner','badges','day-plan','shortlist','venues','references'])assert.ok(sxsw.includes('id="'+id+'"'),'SXSW tool/evidence section missing: '+id);
+assert.ok(sxsw.includes('No live SXSW schedule, badge-price, hotel-inventory, reservation, queue, shuttle, film-lineup, music-lineup or venue-capacity feed is active.'),'SXSW no-live-feed warning missing');
+assert.ok(sxsw.includes('"@type":"Event"'),'SXSW confirmed physical event should use Event schema');
+for(const ext of ['css','js'])assert.ok(fs.existsSync('assets/sxsw-2027.'+ext),'Missing SXSW asset '+ext);
+assert.ok(fs.existsSync('assets/sxsw-2027-social.svg'),'Missing SXSW social image');
+for(const stage of ['planning','during','after']){
+  const spoke=fs.readFileSync('events/sxsw-2027/'+stage+'/index.html','utf8');
+  assert.ok(spoke.includes('noindex,follow'),'SXSW unfinished '+stage+' route must remain noindex,follow');
+}
