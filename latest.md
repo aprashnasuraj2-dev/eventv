@@ -4,22 +4,22 @@
 > Read this file first whenever resuming EventV. Update it **in the same commit/PR** as every meaningful repository change. Historical research files remain references, not the live project status.
 >
 > **Last reviewed:** 2026-11-06 (Asia/Kathmandu)  
-> **Checkpoint:** Fourteenth editorial pilot built — Rugby World Cup 2027 schedule, timezone and travel-planning hub  
-> **Status:** **14 SOURCE-VERIFIED INDEX-READY PILOT HUBS MERGED TO MAIN; LIVE DEPLOYMENT NOT PERFORMED**
+> **Checkpoint:** Fifteenth editorial pilot prepared — Back to School 2027 school-specific budget, price and requirement hub  
+> **Status:** **TOPIC #15 PREPARED ON FEATURE BRANCH; PR/CI/MAIN MERGE PENDING; LIVE DEPLOYMENT NOT PERFORMED**
 
 ## 1. Current verified state
 
 | Area | Status | Verified detail |
 |---|---|---|
 | GitHub repo | **Working** | [`aprashnasuraj2-dev/eventv`](https://github.com/aprashnasuraj2-dev/eventv), default branch `main` |
-| Most recent feature change | **Merged** | [PR #22](https://github.com/aprashnasuraj2-dev/eventv/pull/22), squash commit [`59b8883`](https://github.com/aprashnasuraj2-dev/eventv/commit/59b8883cbc1139f7781365d2fff42897b87f6056) — Rugby World Cup 2027 pilot |
-| CI at feature checkpoint | **PR #22 checks passed** | [GitHub Actions run 42156293978](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42156293978); merged `main` source re-read confirms hub, 14 approvals and noindex spokes |
+| Most recent feature change | **Last merged feature: PR #22; Topic #15 branch in progress** | [PR #22](https://github.com/aprashnasuraj2-dev/eventv/pull/22), squash commit [`59b8883`](https://github.com/aprashnasuraj2-dev/eventv/commit/59b8883cbc1139f7781365d2fff42897b87f6056) — Rugby World Cup 2027 pilot |
+| CI at feature checkpoint | **Last merged feature CI passed; Topic #15 CI pending** | [GitHub Actions run 42156293978](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42156293978) was the prior feature check |
 | Candidate event topics | **50 defined** | [`data/events-50.json`](data/events-50.json), [ranked topics](TOP_50_TOPICS.md); eclipses excluded |
 | Search intents | **1,000 generated hypotheses** | [`research/search-intents-1000.csv`](research/search-intents-1000.csv); **not** verified keyword volumes, demand or attainable rankings |
 | Canonical event routes | **200 mapped** | [`research/routes-200.csv`](research/routes-200.csv) |
 | Generated static pages | **202 HTML files** | 50 event hubs + 50 planning + 50 during + 50 after = **200** event pages; 2 index/navigation pages |
-| Build and validation | **PR #22 passed build + validation + checkpoint enforcement; merged `main` source reverified** | `node scripts/build.mjs`, `node scripts/validate.mjs` on Node 22 |
-| Individual SEO-ready event pages | **14 source-verified hubs registered on main** | Fourteen hubs are merged on main; Rugby World Cup 2027 retains the official Oct 1–Nov 13 window, all 52 match times/venues, seven host cities/eight venues, confirmed pools, venue-aware timezone conversion, conditional team pathways, travel-buffer planning, timestamped ticket-status caveats, compact references and `index,follow`; **not deployed live** |
+| Build and validation | **Prior feature passed; Topic #15 branch validation pending** | `node scripts/build.mjs`, `node scripts/validate.mjs` on Node 22 |
+| Individual SEO-ready event pages | **14 source-verified hubs on main + Topic #15 candidate on feature branch** | Fourteen prior hubs remain merged on main; Back to School 2027 is prepared on the feature branch with Jul–Sep explicitly editorial-only, verified US/UK/Australia calendar examples, Texas-only Aug 6–8 tax rules, school-date planning, browser-local supply and price ledgers, and user-entered device requirement checks; **not deployed live** |
 | Subdomains | **Proposed only** | 50 optional names in manifest; **no** DNS/TLS/host routing configured |
 | Website deployment | **Not performed** | No deployment to aafnaipatro.com, Cloudflare, Pages, or standalone event host verified |
 | Adsterra monetization | **Not implemented in EventV** | No event ad scripts, verified paid impressions or realized CPM measured by this repo |
@@ -50,7 +50,7 @@
 | **P1** | Launch **only approved URLs** after staging QA | HTTP checks, user-visible functionality, metadata/schema/source checks, production click tests, no regressions, smoke-test log | **TODO** |
 | **P2** | Repeat for more event clusters based on observed performance | Actual GSC impressions/clicks, engaged visits, verified paid ads and content-hours ROI; stop low-value clusters | **TODO** |
 
-**Next action to execute:** Continue sequentially with Topic #15 Back to School 2027. Keep its Jul–Sep seasonal window explicitly non-universal by retailer, jurisdiction and school calendar; verify current consumer/tax-holiday/school-list sources before publishing; build evidence-first budget, price-history and supply-list tools. Never deploy live; keep all unfinished routes `noindex`; 186 event routes remain unapproved.
+**Next action to execute:** Complete Topic #15 Back to School 2027 through PR → CI → merge → main verification. Then continue sequentially with Topic #16 Summer Game Fest 2027, keeping 2027 date/location/showcase schedule TBA unless officially announced and building source-led announcement/session tracking rather than prediction. Never deploy live; keep all unfinished routes `noindex`; main currently has 186 unapproved event routes, falling to 185 only if Topic #15 merges.
 
 ## 4. Implementation files and run commands
 
@@ -83,6 +83,7 @@ For any new feature, create a branch from current `main`, make the change, updat
 
 | Date | Change | Verified evidence |
 |---|---|---|
+| 2026-11-06 | Topic #15 Back to School 2027 prepared on feature branch: Jul–Sep retained only as editorial planning scope; official examples include LAUSD Aug 12, Portsmouth Sep 1, Oxfordshire Sep 6, Leicestershire Aug 25, NSW Feb school-year start/Jul 20 Term 3 and Queensland Jan 27 school-year start/Jul 12 Term 3; Texas Aug 6–8 holiday is scoped only to Texas; school-date buffer, browser-local supply budget, exact-item price ledger, Texas tax checker and device-minimum checker added | PR/CI/merge pending; no live deployment |
 | 2026-11-06 | Built fourteenth pilot: Rugby World Cup 2027 with official Oct 1–Nov 13 window, all 52 local kickoff times, 24 teams/six pools, seven cities/eight venues and current ticket-sale state reverified; main site says tickets on sale while an RWC Experiences FAQ is stale; venue-aware timezone converter, conditional team path and multi-city buffer planner added; per-match availability, gate times, future progression and broadcast map not fabricated | [PR #22](https://github.com/aprashnasuraj2-dev/eventv/pull/22) merged as `59b8883`; [passing PR CI 42156293978](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42156293978); merged `main` re-read confirms 14 approvals and all three RWC spokes remain `noindex`; no live deployment |
 | 2026-11-06 | Built thirteenth pilot: Cyber Monday 2027 with Nov 29 transparently derived from OPM Thanksgiving Nov 25 plus NRF five-day shopping-period definition; no universal retailer clock, 2027 prices/coupons/stock asserted; BF-vs-CM comparator, subscription renewal/lifetime audit, delivery-buffer planner, return-deadline calculator and seller checklist added | [PR #20](https://github.com/aprashnasuraj2-dev/eventv/pull/20) merged as `05bedb2`; [passing PR CI 42153672476](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42153672476); merged `main` re-read confirms 13 approvals and all three Cyber Monday spokes remain `noindex`; no live deployment |
 | 2026-11-05 | Built twelfth pilot: Microsoft Build 2027 with official date/location/keynote/registration held at TBA; current Build site remains 2026 archive; historical 2024–2026 timing non-predictive; 2026 session-catalog Jun 2–4 scope kept separate from Build Live Jun 2–3 coverage; blank verified-time converter, maturity ledger, pre/post baseline diff and migration/pricing triage added | [PR #18](https://github.com/aprashnasuraj2-dev/eventv/pull/18) merged as `9e2c9ce`; [passing PR CI 42027633190](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42027633190); merged `main` re-read confirms 12 approvals and all three Build spokes remain `noindex`; no live deployment |
