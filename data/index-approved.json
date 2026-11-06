@@ -227,13 +227,21 @@
       "robots": "index,follow,max-image-preview:large",
       "editorial_status": "pilot-index-ready",
       "source_verified_on": "2026-11-06",
-      "factual_scope": "Cyber Monday 2027 is transparently rule-derived as Monday Nov 29 from OPM's official Thanksgiving Day Nov 25 date and NRF's definition of the five-day Thanksgiving shopping period continuing through the following Monday. No universal retailer start/end time, 2027 prices, coupons, inventory or best-deal claims asserted. Page includes BF-vs-CM same-item total comparison, subscription renewal/lifetime cost audit, delivery-buffer planner, return-deadline calculator and seller verification checklist.",
+      "factual_scope": "Cyber Monday 2027 remains rule-derived as Monday Nov 29 from OPM's official Thanksgiving Day 2027 date of Thursday Nov 25; EventV transparently derives Black Friday Nov 26 and the following Monday Nov 29 without relying on the former secondary timeanddate manifest source. This is a deep upgrade of a pre-existing five-source approval, not a new registry approval, so total approvals remain 26. The hub is software/subscription-contract focused: BF-vs-CM comparison requires an exact plan fingerprint across tier, seats, billing term, storage/usage, support, AI/API credits, commercial rights, edition and seller/billing channel; a price difference is not treated as a better-deal verdict when material fields differ. Free-trial math separates trial start, first paid charge, cancellation buffer, paid-term length and renewal cadence. Subscription-vs-perpetual/lifetime comparison uses a user-chosen horizon plus optional paid upgrade interval, upgrade cost and annual maintenance; 'lifetime' is not represented as a universal duration or vendor-survival guarantee. Regional checkout normalization uses user-entered tax, mandatory fees, FX multiplier and card cost instead of hard-coded global tax rates. Current legal state is timestamped: FTC's 2026 ANPR records that the 2024 amended Negative Option Rule was vacated in July 2025 and the prior rule reinstated, while rulemaking reopened; ROSCA remains separately relevant. UK government material says new subscription rules are expected in Spring 2027, while detailed 2026 regulations remain draft as of this review, so the page requires revalidation before Nov 29 2027 rather than asserting future operative law. EU OSS/ViDA Jan 1 2027 clarifications, CRA digital GST/HST residence rules, ATO imported-digital GST threshold and the ACCC's 2026 eHarmony finding are kept jurisdiction-specific. Cancellation evidence is browser-local only. No live software price, coupon, subscription-status, renewal, tax, FX or cancellation feed is claimed; three spokes remain noindex.",
       "sources": [
         "https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/",
-        "https://cdn.nrf.com/research-insights/holiday-data-and-trends/winter-holidays/winter-holiday-faqs",
-        "https://consumer.ftc.gov/articles/online-shopping",
-        "https://www.ftc.gov/legal-library/browse/rules/mail-internet-or-telephone-order-merchandise-rule",
-        "https://consumer.ftc.gov/articles/buying-online-marketplace"
+        "https://www.ftc.gov/system/files/ftc_gov/pdf/p064202negativeoptionruleanprm.pdf",
+        "https://consumer.ftc.gov/articles/getting-and-out-free-trials-auto-renewals-and-negative-option-subscriptions",
+        "https://www.ftc.gov/legal-library/browse/statutes/restore-online-shoppers-confidence-act",
+        "https://www.gov.uk/government/publications/subscription-contracts",
+        "https://www.gov.uk/government/news/consumers-to-save-around-400-million-every-year-from-government-crackdown-on-costly-subscription-traps",
+        "https://www.legislation.gov.uk/ukdsi/2026/9780348287912/body",
+        "https://www.gov.uk/guidance/the-vat-rules-if-you-supply-digital-services-to-private-consumers",
+        "https://vat-one-stop-shop.ec.europa.eu/one-stop-shop_en",
+        "https://taxation-customs.ec.europa.eu/taxation/vat/vat-digital-age-vida_en",
+        "https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/digital-economy-gsthst/charge-collect/cross-border.html",
+        "https://softwaredevelopers.ato.gov.au/GSTintangibles",
+        "https://www.accc.gov.au/media-release/court-finds-eharmony-engaged-in-misleading-conduct-in-relation-to-automatic-renewal-and-pricing-of-its-subscriptions"
       ]
     },
     {
