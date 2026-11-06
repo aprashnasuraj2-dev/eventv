@@ -7,7 +7,7 @@ const intents=fs.readFileSync('research/search-intents-1000.csv','utf8').trim().
 assert.equal(data.length,50);assert.equal(new Set(data.map(e=>e.slug)).size,50);
 assert.equal(rows.length,201);assert.equal(intents.length,1001);
 assert.equal(data.filter(e=>e.slug.includes('eclipse')).length,0);
-assert.equal(approvals.length,20,'Pilot release currently expects exactly twenty index-approved routes');
+assert.equal(approvals.length,21,'Pilot release currently expects exactly twenty-one index-approved routes');
 for(const e of data){assert.equal(e.facets.length,5);for(const p of ['hub','planning','during','after']){
   const filepath='events/'+e.slug+'/'+(p==='hub'?'':p+'/')+'index.html';
   assert.ok(fs.existsSync(filepath),filepath);
@@ -52,7 +52,7 @@ assert.ok(wwdc.includes('Official date</span><strong>TBA'),'WWDC27 official date
 assert.ok(wwdc.includes('Official keynote time</span><strong>TBA'),'WWDC27 keynote time must remain TBA until source update');
 assert.ok(!wwdc.includes('"@type":"Event"'),'WWDC27 must not use Event schema before date announcement');
 assert.ok(fs.existsSync('index.html')&&fs.existsSync('events/index.html'));
-console.log('Validated: 50 clusters; 1000 intent rows; 200 event pages; 202 HTML total; 20 source-verified pilot hubs index-ready; all remaining event pages noindex');
+console.log('Validated: 50 clusters; 1000 intent rows; 200 event pages; 202 HTML total; 21 source-verified pilot hubs index-ready; all remaining event pages noindex');
 const summer=fs.readFileSync('events/steam-summer-sale-2027/index.html','utf8');
 assert.ok(summer.includes('June 24–July 8, 2027'),'Summer Sale page must preserve official date range');
 assert.ok(summer.includes('Exact start time</span><strong>TBA'),'Summer Sale exact clock must remain TBA until source update');
@@ -276,3 +276,22 @@ assert.ok(racing.includes('No live Steam catalog, price, discount, demo, DLC, wh
 assert.ok(!racing.includes('"@type":"Event"'),'Racing Fest digital themed-sale guide intentionally avoids Event schema');
 for(const ext of ['css','js'])assert.ok(fs.existsSync('assets/steam-racing-fest-2027.'+ext),'Missing Racing Fest asset '+ext);
 assert.ok(fs.existsSync('assets/steam-racing-fest-2027-social.svg'),'Missing Racing Fest social image');
+
+const fighting=fs.readFileSync('events/steam-fighting-fest-2027/index.html','utf8');
+assert.ok(fighting.includes('Apr 26–May 3, 2027')||fighting.includes('April 26–May 3, 2027'),'Fighting Fest official date range missing');
+assert.ok(fighting.includes('Exact official clock</span><strong>Unverified'),'Fighting Fest exact clock must remain unverified');
+assert.ok(fighting.includes('Final lineup / deals</span><strong>Unknown'),'Fighting Fest lineup/deals must remain unknown');
+assert.ok(fighting.includes('Discount required?</span><strong>No'),'Fighting Fest optional-discount rule missing');
+assert.ok(fighting.includes('Fighting Games like the ones the FGC play'),'Fighting Fest FGC-specific eligibility description missing');
+assert.ok(fighting.includes('Playtests</span><strong>Not included'),'Fighting Fest playtest exclusion missing');
+assert.ok(fighting.includes('Device detected ≠ correct layout'),'Fighting Fest device-vs-game-level compatibility distinction missing');
+assert.ok(fighting.includes('only the host needs to own and install the game'),'Fighting Fest Remote Play Together ownership baseline missing');
+assert.ok(fighting.includes('Local multiplayer ≠ Remote Play Together quality'),'Fighting Fest local-vs-RPT distinction missing');
+assert.ok(fighting.includes('Online multiplayer ≠ good fighting-game netcode'),'Fighting Fest online-vs-netcode distinction missing');
+assert.ok(fighting.includes('20% or greater')&&fighting.includes('lowest-priced package'),'Fighting Fest wishlist notification baseline missing');
+assert.ok(fighting.includes('30 days between discounts'),'Fighting Fest standard discount cooldown missing');
+for(const id of ['input','modes','roster','wishlist','eligibility','discounts','remote','references'])assert.ok(fighting.includes('id="'+id+'"'),'Fighting Fest tool/evidence section missing: '+id);
+assert.ok(fighting.includes('No live Steam catalog, price, discount, demo, roster/DLC, fight-stick, netcode or multiplayer-status feed is active.'),'Fighting Fest no-live-feed warning missing');
+assert.ok(!fighting.includes('"@type":"Event"'),'Fighting Fest digital themed-sale guide intentionally avoids Event schema');
+for(const ext of ['css','js'])assert.ok(fs.existsSync('assets/steam-fighting-fest-2027.'+ext),'Missing Fighting Fest asset '+ext);
+assert.ok(fs.existsSync('assets/steam-fighting-fest-2027-social.svg'),'Missing Fighting Fest social image');
