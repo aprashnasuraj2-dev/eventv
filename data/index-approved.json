@@ -346,6 +346,25 @@
         "https://info.gotoburgas.com/en/events/music/eurovision-2027",
         "https://info.gotoburgas.com/en/news/burgas-easy-to-reach-from-europe-and-the-world"
       ]
+    },
+    {
+      "slug": "steam-racing-fest-2027",
+      "page_type": "hub",
+      "output_path": "events/steam-racing-fest-2027/index.html",
+      "source_path": "content/pilots/steam-racing-fest-2027.html",
+      "robots": "index,follow,max-image-preview:large",
+      "editorial_status": "pilot-index-ready",
+      "source_verified_on": "2026-11-06",
+      "factual_scope": "Valve confirms Steam Racing Fest 2027 for Apr 12-19 and generic themed-sale rules require Racing to be the primary game theme, with the Racing tag used in consideration. Dedicated Racing Fest 2027 docs currently error, so exact official start/end clock and event-specific exceptions remain unverified. Generic themed-sale rules say discounts are optional while discounted games receive the most prominent treatment; eligible demos, upcoming and F2P titles can participate unless event-specific docs say otherwise, while Steam Playtests are not included. Buyer tools keep steering-wheel/force-feedback support game-and-device-specific, compare subjective sim/arcade fit, track demo/edition/DLC deal evidence, and check current 20%+ wishlist-notification baseline without fabricating lineup or deals.",
+      "sources": [
+        "https://partner.steamgames.com/doc/marketing/upcoming_events",
+        "https://partner.steamgames.com/doc/marketing/upcoming_events/themed_sales",
+        "https://partner.steamgames.com/doc/marketing/upcoming_events/themed_sales/racing_2027",
+        "https://partner.steamgames.com/doc/marketing/discounts",
+        "https://partner.steamgames.com/doc/marketing/wishlist",
+        "https://partner.steamgames.com/doc/features/steam_controller/steam_input_gamepad_emulation_bestpractices",
+        "https://partner.steamgames.com/doc/store/application/demos"
+      ]
     }
   ]
 }
