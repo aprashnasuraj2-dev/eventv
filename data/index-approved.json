@@ -266,6 +266,27 @@
         "https://comptroller.texas.gov/taxes/publications/98-490/",
         "https://consumer.ftc.gov/articles/online-shopping"
       ]
+    },
+    {
+      "slug": "summer-game-fest-2027",
+      "page_type": "hub",
+      "output_path": "events/summer-game-fest-2027/index.html",
+      "source_path": "content/pilots/summer-game-fest-2027.html",
+      "robots": "index,follow,max-image-preview:large",
+      "editorial_status": "pilot-index-ready",
+      "source_verified_on": "2026-11-06",
+      "factual_scope": "Summer Game Fest 2027 exact date, city/venue, flagship start time, ticketing, participating companies and event schedule remain unannounced in official SGF sources checked. Current official site remains the 2026 archive and describes SGF only at month-level as occurring every June. Historical 2026 examples demonstrate that the official SGF directory spanned multiple partner/community/flagship showcases across Jun 1-9, so one flagship date is not treated as the whole festival schedule. Tools provide browser-local official announcement ledger, blank verified-time conversion, showcase overlap calculation and confirmed-vs-rumored reveal evidence matrix; no live schedule, ticket, social, game or streaming feed.",
+      "sources": [
+        "https://www.summergamefest.com/",
+        "https://www.summergamefest.com/events",
+        "https://www.summergamefest.com/events/summer-game-fest",
+        "https://www.summergamefest.com/events/the-mix",
+        "https://www.summergamefest.com/events/playstation-state-of-play-2026",
+        "https://www.summergamefest.com/events/story-rich-showcase",
+        "https://www.summergamefest.com/events/xbox-games-showcase-2026",
+        "https://www.summergamefest.com/events/pc-gaming-show-2026",
+        "https://www.summergamefest.com/events/nintendo-direct"
+      ]
     }
   ]
 }
