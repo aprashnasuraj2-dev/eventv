@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="theme-color" content="#11100f">
-<title>Black Friday 2027: Date, Deal Math Checker & Price Evidence Tracker | AafnaiPatro</title>
-<meta name="description" content="Black Friday 2027 falls on Friday, November 26 by the day-after-Thanksgiving convention. Check discount math, compare full checkout cost and keep a private price-evidence log without invented deals.">
+<title>Black Friday 2027: 90-Day Price History, Laptop Spec & Landed-Cost Checker | AafnaiPatro</title>
+<meta name="description" content="Black Friday 2027 is Nov 26. Build exact-SKU 90-day price evidence, compare the German/EU 30-day prior-price window, match gaming-laptop specs, normalize landed cost and compare Black Friday vs Cyber Monday without invented deals.">
 <link rel="canonical" href="https://aafnaipatro.com/events/black-friday-2027/">
 <link rel="stylesheet" href="/assets/black-friday-2027.css">
 <meta property="og:type" content="article">
@@ -30,7 +30,7 @@
       "name":"Black Friday 2027: Date, Deal Math Checker & Price Evidence Tracker",
       "description":"Independent Black Friday 2027 planning guide with user-entered price and total-cost tools.",
       "datePublished":"2026-11-05",
-      "dateModified":"2026-11-05",
+      "dateModified":"2026-11-06",
       "inLanguage":"en",
       "isPartOf":{"@type":"WebSite","name":"AafnaiPatro","url":"https://aafnaipatro.com/"}
     },
@@ -65,10 +65,10 @@
     <a class="brand" href="/"><span class="brand-mark">A</span><span>AafnaiPatro <small>EVENTV</small></span></a>
     <nav aria-label="Primary">
       <a href="#date-status">Date</a>
-      <a href="#deal-math">Deal math</a>
-      <a href="#compare">Total cost</a>
-      <a href="#ledger">Price evidence</a>
-      <a href="#returns">Returns</a>
+      <a href="#ledger">90-day history</a>
+      <a href="#laptop">Laptop match</a>
+      <a href="#compare">Landed cost</a>
+      <a href="#returns">Regional rules</a>
       <a href="#faq">FAQ</a>
     </nav>
   </div>
@@ -84,8 +84,8 @@
       <h1>Black Friday 2027 is <em>Friday, November 26</em>—but the deal still needs proof.</h1>
       <p class="lede">The U.S. Office of Personnel Management lists Thanksgiving Day 2027 as <strong>Thursday, November 25</strong>. Black Friday is conventionally the following Friday, making the 2027 planning date <strong>November 26</strong>. That calendar derivation does <strong>not</strong> tell us when any retailer will start or end a promotion, what anything will cost, or whether stock will exist.</p>
       <div class="hero-actions">
-        <a class="button primary" href="#deal-math">Check a deal claim</a>
-        <a class="button secondary" href="#compare">Compare checkout cost</a>
+        <a class="button primary" href="#ledger">Build 90-day evidence</a>
+        <a class="button secondary" href="#laptop">Match laptop specs</a>
       </div>
       <div class="quick-facts">
         <div><span>Rule-derived date</span><strong>Fri · Nov 26, 2027</strong></div>
@@ -171,7 +171,7 @@
 </section>
 
 <section class="content-section" id="compare">
-  <div class="section-label">Interactive tool / 02</div>
+  <div class="section-label">Interactive tool / 02 · landed cost</div>
   <h2>True checkout-cost comparator</h2>
   <p>Compare up to three offers using the costs you actually see. Quantity is included because bundle size, multipacks and accessory bundles can hide a worse unit price behind a lower headline price.</p>
   <div class="tool-panel">
@@ -204,78 +204,146 @@
     <div class="tool-actions"><button id="compare-run" class="button primary dark" type="button">Compare total cost</button></div>
     <div id="compare-result" class="compare-result" aria-live="polite"></div>
   </div>
-  <p class="fine-print">“Cheapest” here means lowest arithmetic total or unit cost among the valid numbers you entered. It does not score warranty, seller trust, delivery date, return shipping, membership cost, financing, cashback reliability or product authenticity.</p>
+  <p class="fine-print">“Cheapest” here means lowest arithmetic total or unit cost among the valid numbers you entered. It does not score warranty, seller trust, delivery date, return shipping, membership cost, financing, cashback reliability or product authenticity. For UK comparisons, mandatory delivery and other unavoidable charges belong in the total-price view; the CMA reiterated this to online retailers on November 2, 2026.</p>
 </section>
 
 <section class="content-section" id="ledger">
-  <div class="section-label">Interactive tool / 03</div>
-  <h2>Private price-evidence ledger</h2>
-  <p>Build your own history before November 26. Store dated observations for the exact model you care about. The ledger stays in this browser when local storage is available; it does not scrape retailers or transmit your entries to this page’s server.</p>
+  <div class="section-label">Interactive tool / 03 · evidence before hype</div>
+  <h2>90-day price-evidence ledger with a separate 30-day legal-reference view</h2>
+  <p>Track one <strong>exact product series</strong> from late August through Black Friday and Cyber Monday. The summary follows the most recently entered combination of exact product/SKU + seller + market + condition + currency. It will not merge different variants or currencies into a fake history.</p>
   <div class="tool-panel">
     <form id="ledger-form">
       <div class="field-grid">
-        <label>Product / exact model
-          <input id="ledger-product" maxlength="120" required placeholder="Model + storage / color / size">
+        <label>Exact product / SKU
+          <input id="ledger-product" maxlength="160" required placeholder="Exact model number / SKU, not just product family">
         </label>
         <label>Seller
-          <input id="ledger-seller" maxlength="80" required>
+          <input id="ledger-seller" maxlength="100" required placeholder="Retailer or marketplace seller">
+        </label>
+        <label>Market
+          <select id="ledger-market"><option value="US">US</option><option value="UK">UK</option><option value="CA">Canada</option><option value="AU">Australia</option><option value="DE">Germany / EU</option><option value="OTHER">Other</option></select>
+        </label>
+        <label>Condition
+          <select id="ledger-condition"><option>New</option><option>Manufacturer refurbished</option><option>Authorized refurbished</option><option>Seller refurbished</option><option>Open box</option><option>Used</option></select>
+        </label>
+        <label>Currency label
+          <input id="ledger-currency" maxlength="8" value="$">
         </label>
         <label>Observed date
-          <input id="ledger-date" type="date" required>
+          <input id="ledger-date" type="date" min="2027-08-01" max="2027-12-31" required>
         </label>
-        <label>Observed item price
+        <label>Checkpoint
+          <select id="ledger-checkpoint"><option>Pre-sale observation</option><option>Black Friday — Nov 26</option><option>Black Friday weekend</option><option>Cyber Monday — Nov 29</option><option>Other promotion</option></select>
+        </label>
+        <label>Item price
           <input id="ledger-price" type="number" min="0" max="10000000" step=".01" required>
         </label>
-        <label>Shipping / mandatory fees observed
-          <input id="ledger-extra" type="number" min="0" max="1000000" step=".01" value="0">
+        <label>Shipping / mandatory delivery
+          <input id="ledger-shipping" type="number" min="0" max="1000000" step=".01" value="0">
         </label>
-        <label>Condition / variant note
-          <input id="ledger-variant" maxlength="120" placeholder="New, refurbished, 16GB/512GB, bundle contents…">
+        <label>Tax / mandatory fees shown
+          <input id="ledger-fees" type="number" min="0" max="1000000" step=".01" value="0">
         </label>
-        <label class="wide">Source URL (optional)
-          <input id="ledger-url" type="url" maxlength="500" placeholder="Retailer/product page or saved record">
+        <label class="wide">Source URL / evidence note
+          <input id="ledger-url" maxlength="500" placeholder="Retailer URL, dated screenshot note, receipt or saved price record">
         </label>
       </div>
-      <div class="tool-actions"><button class="button primary dark" type="submit">Add observation</button><button id="ledger-clear" class="button soft" type="button">Clear local ledger</button></div>
+      <div class="tool-actions"><button class="button primary dark" type="submit">Add exact-series observation</button><button id="ledger-clear" class="button soft" type="button">Clear local ledger</button></div>
     </form>
+    <p class="series-rule"><strong>Series isolation:</strong> summary statistics apply only to the last-entered exact product/SKU + seller + market + condition + currency series.</p>
     <div class="ledger-summary">
-      <div><span>Observations</span><strong id="ledger-count">0</strong></div>
-      <div><span>Lowest entered total</span><strong id="ledger-low">—</strong></div>
-      <div><span>Highest entered total</span><strong id="ledger-high">—</strong></div>
-      <div><span>History span</span><strong id="ledger-span">—</strong></div>
+      <div><span>Series observations</span><strong id="ledger-count">0</strong></div>
+      <div><span>90-day observed low</span><strong id="ledger-low90">—</strong></div>
+      <div><span>30-day observed low</span><strong id="ledger-low30">—</strong></div>
+      <div><span>90-day median</span><strong id="ledger-median">—</strong></div>
+      <div><span>Black Friday</span><strong id="ledger-bf">—</strong></div>
+      <div><span>Cyber Monday</span><strong id="ledger-cm">—</strong></div>
     </div>
-    <p id="ledger-note" class="empty-state">No evidence recorded yet. A useful history needs comparable model/variant observations—not just different products with similar names.</p>
+    <div id="ledger-analysis" class="result-box">No exact-series price evidence recorded yet.</div>
     <div id="ledger-list" class="ledger-list" aria-live="polite"></div>
   </div>
-  <p class="fine-print">The minimum in your ledger is only the minimum of <em>your entered observations</em>. It is not a verified market-wide historical low. Different variants, seller conditions, bundle contents, currencies or tax treatment can invalidate the comparison.</p>
+  <p class="fine-print"><strong>Germany/EU distinction:</strong> this 90-day history is research evidence. For an announced price reduction, EU rules use a specific prior-price concept based on the lowest price applied in at least the preceding 30 days. Your sparse personal observations cannot by themselves prove a trader’s legal prior price or market-wide historical low.</p>
+  <div class="historical-signal"><strong>Historical enforcement signal, not a 2027 forecast:</strong> the European Commission’s 2025 Black Friday/Cyber Monday sweep checked 314 traders and reported that at least 30% referenced discounts incorrectly. The practical lesson is to preserve dated price evidence; it does not establish that any specific 2027 retailer will breach the rules.</div>
+</section>
+
+<section class="content-section" id="laptop">
+  <div class="section-label">Interactive tool / 04 · gaming-laptop comparability</div>
+  <h2>Exact gaming-laptop specification fingerprint</h2>
+  <p>Two listings can share a product-family name or GPU family while differing materially in CPU, GPU power configuration, VRAM, memory, storage, display, condition, warranty or exact SKU. This checker does <strong>not</strong> estimate benchmark performance. It determines whether your two offers are genuinely like-for-like enough for price comparison.</p>
+  <div class="tool-panel">
+    <div class="laptop-grid">
+      <fieldset class="laptop-offer">
+        <legend>Offer A</legend>
+        <label>Exact SKU / model<input id="lap-a-sku" maxlength="120"></label>
+        <label>CPU model<input id="lap-a-cpu" maxlength="120"></label>
+        <label>GPU model<input id="lap-a-gpu" maxlength="120"></label>
+        <label>Published GPU power / TGP (W)<input id="lap-a-tgp" type="number" min="0" max="1000" step="1" placeholder="if published"></label>
+        <label>VRAM (GB)<input id="lap-a-vram" type="number" min="0" max="128" step="1"></label>
+        <label>RAM (GB)<input id="lap-a-ram" type="number" min="0" max="512" step="1"></label>
+        <label>Storage (GB)<input id="lap-a-storage" type="number" min="0" max="32768" step="1"></label>
+        <label>Display resolution<input id="lap-a-res" maxlength="60" placeholder="2560×1600"></label>
+        <label>Refresh rate (Hz)<input id="lap-a-hz" type="number" min="0" max="1000" step="1"></label>
+        <label>Condition<select id="lap-a-condition"><option>New</option><option>Manufacturer refurbished</option><option>Open box</option><option>Used</option></select></label>
+        <label>Warranty months<input id="lap-a-warranty" type="number" min="0" max="120" step="1"></label>
+        <label>Landed price<input id="lap-a-price" type="number" min="0" step=".01"></label>
+      </fieldset>
+      <fieldset class="laptop-offer">
+        <legend>Offer B</legend>
+        <label>Exact SKU / model<input id="lap-b-sku" maxlength="120"></label>
+        <label>CPU model<input id="lap-b-cpu" maxlength="120"></label>
+        <label>GPU model<input id="lap-b-gpu" maxlength="120"></label>
+        <label>Published GPU power / TGP (W)<input id="lap-b-tgp" type="number" min="0" max="1000" step="1" placeholder="if published"></label>
+        <label>VRAM (GB)<input id="lap-b-vram" type="number" min="0" max="128" step="1"></label>
+        <label>RAM (GB)<input id="lap-b-ram" type="number" min="0" max="512" step="1"></label>
+        <label>Storage (GB)<input id="lap-b-storage" type="number" min="0" max="32768" step="1"></label>
+        <label>Display resolution<input id="lap-b-res" maxlength="60" placeholder="2560×1600"></label>
+        <label>Refresh rate (Hz)<input id="lap-b-hz" type="number" min="0" max="1000" step="1"></label>
+        <label>Condition<select id="lap-b-condition"><option>New</option><option>Manufacturer refurbished</option><option>Open box</option><option>Used</option></select></label>
+        <label>Warranty months<input id="lap-b-warranty" type="number" min="0" max="120" step="1"></label>
+        <label>Landed price<input id="lap-b-price" type="number" min="0" step=".01"></label>
+      </fieldset>
+    </div>
+    <button id="laptop-run" class="button primary dark" type="button">Check comparability</button>
+    <div id="laptop-result" class="compare-result"><p class="empty-state">Enter the specifications published by each seller/manufacturer.</p></div>
+  </div>
+  <p class="counterexample"><strong>Counterexample:</strong> “same GPU family” does not prove the same laptop configuration, cooling, graphics-power setting, memory, display or warranty. Component name ≠ system equivalence, and this tool never converts a matching GPU label into a performance claim.</p>
 </section>
 
 <section class="content-section" id="returns">
-  <div class="section-label">Policy check / before checkout</div>
-  <h2>A cheaper price can be a worse purchase if the return path is expensive.</h2>
-  <p>FTC online-shopping guidance recommends checking shipping, delivery, refund and return terms before buying. Sale and clearance items can have different return rules. The FTC also notes that if a seller does not state a shipping time, federal rules generally require shipment within 30 days after receiving the buyer’s information/payment authorization.</p>
-  <div class="checklist" id="policy-checklist">
-    <label><input type="checkbox"> I recorded the seller and exact model / variant.</label>
-    <label><input type="checkbox"> I checked the estimated delivery date or shipping promise.</label>
-    <label><input type="checkbox"> I checked whether sale items have a different return policy.</label>
-    <label><input type="checkbox"> I checked who pays return shipping.</label>
-    <label><input type="checkbox"> I checked restocking / return fees.</label>
-    <label><input type="checkbox"> I checked warranty seller and duration.</label>
-    <label><input type="checkbox"> I saved the advertised price and important terms.</label>
-    <label><input type="checkbox"> I checked the payment method and seller legitimacy.</label>
+  <div class="section-label">Interactive tool / 05 · regional return and pricing boundaries</div>
+  <h2>Return rights and total-price rules are market-specific.</h2>
+  <p>A retailer’s voluntary holiday-return policy is separate from statutory rights. Choose a market and channel to see the current planning baseline this hub can substantiate; then record the seller’s actual 2027 policy before purchase.</p>
+  <div class="tool-panel">
+    <form id="rights-form">
+      <div class="field-grid">
+        <label>Market<select id="rights-market"><option value="US">United States</option><option value="UK">United Kingdom</option><option value="CA">Canada</option><option value="AU">Australia</option><option value="DE">Germany / EU</option></select></label>
+        <label>Purchase channel<select id="rights-channel"><option value="online">Online / distance</option><option value="store">In-store</option></select></label>
+        <label>Problem type<select id="rights-problem"><option value="mind">Changed mind / found cheaper</option><option value="fault">Faulty / not as described</option></select></label>
+        <label>Retailer voluntary return days<input id="rights-days" type="number" min="0" max="365" placeholder="30"></label>
+        <label>Receipt / delivery date<input id="rights-date" type="date"></label>
+        <label>Sale / clearance item?<select id="rights-sale"><option value="yes">Yes</option><option value="no">No</option></select></label>
+      </div>
+      <button class="button primary dark" type="submit">Show return / price baseline</button>
+    </form>
+    <div id="rights-result" class="result-box">Choose your market. This is a planning summary, not legal advice.</div>
   </div>
-  <p id="policy-progress" class="progress-note">0 of 8 checks complete.</p>
-  <div class="policy-warning"><strong>Do not confuse secure transport with a trustworthy seller.</strong> FTC guidance notes that <code>https</code> means the connection is encrypted; scammers can use encrypted sites too.</div>
+  <div class="region-rules">
+    <article><span>US</span><h3>Policy + deceptive-price evidence</h3><p>FTC guidance says compare the exact model and total cost, inspect refund/return terms and preserve records. Federal deceptive-pricing guidance rejects artificial former prices. No universal federal change-of-mind return period is inserted by this hub.</p></article>
+    <article><span>UK</span><h3>Total price must include unavoidable cost</h3><p>CMA price-transparency guidance and its Nov 2, 2026 retailer letter say mandatory delivery and other unavoidable fees/taxes belong in the total price. Many distance buyers have a 14-day cancellation-notice baseline, followed by another 14 days to return, subject to exceptions.</p></article>
+    <article><span>CANADA</span><h3>Regular price must be genuine</h3><p>The Competition Bureau’s ordinary-selling-price framework uses volume/time tests; an invented “regular price” can be misleading. Change-of-mind return law varies by province/territory, so no Canada-wide voluntary change-of-mind period is inserted.</p></article>
+    <article><span>AUSTRALIA</span><h3>Total price + consumer guarantees</h3><p>ACCC guidance requires clear total pricing including unavoidable charges and warns against misleading “was/now” comparisons. Businesses generally need not remedy simple change of mind, but store policy cannot remove consumer-guarantee remedies for faulty goods.</p></article>
+    <article><span>GERMANY / EU</span><h3>30-day prior price + distance withdrawal</h3><p>When announcing a price reduction, the reference price must identify the lowest price applied in at least the previous 30 days. Many online goods purchases have a 14-day withdrawal baseline, subject to exceptions.</p></article>
+  </div>
 </section>
 
 <section class="content-section" id="regions">
-  <div class="section-label">International readers</div>
-  <h2>November 26 is the U.S.-calendar anchor, not a global retail rule.</h2>
+  <div class="section-label">Market evidence</div>
+  <h2>November 26 is the U.S.-calendar anchor; price law and return rights remain local.</h2>
   <div class="region-grid">
     <article><span>United States</span><p>Black Friday is conventionally tied to the day after U.S. Thanksgiving. Store hours, online launch times and return rules remain retailer-specific.</p></article>
-    <article><span>United Kingdom / Europe</span><p>Retailers may use Black Friday branding, but U.S. Thanksgiving is not a local public holiday. VAT, consumer rights, currency and promotion timing are jurisdiction-specific.</p></article>
-    <article><span>Canada</span><p>Canadian retailers may participate, but shipping origin, duties, taxes, warranty and return logistics can change the true cost of a cross-border offer.</p></article>
-    <article><span>Australia</span><p>Promotions may follow the same marketing date while operating in a very different local timezone. Never convert a U.S. retailer launch time unless that retailer publishes a timezone.</p></article>
+    <article><span>United Kingdom</span><p>Retailers may use Black Friday branding, but UK price-transparency rules require total prices to include mandatory fees, taxes and charges; CMA specifically reminded online retailers in November 2026 that mandatory delivery fees must be included up front.</p></article><article><span>Germany / EU</span><p>A 90-day research history is useful, but announced reductions use the legally defined prior-price reference based on the lowest price in at least the previous 30 days. Successive Black Friday/Cyber Monday promotions do not erase earlier lower prices inside that window.</p></article>
+    <article><span>Canada</span><p>Competition Bureau guidance requires a genuine ordinary/regular price and describes volume/time tests. Shipping origin, duties, taxes, warranty and provincial/territorial return rules can still change total economics.</p></article>
+    <article><span>Australia</span><p>ACCC guidance requires clear total pricing and warns against misleading former-price/RRP comparisons. Promotions may use the same marketing date in another timezone, but a U.S. launch time must not be projected onto an Australian retailer without a source.</p></article>
   </div>
 </section>
 
@@ -306,8 +374,8 @@
   <h2>What must be reverified when 2027 retailer campaigns appear</h2>
   <div class="update-grid">
     <div><b>Retailer sale window</b><p>Record exact date, clock, timezone and whether it applies online, in-store, members or all customers.</p></div>
-    <div><b>Product identity</b><p>Record model number, variant, condition, bundle contents, seller and warranty source.</p></div>
-    <div><b>Price evidence</b><p>Separate retailer reference price, your dated observed prices, item price, shipping, taxes/fees and membership cost.</p></div>
+    <div><b>Product identity</b><p>Record exact SKU plus CPU, GPU, published GPU power/TGP where available, VRAM, RAM, storage, display, condition, seller and warranty. Similar family names are not enough.</p></div>
+    <div><b>Price evidence</b><p>Separate retailer reference price, exact-series 90-day history, Germany/EU 30-day reference window, item price, mandatory shipping, taxes/fees and membership cost.</p></div>
     <div><b>Availability</b><p>Stock, backorder, shipping estimate and pickup eligibility can change after the price is captured.</p></div>
     <div><b>Return / price match</b><p>Record sale-item exclusions, return window, return shipping, restocking fees and price-adjustment rules.</p></div>
     <div><b>Corrections</b><p>If a retailer changes the deal, preserve the old timestamp and explain the change instead of silently overwriting history.</p></div>
@@ -322,13 +390,13 @@
     <strong class="big-date">NOV 26</strong>
     <p>Friday · rule-derived from Nov 25 U.S. Thanksgiving</p>
     <hr>
-    <a href="#deal-math">Deal math</a>
-    <a href="#compare">Total cost</a>
-    <a href="#ledger">Price evidence</a>
-    <a href="#returns">Return checklist</a>
+    <a href="#ledger">90-day history</a>
+    <a href="#laptop">Laptop spec match</a>
+    <a href="#compare">Landed cost</a>
+    <a href="#returns">Regional rules</a>
     <a href="#timeline">BF / CM calendar</a>
     <a href="#faq">FAQ</a>
-    <div class="side-alert">Retailer times, prices and stock remain unknown until sourced.</div>
+    <div class="side-alert">Retailer times, prices, stock and 2027 hardware availability remain unknown until sourced.</div>
   </div>
 </aside>
 </div>
@@ -348,16 +416,25 @@
 
 <footer class="site-footer">
   <div class="wrap">
-    <p>Independent AafnaiPatro / EventV editorial resource · Verified November 5, 2026 · No retailer affiliation · No live deployment asserted.</p>
+    <p>Independent AafnaiPatro / EventV editorial resource · Verified November 6, 2026 · No retailer affiliation · No live deployment asserted.</p>
     <div id="references">
-      <strong>Sources & compact notes</strong>
+      <strong>Primary sources checked November 6, 2026</strong>
       <ol>
-        <li>U.S. Office of Personnel Management, 2027 Federal Holiday Schedule — Thanksgiving Day: Thursday, Nov 25, 2027. Black Friday Nov 26 is transparently derived as the following day.</li>
-        <li>FTC Consumer Advice, “Online Shopping” — compare total cost, terms, delivery, returns/refunds, seller/product information and keep records.</li>
-        <li>FTC Guides Against Deceptive Pricing, 16 CFR Part 233 / §233.1 — guidance on genuine versus fictitious former-price comparisons.</li>
-        <li>FTC Advertising & Marketing guidance — advertising claims must be truthful, not deceptive or unfair, and evidence-based.</li>
+        <li><a href="https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/" rel="noopener noreferrer">U.S. Office of Personnel Management — Federal Holidays</a> — Thanksgiving Day 2027 is Thursday, Nov 25; Black Friday Nov 26 and Cyber Monday Nov 29 are calendar-derived here.</li>
+        <li><a href="https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-233" rel="noopener noreferrer">eCFR 16 CFR Part 233 — Guides Against Deceptive Pricing</a> — former/reference-price comparison principles.</li>
+        <li><a href="https://consumer.ftc.gov/articles/online-shopping" rel="noopener noreferrer">FTC — Online Shopping</a> — exact-model comparison, total cost, delivery, return/refund and record-keeping guidance.</li>
+        <li><a href="https://www.gov.uk/government/publications/price-transparency-cma209/providing-clear-and-accurate-information-about-prices-summary" rel="noopener noreferrer">UK CMA — price transparency summary</a> — total price, mandatory fees, taxes and delivery.</li>
+        <li><a href="https://www.gov.uk/government/publications/online-retailers-including-mandatory-delivery-fees-in-the-total-price/open-letter-to-online-retailers-including-mandatory-delivery-fees-in-the-total-price" rel="noopener noreferrer">UK CMA — Nov 2, 2026 online-retailer letter</a> — mandatory delivery fees must be included in total price up front.</li>
+        <li><a href="https://www.gov.uk/accepting-returns-and-giving-refunds" rel="noopener noreferrer">GOV.UK — returns and refunds</a> — sale-item fault rights and distance-sale cancellation baseline.</li>
+        <li><a href="https://commission.europa.eu/topics/consumers/consumer-rights-and-complaints/enforcement-consumer-protection/sweeps_en" rel="noopener noreferrer">European Commission — price sweep</a> — 30-day prior-price rule and historical 2025 Black Friday/Cyber Monday findings.</li>
+        <li><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A52021XC1229%2806%29" rel="noopener noreferrer">EUR-Lex — Price Indication Directive guidance</a> — successive promotions and lowest-price prior-reference treatment.</li>
+        <li><a href="https://commission.europa.eu/digital-life/protecting-you-when-buying-online_en" rel="noopener noreferrer">European Commission — buying online</a> — EU online return and delivery baselines.</li>
+        <li><a href="https://competition-bureau.canada.ca/en/deceptive-marketing-practices/types-deceptive-marketing-practices/ordinary-selling-price" rel="noopener noreferrer">Competition Bureau Canada — ordinary selling price</a> — volume/time tests for genuine regular-price claims.</li>
+        <li><a href="https://competition-bureau.canada.ca/en/deceptive-marketing-practices/types-deceptive-marketing-practices/fake-sales-and-discounts" rel="noopener noreferrer">Competition Bureau Canada — fake sales and discounts</a> — false urgency and regular-price warnings.</li>
+        <li><a href="https://www.accc.gov.au/consumers/pricing/price-displays" rel="noopener noreferrer">ACCC — price displays</a> — total-price and misleading “was/now” / RRP principles.</li>
+        <li><a href="https://www.accc.gov.au/consumers/problem-with-a-product-or-service-you-bought/repair-replace-refund-cancel" rel="noopener noreferrer">ACCC — repair, replace, refund, cancel</a> — consumer guarantees vs change of mind and sale items.</li>
       </ol>
-      <p><a href="https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/" rel="noopener noreferrer">OPM 2027 holidays</a> · <a href="https://consumer.ftc.gov/articles/online-shopping" rel="noopener noreferrer">FTC online shopping</a> · <a href="https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-233" rel="noopener noreferrer">16 CFR Part 233</a> · <a href="https://www.ftc.gov/business-guidance/advertising-marketing" rel="noopener noreferrer">FTC advertising basics</a></p>
+      <p class="source-note">A 90-day ledger is a shopper research tool, not a market-wide price database or a substitute for a legally defined prior-price reference. No 2027 retailer campaign, laptop model, stock level, launch time or future discount is asserted until sourced.</p>
     </div>
     <p class="fine-print">This page provides arithmetic and record-keeping tools, not legal, tax or financial advice. Retailer terms, consumer rights and taxes vary by jurisdiction. “Black Friday” is used descriptively; all retailer and product marks belong to their owners.</p>
   </div>
