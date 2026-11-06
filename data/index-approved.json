@@ -459,6 +459,31 @@
         "https://www.accc.gov.au/consumers/problem-with-a-product-or-service-you-bought/repair-replace-refund-cancel",
         "https://www.canada.ca/en/health-canada/services/buying-second-hand-products.html"
       ]
+    },
+    {
+      "slug": "cyber-monday-2026",
+      "page_type": "hub",
+      "output_path": "events/cyber-monday-2026/index.html",
+      "source_path": "content/pilots/cyber-monday-2026.html",
+      "robots": "index,follow,max-image-preview:large",
+      "editorial_status": "pilot-index-ready",
+      "source_verified_on": "2026-11-06",
+      "factual_scope": "Cyber Monday 2026 is kept rule-derived as Monday Nov 30 from OPM's official Thanksgiving date of Thursday Nov 26, 2026; Cyber Monday is not represented as a U.S. federal holiday or universal retailer sale window. The hub focuses on digital subscriptions rather than live deal rankings. FTC's 2026 rulemaking record is used to preserve the current U.S. boundary that the 2024 amended Negative Option Rule was vacated by the Eighth Circuit in July 2025 and the pre-2024 rule text was reinstated; the vacated click-to-cancel amendment is not presented as current federal rule text. FTC free-trial/auto-renewal consumer guidance and ROSCA remain cited without turning a pending enforcement allegation into a universal adjudicated rule. UK 2013 digital-content cancellation rules are separated from the draft 2026 subscription regulations, whose stated commencement is Jan 1, 2027 and therefore future relative to Cyber Monday 2026. EU VAT OSS/digital-withdrawal, UK digital VAT, Canadian GST/HST digital-economy rules and Australian imported-digital GST are kept jurisdiction-specific. Browser-local tools normalize promotional-to-renewal cost, compare annual vs monthly expected use, reconcile exact checkout tax/fees/FX, save renewal/cancellation evidence, and test retailer-specific price-match policy evidence. No live prices, cancellation service, universal tax rate, legal entitlement or purchase recommendation is claimed.",
+      "sources": [
+        "https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/",
+        "https://www.ftc.gov/legal-library/browse/federal-register-notices/revision-negative-option-rule-withdrawal-cars-rule-removal-non-compete-rule-conform-these-rules",
+        "https://consumer.ftc.gov/articles/getting-and-out-free-trials-auto-renewals-and-negative-option-subscriptions",
+        "https://www.ftc.gov/legal-library/browse/statutes/restore-online-shoppers-confidence-act",
+        "https://www.gov.uk/guidance/the-vat-rules-if-you-supply-digital-services-to-private-consumers",
+        "https://www.gov.uk/vat-rates",
+        "https://www.legislation.gov.uk/uksi/2013/3134/regulation/37/2026-01-01",
+        "https://www.legislation.gov.uk/ukdsi/2026/9780348287912/data.htm?view=plain",
+        "https://europa.eu/youreurope/business/finance-and-tax/vat/one-stop-shop/index_en.htm",
+        "https://europa.eu/youreurope/citizens/consumers/shopping/shopping-consumer-rights/index_en.htm",
+        "https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/digital-economy-gsthst/charge-collect/cross-border.html",
+        "https://softwaredevelopers.ato.gov.au/GSTintangibles",
+        "https://www.accc.gov.au/media-release/court-finds-eharmony-engaged-in-misleading-conduct-in-relation-to-automatic-renewal-and-pricing-of-its-subscriptions"
+      ]
     }
   ]
 }
