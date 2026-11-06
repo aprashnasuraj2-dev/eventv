@@ -484,6 +484,35 @@
         "https://softwaredevelopers.ato.gov.au/GSTintangibles",
         "https://www.accc.gov.au/media-release/court-finds-eharmony-engaged-in-misleading-conduct-in-relation-to-automatic-renewal-and-pricing-of-its-subscriptions"
       ]
+    },
+    {
+      "slug": "boxing-day-2026",
+      "page_type": "hub",
+      "output_path": "events/boxing-day-2026/index.html",
+      "source_path": "content/pilots/boxing-day-2026.html",
+      "robots": "index,follow,max-image-preview:large",
+      "editorial_status": "pilot-index-ready",
+      "source_verified_on": "2026-11-06",
+      "factual_scope": "Boxing Day 2026 remains rule-derived as Saturday Dec 26. The hub explicitly separates actual date from observed/substitute public-holiday treatment: GOV.UK lists Monday Dec 28 as the Boxing Day substitute bank holiday; New Zealand lists Dec 26 actual and Dec 28 observed; Fair Work shows state/territory-specific Australian treatment including additional Dec 28 holidays, Tasmania's Dec 28 Boxing Day label, and South Australia's Proclamation Day wording; Canadian federal labour, CRA and Ontario rules are kept scope-specific. Public holiday is not equated with store closure: Ontario's current mandatory province-wide retail-closure list does not include Boxing Day, and UK national trading rules do not create a blanket Saturday Boxing Day closure. Return rights are kept distinct from voluntary change-of-mind policies: UK sale-item fault rights and distance cancellation, Ontario no general return/exchange right, Australian consumer guarantees vs change of mind, and New Zealand Consumer Guarantees Act vs retailer policy. Delivery planning uses seller promises and market-specific evidence rather than invented courier closures. Browser-local tools map actual/observed holidays, calculate return-policy/statutory paths, model delivery slack, save store/transit/courier evidence, and compare online-vs-in-store total costs. TTC's current 2026 Boxing Day holiday service and Auckland Transport's Oct 2026 Boxing Day rail availability are included as dated transit examples, not universal transport rules. No live store, price, courier, parcel, transit or inventory feed is claimed.",
+      "sources": [
+        "https://www.gov.uk/bank-holidays",
+        "https://www.gov.uk/trading-hours-for-retailers-the-law",
+        "https://www.gov.uk/accepting-returns-and-giving-refunds",
+        "https://www.legislation.gov.uk/ukpga/2015/15/part/1/chapter/2/crossheading/other-rules-about-goods-contracts/2024-01-01?view=plain",
+        "https://www.canada.ca/en/services/jobs/workplace/federal-labour-standards/vacations-holidays.html",
+        "https://www.canada.ca/en/revenue-agency/services/tax/public-holidays.html",
+        "https://www.ontario.ca/document/your-guide-employment-standards-act-0/public-holidays",
+        "https://www.ontario.ca/page/retail-business-holidays",
+        "https://www.ontario.ca/page/returns-exchanges-and-warranties-ontario",
+        "https://www.ontario.ca/page/your-rights-under-consumer-protection-act",
+        "https://www.fairwork.gov.au/employment-conditions/public-holidays/2026-public-holidays",
+        "https://www.accc.gov.au/consumers/problem-with-a-product-or-service-you-bought/repair-replace-refund-cancel",
+        "https://www.govt.nz/browse/work-and-tax/public-holidays-and-work/dates-for-public-holidays-and-anniversary-days/",
+        "https://www.consumerprotection.govt.nz/general-help/common-consumer-issues/change-of-mind",
+        "https://www.consumerprotection.govt.nz/general-help/ways-to-buy-and-pay/online-shopping/know-your-rights-when-shopping-online",
+        "https://www.ttc.ca/riding-the-ttc/Updates/Holiday-Service",
+        "https://at.govt.nz/about-us/news-events/media-centre/2026-media-releases/trains-are-back-for-labour-weekend-and-new-year-s-eve"
+      ]
     }
   ]
 }
