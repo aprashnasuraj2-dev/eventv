@@ -7,7 +7,7 @@ const intents=fs.readFileSync('research/search-intents-1000.csv','utf8').trim().
 assert.equal(data.length,50);assert.equal(new Set(data.map(e=>e.slug)).size,50);
 assert.equal(rows.length,201);assert.equal(intents.length,1001);
 assert.equal(data.filter(e=>e.slug.includes('eclipse')).length,0);
-assert.equal(approvals.length,15,'Pilot release currently expects exactly fifteen index-approved routes');
+assert.equal(approvals.length,16,'Pilot release currently expects exactly sixteen index-approved routes');
 for(const e of data){assert.equal(e.facets.length,5);for(const p of ['hub','planning','during','after']){
   const filepath='events/'+e.slug+'/'+(p==='hub'?'':p+'/')+'index.html';
   assert.ok(fs.existsSync(filepath),filepath);
@@ -52,7 +52,7 @@ assert.ok(wwdc.includes('Official date</span><strong>TBA'),'WWDC27 official date
 assert.ok(wwdc.includes('Official keynote time</span><strong>TBA'),'WWDC27 keynote time must remain TBA until source update');
 assert.ok(!wwdc.includes('"@type":"Event"'),'WWDC27 must not use Event schema before date announcement');
 assert.ok(fs.existsSync('index.html')&&fs.existsSync('events/index.html'));
-console.log('Validated: 50 clusters; 1000 intent rows; 200 event pages; 202 HTML total; 15 source-verified pilot hubs index-ready; all remaining event pages noindex');
+console.log('Validated: 50 clusters; 1000 intent rows; 200 event pages; 202 HTML total; 16 source-verified pilot hubs index-ready; all remaining event pages noindex');
 const summer=fs.readFileSync('events/steam-summer-sale-2027/index.html','utf8');
 assert.ok(summer.includes('June 24–July 8, 2027'),'Summer Sale page must preserve official date range');
 assert.ok(summer.includes('Exact start time</span><strong>TBA'),'Summer Sale exact clock must remain TBA until source update');
@@ -187,3 +187,18 @@ assert.ok(bts.includes('No live school-calendar, retailer-price, stock, tax, stu
 assert.ok(!bts.includes('"@type":"Event"'),'Back to School seasonal guide must not use Event schema');
 for(const ext of ['css','js'])assert.ok(fs.existsSync('assets/back-to-school-2027.'+ext),'Missing Back to School asset '+ext);
 assert.ok(fs.existsSync('assets/back-to-school-2027-social.svg'),'Missing Back to School social image');
+
+const sgf=fs.readFileSync('events/summer-game-fest-2027/index.html','utf8');
+assert.ok(sgf.includes('Official 2027 date</span><strong>TBA'),'SGF 2027 date must remain TBA');
+assert.ok(sgf.includes('Venue / city</span><strong>TBA'),'SGF 2027 venue/city must remain TBA');
+assert.ok(sgf.includes('Flagship start time</span><strong>TBA'),'SGF 2027 flagship time must remain TBA');
+assert.ok(sgf.includes('Tickets / participants</span><strong>TBA'),'SGF 2027 ticket/participant status must remain TBA');
+assert.ok(sgf.includes('2026 ARCHIVE'),'SGF current official-site historical state missing');
+assert.ok(sgf.includes('EVERY JUNE'),'SGF month-level organizer context missing');
+assert.ok(sgf.includes('The Mix')&&sgf.includes('Jun 1')&&sgf.includes('Nintendo Direct')&&sgf.includes('Jun 9'),'SGF 2026 multi-show historical span missing');
+assert.ok(sgf.includes('Main show ≠ whole schedule'),'SGF flagship-vs-directory distinction missing');
+for(const id of ['ledger','time-tool','overlap','reveals','history','references'])assert.ok(sgf.includes('id="'+id+'"'),'SGF tool/evidence section missing: '+id);
+assert.ok(sgf.includes('No live SGF schedule, social, ticket, game, YouTube, Twitch or publisher feed is active.'),'SGF no-live-feed warning missing');
+assert.ok(!sgf.includes('"@type":"Event"'),'SGF 2027 must not use Event schema before official date');
+for(const ext of ['css','js'])assert.ok(fs.existsSync('assets/summer-game-fest-2027.'+ext),'Missing SGF asset '+ext);
+assert.ok(fs.existsSync('assets/summer-game-fest-2027-social.svg'),'Missing SGF social image');
