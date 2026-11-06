@@ -165,13 +165,22 @@
       "source_path": "content/pilots/black-friday-2027.html",
       "robots": "index,follow,max-image-preview:large",
       "editorial_status": "pilot-index-ready",
-      "source_verified_on": "2026-11-05",
-      "factual_scope": "Black Friday 2027 is transparently rule-derived as Friday Nov 26 from OPM's official Thanksgiving Day 2027 date of Thursday Nov 25. No universal retailer start/end time, 2027 product prices, stock or best-deal claims asserted. Page includes user-entered deal arithmetic, total checkout-cost comparison, browser-local price evidence ledger and FTC-grounded shopping/return checklist.",
+      "source_verified_on": "2026-11-06",
+      "factual_scope": "Black Friday 2027 remains rule-derived as Friday Nov 26 from OPM's official Thanksgiving Day 2027 date of Thursday Nov 25; Cyber Monday Nov 29 is a calendar-derived comparison checkpoint, not a guaranteed cheaper-sale date. No live 2027 retailer prices, stock, launch times or future laptop claims are asserted. The browser-local exact-series ledger separates a 90-day shopper research history from the Germany/EU prior-price concept based on the lowest price applied in at least the previous 30 days; personal sparse observations are not represented as a legal compliance finding or market-wide historical low. The JavaScript 90-day and 30-day pre-Black-Friday windows both end Nov 25 so the Nov 26 price cannot become its own prior baseline. Historical 2025 EU sweep findings (314 traders; at least 30% referenced discounts incorrectly) are labelled historical rather than predictive. A gaming-laptop comparator requires exact SKU plus CPU, GPU, published GPU power/TGP when available, VRAM, RAM, storage, display, condition, warranty and landed price; same GPU family is explicitly not treated as system equivalence or performance proof. UK price-transparency evidence includes mandatory delivery and other unavoidable charges plus the CMA's Nov 2 2026 retailer reminder. U.S. deceptive former-price/FTC shopping guidance, Canadian ordinary-selling-price volume/time tests, Australian total-price and consumer-guarantee boundaries, UK distance returns and Germany/EU distance withdrawal remain jurisdiction-specific. BF-vs-CM comparisons stay inside one exact SKU/seller/market/condition/currency series. This replaces the older four-source approval scope; the hub was already present in the approval registry, so registry count remains unchanged.",
       "sources": [
         "https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/",
-        "https://consumer.ftc.gov/articles/online-shopping",
         "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-233",
-        "https://www.ftc.gov/business-guidance/advertising-marketing"
+        "https://consumer.ftc.gov/articles/online-shopping",
+        "https://www.gov.uk/government/publications/price-transparency-cma209/providing-clear-and-accurate-information-about-prices-summary",
+        "https://www.gov.uk/government/publications/online-retailers-including-mandatory-delivery-fees-in-the-total-price/open-letter-to-online-retailers-including-mandatory-delivery-fees-in-the-total-price",
+        "https://www.gov.uk/accepting-returns-and-giving-refunds",
+        "https://commission.europa.eu/topics/consumers/consumer-rights-and-complaints/enforcement-consumer-protection/sweeps_en",
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A52021XC1229%2806%29",
+        "https://commission.europa.eu/digital-life/protecting-you-when-buying-online_en",
+        "https://competition-bureau.canada.ca/en/deceptive-marketing-practices/types-deceptive-marketing-practices/ordinary-selling-price",
+        "https://competition-bureau.canada.ca/en/deceptive-marketing-practices/types-deceptive-marketing-practices/fake-sales-and-discounts",
+        "https://www.accc.gov.au/consumers/pricing/price-displays",
+        "https://www.accc.gov.au/consumers/problem-with-a-product-or-service-you-bought/repair-replace-refund-cancel"
       ]
     },
     {
