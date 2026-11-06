@@ -7,7 +7,7 @@ const intents=fs.readFileSync('research/search-intents-1000.csv','utf8').trim().
 assert.equal(data.length,50);assert.equal(new Set(data.map(e=>e.slug)).size,50);
 assert.equal(rows.length,201);assert.equal(intents.length,1001);
 assert.equal(data.filter(e=>e.slug.includes('eclipse')).length,0);
-assert.equal(approvals.length,22,'Pilot release currently expects exactly twenty-two index-approved routes');
+assert.equal(approvals.length,23,'Pilot release currently expects exactly twenty-three index-approved routes');
 for(const e of data){assert.equal(e.facets.length,5);for(const p of ['hub','planning','during','after']){
   const filepath='events/'+e.slug+'/'+(p==='hub'?'':p+'/')+'index.html';
   assert.ok(fs.existsSync(filepath),filepath);
@@ -52,7 +52,7 @@ assert.ok(wwdc.includes('Official date</span><strong>TBA'),'WWDC27 official date
 assert.ok(wwdc.includes('Official keynote time</span><strong>TBA'),'WWDC27 keynote time must remain TBA until source update');
 assert.ok(!wwdc.includes('"@type":"Event"'),'WWDC27 must not use Event schema before date announcement');
 assert.ok(fs.existsSync('index.html')&&fs.existsSync('events/index.html'));
-console.log('Validated: 50 clusters; 1000 intent rows; 200 event pages; 202 HTML total; 22 source-verified pilot hubs index-ready; all remaining event pages noindex');
+console.log('Validated: 50 clusters; 1000 intent rows; 200 event pages; 202 HTML total; 23 source-verified pilot hubs index-ready; all remaining event pages noindex');
 const summer=fs.readFileSync('events/steam-summer-sale-2027/index.html','utf8');
 assert.ok(summer.includes('June 24–July 8, 2027'),'Summer Sale page must preserve official date range');
 assert.ok(summer.includes('Exact start time</span><strong>TBA'),'Summer Sale exact clock must remain TBA until source update');
@@ -316,4 +316,38 @@ assert.ok(fs.existsSync('assets/sxsw-2027-social.svg'),'Missing SXSW social imag
 for(const stage of ['planning','during','after']){
   const spoke=fs.readFileSync('events/sxsw-2027/'+stage+'/index.html','utf8');
   assert.ok(spoke.includes('noindex,follow'),'SXSW unfinished '+stage+' route must remain noindex,follow');
+}
+
+
+const webSummitData=data.find(e=>e.slug==='web-summit-2027');
+assert.equal(webSummitData.start,'2027-11-08','Web Summit manifest start date must be confirmed');
+assert.equal(webSummitData.end,'2027-11-11','Web Summit manifest end date must be confirmed');
+assert.equal(webSummitData.date_status,'confirmed','Web Summit manifest date status must be confirmed');
+assert.equal(webSummitData.source,'https://websummit.com/web-summit-2027/','Web Summit manifest must use dedicated 2027 source');
+const webSummit=fs.readFileSync('events/web-summit-2027/index.html','utf8');
+assert.ok(webSummit.includes('November 8–11, 2027')||webSummit.includes('Nov 8–11, 2027'),'Web Summit 2027 confirmed date window missing');
+assert.ok(webSummit.includes('MEO Arena'),'Web Summit 2027 confirmed venue missing');
+assert.ok(webSummit.includes('17 tracks + Centre Stage')||webSummit.includes('17 content tracks plus Centre Stage'),'Web Summit current 2027 content model missing');
+assert.ok(webSummit.includes('2-FOR-1 · €950')&&webSummit.includes('Two tickets for €950'),'Web Summit current 2027 two-for-one snapshot missing');
+assert.ok(webSummit.includes('€950 two-ticket promotion')||webSummit.includes('€950 two-ticket promotional bundle')||webSummit.includes('two-ticket promotional bundle at €950'),'Web Summit two-ticket bundle framing missing');
+assert.ok(webSummit.includes('€475 SINGLE TICKET')||webSummit.includes('€475 single-ticket price'),'Web Summit must reject fake standalone price derivation');
+assert.ok(webSummit.includes('PAST SPEAKER ≠ 2027 SPEAKER'),'Web Summit historical-speaker counterexample missing');
+assert.ok(webSummit.includes('links to the 2026 schedule')||webSummit.includes('links 2026'),'Web Summit 2027 schedule-pending evidence missing');
+assert.ok(webSummit.includes('2027 APPLICATION OPEN'),'Web Summit 2027 startup-application state missing');
+assert.ok(webSummit.includes('under $1M')&&webSummit.includes('over $3M'),'Web Summit current ALPHA/GROWTH framework missing');
+assert.ok(webSummit.includes('Funding band alone is not acceptance'),'Web Summit startup non-determinism warning missing');
+assert.ok(webSummit.includes('Livestream / online-only access')&&webSummit.includes('PENDING'),'Web Summit online-access uncertainty missing');
+assert.ok(webSummit.includes('Oriente')&&webSummit.includes('Red line')&&webSummit.includes('400 metres'),'Web Summit Lisbon transport baseline missing');
+assert.ok(webSummit.includes('6-minute Aeroporto')||webSummit.includes('~6 min to Oriente'),'Web Summit airport-to-Oriente current baseline missing');
+assert.ok(webSummit.includes('No 2026 FIL footprint')&&webSummit.includes('No 2026 session'),'Web Summit must reject 2026 event-specific extrapolation');
+for(const id of ['schedule','access','startup','transit','networking','references'])assert.ok(webSummit.includes('id="'+id+'"'),'Web Summit tool/evidence section missing: '+id);
+assert.ok(webSummit.includes('No live Web Summit schedule, speaker, ticket inventory, startup decision, investor accreditation, hotel inventory, transit disruption, meeting, livestream or replay feed is active.'),'Web Summit no-live-feed warning missing');
+assert.ok(webSummit.includes('"@type":"Event"'),'Web Summit confirmed physical event should use Event schema');
+assert.ok(webSummit.includes('Rossio dos Olivais, Lote 2.13.01A'),'Web Summit MEO Arena address missing');
+for(const ext of ['css','js'])assert.ok(fs.existsSync('assets/web-summit-2027.'+ext),'Missing Web Summit asset '+ext);
+assert.ok(fs.existsSync('assets/web-summit-2027-social.svg'),'Missing Web Summit social image');
+for(const stage of ['planning','during','after']){
+  const spoke=fs.readFileSync('events/web-summit-2027/'+stage+'/index.html','utf8');
+  assert.ok(spoke.includes('noindex,follow'),'Web Summit unfinished '+stage+' route must remain noindex,follow');
+  assert.ok(spoke.includes('2027-11-08–2027-11-11'),'Web Summit '+stage+' route must carry confirmed event window');
 }
