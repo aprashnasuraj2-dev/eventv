@@ -4,22 +4,22 @@
 > Read this file first whenever resuming EventV. Update it **in the same commit/PR** as every meaningful repository change. Historical research files remain references, not the live project status.
 >
 > **Last reviewed:** 2026-11-06 (Asia/Kathmandu)  
-> **Checkpoint:** Fifteenth editorial pilot built — Back to School 2027 school-specific budget, price and requirement hub  
-> **Status:** **15 SOURCE-VERIFIED INDEX-READY PILOT HUBS MERGED TO MAIN; LIVE DEPLOYMENT NOT PERFORMED**
+> **Checkpoint:** Sixteenth editorial pilot prepared — Summer Game Fest 2027 announcement-status, timezone and reveal-tracking hub  
+> **Status:** **TOPIC #16 PREPARED ON FEATURE BRANCH; PR/CI/MAIN MERGE PENDING; LIVE DEPLOYMENT NOT PERFORMED**
 
 ## 1. Current verified state
 
 | Area | Status | Verified detail |
 |---|---|---|
 | GitHub repo | **Working** | [`aprashnasuraj2-dev/eventv`](https://github.com/aprashnasuraj2-dev/eventv), default branch `main` |
-| Most recent feature change | **Merged** | [PR #24](https://github.com/aprashnasuraj2-dev/eventv/pull/24), squash commit [`32ba401`](https://github.com/aprashnasuraj2-dev/eventv/commit/32ba4011192fd986c87d99718c97169c2014b05d) — Back to School 2027 pilot |
-| CI at feature checkpoint | **PR #24 checks passed after one validator-caught wording correction** | [GitHub Actions run 42159011498](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42159011498); initial run 42158956746 failed on an exact Texas exclusion-phrase assertion and was corrected without weakening validation |
+| Most recent feature change | **Last merged feature: PR #24; Topic #16 branch in progress** | [PR #24](https://github.com/aprashnasuraj2-dev/eventv/pull/24), squash commit [`32ba401`](https://github.com/aprashnasuraj2-dev/eventv/commit/32ba4011192fd986c87d99718c97169c2014b05d) — Back to School 2027 pilot |
+| CI at feature checkpoint | **Last merged feature CI passed; Topic #16 CI pending** | [GitHub Actions run 42159011498](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42159011498) was the prior feature check |
 | Candidate event topics | **50 defined** | [`data/events-50.json`](data/events-50.json), [ranked topics](TOP_50_TOPICS.md); eclipses excluded |
 | Search intents | **1,000 generated hypotheses** | [`research/search-intents-1000.csv`](research/search-intents-1000.csv); **not** verified keyword volumes, demand or attainable rankings |
 | Canonical event routes | **200 mapped** | [`research/routes-200.csv`](research/routes-200.csv) |
 | Generated static pages | **202 HTML files** | 50 event hubs + 50 planning + 50 during + 50 after = **200** event pages; 2 index/navigation pages |
-| Build and validation | **PR #24 passed build + validation + checkpoint enforcement after the wording correction; merged `main` source reverified** | `node scripts/build.mjs`, `node scripts/validate.mjs` on Node 22 |
-| Individual SEO-ready event pages | **15 source-verified hubs registered on main** | Fifteen hubs are merged on main; Back to School 2027 keeps Jul–Sep explicitly editorial-only, verified US/UK/Australia calendar examples, Texas-only Aug 6–8 tax rules, school-date planning, browser-local supply and price ledgers, user-entered device requirement checks, compact references and `index,follow`; **not deployed live** |
+| Build and validation | **Prior feature passed; Topic #16 branch validation pending** | `node scripts/build.mjs`, `node scripts/validate.mjs` on Node 22 |
+| Individual SEO-ready event pages | **15 source-verified hubs on main + Topic #16 candidate on feature branch** | Fifteen prior hubs remain merged on main; Summer Game Fest 2027 is prepared on the feature branch with date/venue/time/tickets/participants held at TBA, current official site identified as 2026 archive, 2026 multi-show history preserved as non-predictive context, and browser-local showcase/time/overlap/reveal tools; **not deployed live** |
 | Subdomains | **Proposed only** | 50 optional names in manifest; **no** DNS/TLS/host routing configured |
 | Website deployment | **Not performed** | No deployment to aafnaipatro.com, Cloudflare, Pages, or standalone event host verified |
 | Adsterra monetization | **Not implemented in EventV** | No event ad scripts, verified paid impressions or realized CPM measured by this repo |
@@ -50,7 +50,7 @@
 | **P1** | Launch **only approved URLs** after staging QA | HTTP checks, user-visible functionality, metadata/schema/source checks, production click tests, no regressions, smoke-test log | **TODO** |
 | **P2** | Repeat for more event clusters based on observed performance | Actual GSC impressions/clicks, engaged visits, verified paid ads and content-hours ROI; stop low-value clusters | **TODO** |
 
-**Next action to execute:** Continue sequentially with Topic #16 Summer Game Fest 2027. Verify whether any 2027 date, city/venue, showcase clock, participating companies or ticketing status has been officially announced; keep all unannounced fields TBA and build source-led announcement/session tracking rather than prediction. Never deploy live; keep all unfinished routes `noindex`; 185 event routes remain unapproved.
+**Next action to execute:** Complete Topic #16 Summer Game Fest 2027 through PR → CI → merge → main verification. Then continue sequentially with Topic #17 The Game Awards 2026, revalidating the official Dec 10 date/time/venue, ticket/watch status and building differentiated nominee/result/watch-planning utilities without fabricating winners or availability. Never deploy live; keep all unfinished routes `noindex`; main currently has 185 unapproved event routes, falling to 184 only if Topic #16 merges.
 
 ## 4. Implementation files and run commands
 
@@ -83,6 +83,7 @@ For any new feature, create a branch from current `main`, make the change, updat
 
 | Date | Change | Verified evidence |
 |---|---|---|
+| 2026-11-06 | Topic #16 Summer Game Fest 2027 prepared on feature branch: official date, city/venue, flagship time, ticketing and participants remain TBA; current SGF site is still the 2026 archive and only supports month-level “every June” context; historical 2026 directory examples span Jun 1–9 and are explicitly non-predictive; showcase ledger, verified-time converter, overlap checker and confirmed-vs-rumored reveal matrix added | PR/CI/merge pending; no live deployment |
 | 2026-11-06 | Built fifteenth pilot: Back to School 2027 with Jul–Sep retained only as editorial planning scope; official examples include LAUSD Aug 12, Portsmouth Sep 1, Oxfordshire Sep 6, Leicestershire Aug 25, NSW Feb school-year start/Jul 20 Term 3 and Queensland Jan 27 school-year start/Jul 12 Term 3; Texas Aug 6–8 holiday scoped only to Texas; school-date buffer, browser-local supply budget, exact-item price ledger, Texas tax checker and device-minimum checker added | [PR #24](https://github.com/aprashnasuraj2-dev/eventv/pull/24) merged as `32ba401`; corrected [passing PR CI 42159011498](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42159011498) after initial run 42158956746 caught an exact wording mismatch; merged `main` re-read confirms 15 approvals and all three Back-to-School spokes remain `noindex`; no live deployment |
 | 2026-11-06 | Built fourteenth pilot: Rugby World Cup 2027 with official Oct 1–Nov 13 window, all 52 local kickoff times, 24 teams/six pools, seven cities/eight venues and current ticket-sale state reverified; main site says tickets on sale while an RWC Experiences FAQ is stale; venue-aware timezone converter, conditional team path and multi-city buffer planner added; per-match availability, gate times, future progression and broadcast map not fabricated | [PR #22](https://github.com/aprashnasuraj2-dev/eventv/pull/22) merged as `59b8883`; [passing PR CI 42156293978](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42156293978); merged `main` re-read confirms 14 approvals and all three RWC spokes remain `noindex`; no live deployment |
 | 2026-11-06 | Built thirteenth pilot: Cyber Monday 2027 with Nov 29 transparently derived from OPM Thanksgiving Nov 25 plus NRF five-day shopping-period definition; no universal retailer clock, 2027 prices/coupons/stock asserted; BF-vs-CM comparator, subscription renewal/lifetime audit, delivery-buffer planner, return-deadline calculator and seller checklist added | [PR #20](https://github.com/aprashnasuraj2-dev/eventv/pull/20) merged as `05bedb2`; [passing PR CI 42153672476](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42153672476); merged `main` re-read confirms 13 approvals and all three Cyber Monday spokes remain `noindex`; no live deployment |
