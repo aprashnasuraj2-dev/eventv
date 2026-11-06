@@ -143,13 +143,13 @@ for(const ext of ['css','js'])assert.ok(fs.existsSync('assets/microsoft-build-20
 assert.ok(fs.existsSync('assets/microsoft-build-2027-social.svg'),'Missing Microsoft Build social image');
 
 const cyber=fs.readFileSync('events/cyber-monday-2027/index.html','utf8');
-assert.ok(cyber.includes('Monday, November 29')&&cyber.includes('Thursday, November 25'),'Cyber Monday 2027 rule-derived date basis missing');
-assert.ok(cyber.includes('Retailer sale clock</span><strong>Unknown'),'Cyber Monday retailer clock must remain unknown');
-assert.ok(cyber.includes('2027 prices / stock</span><strong>Unknown'),'Cyber Monday prices/stock must remain unknown');
-for(const id of ['delta','subscription','delivery','returns','references'])assert.ok(cyber.includes('id="'+id+'"'),'Cyber Monday tool/evidence section missing: '+id);
-assert.ok(cyber.includes('“Ships by” and “arrives by” are different')||cyber.includes('“ships by” and “arrives by” are different'),'Cyber Monday shipment-vs-delivery distinction missing');
-assert.ok(cyber.includes('No live retailer monitoring is active.'),'Cyber Monday no-live-monitoring warning missing');
-assert.ok(cyber.includes('five-day shopping period'),'Cyber Monday NRF calendar convention missing');
+assert.ok(cyber.includes('Monday, November 29')&&cyber.includes('Thursday, November 25'),'Cyber Monday 2027 OPM-derived date basis missing');
+assert.ok(cyber.includes('UK 2027 subscription regime</span><strong>REVERIFY'),'Cyber Monday future-law status must remain visibly provisional');
+assert.ok(cyber.includes('2027 SaaS prices / terms</span><strong>Unknown'),'Cyber Monday 2027 software terms must remain unknown');
+for(const id of ['delta','trial','license','regional','cancel','legal','references'])assert.ok(cyber.includes('id="'+id+'"'),'Cyber Monday SaaS tool/evidence section missing: '+id);
+assert.ok(cyber.includes('Lower first-term price ≠ lower contract cost'),'Cyber Monday contract-cost counterexample missing');
+assert.ok(cyber.includes('expected in Spring 2027')&&cyber.includes('still draft'),'Cyber Monday UK future-law revalidation boundary missing');
+assert.ok(cyber.includes('No live software-price, coupon, subscription-status, renewal, tax, FX or cancellation feed is active.'),'Cyber Monday no-live-software-feed warning missing');
 assert.ok(!cyber.includes('"@type":"Event"'),'Cyber Monday commerce guide must not use Event schema');
 for(const ext of ['css','js'])assert.ok(fs.existsSync('assets/cyber-monday-2027.'+ext),'Missing Cyber Monday asset '+ext);
 assert.ok(fs.existsSync('assets/cyber-monday-2027-social.svg'),'Missing Cyber Monday social image');
