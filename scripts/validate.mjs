@@ -7,7 +7,7 @@ const intents=fs.readFileSync('research/search-intents-1000.csv','utf8').trim().
 assert.equal(data.length,50);assert.equal(new Set(data.map(e=>e.slug)).size,50);
 assert.equal(rows.length,201);assert.equal(intents.length,1001);
 assert.equal(data.filter(e=>e.slug.includes('eclipse')).length,0);
-assert.equal(approvals.length,16,'Pilot release currently expects exactly sixteen index-approved routes');
+assert.equal(approvals.length,17,'Pilot release currently expects exactly seventeen index-approved routes');
 for(const e of data){assert.equal(e.facets.length,5);for(const p of ['hub','planning','during','after']){
   const filepath='events/'+e.slug+'/'+(p==='hub'?'':p+'/')+'index.html';
   assert.ok(fs.existsSync(filepath),filepath);
@@ -52,7 +52,7 @@ assert.ok(wwdc.includes('Official date</span><strong>TBA'),'WWDC27 official date
 assert.ok(wwdc.includes('Official keynote time</span><strong>TBA'),'WWDC27 keynote time must remain TBA until source update');
 assert.ok(!wwdc.includes('"@type":"Event"'),'WWDC27 must not use Event schema before date announcement');
 assert.ok(fs.existsSync('index.html')&&fs.existsSync('events/index.html'));
-console.log('Validated: 50 clusters; 1000 intent rows; 200 event pages; 202 HTML total; 16 source-verified pilot hubs index-ready; all remaining event pages noindex');
+console.log('Validated: 50 clusters; 1000 intent rows; 200 event pages; 202 HTML total; 17 source-verified pilot hubs index-ready; all remaining event pages noindex');
 const summer=fs.readFileSync('events/steam-summer-sale-2027/index.html','utf8');
 assert.ok(summer.includes('June 24–July 8, 2027'),'Summer Sale page must preserve official date range');
 assert.ok(summer.includes('Exact start time</span><strong>TBA'),'Summer Sale exact clock must remain TBA until source update');
@@ -202,3 +202,21 @@ assert.ok(sgf.includes('No live SGF schedule, social, ticket, game, YouTube, Twi
 assert.ok(!sgf.includes('"@type":"Event"'),'SGF 2027 must not use Event schema before official date');
 for(const ext of ['css','js'])assert.ok(fs.existsSync('assets/summer-game-fest-2027.'+ext),'Missing SGF asset '+ext);
 assert.ok(fs.existsSync('assets/summer-game-fest-2027-social.svg'),'Missing SGF social image');
+
+const tga=fs.readFileSync('events/the-game-awards-2026/index.html','utf8');
+assert.ok(tga.includes('Thursday, December 10')&&tga.includes('Peacock Theater'),'TGA 2026 date/venue missing');
+assert.ok(tga.includes('4:30pm PT / 7:30pm ET'),'TGA 2026 official opening time missing');
+assert.ok(tga.includes('doors at <strong>3:30pm</strong>')||tga.includes('Doors</span><strong>3:30pm PT'),'TGA 2026 venue doors time missing');
+assert.ok(tga.includes('2026 nominees are coming mid-November')||tga.includes('2026 nominees are coming mid-November'),'TGA current pre-nominee state missing');
+assert.ok(tga.includes('Jury 90% · fan vote 10%')||tga.includes('90% jury / 10% fan'),'TGA winner weighting missing');
+assert.ok(tga.includes('December 9 at 6pm PT')||tga.includes('Dec 9 at 6pm PT'),'TGA fan-vote deadline missing');
+assert.ok(tga.includes('November 20, 2026 at 9pm PT')||tga.includes('Nov 20 · 9pm PT'),'TGA main eligibility cutoff missing');
+assert.ok(tga.includes('November 30, 2026')||tga.includes('Nov 30'),'TGA Players Voice cutoff missing');
+assert.ok(tga.includes('October 29')&&tga.includes('live seat/category inventory'),'TGA ticket-sale/dynamic-inventory distinction missing');
+assert.ok(tga.includes('Winners remain unknown until announced live.')||tga.includes('winners are unknown'),'TGA must preserve unknown winner state');
+for(const id of ['time-tool','attendance','eligibility','nominees','results','tickets','references'])assert.ok(tga.includes('id="'+id+'"'),'TGA tool/evidence section missing: '+id);
+assert.ok(tga.includes('No live nominee, voting, ticket, result, replay or streaming-platform feed is active.'),'TGA no-live-feed warning missing');
+assert.ok(tga.includes('"@type":"Event"'),'TGA confirmed physical event should use Event schema');
+assert.ok(tga.includes('777 Chick Hearn Court'),'TGA venue address missing');
+for(const ext of ['css','js'])assert.ok(fs.existsSync('assets/the-game-awards-2026.'+ext),'Missing TGA asset '+ext);
+assert.ok(fs.existsSync('assets/the-game-awards-2026-social.svg'),'Missing TGA social image');

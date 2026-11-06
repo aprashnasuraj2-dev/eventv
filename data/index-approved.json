@@ -287,6 +287,25 @@
         "https://www.summergamefest.com/events/pc-gaming-show-2026",
         "https://www.summergamefest.com/events/nintendo-direct"
       ]
+    },
+    {
+      "slug": "the-game-awards-2026",
+      "page_type": "hub",
+      "output_path": "events/the-game-awards-2026/index.html",
+      "source_path": "content/pilots/the-game-awards-2026.html",
+      "robots": "index,follow,max-image-preview:large",
+      "editorial_status": "pilot-index-ready",
+      "source_verified_on": "2026-11-06",
+      "factual_scope": "The Game Awards 2026 is confirmed for Thursday Dec 10 at Peacock Theater, Los Angeles, with opening act/event start 4:30pm PT / 7:30pm ET and venue doors 3:30pm. Public tickets went on sale Oct 29; current purchase path exists but live seat/category inventory and prices are not mirrored. Official homepage says 2026 nominees are coming mid-November, so nominee names and winners remain unasserted. FAQ publishes 90% jury/10% fan weighting, Dec 9 6pm PT fan-vote close, Nov 20 9pm PT main eligibility cutoff and Nov 30 Players' Voice ship cutoff. Tools provide verified timezone conversion, venue-arrival buffer math, eligibility date-gate checking, browser-local nominee comparison and result/reveal evidence tracking.",
+      "sources": [
+        "https://thegameawards.com/",
+        "https://thegameawards.com/faq",
+        "https://thegameawards.com/voting-jury",
+        "https://thegameawards.com/news/tga-returns-december-10-2026",
+        "https://thegameawards.com/news/public-tickets-on-october-29",
+        "https://www.peacocktheater.com/events/detail/the-game-awards-121026",
+        "https://www.peacocktheater.com/directions"
+      ]
     }
   ]
 }
