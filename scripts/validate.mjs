@@ -7,7 +7,7 @@ const intents=fs.readFileSync('research/search-intents-1000.csv','utf8').trim().
 assert.equal(data.length,50);assert.equal(new Set(data.map(e=>e.slug)).size,50);
 assert.equal(rows.length,201);assert.equal(intents.length,1001);
 assert.equal(data.filter(e=>e.slug.includes('eclipse')).length,0);
-assert.equal(approvals.length,25,'Pilot release currently expects exactly twenty-five index-approved routes');
+assert.equal(approvals.length,26,'Pilot release currently expects exactly twenty-six index-approved routes');
 for(const e of data){assert.equal(e.facets.length,5);for(const p of ['hub','planning','during','after']){
   const filepath='events/'+e.slug+'/'+(p==='hub'?'':p+'/')+'index.html';
   assert.ok(fs.existsSync(filepath),filepath);
@@ -52,7 +52,7 @@ assert.ok(wwdc.includes('Official date</span><strong>TBA'),'WWDC27 official date
 assert.ok(wwdc.includes('Official keynote time</span><strong>TBA'),'WWDC27 keynote time must remain TBA until source update');
 assert.ok(!wwdc.includes('"@type":"Event"'),'WWDC27 must not use Event schema before date announcement');
 assert.ok(fs.existsSync('index.html')&&fs.existsSync('events/index.html'));
-console.log('Validated: 50 clusters; 1000 intent rows; 200 event pages; 202 HTML total; 25 source-verified pilot hubs index-ready; all remaining event pages noindex');
+console.log('Validated: 50 clusters; 1000 intent rows; 200 event pages; 202 HTML total; 26 source-verified pilot hubs index-ready; all remaining event pages noindex');
 const summer=fs.readFileSync('events/steam-summer-sale-2027/index.html','utf8');
 assert.ok(summer.includes('June 24–July 8, 2027'),'Summer Sale page must preserve official date range');
 assert.ok(summer.includes('Exact start time</span><strong>TBA'),'Summer Sale exact clock must remain TBA until source update');
@@ -420,4 +420,38 @@ for(const stage of ['planning','during','after']){
   const spoke=fs.readFileSync('events/cyber-monday-2026/'+stage+'/index.html','utf8');
   assert.ok(spoke.includes('noindex,follow'),'Cyber Monday unfinished '+stage+' route must remain noindex,follow');
   assert.ok(spoke.includes('https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/'),'Cyber Monday '+stage+' route must use primary OPM date anchor');
+}
+
+
+const boxingDayData=data.find(e=>e.slug==='boxing-day-2026');
+assert.equal(boxingDayData.start,'2026-12-26','Boxing Day manifest actual date must remain Dec 26, 2026');
+assert.equal(boxingDayData.end,'2026-12-26','Boxing Day manifest must remain single-day actual date');
+assert.equal(boxingDayData.date_status,'rule-derived','Boxing Day must remain rule-derived, not organizer-confirmed');
+assert.equal(boxingDayData.source,'https://www.gov.uk/bank-holidays','Boxing Day manifest should preserve primary GOV.UK holiday anchor');
+const boxingDay=fs.readFileSync('events/boxing-day-2026/index.html','utf8');
+assert.ok(boxingDay.includes('Saturday, December 26, 2026'),'Boxing Day actual date missing');
+assert.ok(boxingDay.includes('Monday, Dec 28')||boxingDay.includes('Monday Dec 28'),'Boxing Day UK substitute date missing');
+assert.ok(boxingDay.includes('Actual-vs-observed holiday mapper'),'Boxing Day actual-vs-observed utility missing');
+assert.ok(boxingDay.includes('PUBLIC HOLIDAY ≠ STORE CLOSED'),'Boxing Day public-holiday/store-closure counterexample missing');
+assert.ok(boxingDay.includes('SALE ITEM ≠ NO CONSUMER RIGHTS'),'Boxing Day sale-item rights counterexample missing');
+assert.ok(boxingDay.includes('Dec 26 actual and Dec 28 observed')||boxingDay.includes('Dec 26 actual / Dec 28 observed'),'Boxing Day NZ actual/observed distinction missing');
+assert.ok(boxingDay.includes('Tasmania')&&boxingDay.includes('South Australia')&&boxingDay.includes('Proclamation Day'),'Boxing Day Australia state-specific exceptions missing');
+assert.ok(boxingDay.includes('federally regulated employees')&&boxingDay.includes('Ontario separately lists Boxing Day as a public holiday'),'Boxing Day Canada federal/provincial scope distinction missing');
+assert.ok(boxingDay.includes('mandatory retail-closure list does not include Boxing Day'),'Boxing Day Ontario retail-closure counterexample missing');
+assert.ok(boxingDay.includes('another 14 days to return'),'Boxing Day UK distance return baseline missing');
+assert.ok(boxingDay.includes('no general legal right to return or exchange goods'),'Boxing Day Ontario return-policy boundary missing');
+assert.ok(boxingDay.includes('does not require a remedy just because the buyer changed their mind')||boxingDay.includes('does not require a remedy merely for change of mind'),'Boxing Day Australia change-of-mind boundary missing');
+assert.ok(boxingDay.includes('usually does not have to accept a change-of-mind return'),'Boxing Day New Zealand change-of-mind boundary missing');
+assert.ok(boxingDay.includes('no more than 30 days after contract'),'Boxing Day UK delivery default missing');
+assert.ok(boxingDay.includes('within 30 days of the promised delivery date'),'Boxing Day Ontario delivery-delay baseline missing');
+assert.ok(boxingDay.includes('TTC')&&boxingDay.includes('approximately 6 a.m.'),'Boxing Day TTC 2026 holiday-service evidence missing');
+assert.ok(boxingDay.includes('Auckland Transport')&&boxingDay.includes('right across the network on Boxing Day'),'Boxing Day Auckland 2026 rail evidence missing');
+for(const id of ['status','returns','delivery','operations','channel','references'])assert.ok(boxingDay.includes('id="'+id+'"'),'Boxing Day tool/evidence section missing: '+id);
+assert.ok(boxingDay.includes('No live store-hours, retailer-price, return-policy, courier, parcel-tracking, public-transport, inventory, click-and-collect or holiday-service feed is active.'),'Boxing Day no-live-feed warning missing');
+assert.ok(!boxingDay.includes('"@type":"Event"'),'Boxing Day retail-calendar guide must not misuse Event schema');
+for(const ext of ['css','js'])assert.ok(fs.existsSync('assets/boxing-day-2026.'+ext),'Missing Boxing Day asset '+ext);
+assert.ok(fs.existsSync('assets/boxing-day-2026-social.svg'),'Missing Boxing Day social image');
+for(const stage of ['planning','during','after']){
+  const spoke=fs.readFileSync('events/boxing-day-2026/'+stage+'/index.html','utf8');
+  assert.ok(spoke.includes('noindex,follow'),'Boxing Day unfinished '+stage+' route must remain noindex,follow');
 }
