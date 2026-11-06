@@ -7,7 +7,7 @@ const intents=fs.readFileSync('research/search-intents-1000.csv','utf8').trim().
 assert.equal(data.length,50);assert.equal(new Set(data.map(e=>e.slug)).size,50);
 assert.equal(rows.length,201);assert.equal(intents.length,1001);
 assert.equal(data.filter(e=>e.slug.includes('eclipse')).length,0);
-assert.equal(approvals.length,23,'Pilot release currently expects exactly twenty-three index-approved routes');
+assert.equal(approvals.length,24,'Pilot release currently expects exactly twenty-four index-approved routes');
 for(const e of data){assert.equal(e.facets.length,5);for(const p of ['hub','planning','during','after']){
   const filepath='events/'+e.slug+'/'+(p==='hub'?'':p+'/')+'index.html';
   assert.ok(fs.existsSync(filepath),filepath);
@@ -52,7 +52,7 @@ assert.ok(wwdc.includes('Official date</span><strong>TBA'),'WWDC27 official date
 assert.ok(wwdc.includes('Official keynote time</span><strong>TBA'),'WWDC27 keynote time must remain TBA until source update');
 assert.ok(!wwdc.includes('"@type":"Event"'),'WWDC27 must not use Event schema before date announcement');
 assert.ok(fs.existsSync('index.html')&&fs.existsSync('events/index.html'));
-console.log('Validated: 50 clusters; 1000 intent rows; 200 event pages; 202 HTML total; 23 source-verified pilot hubs index-ready; all remaining event pages noindex');
+console.log('Validated: 50 clusters; 1000 intent rows; 200 event pages; 202 HTML total; 24 source-verified pilot hubs index-ready; all remaining event pages noindex');
 const summer=fs.readFileSync('events/steam-summer-sale-2027/index.html','utf8');
 assert.ok(summer.includes('June 24–July 8, 2027'),'Summer Sale page must preserve official date range');
 assert.ok(summer.includes('Exact start time</span><strong>TBA'),'Summer Sale exact clock must remain TBA until source update');
@@ -350,4 +350,38 @@ for(const stage of ['planning','during','after']){
   const spoke=fs.readFileSync('events/web-summit-2027/'+stage+'/index.html','utf8');
   assert.ok(spoke.includes('noindex,follow'),'Web Summit unfinished '+stage+' route must remain noindex,follow');
   assert.ok(spoke.includes('2027-11-08–2027-11-11'),'Web Summit '+stage+' route must carry confirmed event window');
+}
+
+
+const blackFridayData=data.find(e=>e.slug==='black-friday-2026');
+assert.equal(blackFridayData.start,'2026-11-27','Black Friday manifest date must remain Nov 27, 2026');
+assert.equal(blackFridayData.end,'2026-11-27','Black Friday manifest end must remain single-day Nov 27, 2026');
+assert.equal(blackFridayData.date_status,'rule-derived','Black Friday must remain rule-derived, not organizer-confirmed');
+assert.equal(blackFridayData.source,'https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/','Black Friday manifest should preserve OPM Thanksgiving anchor');
+const blackFriday=fs.readFileSync('events/black-friday-2026/index.html','utf8');
+assert.ok(blackFriday.includes('Thursday, November 26, 2026'),'Black Friday Thanksgiving anchor missing');
+assert.ok(blackFriday.includes('Friday, November 27'),'Black Friday rule-derived date missing');
+assert.ok(blackFriday.includes('Monday, November 30'),'Cyber Monday calendar checkpoint missing');
+assert.ok(blackFriday.includes('it is not itself a U.S. federal holiday'),'Black Friday federal-holiday distinction missing');
+assert.ok(blackFriday.includes('Fictitious former price ≠ bargain'),'Black Friday US deceptive-reference-price principle missing');
+assert.ok(blackFriday.includes('30-day reference rule')&&blackFriday.includes('lowest price applied in at least the previous 30 days'),'Black Friday Germany/EU prior-price rule missing');
+assert.ok(blackFriday.includes('Ordinary selling price must be genuine')&&blackFriday.includes('volume and time tests'),'Black Friday Canada ordinary-price rule missing');
+assert.ok(blackFriday.includes('“Was/now” and total price must not mislead'),'Black Friday Australia price-display distinction missing');
+assert.ok(blackFriday.includes('another 14 days to return'),'Black Friday UK distance-return baseline missing');
+assert.ok(blackFriday.includes('314 online traders')&&blackFriday.includes('at least 30% referenced discounts incorrectly'),'Black Friday historical EU sweep context missing');
+assert.ok(blackFriday.includes('MSRP → $599 does not prove 40% savings')||blackFriday.includes('$999 MSRP → $599 does not prove 40% savings'),'Black Friday headline-discount counterexample missing');
+assert.ok(blackFriday.includes('Component discount ≠ total purchase quality'),'Black Friday system-quality counterexample missing');
+assert.ok(blackFriday.includes('Focused-series rule:')&&blackFriday.includes('never compares different markets or conditions'),'Black Friday price-history series isolation missing');
+assert.ok(blackFriday.includes('No universal federal change-of-mind return period is inserted'),'Black Friday US return-period non-assumption missing');
+assert.ok(blackFriday.includes('No single Canada-wide voluntary return deadline is invented'),'Black Friday Canada return-period non-assumption missing');
+assert.ok(blackFriday.includes('No EU 30-day lowest-price rule is copied into post-Brexit UK'),'Black Friday UK/EU rule separation missing');
+assert.ok(blackFriday.includes('No retailer change-of-mind period is treated as a statutory ACL minimum'),'Black Friday Australia return-policy separation missing');
+for(const id of ['deal','history','returns','condition','threshold','rights','references'])assert.ok(blackFriday.includes('id="'+id+'"'),'Black Friday tool/evidence section missing: '+id);
+assert.ok(blackFriday.includes('No live retailer price, inventory, coupon, tax, delivery, return-policy, warranty, condition, Black Friday or Cyber Monday feed is active.'),'Black Friday no-live-feed warning missing');
+assert.ok(!blackFriday.includes('"@type":"Event"'),'Black Friday retail-calendar guide must not misuse Event schema');
+for(const ext of ['css','js'])assert.ok(fs.existsSync('assets/black-friday-2026.'+ext),'Missing Black Friday asset '+ext);
+assert.ok(fs.existsSync('assets/black-friday-2026-social.svg'),'Missing Black Friday social image');
+for(const stage of ['planning','during','after']){
+  const spoke=fs.readFileSync('events/black-friday-2026/'+stage+'/index.html','utf8');
+  assert.ok(spoke.includes('noindex,follow'),'Black Friday unfinished '+stage+' route must remain noindex,follow');
 }

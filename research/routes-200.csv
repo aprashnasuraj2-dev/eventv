@@ -91,7 +91,7 @@ event_slug,page_type,output_path,canonical_url,robots,editorial_status
 "web-summit-2027","planning","events/web-summit-2027/planning/index.html","https://aafnaipatro.com/events/web-summit-2027/planning/","noindex,follow","research-draft"
 "web-summit-2027","during","events/web-summit-2027/during/index.html","https://aafnaipatro.com/events/web-summit-2027/during/","noindex,follow","research-draft"
 "web-summit-2027","after","events/web-summit-2027/after/index.html","https://aafnaipatro.com/events/web-summit-2027/after/","noindex,follow","research-draft"
-"black-friday-2026","hub","events/black-friday-2026/index.html","https://aafnaipatro.com/events/black-friday-2026/","noindex,follow","research-draft"
+"black-friday-2026","hub","events/black-friday-2026/index.html","https://aafnaipatro.com/events/black-friday-2026/","index,follow,max-image-preview:large","pilot-index-ready"
 "black-friday-2026","planning","events/black-friday-2026/planning/index.html","https://aafnaipatro.com/events/black-friday-2026/planning/","noindex,follow","research-draft"
 "black-friday-2026","during","events/black-friday-2026/during/index.html","https://aafnaipatro.com/events/black-friday-2026/during/","noindex,follow","research-draft"
 "black-friday-2026","after","events/black-friday-2026/after/index.html","https://aafnaipatro.com/events/black-friday-2026/after/","noindex,follow","research-draft"

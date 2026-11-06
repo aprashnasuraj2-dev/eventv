@@ -433,6 +433,32 @@
         "https://www.metrolisboa.pt/en/lisboa-by-metro-from-airport/",
         "https://www.metrolisboa.pt/en/travel/timetables-and-frequency/"
       ]
+    },
+    {
+      "slug": "black-friday-2026",
+      "page_type": "hub",
+      "output_path": "events/black-friday-2026/index.html",
+      "source_path": "content/pilots/black-friday-2026.html",
+      "robots": "index,follow,max-image-preview:large",
+      "editorial_status": "pilot-index-ready",
+      "source_verified_on": "2026-11-06",
+      "factual_scope": "Black Friday 2026 is treated as a rule-derived retail date: OPM confirms U.S. Thanksgiving on Thursday Nov 26, 2026, so this hub uses Friday Nov 27 as the conventional Black Friday date and Monday Nov 30 as a calendar-derived Cyber Monday comparison checkpoint; neither is represented as an OPM-designated federal holiday or universal retailer sale window. The hub does not scrape or rank live deals. U.S. eCFR Part 233 deceptive-pricing guidance, FTC online-shopping and shipping guidance, current UK CMA price-transparency and GOV.UK distance-return guidance, EU prior-price/withdrawal rules, Canada Competition Bureau ordinary-selling-price guidance, Canadian online-shopping guidance, and ACCC price/refund guidance are kept market-specific rather than blended into a fake universal rule. A 2025 European Commission sweep statistic is explicitly historical, not a 2026 forecast. Browser-local tools calculate advertised vs user-verified discount, landed cost, exact-series price history, retailer-policy/statutory return-date baselines, new-vs-refurb evidence gaps and user-defined purchase thresholds. No product recommendation, legal compliance finding, live inventory, live coupon, affiliate ordering or universal return period is claimed.",
+      "sources": [
+        "https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/",
+        "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-233",
+        "https://consumer.ftc.gov/articles/online-shopping",
+        "https://www.ftc.gov/legal-library/browse/rules/mail-internet-or-telephone-order-merchandise-rule",
+        "https://www.gov.uk/government/publications/price-transparency-cma209/providing-clear-and-accurate-information-about-prices-summary",
+        "https://www.gov.uk/accepting-returns-and-giving-refunds",
+        "https://europa.eu/youreurope/citizens/consumers/unfair-treatment/unfair-pricing/index_en.htm",
+        "https://europa.eu/youreurope/citizens/consumers/shopping/returns/index_en.htm",
+        "https://commission.europa.eu/topics/consumers/consumer-rights-and-complaints/enforcement-consumer-protection/sweeps_en",
+        "https://competition-bureau.canada.ca/en/deceptive-marketing-practices/types-deceptive-marketing-practices/ordinary-selling-price",
+        "https://ised-isde.canada.ca/site/office-consumer-affairs/en/connected-consumer/online-shopping",
+        "https://www.accc.gov.au/consumers/pricing/price-displays",
+        "https://www.accc.gov.au/consumers/problem-with-a-product-or-service-you-bought/repair-replace-refund-cancel",
+        "https://www.canada.ca/en/health-canada/services/buying-second-hand-products.html"
+      ]
     }
   ]
 }
