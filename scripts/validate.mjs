@@ -7,7 +7,7 @@ const intents=fs.readFileSync('research/search-intents-1000.csv','utf8').trim().
 assert.equal(data.length,50);assert.equal(new Set(data.map(e=>e.slug)).size,50);
 assert.equal(rows.length,201);assert.equal(intents.length,1001);
 assert.equal(data.filter(e=>e.slug.includes('eclipse')).length,0);
-assert.equal(approvals.length,26,'Pilot release currently expects exactly twenty-six index-approved routes');
+assert.equal(approvals.length,27,'Pilot release currently expects exactly twenty-seven index-approved routes');
 for(const e of data){assert.equal(e.facets.length,5);for(const p of ['hub','planning','during','after']){
   const filepath='events/'+e.slug+'/'+(p==='hub'?'':p+'/')+'index.html';
   assert.ok(fs.existsSync(filepath),filepath);
@@ -52,7 +52,7 @@ assert.ok(wwdc.includes('Official date</span><strong>TBA'),'WWDC27 official date
 assert.ok(wwdc.includes('Official keynote time</span><strong>TBA'),'WWDC27 keynote time must remain TBA until source update');
 assert.ok(!wwdc.includes('"@type":"Event"'),'WWDC27 must not use Event schema before date announcement');
 assert.ok(fs.existsSync('index.html')&&fs.existsSync('events/index.html'));
-console.log('Validated: 50 clusters; 1000 intent rows; 200 event pages; 202 HTML total; 26 source-verified pilot hubs index-ready; all remaining event pages noindex');
+console.log('Validated: 50 clusters; 1000 intent rows; 200 event pages; 202 HTML total; 27 source-verified pilot hubs index-ready; all remaining event pages noindex');
 const summer=fs.readFileSync('events/steam-summer-sale-2027/index.html','utf8');
 assert.ok(summer.includes('June 24–July 8, 2027'),'Summer Sale page must preserve official date range');
 assert.ok(summer.includes('Exact start time</span><strong>TBA'),'Summer Sale exact clock must remain TBA until source update');
@@ -454,4 +454,44 @@ assert.ok(fs.existsSync('assets/boxing-day-2026-social.svg'),'Missing Boxing Day
 for(const stage of ['planning','during','after']){
   const spoke=fs.readFileSync('events/boxing-day-2026/'+stage+'/index.html','utf8');
   assert.ok(spoke.includes('noindex,follow'),'Boxing Day unfinished '+stage+' route must remain noindex,follow');
+}
+
+
+const blackFriday27Data=data.find(e=>e.slug==='black-friday-2027');
+assert.equal(blackFriday27Data.start,'2027-11-26','Black Friday 2027 manifest date must remain Nov 26, 2027');
+assert.equal(blackFriday27Data.end,'2027-11-26','Black Friday 2027 manifest must remain single-day');
+assert.equal(blackFriday27Data.date_status,'rule-derived','Black Friday 2027 must remain rule-derived, not organizer-confirmed');
+assert.equal(blackFriday27Data.source,'https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/','Black Friday 2027 manifest must preserve primary OPM Thanksgiving anchor');
+const blackFriday27=fs.readFileSync('events/black-friday-2027/index.html','utf8');
+const blackFriday27Source=fs.readFileSync('content/pilots/black-friday-2027.html','utf8');
+const blackFriday27Js=fs.readFileSync('assets/black-friday-2027.js','utf8');
+assert.equal(blackFriday27,blackFriday27Source,'Black Friday 2027 approved output must byte-match editorial source');
+assert.ok(blackFriday27.includes('Thursday, November 25')||blackFriday27.includes('Thursday, Nov 25'),'Black Friday 2027 Thanksgiving anchor missing');
+assert.ok(blackFriday27.includes('Friday, November 26')||blackFriday27.includes('Fri · Nov 26'),'Black Friday 2027 rule-derived date missing');
+assert.ok(blackFriday27.includes('Mon · Nov 29')&&blackFriday27.includes('Cyber Monday'),'Black Friday 2027 Cyber Monday checkpoint missing');
+assert.ok(blackFriday27.includes('90-day price-evidence ledger')&&blackFriday27.includes('30-day legal-reference view'),'Black Friday 2027 90-day/30-day evidence separation missing');
+assert.ok(blackFriday27.includes('90-day history is research evidence')&&blackFriday27.includes('lowest price applied in at least the previous 30 days'),'Black Friday 2027 EU research-vs-legal reference distinction missing');
+assert.ok(blackFriday27.includes('314 traders')&&blackFriday27.includes('at least 30% referenced discounts incorrectly'),'Black Friday 2027 historical EU sweep signal missing');
+assert.ok(blackFriday27.includes('Series isolation:')&&blackFriday27.includes('exact product/SKU + seller + market + condition + currency'),'Black Friday 2027 exact-series isolation missing');
+assert.ok(blackFriday27Js.includes("between(x.date,'2027-08-28','2027-11-25')"),'Black Friday 2027 90-day pre-BF window must exclude Nov 26');
+assert.ok(blackFriday27Js.includes("between(x.date,'2027-10-27','2027-11-25')"),'Black Friday 2027 30-day pre-BF window must exclude Nov 26');
+assert.ok(blackFriday27Js.includes("Black Friday — Nov 26")&&blackFriday27Js.includes("Cyber Monday — Nov 29"),'Black Friday 2027 BF/CM exact-series comparison logic missing');
+assert.ok(blackFriday27.includes('Exact gaming-laptop specification fingerprint'),'Black Friday 2027 laptop comparator missing');
+for(const field of ['Exact SKU / model','CPU model','GPU model','Published GPU power / TGP (W)','VRAM (GB)','RAM (GB)','Storage (GB)','Display resolution','Refresh rate (Hz)','Warranty months','Landed price'])assert.ok(blackFriday27.includes(field),'Black Friday 2027 laptop comparator missing field: '+field);
+assert.ok(blackFriday27.includes('same GPU family')&&blackFriday27.includes('Component name ≠ system equivalence'),'Black Friday 2027 laptop system-equivalence counterexample missing');
+assert.ok(blackFriday27.includes('mandatory delivery fees must be included')&&blackFriday27.includes('November 2, 2026'),'Black Friday 2027 current UK delivery-price evidence missing');
+assert.ok(blackFriday27.includes('volume/time tests'),'Black Friday 2027 Canada ordinary-selling-price boundary missing');
+assert.ok(blackFriday27.includes('No universal federal change-of-mind return period is inserted'),'Black Friday 2027 US return-period non-assumption missing');
+assert.ok(blackFriday27.includes('no Canada-wide voluntary change-of-mind period is inserted'),'Black Friday 2027 Canada return-period non-assumption missing');
+assert.ok(blackFriday27.includes('14-day withdrawal baseline'),'Black Friday 2027 Germany/EU distance-withdrawal baseline missing');
+assert.ok(blackFriday27.includes('consumer-guarantee remedies for faulty goods'),'Black Friday 2027 Australia consumer-guarantee boundary missing');
+for(const id of ['deal-math','compare','ledger','laptop','returns','regions','timeline','freshness','references'])assert.ok(blackFriday27.includes('id="'+id+'"'),'Black Friday 2027 tool/evidence section missing: '+id);
+assert.ok(blackFriday27.includes('No live retailer feed is active.')&&blackFriday27.includes('does not scrape prices, inventory, coupons or checkout totals'),'Black Friday 2027 no-live-feed warning missing');
+assert.ok(blackFriday27.includes('No 2027 retailer campaign, laptop model, stock level, launch time or future discount is asserted until sourced.'),'Black Friday 2027 future-hardware/retailer non-assertion missing');
+assert.ok(!blackFriday27.includes('"@type":"Event"'),'Black Friday 2027 retail-calendar guide must not misuse Event schema');
+for(const ext of ['css','js'])assert.ok(fs.existsSync('assets/black-friday-2027.'+ext),'Missing Black Friday 2027 asset '+ext);
+assert.ok(fs.existsSync('assets/black-friday-2027-social.svg'),'Missing Black Friday 2027 social image');
+for(const stage of ['planning','during','after']){
+  const spoke=fs.readFileSync('events/black-friday-2027/'+stage+'/index.html','utf8');
+  assert.ok(spoke.includes('noindex,follow'),'Black Friday 2027 unfinished '+stage+' route must remain noindex,follow');
 }
