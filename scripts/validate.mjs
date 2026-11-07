@@ -173,16 +173,32 @@ for(const ext of ['css','js'])assert.ok(fs.existsSync('assets/rugby-world-cup-20
 assert.ok(fs.existsSync('assets/rugby-world-cup-2027-social.svg'),'Missing RWC social image');
 
 const bts=fs.readFileSync('events/back-to-school-2027/index.html','utf8');
-assert.ok(bts.includes('July 1–September 30')&&bts.includes('editorial planning season'),'Back to School seasonal window must remain editorial-only');
+const btsSource=fs.readFileSync('content/pilots/back-to-school-2027.html','utf8');
+const btsJs=fs.readFileSync('assets/back-to-school-2027.js','utf8');
+assert.equal(bts,btsSource,'Back to School approved output must byte-match editorial source');
+assert.ok(bts.includes('July 1–September 30')&&bts.includes('editorial commerce/research season'),'Back to School seasonal window must remain editorial-only');
 assert.ok(bts.includes('Universal school date</span><strong>None'),'Back to School must reject a universal school date');
 assert.ok(bts.includes('Universal sale period</span><strong>None'),'Back to School must reject a universal sale period');
-assert.ok(bts.includes('LAUSD')&&bts.includes('August 12, 2027'),'LAUSD 2027 calendar example missing');
-assert.ok(bts.includes('September 6')&&bts.includes('Oxfordshire'),'Oxfordshire 2027 calendar example missing');
-assert.ok(bts.includes('NSW')&&bts.includes('Term 3 starts July 20'),'NSW Southern Hemisphere counterexample missing');
-assert.ok(bts.includes('Queensland')&&bts.includes('Term 3 starts July 12'),'Queensland Southern Hemisphere counterexample missing');
+assert.ok(!bts.includes('LAUSD'),'Back to School must not retain the unverified LAUSD 2027 preset');
+assert.ok(bts.includes('Ontario template ≠ your board’s first day')&&bts.includes('boards to submit calendars'),'Back to School Ontario board-specific calendar boundary missing');
+assert.ok(bts.includes('Leicestershire')&&bts.includes('Aug 25'),'Leicestershire 2027 example missing');
+assert.ok(bts.includes('Portsmouth')&&bts.includes('Sep 1'),'Portsmouth 2027 example missing');
+assert.ok(bts.includes('Oxfordshire')&&bts.includes('Sep 6'),'Oxfordshire 2027 example missing');
+assert.ok(bts.includes('NSW')&&bts.includes('Jul 20'),'NSW Southern Hemisphere counterexample missing');
+assert.ok(bts.includes('Queensland')&&bts.includes('Jul 12'),'Queensland Southern Hemisphere counterexample missing');
+assert.ok(btsJs.includes("eventv:bts-2027:calendar-evidence:v2"),'Back to School sourced calendar evidence ledger missing');
+assert.ok(bts.includes('Exact-series price history ledger'),'Back to School exact-series price ledger missing');
+assert.ok(btsJs.includes("priceKey=x=>[x.item.toLowerCase(),x.seller.toLowerCase(),x.condition,x.cur].join('|')"),'Back to School price series must isolate item/seller/condition/currency');
 assert.ok(bts.includes('Aug 6–8, 2027'),'Texas 2027 tax holiday dates missing');
 assert.ok(bts.includes('computers, software and textbooks do not qualify'),'Texas tax-holiday exclusions missing');
-for(const id of ['calendar','supply','prices','tax','device','references'])assert.ok(bts.includes('id="'+id+'"'),'Back to School tool/evidence section missing: '+id);
+assert.ok(bts.includes('School device workload and support-horizon checker'),'Back to School lifecycle device checker missing');
+assert.ok(bts.includes('Auto Update Expiration'),'Back to School Chromebook AUE evidence boundary missing');
+assert.ok(bts.includes('Component fit ≠ lifecycle fit'),'Back to School component-vs-lifecycle counterexample missing');
+assert.ok(btsJs.includes('support>=use'),'Back to School support-horizon comparison logic missing');
+assert.ok(bts.includes('Refurbished vs new lifecycle-cost comparator'),'Back to School refurb lifecycle comparator missing');
+assert.ok(bts.includes('Education-discount evidence checker'),'Back to School student-discount evidence tool missing');
+assert.ok(bts.includes('2026 college-student offer ran July 16–September 24')&&bts.includes('not evidence of a 2027 campaign'),'Back to School Apple promotion historical-vs-future boundary missing');
+for(const id of ['calendar','regional','supply','prices','tax','device','refurb','discount','consumer','faq','freshness','references'])assert.ok(bts.includes('id="'+id+'"'),'Back to School tool/evidence section missing: '+id);
 assert.ok(bts.includes('No live school-calendar, retailer-price, stock, tax, student-discount or device-catalog feed is active.'),'Back to School no-live-feed warning missing');
 assert.ok(!bts.includes('"@type":"Event"'),'Back to School seasonal guide must not use Event schema');
 for(const ext of ['css','js'])assert.ok(fs.existsSync('assets/back-to-school-2027.'+ext),'Missing Back to School asset '+ext);
@@ -576,4 +592,15 @@ assert.ok(fs.existsSync('assets/amazon-prime-day-2027-social.svg'),'Missing Prim
 for(const stage of ['planning','during','after']){
  const spoke=fs.readFileSync('events/amazon-prime-day-2027/'+stage+'/index.html','utf8');
  assert.ok(spoke.includes('noindex,follow'),'Prime Day 2027 unfinished '+stage+' route must remain noindex,follow');
+}
+
+
+const bts27Data=data.find(e=>e.slug==='back-to-school-2027');
+assert.equal(bts27Data.start,'2027-07-01','Back to School editorial season start must remain Jul 1, 2027');
+assert.equal(bts27Data.end,'2027-09-30','Back to School editorial season end must remain Sep 30, 2027');
+assert.equal(bts27Data.date_status,'seasonal-window','Back to School date status must remain seasonal-window');
+assert.equal(bts27Data.source,'https://www.usa.gov/school','Back to School manifest source anchor must remain USA.gov');
+for(const stage of ['planning','during','after']){
+  const spoke=fs.readFileSync('events/back-to-school-2027/'+stage+'/index.html','utf8');
+  assert.ok(spoke.includes('noindex,follow'),'Back to School unfinished '+stage+' route must remain noindex,follow');
 }
