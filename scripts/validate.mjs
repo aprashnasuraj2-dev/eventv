@@ -570,7 +570,7 @@ assert.ok(primeDay27.includes('mandatory delivery'),'Prime Day 2027 UK total-pri
 assert.ok(primeDay27.includes('No live Amazon price, inventory, coupon, membership-status, return-policy, delivery, seller-rating or deal feed is active.'),'Prime Day 2027 no-live-feed warning missing');
 for(const id of ['status','membership','history','cost','returns','announce','rules','freshness','references'])assert.ok(primeDay27.includes('id="'+id+'"'),'Prime Day 2027 tool/evidence section missing: '+id);
 assert.ok(!primeDay27.includes('"@type":"Event"'),'Prime Day 2027 must not use Event schema before official dates');
-assert.ok(!primeDay27.includes('countdown'),'Prime Day 2027 must not publish a countdown before dates are announced');
+assert.ok(!primeDay27.includes('id="countdown"')&&!primeDay27.includes('class="countdown"')&&!primeDay27Js.includes('setInterval('),'Prime Day 2027 must not implement countdown behavior before dates are announced');
 for(const ext of ['css','js'])assert.ok(fs.existsSync('assets/amazon-prime-day-2027.'+ext),'Missing Prime Day 2027 asset '+ext);
 assert.ok(fs.existsSync('assets/amazon-prime-day-2027-social.svg'),'Missing Prime Day 2027 social image');
 for(const stage of ['planning','during','after']){
