@@ -111,7 +111,7 @@ event_slug,page_type,output_path,canonical_url,robots,editorial_status
 "cyber-monday-2027","planning","events/cyber-monday-2027/planning/index.html","https://aafnaipatro.com/events/cyber-monday-2027/planning/","noindex,follow","research-draft"
 "cyber-monday-2027","during","events/cyber-monday-2027/during/index.html","https://aafnaipatro.com/events/cyber-monday-2027/during/","noindex,follow","research-draft"
 "cyber-monday-2027","after","events/cyber-monday-2027/after/index.html","https://aafnaipatro.com/events/cyber-monday-2027/after/","noindex,follow","research-draft"
-"amazon-prime-day-2027","hub","events/amazon-prime-day-2027/index.html","https://aafnaipatro.com/events/amazon-prime-day-2027/","noindex,follow","research-draft"
+"amazon-prime-day-2027","hub","events/amazon-prime-day-2027/index.html","https://aafnaipatro.com/events/amazon-prime-day-2027/","index,follow,max-image-preview:large","pilot-index-ready"
 "amazon-prime-day-2027","planning","events/amazon-prime-day-2027/planning/index.html","https://aafnaipatro.com/events/amazon-prime-day-2027/planning/","noindex,follow","research-draft"
 "amazon-prime-day-2027","during","events/amazon-prime-day-2027/during/index.html","https://aafnaipatro.com/events/amazon-prime-day-2027/during/","noindex,follow","research-draft"
 "amazon-prime-day-2027","after","events/amazon-prime-day-2027/after/index.html","https://aafnaipatro.com/events/amazon-prime-day-2027/after/","noindex,follow","research-draft"
