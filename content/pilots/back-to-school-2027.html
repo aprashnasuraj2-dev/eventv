@@ -212,6 +212,9 @@
             <option value="wait">Wait / verify first</option>
           </select>
         </label>
+        <label>Currency label
+          <input id="supply-cur" maxlength="8" value="$">
+        </label>
         <label>Quantity
           <input id="supply-qty" type="number" min="1" max="100" step="1" value="1" required>
         </label>
@@ -229,9 +232,9 @@
     </form>
     <div class="summary-strip">
       <div><span>List rows</span><strong id="supply-count">0</strong></div>
-      <div><span>Full list value</span><strong id="supply-gross">$0.00</strong></div>
-      <div><span>Reuse value</span><strong id="supply-reuse">$0.00</strong></div>
-      <div><span>Still-to-buy</span><strong id="supply-buy">$0.00</strong></div>
+      <div><span>Full list value</span><strong id="supply-gross">0.00</strong></div>
+      <div><span>Reuse value</span><strong id="supply-reuse">0.00</strong></div>
+      <div><span>Still-to-buy</span><strong id="supply-buy">0.00</strong></div>
     </div>
     <p id="supply-empty" class="empty-state">No list items yet. Start with the school/course source, not a retailer template.</p>
     <div id="supply-list" class="entry-list" aria-live="polite"></div>
@@ -251,6 +254,9 @@
         </label>
         <label>Seller
           <input id="price-seller" maxlength="100" required placeholder="Store / marketplace seller">
+        </label>
+        <label>Currency label
+          <input id="price-cur" maxlength="8" value="$">
         </label>
         <label>Observation date
           <input id="price-date" type="date" required>
