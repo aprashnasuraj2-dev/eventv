@@ -7,7 +7,7 @@ const intents=fs.readFileSync('research/search-intents-1000.csv','utf8').trim().
 assert.equal(data.length,50);assert.equal(new Set(data.map(e=>e.slug)).size,50);
 assert.equal(rows.length,201);assert.equal(intents.length,1001);
 assert.equal(data.filter(e=>e.slug.includes('eclipse')).length,0);
-assert.equal(approvals.length,26,'Pilot release currently expects exactly twenty-six index-approved routes');
+assert.equal(approvals.length,27,'Pilot release currently expects exactly twenty-seven index-approved routes');
 for(const e of data){assert.equal(e.facets.length,5);for(const p of ['hub','planning','during','after']){
   const filepath='events/'+e.slug+'/'+(p==='hub'?'':p+'/')+'index.html';
   assert.ok(fs.existsSync(filepath),filepath);
@@ -52,7 +52,7 @@ assert.ok(wwdc.includes('Official date</span><strong>TBA'),'WWDC27 official date
 assert.ok(wwdc.includes('Official keynote time</span><strong>TBA'),'WWDC27 keynote time must remain TBA until source update');
 assert.ok(!wwdc.includes('"@type":"Event"'),'WWDC27 must not use Event schema before date announcement');
 assert.ok(fs.existsSync('index.html')&&fs.existsSync('events/index.html'));
-console.log('Validated: 50 clusters; 1000 intent rows; 200 event pages; 202 HTML total; 26 source-verified pilot hubs index-ready; all remaining event pages noindex');
+console.log('Validated: 50 clusters; 1000 intent rows; 200 event pages; 202 HTML total; 27 source-verified pilot hubs index-ready; all remaining event pages noindex');
 const summer=fs.readFileSync('events/steam-summer-sale-2027/index.html','utf8');
 assert.ok(summer.includes('June 24–July 8, 2027'),'Summer Sale page must preserve official date range');
 assert.ok(summer.includes('Exact start time</span><strong>TBA'),'Summer Sale exact clock must remain TBA until source update');
@@ -537,4 +537,43 @@ for(const stage of ['planning','during','after']){
   const spoke=fs.readFileSync('events/cyber-monday-2027/'+stage+'/index.html','utf8');
   assert.ok(spoke.includes('noindex,follow'),'Cyber Monday 2027 unfinished '+stage+' route must remain noindex,follow');
   assert.ok(spoke.includes('https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/'),'Cyber Monday 2027 '+stage+' route must use OPM date anchor');
+}
+
+
+const primeDay27Data=data.find(e=>e.slug==='amazon-prime-day-2027');
+assert.equal(primeDay27Data.start,null,'Prime Day 2027 start must remain null until Amazon announces it');
+assert.equal(primeDay27Data.end,null,'Prime Day 2027 end must remain null until Amazon announces it');
+assert.equal(primeDay27Data.date_status,'unannounced','Prime Day 2027 date status must remain unannounced');
+assert.equal(primeDay27Data.source,'https://www.aboutamazon.com/prime-day','Prime Day 2027 manifest must preserve Amazon-owned source anchor');
+const primeDay27=fs.readFileSync('events/amazon-prime-day-2027/index.html','utf8');
+const primeDay27Source=fs.readFileSync('content/pilots/amazon-prime-day-2027.html','utf8');
+const primeDay27Js=fs.readFileSync('assets/amazon-prime-day-2027.js','utf8');
+assert.equal(primeDay27,primeDay27Source,'Prime Day 2027 approved output must byte-match editorial source');
+assert.ok(primeDay27.includes('2027 date is <em>not announced')||primeDay27.includes('2027 dates</span><strong>UNANNOUNCED'),'Prime Day 2027 unannounced state missing');
+assert.ok(primeDay27.includes('June 23–26')&&primeDay27.includes('not a prediction for 2027'),'Prime Day 2027 must label 2026 history as non-predictive');
+assert.ok(primeDay27.includes('Country date ≠ global date'),'Prime Day 2027 marketplace-date counterexample missing');
+assert.ok(primeDay27.includes('Prime membership break-even calculator'),'Prime Day 2027 membership break-even tool missing');
+assert.ok(primeDay27.includes('Exact-SKU 365-day price-evidence ledger'),'Prime Day 2027 price-history tool missing');
+assert.ok(primeDay27Js.includes("eventv:amazon-prime-day-2027:price-history:v1"),'Prime Day 2027 local price-history key missing');
+assert.ok(primeDay27.includes('Prime vs alternative landed-cost normalizer'),'Prime Day 2027 landed-cost tool missing');
+assert.ok(primeDay27.includes('Exclusive price ≠ net saving'),'Prime Day 2027 membership-cost counterexample missing');
+assert.ok(primeDay27.includes('Marketplace return-policy evidence calculator'),'Prime Day 2027 return evidence tool missing');
+assert.ok(primeDay27.includes('most items can be returned within 30 days of delivery'),'Prime Day 2027 current US return-policy example missing');
+assert.ok(primeDay27.includes('30-day voluntary return window'),'Prime Day 2027 current UK return-policy example missing');
+assert.ok(primeDay27.includes('2027 announcement evidence gate'),'Prime Day 2027 announcement gate missing');
+assert.ok(primeDay27Js.includes("item.status==='announced'&&/^https?:\\/\\//i.test(item.source)&&item.start&&item.end"),'Prime Day 2027 announcement publishability logic missing');
+assert.ok(primeDay27.includes('does not accept a date when status is “unannounced.”'),'Prime Day 2027 unannounced date-gate boundary missing');
+assert.ok(primeDay27.includes('A “Prime Day discount” still lives inside local pricing law.'),'Prime Day 2027 market-pricing rules section missing');
+assert.ok(primeDay27.includes('lowest-price reference from at least the previous 30 days'),'Prime Day 2027 EU 30-day pricing boundary missing');
+assert.ok(primeDay27.includes('volume/time tests'),'Prime Day 2027 Canada ordinary-price boundary missing');
+assert.ok(primeDay27.includes('mandatory delivery'),'Prime Day 2027 UK total-price boundary missing');
+assert.ok(primeDay27.includes('No live Amazon price, inventory, coupon, membership-status, return-policy, delivery, seller-rating or deal feed is active.'),'Prime Day 2027 no-live-feed warning missing');
+for(const id of ['status','membership','history','cost','returns','announce','rules','freshness','references'])assert.ok(primeDay27.includes('id="'+id+'"'),'Prime Day 2027 tool/evidence section missing: '+id);
+assert.ok(!primeDay27.includes('"@type":"Event"'),'Prime Day 2027 must not use Event schema before official dates');
+assert.ok(!primeDay27.includes('id="countdown"')&&!primeDay27.includes('class="countdown"')&&!primeDay27Js.includes('setInterval('),'Prime Day 2027 must not implement countdown behavior before dates are announced');
+for(const ext of ['css','js'])assert.ok(fs.existsSync('assets/amazon-prime-day-2027.'+ext),'Missing Prime Day 2027 asset '+ext);
+assert.ok(fs.existsSync('assets/amazon-prime-day-2027-social.svg'),'Missing Prime Day 2027 social image');
+for(const stage of ['planning','during','after']){
+ const spoke=fs.readFileSync('events/amazon-prime-day-2027/'+stage+'/index.html','utf8');
+ assert.ok(spoke.includes('noindex,follow'),'Prime Day 2027 unfinished '+stage+' route must remain noindex,follow');
 }

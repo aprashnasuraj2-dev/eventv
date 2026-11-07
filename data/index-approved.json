@@ -530,6 +530,30 @@
         "https://www.ttc.ca/riding-the-ttc/Updates/Holiday-Service",
         "https://at.govt.nz/about-us/news-events/media-centre/2026-media-releases/trains-are-back-for-labour-weekend-and-new-year-s-eve"
       ]
+    },
+    {
+      "slug": "amazon-prime-day-2027",
+      "page_type": "hub",
+      "output_path": "events/amazon-prime-day-2027/index.html",
+      "source_path": "content/pilots/amazon-prime-day-2027.html",
+      "robots": "index,follow,max-image-preview:large",
+      "editorial_status": "pilot-index-ready",
+      "source_verified_on": "2026-11-07",
+      "factual_scope": "Amazon Prime Day 2027 remains explicitly unannounced: manifest start/end stay null and date_status stays unannounced. The hub does not infer a 2027 date from 2025/2026 patterns, does not use Event schema, and does not expose a countdown. Amazon's official 2026 Prime Day history (June 23–26 in the US, with some countries shopping later) is presented only as historical evidence that marketplace timing can vary. Current U.S. and UK Prime membership prices are dated examples rather than 2027 guarantees. Browser-local tools calculate membership break-even using user-entered membership and verified savings, maintain an exact-SKU/seller/marketplace/condition/currency price ledger, compare landed cost including membership allocation/delivery/taxes/return exposure, calculate item-policy return deadlines from user-entered marketplace evidence, and require Amazon-owned announcement URLs plus explicit start/end dates before a local 2027 marketplace record is considered publishable. Amazon's current 365-day price-history capability is cited as context; the local ledger does not scrape Amazon. EU/Germany 30-day prior-price law, UK total-price/delivery-fee rules, Canadian ordinary-selling-price volume/time tests, U.S. deceptive former-price guidance and Australian misleading-price/total-price rules remain jurisdiction-specific. No live Amazon price, inventory, coupon, membership-status, return-policy, delivery, seller-rating or deal feed is claimed. Only the hub is approved; planning/during/after remain noindex.",
+      "sources": [
+        "https://www.aboutamazon.com/news/retail/when-is-amazon-prime-day",
+        "https://press.aboutamazon.com/2026/6/mark-your-calendars-amazon-announces-prime-day-event-from-june-23-26-with-millions-of-exclusive-deals-for-prime-members",
+        "https://www.aboutamazon.com/news/retail/amazon-gas-savings-prime",
+        "https://www.amazon.co.uk/gp/help/customer/display.html?nodeId=G34EUPKVMYFW8N2U",
+        "https://www.amazon.com/gp/help/customer/display.html?nodeId=GKM69DUUYKQWKWX7",
+        "https://www.amazon.co.uk/gp/help/customer/display.html?nodeId=GKM69DUUYKQWKWX7",
+        "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-233",
+        "https://www.gov.uk/government/publications/price-transparency-cma209/providing-clear-and-accurate-information-about-prices-summary",
+        "https://europa.eu/youreurope/citizens/consumers/unfair-treatment/unfair-pricing/index_en.htm",
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A52021XC1229%2806%29",
+        "https://competition-bureau.canada.ca/en/deceptive-marketing-practices/types-deceptive-marketing-practices/ordinary-selling-price",
+        "https://www.accc.gov.au/consumers/pricing/price-displays"
+      ]
     }
   ]
 }
