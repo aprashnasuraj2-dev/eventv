@@ -559,6 +559,135 @@
         "https://competition-bureau.canada.ca/en/deceptive-marketing-practices/types-deceptive-marketing-practices/ordinary-selling-price",
         "https://www.accc.gov.au/consumers/pricing/price-displays"
       ]
+    },
+    {
+      "slug": "us-thanksgiving-2027",
+      "page_type": "hub",
+      "output_path": "events/us-thanksgiving-2027/index.html",
+      "source_path": "content/pilots/us-thanksgiving-2027.html",
+      "robots": "index,follow,max-image-preview:large",
+      "editorial_status": "pilot-index-ready",
+      "source_verified_on": "2026-11-08",
+      "factual_scope": "OPM/USPS-confirmed Thanksgiving date and federal versus private closures; provider-specific shipping, travel and local hours pending; user-input cash planner and local source ledger.",
+      "sources": [
+        "https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/",
+        "https://www.usps.com/holiday/holiday-schedule.htm",
+        "https://www.usa.gov/holidays",
+        "https://www.tsa.gov/travel/travel-tips"
+      ]
+    },
+    {
+      "slug": "halloween-2027",
+      "page_type": "hub",
+      "output_path": "events/halloween-2027/index.html",
+      "source_path": "content/pilots/halloween-2027.html",
+      "robots": "index,follow,max-image-preview:large",
+      "editorial_status": "pilot-index-ready",
+      "source_verified_on": "2026-11-08",
+      "factual_scope": "Rule-derived Halloween Sunday Oct 31 and NHTSA/FARE safety; local trick-or-treat hours pending; user-input inclusive treats budget; UK DST collision.",
+      "sources": [
+        "https://www.usa.gov/holidays",
+        "https://www.nhtsa.gov/halloween-safety-tips",
+        "https://www.foodallergy.org/our-initiatives/awareness-campaigns/teal-pumpkin-project",
+        "https://www.gov.uk/when-do-the-clocks-change"
+      ]
+    },
+    {
+      "slug": "easter-2027",
+      "page_type": "hub",
+      "output_path": "events/easter-2027/index.html",
+      "source_path": "content/pilots/easter-2027.html",
+      "robots": "index,follow,max-image-preview:large",
+      "editorial_status": "pilot-index-ready",
+      "source_verified_on": "2026-11-08",
+      "factual_scope": "Western Easter 2027, 2027 GOV.UK country-specific Good Friday/Easter Monday bank rules and Edinburgh school counterexample; transport and private operations pending.",
+      "sources": [
+        "https://www.gov.uk/bank-holidays",
+        "https://www.gov.uk/school-term-holiday-dates",
+        "https://www.edinburgh.gov.uk/termdates"
+      ]
+    },
+    {
+      "slug": "us-memorial-day-2027",
+      "page_type": "hub",
+      "output_path": "events/us-memorial-day-2027/index.html",
+      "source_path": "content/pilots/us-memorial-day-2027.html",
+      "robots": "index,follow,max-image-preview:large",
+      "editorial_status": "pilot-index-ready",
+      "source_verified_on": "2026-11-08",
+      "factual_scope": "OPM/USPS Memorial Day May 31 2027, memorial meaning, weather safety, drive cost assumptions and local closure ledger; no traffic or retailer predictions.",
+      "sources": [
+        "https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/",
+        "https://www.usps.com/holiday/holiday-schedule.htm",
+        "https://www.usa.gov/holidays",
+        "https://www.weather.gov/safety/lightning"
+      ]
+    },
+    {
+      "slug": "us-daylight-saving-start-2027",
+      "page_type": "hub",
+      "output_path": "events/us-daylight-saving-start-2027/index.html",
+      "source_path": "content/pilots/us-daylight-saving-start-2027.html",
+      "robots": "index,follow,max-image-preview:large",
+      "editorial_status": "pilot-index-ready",
+      "source_verified_on": "2026-11-08",
+      "factual_scope": "NIST/DOT U.S. March 14 2027 spring clock rule, geographic exceptions and 2026 B.C. permanent PCT; browser-local wall-clock gap resolver and payroll/travel elapsed-time boundary.",
+      "sources": [
+        "https://www.nist.gov/pml/time-and-frequency-division/popular-links/daylight-saving-time-dst",
+        "https://www.transportation.gov/regulations/daylight-saving-time",
+        "https://www2.gov.bc.ca/gov/content/governments/celebrating-british-columbia/daylight-saving-time",
+        "https://www.gov.uk/when-do-the-clocks-change",
+        "https://www.cnrc.canada.ca/en/certifications-evaluations-standards/canadas-official-time/time-zones-daylight-saving-time"
+      ]
+    },
+    {
+      "slug": "us-daylight-saving-end-2027",
+      "page_type": "hub",
+      "output_path": "events/us-daylight-saving-end-2027/index.html",
+      "source_path": "content/pilots/us-daylight-saving-end-2027.html",
+      "robots": "index,follow,max-image-preview:large",
+      "editorial_status": "pilot-index-ready",
+      "source_verified_on": "2026-11-08",
+      "factual_scope": "NIST/DOT U.S. November 7 2027 clock fold and double-01:30, UK transition difference, B.C. fixed PCT, browser-local UTC instant enumeration and elapsed-hour tool.",
+      "sources": [
+        "https://www.nist.gov/pml/time-and-frequency-division/popular-links/daylight-saving-time-dst",
+        "https://www.transportation.gov/regulations/daylight-saving-time",
+        "https://www2.gov.bc.ca/gov/content/governments/celebrating-british-columbia/daylight-saving-time",
+        "https://www.gov.uk/when-do-the-clocks-change",
+        "https://www.cnrc.canada.ca/en/certifications-evaluations-standards/canadas-official-time/time-zones-daylight-saving-time"
+      ]
+    },
+    {
+      "slug": "uk-clocks-forward-2027",
+      "page_type": "hub",
+      "output_path": "events/uk-clocks-forward-2027/index.html",
+      "source_path": "content/pilots/uk-clocks-forward-2027.html",
+      "robots": "index,follow,max-image-preview:large",
+      "editorial_status": "pilot-index-ready",
+      "source_verified_on": "2026-11-08",
+      "factual_scope": "GOV.UK March 28 2027 UK spring change, Irish parallel rule and Easter overlap; browser-local gap/UTC comparison and shift timing.",
+      "sources": [
+        "https://www.gov.uk/when-do-the-clocks-change",
+        "https://www.gov.ie/en/department-of-justice-home-affairs-and-migration/publications/summerwinter-time-arrangements/",
+        "https://www.gov.uk/bank-holidays",
+        "https://www.nist.gov/pml/time-and-frequency-division/popular-links/daylight-saving-time-dst"
+      ]
+    },
+    {
+      "slug": "uk-clocks-back-2027",
+      "page_type": "hub",
+      "output_path": "events/uk-clocks-back-2027/index.html",
+      "source_path": "content/pilots/uk-clocks-back-2027.html",
+      "robots": "index,follow,max-image-preview:large",
+      "editorial_status": "pilot-index-ready",
+      "source_verified_on": "2026-11-08",
+      "factual_scope": "GOV.UK October 31 2027 UK autumn fold, Irish parallel rule and US Nov 7 mismatch; browser-local fold/UTC resolution and shift timing.",
+      "sources": [
+        "https://www.gov.uk/when-do-the-clocks-change",
+        "https://www.gov.ie/en/department-of-justice-home-affairs-and-migration/publications/summerwinter-time-arrangements/",
+        "https://www.nist.gov/pml/time-and-frequency-division/popular-links/daylight-saving-time-dst",
+        "https://www.transportation.gov/regulations/daylight-saving-time"
+      ]
     }
   ]
 }
