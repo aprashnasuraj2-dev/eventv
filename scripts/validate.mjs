@@ -632,7 +632,7 @@ import './verify-seasonal-2027.mjs';
 // Topic 39/40 pre-existing hub approvals are canonical route truth; no stale CSV research-draft state.
 for(const slug of ['rugby-world-cup-2027','tour-de-france-uk-2027']){
  const approval=approvals.find(a=>a.slug===slug&&a.page_type==='hub');assert.ok(approval,'Approved sports hub missing '+slug);
- const route=fs.readFileSync('research/routes-200.csv','utf8').split('\\n').find(l=>l.startsWith('"'+slug+'","hub",'));
+ const route=fs.readFileSync('research/routes-200.csv','utf8').split('\n').find(l=>l.startsWith('"'+slug+'","hub",'));
  assert.ok(route&&route.includes('"index,follow,max-image-preview:large","pilot-index-ready"'),'Stale approved route metadata '+slug);
  assert.equal(fs.readFileSync('events/'+slug+'/index.html','utf8'),fs.readFileSync(approval.source_path,'utf8'),'Topic 39/40 source/output drift '+slug);
  for(const part of ['planning','during','after'])assert.ok(fs.readFileSync('events/'+slug+'/'+part+'/index.html','utf8').includes('noindex,follow'),'Unfinished Topic 39/40 spoke indexed '+slug+'/'+part);
