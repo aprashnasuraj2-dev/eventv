@@ -7,7 +7,7 @@
 > **Checkpoint:** Thirtieth editorial pilot deeply upgraded — Back to School 2027 school-calendar evidence, exact-series prices, device lifecycle, refurb economics and student-discount verification hub  
 > **Status:** **TOPIC #30 EXISTING APPROVAL DEEPLY UPGRADED AND MERGED TO MAIN; 27 REGISTRY APPROVALS TOTAL; LIVE DEPLOYMENT NOT PERFORMED**
 
-**Feature-branch checkpoint (pending CI and merge, NOT a merged-main claim):** Topics #31–38 new verified primary-source hubs and local planning tools have been prepared on an isolated branch; Topics #39–40 are already approved and intentionally preserved. Proposed approval count after validation is 35; all 30 spokes for #31–40 remain noindex,follow. The prior Topic #30 verified-main summary below remains historical until exact-head CI and an independent docs-only post-merge reconciliation. No live deployment.\n\n## 1. Current verified state
+**Pending route-parity correction (feature branch; not yet merged):** [PR #56](https://github.com/aprashnasuraj2-dev/eventv/pull/56) merged eight Topics #31–38 hubs as `d614461` with 35 approvals and [passing exact-head CI 42475276933](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42475276933). Topics #39–40 were already approved, but their checked-in route CSV retained the old noindex draft labels; this branch corrects only those two rows and adds a gate. The earlier 16 unrelated pre-existing approved-route metadata mismatches remain a separately documented debt. A docs-only final latest.md reconciliation follows passing CI and merger. No live deployment.\n\n## 1. Current verified state
 
 | Area | Status | Verified detail |
 |---|---|---|
