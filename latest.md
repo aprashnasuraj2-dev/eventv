@@ -3,11 +3,11 @@
 > **Single source of truth for current project progress and the next work.**
 > Read this file first whenever resuming EventV. Update it **in the same commit/PR** as every meaningful repository change. Historical research files remain references, not the live project status.
 >
-> **Last reviewed:** 2026-11-07 (Asia/Kathmandu)  
+> **Last reviewed:** 2026-11-08 (Asia/Kathmandu)  
 > **Checkpoint:** Thirtieth editorial pilot deeply upgraded — Back to School 2027 school-calendar evidence, exact-series prices, device lifecycle, refurb economics and student-discount verification hub  
 > **Status:** **TOPIC #30 EXISTING APPROVAL DEEPLY UPGRADED AND MERGED TO MAIN; 27 REGISTRY APPROVALS TOTAL; LIVE DEPLOYMENT NOT PERFORMED**
 
-## 1. Current verified state
+**Feature-branch checkpoint (pending CI and merge, NOT a merged-main claim):** Topics #31–38 new verified primary-source hubs and local planning tools have been prepared on an isolated branch; Topics #39–40 are already approved and intentionally preserved. Proposed approval count after validation is 35; all 30 spokes for #31–40 remain noindex,follow. The prior Topic #30 verified-main summary below remains historical until exact-head CI and an independent docs-only post-merge reconciliation. No live deployment.\n\n## 1. Current verified state
 
 | Area | Status | Verified detail |
 |---|---|---|

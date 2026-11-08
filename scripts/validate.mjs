@@ -7,7 +7,7 @@ const intents=fs.readFileSync('research/search-intents-1000.csv','utf8').trim().
 assert.equal(data.length,50);assert.equal(new Set(data.map(e=>e.slug)).size,50);
 assert.equal(rows.length,201);assert.equal(intents.length,1001);
 assert.equal(data.filter(e=>e.slug.includes('eclipse')).length,0);
-assert.equal(approvals.length,27,'Pilot release currently expects exactly twenty-seven index-approved routes');
+assert.equal(approvals.length,35,'Pilot release currently expects exactly thirty-five index-approved routes');
 for(const e of data){assert.equal(e.facets.length,5);for(const p of ['hub','planning','during','after']){
   const filepath='events/'+e.slug+'/'+(p==='hub'?'':p+'/')+'index.html';
   assert.ok(fs.existsSync(filepath),filepath);
@@ -52,7 +52,7 @@ assert.ok(wwdc.includes('Official date</span><strong>TBA'),'WWDC27 official date
 assert.ok(wwdc.includes('Official keynote time</span><strong>TBA'),'WWDC27 keynote time must remain TBA until source update');
 assert.ok(!wwdc.includes('"@type":"Event"'),'WWDC27 must not use Event schema before date announcement');
 assert.ok(fs.existsSync('index.html')&&fs.existsSync('events/index.html'));
-console.log('Validated: 50 clusters; 1000 intent rows; 200 event pages; 202 HTML total; 27 source-verified pilot hubs index-ready; all remaining event pages noindex');
+console.log('Validated: 50 clusters; 1000 intent rows; 200 event pages; 202 HTML total; 35 source-verified pilot hubs index-ready; all remaining event pages noindex');
 const summer=fs.readFileSync('events/steam-summer-sale-2027/index.html','utf8');
 assert.ok(summer.includes('June 24–July 8, 2027'),'Summer Sale page must preserve official date range');
 assert.ok(summer.includes('Exact start time</span><strong>TBA'),'Summer Sale exact clock must remain TBA until source update');
@@ -604,3 +604,27 @@ for(const stage of ['planning','during','after']){
   const spoke=fs.readFileSync('events/back-to-school-2027/'+stage+'/index.html','utf8');
   assert.ok(spoke.includes('noindex,follow'),'Back to School unfinished '+stage+' route must remain noindex,follow');
 }
+
+// Topics 31–40 boundary and deep source/output/interaction security gates; 39–40 retain pre-existing approval.
+const deepTopics=["us-thanksgiving-2027","halloween-2027","easter-2027","us-memorial-day-2027","us-daylight-saving-start-2027","us-daylight-saving-end-2027","uk-clocks-forward-2027","uk-clocks-back-2027"];
+assert.equal(deepTopics.length,8);
+for(const slug of deepTopics){
+ const a=approvals.find(x=>x.slug===slug&&x.page_type==='hub');assert.ok(a,'Missing topic approval '+slug);
+ const page=fs.readFileSync('events/'+slug+'/index.html','utf8');
+ assert.equal(page,fs.readFileSync('content/pilots/'+slug+'.html','utf8'),'Approved output differs from source '+slug);
+ for(const id of ['facts','planner','comparison','guide','faq','references','ledger-body','ledger-add','ledger-export','ledger-clear'])assert.ok(page.includes('id="'+id+'"'),'Deep topic section or tool missing '+slug+':'+id);
+ assert.ok(page.length>15000,'Deep topic content unexpectedly thin '+slug);
+ assert.ok(page.includes('assets/seasonal-2027.js')&&page.includes('assets/seasonal-2027.css'),'Missing assets reference '+slug);
+ assert.ok(!page.includes('"@type":"Event"'),'Calendar and planning hubs must use Article not Event schema: '+slug);
+ assert.ok(!page.includes('content="noindex,follow"'),'Hub has mistaken noindex meta directive: '+slug);
+ for(const phase of ['planning','during','after'])assert.ok(fs.readFileSync('events/'+slug+'/'+phase+'/index.html','utf8').includes('noindex,follow'),'Unapproved spoke must remain noindex: '+slug+'/'+phase);
+ const rows=fs.readFileSync('research/routes-200.csv','utf8');assert.ok(rows.includes('"'+slug+'","hub","events/'+slug+'/index.html","https://aafnaipatro.com/events/'+slug+'/","index,follow,max-image-preview:large","pilot-index-ready"'),'Route artifact stale '+slug);
+}
+for(const s of ['rugby-world-cup-2027','tour-de-france-uk-2027'])assert.ok(approvals.some(x=>x.slug===s&&x.page_type==='hub'),'Existing Topic 39/40 approval lost: '+s);
+for(const slug of ['us-daylight-saving-start-2027','us-daylight-saving-end-2027','uk-clocks-forward-2027','uk-clocks-back-2027'])assert.ok(fs.readFileSync('content/pilots/'+slug+'.html','utf8').includes('id="time-run"')&&fs.readFileSync('content/pilots/'+slug+'.html','utf8').includes('id="shift-run"'),'DST resolver missing '+slug);
+const timeEngine=fs.readFileSync('assets/seasonal-2027.js','utf8');assert.ok(timeEngine.includes('function candidates(local,z)')&&timeEngine.includes('BC/PCT')&&timeEngine.includes('hits.sort((a,b)=>a-b)'),'DST engine missing gap/fold logic or B.C. exception');
+const halloweenNew=data.find(x=>x.slug==='halloween-2027'),easterNew=data.find(x=>x.slug==='easter-2027');assert.equal(halloweenNew.source,'https://www.usa.gov/holidays');assert.equal(easterNew.source,'https://www.gov.uk/bank-holidays');
+console.log('Topics 31–40: eight deep new approved hubs, Topics 39–40 approval preserved, all unfinished spokes noindex');
+
+// Independently exercise browser-time gap/fold logic under Node with controlled DOM inputs.
+import './verify-seasonal-2027.mjs';

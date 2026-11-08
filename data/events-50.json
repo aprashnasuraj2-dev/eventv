@@ -911,7 +911,7 @@
         "CA",
         "AU"
       ],
-      "source": "https://www.timeanddate.com/holidays/us/halloween",
+      "source": "https://www.usa.gov/holidays",
       "date_status": "rule-derived",
       "job": "Provide family logistics and original printable planning tools rather than generic holiday definitions.",
       "facets": [
@@ -940,7 +940,7 @@
         "AU",
         "EU"
       ],
-      "source": "https://www.timeanddate.com/holidays/uk/easter-sunday",
+      "source": "https://www.gov.uk/bank-holidays",
       "date_status": "rule-derived",
       "job": "Center local weekend closures and actionable family itineraries.",
       "facets": [
