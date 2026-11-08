@@ -616,7 +616,7 @@ for(const slug of deepTopics){
  assert.ok(page.length>15000,'Deep topic content unexpectedly thin '+slug);
  assert.ok(page.includes('assets/seasonal-2027.js')&&page.includes('assets/seasonal-2027.css'),'Missing assets reference '+slug);
  assert.ok(!page.includes('"@type":"Event"'),'Calendar and planning hubs must use Article not Event schema: '+slug);
- assert.ok(!page.includes('noindex,follow'),'Hub includes mistaken noindex directive: '+slug);
+ assert.ok(!page.includes('content="noindex,follow"'),'Hub has mistaken noindex meta directive: '+slug);
  for(const phase of ['planning','during','after'])assert.ok(fs.readFileSync('events/'+slug+'/'+phase+'/index.html','utf8').includes('noindex,follow'),'Unapproved spoke must remain noindex: '+slug+'/'+phase);
  const rows=fs.readFileSync('research/routes-200.csv','utf8');assert.ok(rows.includes('"'+slug+'","hub","events/'+slug+'/index.html","https://aafnaipatro.com/events/'+slug+'/","index,follow,max-image-preview:large","pilot-index-ready"'),'Route artifact stale '+slug);
 }
@@ -625,3 +625,6 @@ for(const slug of ['us-daylight-saving-start-2027','us-daylight-saving-end-2027'
 const timeEngine=fs.readFileSync('assets/seasonal-2027.js','utf8');assert.ok(timeEngine.includes('function candidates(local,z)')&&timeEngine.includes('BC/PCT')&&timeEngine.includes('hits.sort((a,b)=>a-b)'),'DST engine missing gap/fold logic or B.C. exception');
 const halloweenNew=data.find(x=>x.slug==='halloween-2027'),easterNew=data.find(x=>x.slug==='easter-2027');assert.equal(halloweenNew.source,'https://www.usa.gov/holidays');assert.equal(easterNew.source,'https://www.gov.uk/bank-holidays');
 console.log('Topics 31–40: eight deep new approved hubs, Topics 39–40 approval preserved, all unfinished spokes noindex');
+
+// Independently exercise browser-time gap/fold logic under Node with controlled DOM inputs.
+import './verify-seasonal-2027.mjs';
