@@ -30,9 +30,14 @@ export function planGap(first,second,travelHours,arrivalHours=2,riskHours=1,firs
  return {kickoffGapHours:kickoffGap,firstMatchHours: firstMatchHours,gapHours:gap,requiredHours:required,slackHours:gap-required,feasibleByUserAssumptions:gap>=required,warning:"Hypothetical: flight availability, delays, local transit and venue rules are not verified."};
 }
 export function validateNotebookItem(x){
- if(!x||typeof x!=="object"||!CITIES.includes(x.city)||typeof x.note!=="string"||x.note.length>2000)throw Error("Invalid notebook entry.");
+ if(!x||typeof x!=="object"||!CITIES.includes(x.city)||typeof x.note!=="string"||!x.note.trim()||x.note.length>2000)throw Error("Invalid notebook entry.");
  if(!["USER_INPUT","CONFIRMED","PENDING","HISTORICAL","CONFLICTED"].includes(x.status))throw Error("Invalid evidence status.");
- if(x.status==="CONFIRMED"&&(!/^https:\/\//.test(x.source||"")||!/^\d{4}-\d{2}-\d{2}$/.test(x.checked||"")))throw Error("Confirmed entries require source and check date.");
+ if(x.status==="CONFIRMED"){
+  let url;try{url=new URL(x.source);}catch{throw Error("Confirmed entries require source and check date.");}
+  if(url.protocol!=="https:"||!url.hostname||url.username||url.password||!/^\\d{4}-\\d{2}-\\d{2}$/.test(x.checked||""))throw Error("Confirmed entries require source and check date.");
+  const [y,m,d]=x.checked.split("-").map(Number),stamp=new Date(Date.UTC(y,m-1,d));
+  if(stamp.getUTCFullYear()!==y||stamp.getUTCMonth()!==m-1||stamp.getUTCDate()!==d)throw Error("Invalid source check date.");
+ }
  return {city:x.city,note:x.note,status:x.status,source:String(x.source||""),checked:String(x.checked||"")};
 }
 export function safeCsvCell(value){
