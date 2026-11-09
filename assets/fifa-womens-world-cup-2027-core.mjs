@@ -22,12 +22,12 @@ export function formatInstant(iso,zone){
  const dt=new Date(iso);if(!Number.isFinite(dt.getTime()))throw Error("Invalid instant.");
  return new Intl.DateTimeFormat("en-GB",{timeZone:zone,dateStyle:"full",timeStyle:"short",hourCycle:"h23"}).format(dt);
 }
-export function planGap(first,second,travelHours,arrivalHours=2,riskHours=1){
- for(const n of [travelHours,arrivalHours,riskHours])if(typeof n!=="number"||!Number.isFinite(n)||n<0)throw Error("Enter finite, nonnegative hour estimates.");
+export function planGap(first,second,travelHours,arrivalHours=2,riskHours=1,firstMatchHours=2.5){
+ for(const n of [travelHours,arrivalHours,riskHours,firstMatchHours])if(typeof n!=="number"||!Number.isFinite(n)||n<0)throw Error("Enter finite, nonnegative hour estimates.");
  const a=Date.parse(first),b=Date.parse(second);
  if(!Number.isFinite(a)||!Number.isFinite(b))throw Error("Valid kickoff instants required.");
- const gap=(b-a)/3600000,required=travelHours+arrivalHours+riskHours;
- return {gapHours:gap,requiredHours:required,slackHours:gap-required,feasibleByUserAssumptions:gap>=required,warning:"Hypothetical: flight availability, delays, local transit and venue rules are not verified."};
+ const kickoffGap=(b-a)/3600000,gap=kickoffGap-firstMatchHours,required=travelHours+arrivalHours+riskHours;
+ return {kickoffGapHours:kickoffGap,firstMatchHours: firstMatchHours,gapHours:gap,requiredHours:required,slackHours:gap-required,feasibleByUserAssumptions:gap>=required,warning:"Hypothetical: flight availability, delays, local transit and venue rules are not verified."};
 }
 export function validateNotebookItem(x){
  if(!x||typeof x!=="object"||!CITIES.includes(x.city)||typeof x.note!=="string"||x.note.length>2000)throw Error("Invalid notebook entry.");
