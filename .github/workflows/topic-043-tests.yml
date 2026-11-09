@@ -1,0 +1,23 @@
+name: Topic 43 browser and planner regression
+on:
+  pull_request:
+    paths:
+      - 'content/pilots/icc-cricket-world-cup-2027.html'
+      - 'content/tools/icc-cwc-2027-planner.mjs'
+      - 'tests/icc-cwc-2027-*.test.mjs'
+      - '.github/workflows/topic-043-tests.yml'
+  workflow_dispatch:
+jobs:
+  topic-043:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Exercise original planner and actual browser handlers
+        run: node --test tests/icc-cwc-2027-planner.test.mjs tests/icc-cwc-2027-browser.test.mjs
+      - name: Build static output
+        run: node scripts/build.mjs
+      - name: Validate static output
+        run: node scripts/validate.mjs
