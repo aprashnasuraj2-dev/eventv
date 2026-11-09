@@ -1,0 +1,6 @@
+{
+  "schema_version": 2,
+  "version": "2026-11-09",
+  "policy": "Append researched, independently source-verified IDs 51–200 in order; do not fabricate future editions, dates, venues, schedules, prices or demand. Keep first 50 in data/events-50.json unchanged.",
+  "events": []
+}

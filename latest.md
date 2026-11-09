@@ -12,6 +12,8 @@
 
 > **2026-11-09 workflow handoff:** [Five-lane deep production contract](docs/hourly-200-topics-v1.md) added for proposed hourly Topic #41–200 execution. Topics #51–200 have no qualified catalog entries yet; validators currently hardcode 50 clusters and 200 routes, so >50 expansion requires a separately validated infrastructure PR. The five hourly tasks were enabled and their IDs recorded in the contract (Asia/Kathmandu :01/:13/:27/:39/:52), but no task run, new hub, or live deployment is yet verified; worker success must be proven from actual GitHub PR, exact-head CI and final main audit.
 
+> **2026-11-09 infrastructure candidate (NOT YET MERGED):** Lane 1 proposes `data/events-extra.json` schema v2 (initially empty), `scripts/catalog.mjs` contiguous IDs/unique slugs/canonicals/source/verified-date validation, variable build/route/intent counts, and a CI catalog test. The existing 50-topic dataset and 35 approved pages must remain unchanged; this is a prerequisite, **not** publication or discovery of Topics #51–200. Exact-head CI, feature merge, and final-main audit still required.
+
 ## 1. Current verified state
 
 | Area | Status | Verified detail |
