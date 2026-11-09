@@ -21,6 +21,7 @@ assert.match(nodes.result.textContent,/06:15/);
 assert.match(nodes.result.textContent,/£70\.00/);
 assert.match(nodes.result.textContent,/NOT guaranteed entry/i);
 nodes.day.value='2027-06-27';run();assert.match(nodes.result.textContent,/Cannot calculate/);
+nodes.day.value='2027-06-28';nodes.channel.value='tampered-channel';run();assert.match(nodes.result.textContent,/valid access path/);nodes.channel.value='queue';
 nodes.day.value='2027-07-11';nodes.people.value='0';run();assert.match(nodes.result.textContent,/invalid/);
 nodes.people.value='2';nodes.ticket.value='NaN';run();assert.match(nodes.result.textContent,/invalid/);
 nodes.ticket.value='10';nodes.arrival.value='00:30';nodes.travel.value='120';nodes.buffer.value='30';run();assert.match(nodes.result.textContent,/previous day/);
