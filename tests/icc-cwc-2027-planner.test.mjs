@@ -12,9 +12,9 @@ test('missing kickoff and travel estimates remain unknown',()=>{
 });
 test('travel conflicts and rollover use instants, not local string subtraction',()=>{
  const a={iso:'2027-10-10T22:30:00Z'},b={iso:'2027-10-11T01:00:00Z'};
- assert.equal(planTransfer(a,b,{travelMinutes:120,arrivalBufferMinutes:60}).status,'conflict');
- assert.equal(planTransfer(a,b,{travelMinutes:60,arrivalBufferMinutes:30}).marginMinutes,60);
- assert.equal(planTransfer(b,a,{travelMinutes:0,arrivalBufferMinutes:0}).status,'conflict');
+ assert.equal(planTransfer(a,b,{travelMinutes:120,arrivalBufferMinutes:60,matchDurationMinutes:30}).status,'conflict');
+ assert.equal(planTransfer(a,b,{travelMinutes:60,arrivalBufferMinutes:30,matchDurationMinutes:30}).marginMinutes,30);
+ assert.equal(planTransfer(b,a,{travelMinutes:0,arrivalBufferMinutes:0,matchDurationMinutes:0}).status,'conflict');
 });
 test('invalid input and timezone are rejected',()=>{
  for(const value of [-1,Infinity,10081,'not-a-number'])assert.throws(()=>parseDuration(value),RangeError);
@@ -29,4 +29,12 @@ test('shortlist bounds and text safety',()=>{
  assert.equal(normalizeShortlist([{id:'match-1',note:'<script>',status:'made-up'}])[0].status,'conditional');
  assert.equal(escapeText('<img src=x onerror="alert(1)">'),'&lt;img src=x onerror=&quot;alert(1)&quot;&gt;');
  assert.throws(()=>normalizeShortlist([{id:''}]),RangeError);
+});
+
+test('a kickoff-to-kickoff window cannot ignore the first match duration',()=>{
+ const first={iso:'2027-10-10T08:00:00Z'},second={iso:'2027-10-10T12:00:00Z'};
+ assert.equal(planTransfer(first,second,{travelMinutes:90,arrivalBufferMinutes:30}).status,'unknown-travel');
+ const actual=planTransfer(first,second,{matchDurationMinutes:180,travelMinutes:90,arrivalBufferMinutes:30});
+ assert.equal(actual.status,'conflict');
+ assert.equal(actual.marginMinutes,-60);
 });
