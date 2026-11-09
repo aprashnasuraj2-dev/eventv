@@ -11,7 +11,7 @@ const script=html.match(/<script>([\s\S]*?)<\/script>/)?.[1];
 assert.ok(script,'Planner script required');
 const defaults={day:'2027-06-28',channel:'queue',arrival:'08:00',travel:'60',buffer:'45',people:'2',ticket:'10',transport:'30',extras:'20',notes:'<img src=x onerror=alert(1)>'};
 const handlers={},nodes={};
-for(const [id,value] of Object.entries({...defaults,result:''}))nodes[id]={value,textContent:'',addEventListener:(type,fn)=>{handlers[id+':'+type]=fn}};
+for(const [id,value] of Object.entries({...defaults,result:'',calculate:'',save:'',export:'',reset:''}))nodes[id]={value,textContent:'',addEventListener:(type,fn)=>{handlers[id+':'+type]=fn}};
 let stored={},downloaded=false;
 const context={document:{getElementById:id=>nodes[id],createElement:()=>({set href(x){},set download(x){},click(){downloaded=true}})},localStorage:{getItem:k=>stored[k]??null,setItem:(k,v)=>{stored[k]=v},removeItem:k=>{delete stored[k]}},URL:{createObjectURL:()=> 'blob:test',revokeObjectURL:()=>{}},Blob:class{},setTimeout:fn=>fn(),Object,JSON,Number,String,Math,Error};
 vm.runInNewContext(script,context,{timeout:1000});
