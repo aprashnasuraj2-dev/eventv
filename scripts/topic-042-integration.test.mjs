@@ -47,3 +47,16 @@ test('pass inference never implies confirmed admission',()=>{
   }
  }
 });
+
+test('pass evidence UI is wired to conservative engine and source navigation exists',()=>{
+ assert.match(html,/id="pass-type"/);
+ assert.match(html,/id="pass-phase"/);
+ assert.match(html,/id="pass-venue"/);
+ assert.match(html,/id="pass-team"/);
+ assert.match(html,/id="pass-check"/);
+ assert.match(html,/passCoverage\(pass,\{phase,venue,team\}\)/);
+ assert.match(html,/id="pass-result" aria-live="polite"/);
+ assert.match(html,/href="#references"/);
+ assert.doesNotMatch(html,/href="#sources"/);
+ assert.match(html,/POTENTIALLY COVERED under the entered assumptions/);
+});
