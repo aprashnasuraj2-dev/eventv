@@ -1,6 +1,7 @@
 // Reproducible EventV staging build. Node 22+, no external dependencies.
 import fs from 'node:fs';
 import path from 'node:path';
+import {events,LEGACY_COUNT} from './catalog.mjs';
 const esc=s=>String(s??"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;");
 const when=e=>e.start?(e.end&&e.end!==e.start?`${e.start}–${e.end}`:e.start):"Date not announced";
 const root=e=>`/events/${e.slug}/`;
@@ -35,11 +36,10 @@ const renderIndex=function renderIndex(all,eventsOnly){
 };
 const css=":root{color-scheme:light;font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:#1c2735;background:#f7f9fc}*{box-sizing:border-box}body{margin:0;line-height:1.65}a{color:#1257a0}a:hover{text-decoration:underline}.shell{max-width:1120px;margin:auto;padding:0 20px}header{background:#0d223d;color:#fff}header a{color:#fff}header .shell{padding:15px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px}nav{display:flex;gap:15px;flex-wrap:wrap}main{max-width:980px;margin:34px auto;padding:0 22px}.hero{background:#fff;padding:26px;border:1px solid #d7e0eb;border-radius:16px}.hero h1{font-size:clamp(1.65rem,3.8vw,2.55rem);line-height:1.2;margin:8px 0 14px}.eyebrow{font-size:.76rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#435a78}.muted{color:#4b6075}.chip{display:inline-block;padding:3px 10px;border-radius:16px;background:#e7eef9;margin:4px 8px 4px 0;font-size:.82rem}section{margin:35px 0}h2{font-size:1.4rem;line-height:1.3}h3{font-size:1.12rem}ul{padding-left:23px}li{margin:7px 0}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:14px}.card{display:block;background:#fff;border:1px solid #d7e0eb;border-radius:12px;padding:18px;text-decoration:none;color:#1c2735}.card:hover{border-color:#408acc}.card h3{margin:0 0 8px;color:#1257a0}.table{overflow-x:auto}table{border-collapse:collapse;width:100%;background:#fff}th,td{padding:12px 10px;border-bottom:1px solid #d7e0eb;text-align:left;vertical-align:top}th{background:#edf3fb}.notice{background:#fff7e6;padding:15px;border-left:4px solid #b47512}.source{padding:14px;background:#edf3fb;border-radius:8px;overflow-wrap:anywhere}footer{border-top:1px solid #d7e0eb;margin-top:50px;padding:25px 20px;color:#536579;font-size:.85rem}button{background:#0d5596;color:white;border:0;padding:11px 16px;border-radius:8px;cursor:pointer}@media(max-width:600px){header .shell{display:block}nav{margin-top:10px}main{margin-top:18px;padding:0 13px}.hero{padding:19px}th,td{padding:9px 7px}}";
 const csv=(rows,heads)=>heads.join(",")+"\n"+rows.map(row=>heads.map(k=>`"${String(row[k]??"").replace(/"/g,'""')}"`).join(",")).join("\n")+"\n";
-const data=JSON.parse(fs.readFileSync('data/events-50.json','utf8'));
-const events=data.events;
+// Ordered, validated legacy and extension records are loaded by catalog.mjs.
 const approvedData=fs.existsSync('data/index-approved.json')?JSON.parse(fs.readFileSync('data/index-approved.json','utf8')):{approved:[]};
 const approved=new Map((approvedData.approved||[]).map(x=>[x.slug+'|'+x.page_type,x]));
-if(events.length!==50 || new Set(events.map(e=>e.slug)).size!==50 || events.some(e=>e.facets.length!==5)) throw new Error('Invalid event manifest');
+if(events.length < LEGACY_COUNT || events.length > 200) throw new Error('Invalid expanded event catalog');
 const write=(p,text)=>{fs.mkdirSync(path.dirname(p),{recursive:true});fs.writeFileSync(p,text)};
 for(const e of events) for(const p of ['hub','planning','during','after']){
   const override=approved.get(e.slug+'|'+p);
@@ -48,11 +48,21 @@ for(const e of events) for(const p of ['hub','planning','during','after']){
     write(pagePath(e,p),fs.readFileSync(override.source_path,'utf8'));
   } else write(pagePath(e,p),render(e,p));
 }
-write('index.html',renderIndex(events,false));
-write('events/index.html',renderIndex(events,true));
+const indexFor = onlyEvents => {
+  const html = renderIndex(events,onlyEvents);
+  if (events.length === LEGACY_COUNT) return html; // byte-for-byte baseline compatibility
+  return html.replaceAll('All 50 events','All '+events.length+' events')
+    .replaceAll('50 Global Event Clusters',events.length+' Global Event Clusters')
+    .replaceAll('Fifty verified-or-labeled candidate events and 200 editorial staging pages.',events.length+' verified-or-labeled candidate events and '+(events.length*4)+' editorial staging pages.')
+    .replaceAll('50 event clusters, 1,000 search',events.length+' event clusters, '+(events.length*20).toLocaleString('en-US')+' search')
+    .replaceAll('50 event clusters',events.length+' event clusters')
+    .replaceAll('200 editorial staging pages',events.length*4+' editorial staging pages');
+};
+write('index.html',indexFor(false));
+write('events/index.html',indexFor(true));
 write('assets/eventv.css',css+'\n');
 const intents=events.flatMap(e=>['pre','compare','live','post'].flatMap(p=>phrases(e,p).map(x=>({event_slug:e.slug,topic:e.name,category:e.category,phase:x.phase,facet_number:x.facet,search_intent:x.intent,query_hypothesis:x.query,canonical_url:'https://aafnaipatro.com'+x.path,validation_status:'unvalidated',geo:e.geo.join(' ')}))));
 const routes=events.flatMap(e=>['hub','planning','during','after'].map(p=>{const override=approved.get(e.slug+'|'+p);return {event_slug:e.slug,page_type:p,output_path:pagePath(e,p),canonical_url:'https://aafnaipatro.com'+root(e)+(p==='hub'?'':p+'/'),robots:override?.robots||'noindex,follow',editorial_status:override?.editorial_status||'research-draft'}}));
 write('research/search-intents-1000.csv',csv(intents,['event_slug','topic','category','phase','facet_number','search_intent','query_hypothesis','canonical_url','validation_status','geo']));
 write('research/routes-200.csv',csv(routes,['event_slug','page_type','output_path','canonical_url','robots','editorial_status']));
-console.log('Generated '+events.length+' clusters / '+intents.length+' intents / '+routes.length+' event HTML pages / 202 HTML total / '+approved.size+' editorial override(s)');
+console.log('Generated '+events.length+' clusters / '+intents.length+' intents / '+routes.length+' event HTML pages / '+(routes.length+2)+' HTML total / '+approved.size+' editorial override(s)');
