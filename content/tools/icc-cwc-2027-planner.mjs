@@ -12,15 +12,15 @@ export function parseDuration(value){
  if(!Number.isFinite(n)||n<0||n>10080) throw new RangeError('Minutes must be between 0 and 10080');
  return n;
 }
-export function planTransfer(previous,next,{travelMinutes,arrivalBufferMinutes=60}={}){
+export function planTransfer(previous,next,{travelMinutes,arrivalBufferMinutes=60,matchDurationMinutes}={}){
  if(!previous?.iso||!next?.iso) return {status:'unknown-time',message:'Both verified match start times are required'};
  const a=Date.parse(previous.iso),b=Date.parse(next.iso);
  if(!Number.isFinite(a)||!Number.isFinite(b)) return {status:'invalid-time',message:'Invalid timestamp'};
- const travel=parseDuration(travelMinutes),buffer=parseDuration(arrivalBufferMinutes);
- if(travel===null||buffer===null)return {status:'unknown-travel',message:'Enter a travel estimate and arrival buffer'};
+ const travel=parseDuration(travelMinutes),buffer=parseDuration(arrivalBufferMinutes),matchDuration=parseDuration(matchDurationMinutes);
+ if(travel===null||buffer===null||matchDuration===null)return {status:'unknown-travel',message:'Enter travel, first-match duration and arrival buffer estimates'};
  const available=(b-a)/60000;
- const margin=available-travel-buffer;
- return {status:margin<0?'conflict':'possible',availableMinutes:available,requiredMinutes:travel+buffer,marginMinutes:margin,assumption:'Travel and buffer are user estimates, not a route forecast'};
+ const margin=available-matchDuration-travel-buffer;
+ return {status:margin<0?'conflict':'possible',availableMinutes:available,requiredMinutes:matchDuration+travel+buffer,marginMinutes:margin,assumption:'Match duration, travel and buffer are user estimates, not a route forecast'};
 }
 export function formatInstant(iso,zone='UTC'){
  const ms=Date.parse(iso);
