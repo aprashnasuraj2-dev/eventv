@@ -5,7 +5,7 @@ assert.match(formatInstant("2027-06-24T23:00:00.000Z","Europe/London"),/00:00/);
 assert.throws(()=>brazilWallToUtc("2027-02-30","20:00"),/Invalid/);
 assert.throws(()=>brazilWallToUtc("2027-06-24","24:00"),/valid/);
 assert.equal(planGap("2027-06-24T20:00:00Z","2027-06-25T01:00:00Z",3,2,1).feasibleByUserAssumptions,false);
-assert.equal(planGap("2027-06-24T20:00:00Z","2027-06-25T03:00:00Z",3,2,1).slackHours,1);
+assert.equal(planGap("2027-06-24T20:00:00Z","2027-06-25T03:00:00Z",3,2,1).slackHours,-1.5);
 assert.throws(()=>planGap("2027-06-24","2027-06-25",-1),/nonnegative/);
 assert.throws(()=>validateNotebookItem({city:"Recife",note:"claimed",status:"CONFIRMED"}),/source/);
 assert.match(safeCsvCell("=IMPORTXML(A1)"),/^"'=/);
@@ -27,4 +27,9 @@ assert.throws(()=>exportNotebook(Array.from({length:501},()=>({city:"Recife",not
 assert.match(safeCsvCell(" +SUM(A1:A2)"),/^"' \+SUM/);
 assert.equal(safeCsvCell('a"b'),'"a""b"');
 
+assert.equal(planGap("2027-06-24T20:00:00Z","2027-06-25T03:00:00Z",3,2,1,0).slackHours,1);
+assert.equal(planGap("2027-06-24T20:00:00Z","2027-06-25T03:00:00Z",3,2,1,2.5).kickoffGapHours,7);
+assert.equal(planGap("2027-06-24T20:00:00Z","2027-06-25T03:00:00Z",3,2,1,2.5).gapHours,4.5);
+assert.throws(()=>planGap("2027-06-24T20:00:00Z","2027-06-25T03:00:00Z",3,2,1,-1),/nonnegative/);
+assert.equal(planGap("2027-06-24T20:00:00Z","2027-06-24T21:00:00Z",0,0,0,2.5).feasibleByUserAssumptions,false);
 console.log("Topic 41 pure utility edge tests passed");
