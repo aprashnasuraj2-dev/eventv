@@ -7,8 +7,9 @@ export function clock(seconds){const n=Math.floor(seconds);return [Math.floor(n/
 export function secondsOf(s){if(!/^\d{1,2}:[0-5]\d:[0-5]\d$/.test(s))throw Error('Enter time as H:MM:SS');const [h,m,sec]=s.split(':').map(Number);if(h<1||h>12)throw Error('Enter a marathon finish between 1 and 12 hours');return h*3600+m*60+sec}
 export function assess(x){
  const age=Number(x.age),drop=Number(x.drop);
+ if(x.age===null||String(x.age).trim()===''||x.drop===null||String(x.drop).trim()==='')throw Error('Enter race-day age and net downhill');
  if(!Number.isInteger(age)||age<18||age>110)throw Error('Race-day age must be 18–110');
- if(!Number.isFinite(drop)||drop<0||drop>30000)throw Error('Net downhill must be 0–30,000 feet');
+ if(!Number.isInteger(drop)||drop<0||drop>30000)throw Error('Net downhill must be 0–30,000 feet');
  if(!['men','women','nonbinary'].includes(x.category))throw Error('Choose an open-field category');
  const t=secondsOf(x.time), date=String(x.date||'');
  if(!/^\d{4}-\d{2}-\d{2}$/.test(date)||Number.isNaN(Date.parse(date))||new Date(date).toISOString().slice(0,10)!==date)throw Error('Enter a valid qualifying race date');
