@@ -1,13 +1,22 @@
 // Topic 41: offline planning primitives. No official fixtures, travel estimates or ticket inventory.
 export const CITIES=Object.freeze(["Belo Horizonte","Brasília","Fortaleza","Porto Alegre","Recife","Rio de Janeiro","Salvador","São Paulo"]);
 const pad=n=>String(n).padStart(2,"0");
+// Resolve Brazil wall time using the runtime IANA database, not a legislated-future offset guess.
+// Search the bounded set of plausible offsets; reject gaps and ambiguous local instants.
+const brazilParts = new Intl.DateTimeFormat("en-GB",{timeZone:"America/Sao_Paulo",year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit",hourCycle:"h23"});
+function wallParts(ms){const x=Object.fromEntries(brazilParts.formatToParts(new Date(ms)).filter(p=>p.type!=="literal").map(p=>[p.type,p.value]));return [x.year,x.month,x.day,x.hour,x.minute].join("-");}
 export function brazilWallToUtc(date,time){
  if(!/^2027-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/.test(date)||!/^([01][0-9]|2[0-3]):[0-5][0-9]$/.test(time))throw Error("Enter a valid 2027 date and HH:MM.");
  const [y,m,d]=date.split("-").map(Number),[h,min]=time.split(":").map(Number);
- const utc=Date.UTC(y,m-1,d,h+3,min); // Brazil host cities currently observe UTC−03; verify 2027 legislation before publication.
- const check=new Date(utc-3*3600000);
- if(check.getUTCFullYear()!==y||check.getUTCMonth()!==m-1||check.getUTCDate()!==d)throw Error("Invalid calendar date.");
- return new Date(utc).toISOString();
+ const wall=Date.UTC(y,m-1,d,h,min);
+ if(new Date(wall).getUTCFullYear()!==y||new Date(wall).getUTCMonth()!==m-1||new Date(wall).getUTCDate()!==d)throw Error("Invalid calendar date.");
+ const target=[String(y),pad(m),pad(d),pad(h),pad(min)].join("-");
+ const matches=[];
+ for(let offset=-14;offset<=14;offset+=0.25){const ms=wall-offset*3600000;if(wallParts(ms)===target)matches.push(ms);}
+ const unique=[...new Set(matches)];
+ if(unique.length===0)throw Error("Nonexistent Brazil wall time under installed IANA timezone rules.");
+ if(unique.length>1)throw Error("Ambiguous Brazil wall time under installed IANA timezone rules.");
+ return new Date(unique[0]).toISOString();
 }
 export function formatInstant(iso,zone){
  const dt=new Date(iso);if(!Number.isFinite(dt.getTime()))throw Error("Invalid instant.");
