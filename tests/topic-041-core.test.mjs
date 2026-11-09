@@ -32,4 +32,8 @@ assert.equal(planGap("2027-06-24T20:00:00Z","2027-06-25T03:00:00Z",3,2,1,2.5).ki
 assert.equal(planGap("2027-06-24T20:00:00Z","2027-06-25T03:00:00Z",3,2,1,2.5).gapHours,4.5);
 assert.throws(()=>planGap("2027-06-24T20:00:00Z","2027-06-25T03:00:00Z",3,2,1,-1),/nonnegative/);
 assert.equal(planGap("2027-06-24T20:00:00Z","2027-06-24T21:00:00Z",0,0,0,2.5).feasibleByUserAssumptions,false);
+assert.throws(()=>validateNotebookItem({city:"Recife",note:"   ",status:"USER_INPUT"}),/Invalid/);
+assert.throws(()=>validateNotebookItem({city:"Recife",note:"source",status:"CONFIRMED",source:"https://example.org/",checked:"2027-02-30"}),/Invalid source check date/);
+assert.throws(()=>validateNotebookItem({city:"Recife",note:"source",status:"CONFIRMED",source:"https://user:password@example.org/",checked:"2027-06-24"}),/source/);
+assert.deepEqual(validateNotebookItem({city:"Recife",note:"source",status:"CONFIRMED",source:"https://www.fifa.com/",checked:"2027-06-24"}),{city:"Recife",note:"source",status:"CONFIRMED",source:"https://www.fifa.com/",checked:"2027-06-24"});
 console.log("Topic 41 pure utility edge tests passed");
