@@ -11,7 +11,7 @@ test('browser utility matches tested engine exactly',()=>assert.equal(browser,en
 test('draft cannot accidentally become indexable',()=>{
  assert.match(html,/<meta name="robots" content="noindex,follow">/);
  assert.match(html,/rel="canonical" href="https:\/\/aafnaipatro\.com\/events\/fiba-world-cup-2027\/"/);
- assert.match(html,/import \{parseDohaLocal,formatInZone,budgetQar,analyzeGames\} from '\/assets\/topic-042-planner\.mjs'/);
+ assert.match(html,/import \{parseDohaLocal,formatInZone,budgetQar,analyzeGames,passCoverage\} from '\/assets\/topic-042-planner\.mjs'/);
  assert.doesNotMatch(html,/innerHTML\s*=/);
  assert.match(html,/replaceChildren\(\)/);
  assert.match(html,/textContent/);
