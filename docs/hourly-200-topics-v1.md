@@ -42,3 +42,16 @@
 
 ## 5. Acceptance proof
 Topic COMPLETE requires: merged **final main** with original tool and primary-source verification, audited canonical/robots parity, all required CI passing on exact-head and post-merge audit, and `latest.md` reconciliation. Keep separate counts for *discovered*, *researched*, *in PR*, *merged*, *index-approved*, *deployed* and *measured traffic*. No completion claim solely from a generated file or scheduled-task success.
+
+## 6. Enabled task registry (2026-11-09 NPT)
+Task automation creation and enabled flags were verified, but no hourly run has yet proved code execution, CI or publication. All run every hour with Asia/Kathmandu timezone; next-run estimates were not returned by the scheduler.
+
+| Worker | Minute (NPT) | Automation ID |
+|---|---|---|
+| 1 | :01 | `6af1c5bc67d08191a3ff609d0af2582f` |
+| 2 | :13 | `6af1c5bf7628819188c122426fc9edee` |
+| 3 | :27 | `6af1c5c40be881918d8970d70235902c` |
+| 4 | :39 | `6af1c5c888008191a354b0d4d2b467d7` |
+| 5 | :52 | `6af1c5ccaab48191bb60d7bdc2b0534e` |
+
+When a lane finishes all 32 owned topics, pause its own automation; no other lanes should keep reworking completed IDs. Check each actual run's PR and main evidence independently; task enabled is not topic completion.
