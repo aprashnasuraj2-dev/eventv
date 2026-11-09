@@ -14,6 +14,9 @@
 
 > **2026-11-09 infrastructure merged (NO NEW TOPICS):** Lane 1 merged `data/events-extra.json` schema v2 (initially empty), `scripts/catalog.mjs` contiguous IDs/unique slugs/canonicals/source/verified-date validation, variable build/route/intent counts, and a CI catalog test. PR #61 passed exact-head CI run 42624927308 on e9693140281f5fb105c320e995a62e0236b72993 and merged to main as e08ac57c43b94d306b7a35e7aa75e4cf4565b847. Main re-read confirms exactly 50 legacy topics, zero extension entries and 35 approvals; existing route count remains 200. No topic #51+ is discovered, index-approved or deployed.
 
+
+> **2026-11-10 Worker 2 / Topic #42 draft handoff (NOT APPROVED):** [Draft PR #66](https://github.com/aprashnasuraj2-dev/eventv/pull/66) on `eventv/topic-042-lane-2` contains FIBA primary-source research, a 16 KB Doha planner draft, shared browser/Node engine and unit/integration test files. The draft remains `noindex,follow` and is NOT connected to the approved generated route. Initial PR CI [run 42683862731](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42683862731) passed catalog/build/validate but FAILED `check-latest` because this checkpoint was absent. The tests were not included in that workflow and have not been executed or browser-tested. Source/structured-data/editorial/route-parity gates and exact-head CI are outstanding. Do not merge, approve, deploy or proceed to #47 until the complete feature and post-merge lifecycle is verified. This note records an in-progress feature for the repository's existing same-PR checkpoint requirement; a separate docs-only reconciliation remains mandatory after feature merge.
+
 ## 1. Current verified state
 
 | Area | Status | Verified detail |
