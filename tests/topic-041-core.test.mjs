@@ -1,0 +1,13 @@
+import assert from "node:assert/strict";
+import {brazilWallToUtc,formatInstant,planGap,validateNotebookItem,safeCsvCell,exportNotebook} from "../assets/fifa-womens-world-cup-2027-core.mjs";
+assert.equal(brazilWallToUtc("2027-06-24","20:00"),"2027-06-24T23:00:00.000Z");
+assert.match(formatInstant("2027-06-24T23:00:00.000Z","Europe/London"),/00:00/);
+assert.throws(()=>brazilWallToUtc("2027-02-30","20:00"),/Invalid/);
+assert.throws(()=>brazilWallToUtc("2027-06-24","24:00"),/valid/);
+assert.equal(planGap("2027-06-24T20:00:00Z","2027-06-25T01:00:00Z",3,2,1).feasibleByUserAssumptions,false);
+assert.equal(planGap("2027-06-24T20:00:00Z","2027-06-25T03:00:00Z",3,2,1).slackHours,1);
+assert.throws(()=>planGap("2027-06-24","2027-06-25",-1),/nonnegative/);
+assert.throws(()=>validateNotebookItem({city:"Recife",note:"claimed",status:"CONFIRMED"}),/source/);
+assert.match(safeCsvCell("=IMPORTXML(A1)"),/^"'=/);
+assert.match(exportNotebook([{city:"Recife",note:"=1+1",status:"USER_INPUT"}]),/"'=1\+1"/);
+console.log("Topic 41 pure utility edge tests passed");
