@@ -10,4 +10,21 @@ assert.throws(()=>planGap("2027-06-24","2027-06-25",-1),/nonnegative/);
 assert.throws(()=>validateNotebookItem({city:"Recife",note:"claimed",status:"CONFIRMED"}),/source/);
 assert.match(safeCsvCell("=IMPORTXML(A1)"),/^"'=/);
 assert.match(exportNotebook([{city:"Recife",note:"=1+1",status:"USER_INPUT"}]),/"'=1\+1"/);
+
+assert.equal(brazilWallToUtc("2027-07-25","00:15"),"2027-07-25T03:15:00.000Z");
+assert.match(formatInstant("2027-06-24T23:00:00.000Z","Australia/Sydney"),/25 June 2027/);
+assert.match(formatInstant("2027-06-24T23:00:00.000Z","America/Los_Angeles"),/24 June 2027/);
+assert.throws(()=>brazilWallToUtc("2027-02-29","12:00"),/Invalid/);
+assert.throws(()=>brazilWallToUtc("2027-04-31","12:00"),/Invalid/);
+assert.throws(()=>formatInstant("not-a-date","Europe/London"),/Invalid/);
+assert.throws(()=>formatInstant("2027-06-24T23:00:00Z","Not_A_Real_Zone"),RangeError);
+assert.equal(planGap("2027-06-25T03:00:00Z","2027-06-24T20:00:00Z",0,0,0).feasibleByUserAssumptions,false);
+assert.throws(()=>planGap("bad","2027-06-24T20:00:00Z",1),/Valid/);
+assert.throws(()=>planGap("2027-06-24T20:00:00Z","2027-06-25T03:00:00Z",NaN),/nonnegative/);
+assert.throws(()=>validateNotebookItem({city:"Unverified City",note:"hello",status:"USER_INPUT"}),/Invalid/);
+assert.throws(()=>validateNotebookItem({city:"Recife",note:"hello",status:"CONFIRMED",source:"javascript:alert(1)",checked:"2027-01-01"}),/source/);
+assert.throws(()=>exportNotebook(Array.from({length:501},()=>({city:"Recife",note:"test",status:"USER_INPUT"}))),/limit/);
+assert.match(safeCsvCell(" +SUM(A1:A2)"),/^"' \+SUM/);
+assert.equal(safeCsvCell('a"b'),'"a""b"');
+
 console.log("Topic 41 pure utility edge tests passed");
