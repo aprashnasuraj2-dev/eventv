@@ -34,7 +34,7 @@ export function validateNotebookItem(x){
  if(!["USER_INPUT","CONFIRMED","PENDING","HISTORICAL","CONFLICTED"].includes(x.status))throw Error("Invalid evidence status.");
  if(x.status==="CONFIRMED"){
   let url;try{url=new URL(x.source);}catch{throw Error("Confirmed entries require source and check date.");}
-  if(url.protocol!=="https:"||!url.hostname||url.username||url.password||!/^\\d{4}-\\d{2}-\\d{2}$/.test(x.checked||""))throw Error("Confirmed entries require source and check date.");
+  if(url.protocol!=="https:"||!url.hostname||url.username||url.password||!/^\d{4}-\d{2}-\d{2}$/.test(x.checked||""))throw Error("Confirmed entries require source and check date.");
   const [y,m,d]=x.checked.split("-").map(Number),stamp=new Date(Date.UTC(y,m-1,d));
   if(stamp.getUTCFullYear()!==y||stamp.getUTCMonth()!==m-1||stamp.getUTCDate()!==d)throw Error("Invalid source check date.");
  }
