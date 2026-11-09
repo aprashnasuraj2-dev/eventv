@@ -18,5 +18,5 @@ assert.equal(check({certified:false}).meets,false);
 assert.equal(check({applied:false,time:'2:55:00'}).randomPossible,false);
 assert.equal(check({age:34}).standard,10500);assert.equal(check({age:35}).standard,10800);
 assert.equal(check({age:80,category:'nonbinary'}).standard,19200);
-for(const x of [{age:17},{drop:-1},{time:'bad'},{date:'2026-02-30'},{category:'wheelchair'}])assert.throws(()=>check(x));
+for(const x of [{age:17},{age:''},{drop:-1},{drop:''},{drop:1500.5},{time:'bad'},{date:'2026-02-30'},{category:'wheelchair'}])assert.throws(()=>check(x));
 console.log('Boston 2027 eligibility boundary tests passed');
