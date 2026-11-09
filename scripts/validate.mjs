@@ -1,13 +1,14 @@
 import fs from 'node:fs';import assert from 'node:assert/strict';
-const data=JSON.parse(fs.readFileSync('data/events-50.json','utf8')).events;
+import {events as catalogEvents,LEGACY_COUNT} from './catalog.mjs';
+const data=catalogEvents;
 const approvals=JSON.parse(fs.readFileSync('data/index-approved.json','utf8')).approved||[];
 const approved=new Map(approvals.map(x=>[x.slug+'|'+x.page_type,x]));
 const rows=fs.readFileSync('research/routes-200.csv','utf8').trim().split('\n');
 const intents=fs.readFileSync('research/search-intents-1000.csv','utf8').trim().split('\n');
-assert.equal(data.length,50);assert.equal(new Set(data.map(e=>e.slug)).size,50);
-assert.equal(rows.length,201);assert.equal(intents.length,1001);
+assert.ok(data.length>=LEGACY_COUNT && data.length<=200);assert.equal(new Set(data.map(e=>e.slug)).size,data.length);
+assert.equal(rows.length,4*data.length+1);assert.equal(intents.length,20*data.length+1);
 assert.equal(data.filter(e=>e.slug.includes('eclipse')).length,0);
-assert.equal(approvals.length,35,'Pilot release currently expects exactly thirty-five index-approved routes');
+assert.ok(approvals.length>=35 && approvals.length<=data.length*4,'Baseline approvals must not be downgraded');
 for(const e of data){assert.equal(e.facets.length,5);for(const p of ['hub','planning','during','after']){
   const filepath='events/'+e.slug+'/'+(p==='hub'?'':p+'/')+'index.html';
   assert.ok(fs.existsSync(filepath),filepath);
@@ -52,7 +53,7 @@ assert.ok(wwdc.includes('Official date</span><strong>TBA'),'WWDC27 official date
 assert.ok(wwdc.includes('Official keynote time</span><strong>TBA'),'WWDC27 keynote time must remain TBA until source update');
 assert.ok(!wwdc.includes('"@type":"Event"'),'WWDC27 must not use Event schema before date announcement');
 assert.ok(fs.existsSync('index.html')&&fs.existsSync('events/index.html'));
-console.log('Validated: 50 clusters; 1000 intent rows; 200 event pages; 202 HTML total; 35 source-verified pilot hubs index-ready; all remaining event pages noindex');
+console.log('Validated: '+data.length+' clusters; '+(20*data.length)+' intent rows; '+(4*data.length)+' event pages; '+(4*data.length+2)+' HTML total; '+approvals.length+' source-verified approved routes; all remaining event pages noindex');
 const summer=fs.readFileSync('events/steam-summer-sale-2027/index.html','utf8');
 assert.ok(summer.includes('June 24–July 8, 2027'),'Summer Sale page must preserve official date range');
 assert.ok(summer.includes('Exact start time</span><strong>TBA'),'Summer Sale exact clock must remain TBA until source update');
