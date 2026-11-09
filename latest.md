@@ -12,7 +12,7 @@
 
 > **2026-11-09 workflow handoff:** [Five-lane deep production contract](docs/hourly-200-topics-v1.md) added for proposed hourly Topic #41–200 execution. Topics #51–200 have no qualified catalog entries yet; validators currently hardcode 50 clusters and 200 routes, so >50 expansion requires a separately validated infrastructure PR. The five hourly tasks were enabled and their IDs recorded in the contract (Asia/Kathmandu :01/:13/:27/:39/:52), but no task run, new hub, or live deployment is yet verified; worker success must be proven from actual GitHub PR, exact-head CI and final main audit.
 
-> **2026-11-09 infrastructure candidate (NOT YET MERGED):** Lane 1 proposes `data/events-extra.json` schema v2 (initially empty), `scripts/catalog.mjs` contiguous IDs/unique slugs/canonicals/source/verified-date validation, variable build/route/intent counts, and a CI catalog test. The existing 50-topic dataset and 35 approved pages must remain unchanged; this is a prerequisite, **not** publication or discovery of Topics #51–200. Exact-head CI, feature merge, and final-main audit still required.
+> **2026-11-09 infrastructure merged (NO NEW TOPICS):** Lane 1 merged `data/events-extra.json` schema v2 (initially empty), `scripts/catalog.mjs` contiguous IDs/unique slugs/canonicals/source/verified-date validation, variable build/route/intent counts, and a CI catalog test. PR #61 passed exact-head CI run 42624927308 on e9693140281f5fb105c320e995a62e0236b72993 and merged to main as e08ac57c43b94d306b7a35e7aa75e4cf4565b847. Main re-read confirms exactly 50 legacy topics, zero extension entries and 35 approvals; existing route count remains 200. No topic #51+ is discovered, index-approved or deployed.
 
 ## 1. Current verified state
 
@@ -108,6 +108,9 @@ For any new feature, create a branch from current `main`, make the change, updat
 7. **Start future sessions by reading `latest.md` before making changes**, then confirm its claims against repository HEAD and CI. Treat this document as a living ledger, not as proof by itself.
 
 ## 6. Last completed work log
+
+| 2026-11-09 | Lane 1 catalog infrastructure: validated append-only schema v2, ordered topic IDs 1–200, unique slug/canonical, official-source evidence and date checks; dynamic build/route/intent counts with zero extension entries; Node 22 CI catalog test. Existing 50 topics and 35 approvals preserved. | PR #61 exact-head CI 42624927308 passed; merged e08ac57; main reread 50/0/35; no live deployment |
+
 
 | Date | Change | Verified evidence |
 |---|---|---|
