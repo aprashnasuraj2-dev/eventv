@@ -33,7 +33,7 @@ test('explicit noindex, canonical, official citations and no unsafe HTML injecti
  assert.match(html,/name="robots" content="noindex,follow"/);
  assert.match(html,/rel="canonical" href="https:\/\/aafnaipatro.com\/events\/mwc-barcelona-2027\/"/);
  assert.match(html,/gsma-mwc27-barcelona-countdown/);
- assert.match(html,/date contradiction|contradictory/);
+ assert.match(html,/prior organizer FAQ|previously inconsistent/i);
  assert.doesNotMatch(script,/innerHTML\s*=/);
  assert.match(script,/textContent=/);
 });
