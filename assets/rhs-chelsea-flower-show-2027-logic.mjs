@@ -22,7 +22,7 @@ export function assess({date,arrival,minutesInside,buffer=30,membership="public"
  if(start<w.start)warnings.push("Arrival is before standard opening; accessibility early entry requires a separately verified booking.");
  if(start>=w.end)warnings.push("Arrival is at or after closing.");
  if(start+duration+margin>w.end)warnings.push("Planned visit plus buffer exceeds published closing time.");
- if(date==="2027-05-21" && start>=1050)warnings.push("Chelsea Late is a separate Friday 17:30–22:00 offering: standard daytime admission must not be assumed to cover it.");
+ if(date==="2027-05-21" && start+duration>1050)warnings.push("Your visit overlaps Chelsea Late, a separate Friday 17:30–22:00 offering: daytime admission must not be assumed to cover the evening.");
  return {label:w.label,window:clock(w.start)+"–"+clock(w.end),end:clock(start+duration),remaining:w.end-start-duration-margin,warnings,feasible:warnings.length===0};
 }
 export function budget({people,perTicket,memberFee=0,travel=0,food=0,extras=0}){

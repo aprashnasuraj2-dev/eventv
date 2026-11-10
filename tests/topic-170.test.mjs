@@ -33,3 +33,11 @@ test("browser module import resolves to a committed asset and key controls exist
  for(const id of ["visit","costForm","visitResult","costResult","compareResult","storageStatus"])
   assert.match(html,new RegExp('id="'+id+'"'));
 });
+
+test("Friday visits crossing 17:30 warn about separate evening access",()=>{
+ const overlap=assess({date:"2027-05-21",arrival:"16:30",minutesInside:90,buffer:0});
+ assert.equal(overlap.feasible,false);
+ assert.match(overlap.warnings.join(" "),/overlaps Chelsea Late/);
+ const daytime=assess({date:"2027-05-21",arrival:"15:30",minutesInside:90,buffer:0});
+ assert.equal(daytime.feasible,true);
+});
