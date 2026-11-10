@@ -18,11 +18,22 @@ assert.equal(legacy.events.length, LEGACY_COUNT, 'Preserve all 50 legacy event r
 assert.equal(extension.schema_version, 2, 'Unexpected extended catalog schema');
 assert.ok(Array.isArray(extension.events), 'Extension events must be an array');
 assert.ok(extension.events.length <= 150, 'Topic ID must not exceed 200');
-const events = [...legacy.events, ...extension.events];
+// Sparse independent per-topic manifests let five ranges advance without inventing lower IDs.
+const topicDir='data/topics';
+const topicFiles=fs.existsSync(topicDir)?fs.readdirSync(topicDir).filter(f=>/^\d{3}\.json$/.test(f)).sort():[];
+const independent=topicFiles.map(f=>{
+ const e=read(topicDir+'/'+f);
+ assert.equal(String(e.rank).padStart(3,'0')+'.json',f,'Manifest filename/rank mismatch '+f);
+ assert.ok(e.rank>LEGACY_COUNT&&e.rank<=200,'Independent ID outside extension range '+f);
+ return e;
+});
+const events=[...legacy.events,...extension.events,...independent].sort((a,b)=>a.rank-b.rank);
 const ids = new Set(), slugs = new Set(), canonical = new Set();
 for (const [i,e] of events.entries()) {
-  const id = i + 1;
-  assert.equal(e.rank, id, 'Topic IDs must be contiguous and stable at '+id);
+  const id=e.rank;
+  assert.ok(Number.isInteger(id)&&id>=1&&id<=200,'Topic ID out of bounds '+id);
+  if(i<LEGACY_COUNT) assert.equal(id,i+1,'Legacy topic ID order must remain unchanged');
+  assert.ok(!ids.has(id),'Duplicate topic ID '+id);
   assert.ok(typeof e.name === 'string' && e.name.trim().length >= 5, 'Missing event name '+id);
   assert.ok(slugRE.test(e.slug), 'Invalid slug at '+id);
   assert.ok(!slugs.has(e.slug), 'Duplicate event slug '+e.slug);
@@ -45,4 +56,4 @@ for (const [i,e] of events.entries()) {
     assert.ok(e.name.toLowerCase().includes('202') || e.source_notes.includes('recurring'), 'Event edition or recurrence must be explicit '+id);
   }
 }
-export {events, extension, LEGACY_COUNT};
+export {events, extension, independent, LEGACY_COUNT};

@@ -1,7 +1,8 @@
 import fs from 'node:fs';import assert from 'node:assert/strict';
 import {events as catalogEvents,LEGACY_COUNT} from './catalog.mjs';
+import {approvals as approvalEntries} from './approval-loader.mjs';
 const data=catalogEvents;
-const approvals=JSON.parse(fs.readFileSync('data/index-approved.json','utf8')).approved||[];
+const approvals=approvalEntries;
 const approved=new Map(approvals.map(x=>[x.slug+'|'+x.page_type,x]));
 const rows=fs.readFileSync('research/routes-200.csv','utf8').trim().split('\n');
 const intents=fs.readFileSync('research/search-intents-1000.csv','utf8').trim().split('\n');

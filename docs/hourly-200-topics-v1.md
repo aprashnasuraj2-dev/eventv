@@ -1,3 +1,5 @@
+> **SUPERSEDED OWNERSHIP (2026-11-10):** The modulo-five topic assignment below is historical. Read `docs/worker-lanes-v2.md` and `data/worker-lanes-v2.json` for the five current non-overlapping contiguous partitions. The source, tool, tests, CI, safety and final-main audit requirements remain effective.
+
 # EventV hourly production contract — Topics #41–200 (v1)
 **Owner target:** 200 genuinely useful, original event-topic hubs, not 200 auto-generated low-value pages.
 **Repository:** aprashnasuraj2-dev/eventv `main`; **checkpoint:** `latest.md`.
