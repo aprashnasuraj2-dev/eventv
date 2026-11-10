@@ -1,0 +1,25 @@
+{
+  "rank": 100,
+  "name": "International Museum Day 2027",
+  "slug": "international-museum-day-2027",
+  "start": "2027-05-18",
+  "end": "2027-05-18",
+  "category": "Culture",
+  "geo": [
+    "GLOBAL"
+  ],
+  "source": "https://icom.museum/en/international-museum-day-2/",
+  "date_status": "annual-observance-confirmed-2027-program-unannounced",
+  "job": "Help visitors plan accessible museum visits across local institutions without assuming free entry, special opening hours, or confirmed 2027 programming.",
+  "facets": [
+    "Museum-by-museum verified opening and admission ledger",
+    "Accessibility and sensory-support comparison",
+    "Travel and timed-entry conflict checker",
+    "Group cost planning with local currencies",
+    "Offline itinerary export"
+  ],
+  "state": "draft-research",
+  "verified_on": "2026-11-10",
+  "source_notes": "ICOM states IMD is organized annually on or around 18 May. The 2027 theme, participating venues, ticket costs, free admission, opening hours, and local program are not established by this source. May 18 is the annual observance anchor, not a guarantee each venue participates on that day.",
+  "canonical_root": "https://aafnaipatro.com/events/international-museum-day-2027/"
+}
