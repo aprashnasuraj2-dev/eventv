@@ -37,3 +37,20 @@ test('explicit noindex, canonical, official citations and no unsafe HTML injecti
  assert.doesNotMatch(script,/innerHTML\s*=/);
  assert.match(script,/textContent=/);
 });
+
+test('EUR budget computes group costs and contingency without invented official prices',()=>{
+ const b=vm.createContext({});
+ vm.runInContext(logic+';globalThis.budget=budgetEstimate;',b);
+ const scenario={attendees:'2',nights:'3',hotel:'180',badge:'0',ground:'60',contingency:'15'};
+ assert.equal(b.budget(scenario).subtotal,1200);
+ assert.equal(b.budget(scenario).total,1380);
+ assert.equal(b.budget({...scenario,hotel:''}).ok,false);
+ assert.equal(b.budget({...scenario,attendees:'0'}).ok,false);
+ assert.equal(b.budget({...scenario,contingency:'101'}).ok,false);
+ assert.equal(b.budget({...scenario,nights:'1.5'}).ok,false);
+});
+test('source discrepancy is dated and not presented as an unresolved live FAQ contradiction',()=>{
+ assert.match(html,/Previously inconsistent, now rechecked/);
+ assert.match(html,/budgetCheck/);
+ assert.match(html,/budgetAssessment/);
+});

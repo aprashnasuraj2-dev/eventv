@@ -7,8 +7,8 @@ Checked 2026-11-10. Owner: lane D. **Nonpublishing draft; no index approval or l
 - GSMA states the Ministerial Programme is invitation-only and attendance registration has identity-check stages: https://www.mwcbarcelona.com/get-in-touch/
 - Event organizer describes new 2027 automotive, health and aviation zones. That does not imply an individual attendee has access to every zone.
 
-## CONFLICTED
-- Organizer FAQ https://www.mwcbarcelona.com/get-in-touch/ currently contains *both* 1–4 March and 2–5 March 2027 answers. The dated 2026-10-01 organizer announcement and two GSMA 2027 event listings corroborate 1–4 March. This discrepancy must be prominently disclosed, not silently normalized.
+## HISTORICAL SOURCE DISCREPANCY — rechecked 2026-11-10
+- An earlier reading of https://www.mwcbarcelona.com/get-in-touch/ reported both 1–4 and 2–5 March 2027. A fresh browser inspection of that page plus https://www.mwcbarcelona.com/passes/faqs and https://www.mwcbarcelona.com/about on 2026-11-10 did not reproduce the conflicting 2–5 March text. The browser report found 1–4 March consistently. This does not prove all archived/cached FAQ versions were corrected. The dated 2026-10-01 announcement and independent GSMA listings support 1–4 March. Preserve the dated provenance rather than asserting the old contradiction remains live.
 
 ## PENDING / UNANNOUNCED
 - Session-specific times, badge entitlement, availability, precise venue-to-venue travel, access to invitation-only sessions, visa decision, and hotel pricing cannot be assumed from generic 2027 dates.
@@ -23,3 +23,7 @@ Checked 2026-11-10. Owner: lane D. **Nonpublishing draft; no index approval or l
 ## Proposed original browser utility
 - Barcelona-local meeting-window editor, explicit hypothetical campus transfer minutes, conflict/insufficient-buffer warnings, user-specified costs, saved scenarios and export. Avoid fixed campus travel estimates presented as fact.
 - Gate: original deterministic tests, mobile keyboard QA, source/canonical/robots parity, Node 22 catalog/build/validate, exact-head PR CI, separate guarded integration and latest.md checkpoint. No promotion on research alone.
+
+## Additional tool and validation scope (2026-11-10)
+- Added user-supplied EUR group budget sensitivity with hotel nights, attendee count, badge, transport and contingency; no claimed official pricing. Unknown blanks fail closed. Export includes assumptions and computed result. Reset clears both planning tools.
+- Browser review verified current public organizer date text, **not** the unmerged local HTML interaction. Real responsive keyboard and browser-storage QA remain a release gate.
