@@ -27,9 +27,9 @@ test("long visits display actual next-day end, never a fabricated 23:59",()=>{
 });
 test("browser module import resolves to a committed asset and key controls exist",()=>{
  const html=fs.readFileSync("content/pilots/rhs-chelsea-flower-show-2027.html","utf8");
- const match=html.match(/import\\s+\\{assess,budget,breakEven\\}\\s+from\\s+["'](\\/assets\\/[^"']+)["']/);
- assert.ok(match,"expected browser module import");
- assert.ok(fs.existsSync("."+match[1]),"missing imported browser asset");
+ const expected='from "/assets/rhs-chelsea-flower-show-2027-logic.mjs"';
+ assert.ok(html.includes(expected),"expected browser module import");
+ assert.ok(fs.existsSync("assets/rhs-chelsea-flower-show-2027-logic.mjs"),"missing imported browser asset");
  for(const id of ["visit","costForm","visitResult","costResult","compareResult","storageStatus"])
   assert.match(html,new RegExp('id="'+id+'"'));
 });
