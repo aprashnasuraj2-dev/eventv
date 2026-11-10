@@ -18,7 +18,7 @@ export function assess({date,arrival,minutesInside,buffer=30,membership="public"
  if(w.member && membership!=="member")warnings.push("Member days require a qualifying RHS member to purchase member-day tickets; a public ticket alone is insufficient.");
  if(w.member && ticket!=="member")warnings.push("A member-day ticket is required; verify each guest's issued ticket.");
  if(ticket==="member" && membership!=="member")warnings.push("Member-rate ticket requires qualifying membership at purchase and at the show.");
- if(w.member && guests>3)warnings.push("RHS member rate is limited to four tickets per member, including the member: verify additional bookings separately.");
+ if(ticket==="member" && guests>3)warnings.push("RHS member rate is limited to four tickets per member, including the member: verify additional bookings separately.");
  if(start<w.start)warnings.push("Arrival is before standard opening; accessibility early entry requires a separately verified booking.");
  if(start>=w.end)warnings.push("Arrival is at or after closing.");
  if(start+duration+margin>w.end)warnings.push("Planned visit plus buffer exceeds published closing time.");

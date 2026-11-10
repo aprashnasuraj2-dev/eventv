@@ -41,3 +41,12 @@ test("Friday visits crossing 17:30 warn about separate evening access",()=>{
  const daytime=assess({date:"2027-05-21",arrival:"15:30",minutesInside:90,buffer:0});
  assert.equal(daytime.feasible,true);
 });
+
+// Member-rate guest limits apply on public dates as well as member-only dates.
+test("member-rate guest cap applies on public days",()=>{
+ const member=assess({date:"2027-05-20",arrival:"09:00",minutesInside:180,membership:"member",ticket:"member",guestCount:4});
+ assert.equal(member.feasible,false);
+ assert.match(member.warnings.join(" "),/four tickets/);
+ const publicBooking=assess({date:"2027-05-20",arrival:"09:00",minutesInside:180,membership:"public",ticket:"public",guestCount:4});
+ assert.equal(publicBooking.feasible,true);
+});
