@@ -705,6 +705,23 @@
         "https://www.baa.org/news/2027-boston-marathon-presented-by-bank-of-america-registration-update/",
         "https://www.baa.org/news/qualifier-registration-for-131st-boston-marathon-presented-by-bank-of-america-begins-today/"
       ]
+    },
+    {
+      "slug": "british-grand-prix-2027",
+      "page_type": "hub",
+      "output_path": "events/british-grand-prix-2027/index.html",
+      "source_path": "content/pilots/british-grand-prix-2027.html",
+      "robots": "index,follow,max-image-preview:large",
+      "editorial_status": "pilot-index-ready",
+      "source_verified_on": "2026-11-10",
+      "factual_scope": "Official July 2–4 Silverstone Sprint dates and session-day order; exact start times pending. User-entered travel scenarios are not official transport times; access, ticket and broadcast details require fresh provider verification.",
+      "sources": [
+        "https://corp.formula1.com/2027-calendar-announced-with-10-sprint-events/",
+        "https://www.formula1.com/en/racing/2027/great-britain",
+        "https://ticketing.formula1.com/great-britain/",
+        "https://www.silverstone.co.uk/events/formula-1-british-grand-prix/tickets/accessibility/application",
+        "https://www.silverstone.co.uk/events/british-grand-prix-motogp"
+      ]
     }
   ]
 }
