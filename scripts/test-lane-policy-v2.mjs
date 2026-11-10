@@ -14,9 +14,9 @@ const exec=(bin,args,env=process.env)=>{
  return p.stdout.trim();
 };
 const git=(...args)=>exec('git',args);
-const check=(file,branch,shouldPass)=>{
+const check=(file,branch,shouldPass,overrides={})=>{
  const p=spawnSync(process.execPath,[join(root,'scripts',file)],{
-  cwd,encoding:'utf8',env:{...process.env,BASE_SHA:base,GITHUB_EVENT_NAME:'pull_request',GITHUB_HEAD_REF:branch}
+  cwd,encoding:'utf8',env:{...process.env,BASE_SHA:base,GITHUB_EVENT_NAME:'pull_request',GITHUB_HEAD_REF:branch,...overrides}
  });
  assert.equal(p.status===0,shouldPass,file+' '+branch+' unexpectedly '+(p.status===0?'passed':'failed')+': '+p.stdout+' '+p.stderr);
 };
@@ -38,10 +38,12 @@ try{
  check('check-lanes.mjs','eventv/topic-170-lane-1',false);
  check('check-latest.mjs','eventv/topic-170-lane-1',false);
  check('check-latest.mjs','eventv/unrelated-implementation',false);
+ check('check-latest.mjs','main',true,{GITHUB_HEAD_REF:'',GITHUB_REF_NAME:'main',GITHUB_EVENT_NAME:'push'});
+ check('check-latest.mjs','release/manual',false,{GITHUB_HEAD_REF:'',GITHUB_REF_NAME:'release/manual',GITHUB_EVENT_NAME:'push'});
  check('check-latest.mjs','eventv/latest-topic-170',false);
  mkdirSync(join(cwd,'scripts'),{recursive:true});
  writeFileSync(join(cwd,'scripts','build.mjs'),'unsafe cross-lane change\n');
  git('add','.');git('-c','user.email=test@example.test','-c','user.name=LaneTest','commit','-qm','shared edit');
  check('check-lanes.mjs','eventv/topic-170-lane-A',false);
- console.log('Worker lane/checkpoint v2 tests passed: owner accept, wrong owner deny, legacy-branch deny, shared-file deny, non-topic checkpoint deny, docs-only deny');
+ console.log('Worker lane/checkpoint v2 tests passed: owner accept, wrong owner deny, legacy-branch deny, shared-file deny, non-topic checkpoint deny, docs-only deny, deferred main-push checkpoint permitted');
 }finally{rmSync(cwd,{recursive:true,force:true});}
