@@ -35,11 +35,13 @@ try{
  check('check-lanes.mjs','eventv/topic-170-lane-A',true);
  check('check-latest.mjs','eventv/topic-170-lane-A',true);
  check('check-lanes.mjs','eventv/topic-170-lane-B',false);
+ check('check-lanes.mjs','eventv/topic-170-lane-1',false);
+ check('check-latest.mjs','eventv/topic-170-lane-1',false);
  check('check-latest.mjs','eventv/unrelated-implementation',false);
  check('check-latest.mjs','eventv/latest-topic-170',false);
  mkdirSync(join(cwd,'scripts'),{recursive:true});
  writeFileSync(join(cwd,'scripts','build.mjs'),'unsafe cross-lane change\n');
  git('add','.');git('-c','user.email=test@example.test','-c','user.name=LaneTest','commit','-qm','shared edit');
  check('check-lanes.mjs','eventv/topic-170-lane-A',false);
- console.log('Worker lane/checkpoint v2 tests passed: owner accept, wrong owner deny, shared-file deny, non-topic checkpoint deny, docs-only deny');
+ console.log('Worker lane/checkpoint v2 tests passed: owner accept, wrong owner deny, legacy-branch deny, shared-file deny, non-topic checkpoint deny, docs-only deny');
 }finally{rmSync(cwd,{recursive:true,force:true});}

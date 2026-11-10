@@ -29,7 +29,7 @@ try {
 // Topic feature PRs are deliberately reconciled by a separate docs-only PR after merge.
 // This exemption is limited to named topic branches, not arbitrary PRs or policy changes.
 const headBranch=process.env.GITHUB_HEAD_REF||process.env.GITHUB_REF_NAME||'';
-const topicFeature=/^eventv\/topic-\d{3}-lane-(?:[A-E]|[1-5])$/.test(headBranch);
+const topicFeature=/^eventv\/topic-\d{3}-lane-[A-E]$/.test(headBranch);
 const docsOnly=/^eventv\/latest-(?:topic-\d{3}|reconcile-[a-z0-9-]+)$/.test(headBranch);
 if(docsOnly && files.some(p=>p!==file)) {
   console.error('Checkpoint reconciliation PR must modify latest.md only.');

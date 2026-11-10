@@ -12,7 +12,7 @@
 | D | 75–99 | 25 | `6af1c5c888008191a354b0d4d2b467d7` | :39 |
 | E | 1–74 | 74 | `6af1c5ccaab48191bb60d7bdc2b0534e` | :52 |
 
-All 200 IDs belong to exactly one lane. Topic #75 belongs to D; #131–140 belong to B to close the previously uncovered gap. Legacy #1–74 belong to E, including unfinished FIFA Women's World Cup 2027 #41 and existing PR #67. A must stop writing #41. Previously merged topics are **audited**, not rebuilt; branch names from the former lane scheme are historical evidence, not ownership authority. Never delete or force-reset them. New topic branch format: `eventv/topic-NNN-lane-X` where X is A/B/C/D/E. One existing feature PR per ID; no duplicates. Review live GitHub and the canonical registries before concluding that an ID is incomplete.
+All 200 IDs belong to exactly one lane. Topic #75 belongs to D; #131–140 belong to B to close the previously uncovered gap. Legacy #1–74 belong to E, including unfinished FIFA Women's World Cup 2027 #41 and existing PR #67. A must stop writing #41. Previously merged topics are **audited**, not rebuilt; branch names from the former lane scheme are historical evidence, not ownership authority. Never delete or force-reset them. Historical numeric-lane PR heads are not merge eligible: recover all topic-owned files into a fresh lettered owner branch, rerun full Node 22 and exact-head CI, and preserve the old PR as an audit trail. New topic branch format: `eventv/topic-NNN-lane-X` where X is A/B/C/D/E. One existing feature PR per ID; no duplicates. Review live GitHub and the canonical registries before concluding that an ID is incomplete.
 
 ## Independent topic workspace
 
