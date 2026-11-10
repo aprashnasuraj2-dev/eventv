@@ -30,11 +30,11 @@ function minutes(t){if(typeof t!=="string"||!TIME_RE.test(t))return null;const [
 export function assessSessions(raw,buffer=20){
   if(!Array.isArray(raw)||!Number.isInteger(buffer)||buffer<0||buffer>240) return {valid:[],errors:["Invalid sessions or buffer"],conflicts:[]};
   const valid=[],errors=[],seen=new Set();
-  for(const [i,s] of raw.entries()){
+  for(const [i,s] of raw.slice(0,100).entries()){
     if(!s||typeof s!=="object"||typeof s.id!=="string"||!s.id.trim()||seen.has(s.id)||classifyDate(s.date)==="outside"||minutes(s.start)===null||minutes(s.end)===null||minutes(s.end)<=minutes(s.start)||typeof s.venue!=="string"||!s.venue.trim()){
       errors.push("Invalid session at position "+(i+1));continue;
     }
-    seen.add(s.id);valid.push({id:s.id,date:s.date,start:s.start,end:s.end,venue:s.venue});
+    seen.add(s.id);valid.push({id:s.id,label:typeof s.label==="string"?s.label.slice(0,90):"",date:s.date,start:s.start,end:s.end,venue:s.venue.slice(0,90)});
   }
   const conflicts=[];
   for(let i=0;i<valid.length;i++)for(let j=i+1;j<valid.length;j++){
