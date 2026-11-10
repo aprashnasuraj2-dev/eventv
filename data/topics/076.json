@@ -1,0 +1,30 @@
+{
+  "rank": 76,
+  "name": "RSAC Conference 2027",
+  "slug": "rsac-conference-2027",
+  "start": "2027-04-05",
+  "end": "2027-04-08",
+  "category": "Technology",
+  "geo": [
+    "US",
+    "CA",
+    "UK",
+    "EU",
+    "IN"
+  ],
+  "source": "https://www.rsaconference.com/",
+  "date_status": "confirmed",
+  "verified_on": "2026-11-11",
+  "job": "Plan realistic cybersecurity conference meeting windows and independently compare vendor evidence without implying session access.",
+  "facets": [
+    "official venue and date",
+    "local meeting conflict and walking buffers",
+    "vendor evidence checklist",
+    "pass entitlement verification",
+    "budget assumptions"
+  ],
+  "score": 8,
+  "state": "draft-research",
+  "source_notes": "RSAC official site and Moscone venue listing confirm 5–8 April 2027, Moscone Center San Francisco. Registration and pricing may change; verify live checkout. No assumed session admission, speaker schedules or vendor performance.",
+  "canonical_root": "https://aafnaipatro.com/events/rsac-conference-2027/"
+}
