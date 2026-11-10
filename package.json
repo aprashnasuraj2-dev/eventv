@@ -5,6 +5,6 @@
   "type": "module",
   "scripts": {
     "build": "node scripts/build.mjs",
-    "test": "node scripts/validate.mjs && node tests/boston-marathon-2027.test.mjs && node tests/british-grand-prix-2027.test.mjs"
+    "test": "node scripts/validate.mjs && node tests/boston-marathon-2027.test.mjs && node tests/british-grand-prix-2027.test.mjs && node tests/edinburgh-fringe-2027.test.mjs"
   }
 }
