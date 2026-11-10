@@ -50,3 +50,15 @@ test("member-rate guest cap applies on public days",()=>{
  const publicBooking=assess({date:"2027-05-20",arrival:"09:00",minutesInside:180,membership:"public",ticket:"public",guestCount:4});
  assert.equal(publicBooking.feasible,true);
 });
+
+// Missing quotes must not be treated as free admission or free membership.
+test("missing prices fail closed rather than silently becoming zero",()=>{
+ assert.throws(()=>budget({people:2,perTicket:""}),/valid party/);
+ assert.throws(()=>budget({people:2,perTicket:null}),/valid party/);
+ assert.throws(()=>breakEven({memberPrice:"",publicPrice:61,membershipFee:55.99,eligibleTickets:2}),/nonnegative prices/);
+ assert.throws(()=>breakEven({memberPrice:48,publicPrice:61,membershipFee:"",eligibleTickets:2}),/nonnegative prices/);
+ const html=fs.readFileSync("content/pilots/rhs-chelsea-flower-show-2027.html","utf8");
+ assert.match(html,/id="price"[^>]+required/);
+ assert.match(html,/value\(id\)\.trim\(\)===""\?NaN/);
+ assert.doesNotMatch(html,/id="mp"[^>]+value="48"/);
+});

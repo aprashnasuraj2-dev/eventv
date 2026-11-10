@@ -26,12 +26,12 @@ export function assess({date,arrival,minutesInside,buffer=30,membership="public"
  return {label:w.label,window:clock(w.start)+"–"+clock(w.end),end:clock(start+duration),remaining:w.end-start-duration-margin,warnings,feasible:warnings.length===0};
 }
 export function budget({people,perTicket,memberFee=0,travel=0,food=0,extras=0}){
- const a=[people,perTicket,memberFee,travel,food,extras].map(Number);
+ const a=[people,perTicket,memberFee,travel,food,extras].map(x=>x===""||x===null||x===undefined?NaN:Number(x));
  if(a.some(x=>!Number.isFinite(x)||x<0)||!Number.isInteger(a[0])||a[0]<1||a[0]>50||a.slice(1).some(x=>x>100000))throw Error("Enter a valid party (1–50) and nonnegative GBP amounts.");
  const [n,t,m,r,f,e]=a;return {total:Math.round((n*t+m+r+f+e)*100)/100,admission:Math.round(n*t*100)/100,other:Math.round((m+r+f+e)*100)/100};
 }
 export function breakEven({memberPrice,publicPrice,membershipFee,eligibleTickets}){
- const a=[memberPrice,publicPrice,membershipFee,eligibleTickets].map(Number);
+ const a=[memberPrice,publicPrice,membershipFee,eligibleTickets].map(x=>x===""||x===null||x===undefined?NaN:Number(x));
  if(a.some(x=>!Number.isFinite(x)||x<0)||!Number.isInteger(a[3])||a[3]<1||a[3]>4)throw Error("Enter nonnegative prices and 1–4 eligible member-rate tickets.");
  const saving=(a[1]-a[0])*a[3]-a[2];
  return {difference:Math.round(saving*100)/100,worthIt:saving>0};
