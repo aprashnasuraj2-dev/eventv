@@ -1403,8 +1403,8 @@
       "rank": 50,
       "name": "British Grand Prix 2027",
       "slug": "british-grand-prix-2027",
-      "start": null,
-      "end": null,
+      "start": "2027-07-02",
+      "end": "2027-07-04",
       "category": "Sports",
       "geo": [
         "UK",
@@ -1412,8 +1412,8 @@
         "EU",
         "US"
       ],
-      "source": "https://www.formula1.com/",
-      "date_status": "unannounced",
+      "source": "https://www.formula1.com/en/racing/2027/great-britain",
+      "date_status": "confirmed",
       "job": "Explain Silverstone access and transport once the official race calendar is fixed.",
       "facets": [
         "Silverstone shuttle versus car parking",
