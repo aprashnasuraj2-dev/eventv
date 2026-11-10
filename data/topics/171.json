@@ -16,7 +16,8 @@
     "Sunday and Friday 27 August exception checks",
     "Performance time and transfer-buffer calculator",
     "Editable GBP budget",
-    "Local itinerary and JSON export"
+    "Local itinerary and JSON export",
+    "Accessibility, weather and Old Town entry constraints with official-source checks"
   ],
   "state": "draft-research",
   "verified_on": "2026-11-11",
