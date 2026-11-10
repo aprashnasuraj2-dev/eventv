@@ -643,3 +643,9 @@ for(const slug of ['rugby-world-cup-2027','tour-de-france-uk-2027']){
 if (approvals.some(x=>x.slug==='boston-marathon-2027' && x.page_type==='hub')) {
   await import('../tests/boston-marathon-2027.test.mjs');
 }
+
+// Topic 45: approved hub route and three unapproved spokes must match the SEO registry.
+const bostonRouteRows=fs.readFileSync('research/routes-200.csv','utf8').split('\n').filter(x=>x.startsWith('"boston-marathon-2027",'));
+assert.equal(bostonRouteRows.length,4,'Boston route count drift');
+assert.ok(bostonRouteRows.some(x=>x.includes('"hub"')&&x.includes('"index,follow,max-image-preview:large","pilot-index-ready"')),'Boston hub route must be approved');
+for(const phase of ['planning','during','after'])assert.ok(bostonRouteRows.some(x=>x.includes('"'+phase+'"')&&x.includes('"noindex,follow","research-draft"')),'Boston spoke must remain noindex: '+phase);
