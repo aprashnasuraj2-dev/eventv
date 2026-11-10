@@ -10,3 +10,6 @@ test("valid HH:MM parses and malformed clock inputs fail closed",()=>{
  assert.equal(evaluate({...base,arrival:"20:30"}).ok,true);
  for(const arrival of ["99:00","20:60","8:30","20:xx"])assert.throws(()=>evaluate({...base,arrival}),/HH:MM/);
 });
+
+// A missing checkout quote must not silently become a zero-price ticket.
+test("budget form requires a real user-entered ticket quote",()=>{const h=fs.readFileSync("content/pilots/royal-edinburgh-military-tattoo-2027.html","utf8");assert.match(h,/<input id="price"[^>]*placeholder="Enter your checkout quote" required>/);assert.match(h,/if\(!v\("price"\)\.trim\(\)\)throw Error\("Enter an actual ticket quote/);assert.doesNotMatch(h,/<input id="price"[^>]*value="0"/);});
