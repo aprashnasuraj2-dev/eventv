@@ -20,7 +20,7 @@ assert.ok(Array.isArray(extension.events), 'Extension events must be an array');
 assert.ok(extension.events.length <= 150, 'Topic ID must not exceed 200');
 // Sparse independent per-topic manifests let five ranges advance without inventing lower IDs.
 const topicDir='data/topics';
-const topicFiles=fs.existsSync(topicDir)?fs.readdirSync(topicDir).filter(f=>/^\\d{3}\\.json$/.test(f)).sort():[];
+const topicFiles=fs.existsSync(topicDir)?fs.readdirSync(topicDir).filter(f=>/^\d{3}\.json$/.test(f)).sort():[];
 const independent=topicFiles.map(f=>{
  const e=read(topicDir+'/'+f);
  assert.equal(String(e.rank).padStart(3,'0')+'.json',f,'Manifest filename/rank mismatch '+f);

@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import {events} from './catalog.mjs';
 const all=JSON.parse(fs.readFileSync('data/index-approved.json','utf8')).approved||[];
 const dir='data/approvals';
-if(fs.existsSync(dir))for(const filename of fs.readdirSync(dir).filter(f=>/^\\d{3}\\.json$/.test(f)).sort()){
+if(fs.existsSync(dir))for(const filename of fs.readdirSync(dir).filter(f=>/^\d{3}\.json$/.test(f)).sort()){
  const id=Number(filename.slice(0,3));
  assert.ok(id>50&&id<=200,'Per-topic approval outside extension range '+id);
  const entry=JSON.parse(fs.readFileSync(dir+'/'+filename,'utf8'));

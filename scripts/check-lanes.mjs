@@ -12,10 +12,10 @@ assert.equal(seen.size,200,'Every ID 1..200 requires exactly one owner');
 const branch=process.env.GITHUB_HEAD_REF||'';
 if(!branch || !branch.startsWith('eventv/topic-')){console.log('Lane partition valid; non-topic branch');process.exit(0);}
 // Historical numeric lane PRs are preserved during migration. New PRs MUST use letters.
-if(/^eventv\\/topic-\\d{3}-lane-[1-5]$/.test(branch)){
+if(/^eventv\/topic-\d{3}-lane-[1-5]$/.test(branch)){
  console.log('Legacy pre-v2 topic branch — migrate to designated owner on fresh main before completion');process.exit(0);
 }
-const match=branch.match(/^eventv\\/topic-(\\d{3})-lane-([A-E])$/);
+const match=branch.match(/^eventv\/topic-(\d{3})-lane-([A-E])$/);
 assert.ok(match,'New topic branches require eventv/topic-NNN-lane-A..E');
 const id=Number(match[1]),lane=match[2],owner=lanes.find(x=>id>=x.min&&id<=x.max);
 assert.equal(owner?.lane,lane,'Topic '+id+' is owned by '+owner?.lane+', not '+lane);
@@ -31,7 +31,7 @@ const slug=topic.slug,nnn=String(id).padStart(3,'0');
 const base=process.env.BASE_SHA;
 if(!base){console.log('Lane ownership valid; no diff base available');process.exit(0);}
 let changed=[];
-try{changed=execFileSync('git',['diff','--name-only',base+'...HEAD'],{encoding:'utf8'}).trim().split(/\\r?\\n/).filter(Boolean);}
+try{changed=execFileSync('git',['diff','--name-only',base+'...HEAD'],{encoding:'utf8'}).trim().split(/\r?\n/).filter(Boolean);}
 catch(e){throw Error('Cannot verify changed files; fail closed: '+e.message);}
 const permitted=p=>p==='data/topics/'+nnn+'.json'||p==='data/approvals/'+nnn+'.json'||
  p==='content/pilots/'+slug+'.html'||p.startsWith('events/'+slug+'/')||
