@@ -16,7 +16,9 @@
 
 > **2026-11-10 Topic #45 FINAL FEATURE MERGE (no deployment):** Boston Marathon 2027 source-verified open-field qualification and 5:17 competitive cutoff screening hub merged via [PR #64](https://github.com/aprashnasuraj2-dev/eventv/pull/64) at main SHA `41bca7b2d7629f5bfb1f8547be9d2d720d5a2169`. Exact feature head `d0b0d0653fa81a0fc09775b7df13b930696ab62e` passed [Node 22 CI run 42753589618](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42753589618), including catalog, build, static validation, Boston-specific boundary tests and two-phase checkpoint guard. The approved registry now contains **36 index-ready hubs**; Boston's three unfinished spokes remain `noindex,follow`. The browser utility does **not** verify individual B.A.A. acceptance or forecast 2028 cutoff. Sources checked 2026-11-10. No live deployment, GSC indexing or traffic measured. Worker 5 next owned incomplete topic: **#50**. This docs-only checkpoint must independently pass CI and merge before #45 counts as fully reconciled.
 
-> **2026-11-10 Boston #45 post-merge audit correction:** Initial final-main audit identified a stale hub row in `research/routes-200.csv` despite correct approval registry and generated source. This follow-up aligns the hub route with `index,follow,max-image-preview:large` / `pilot-index-ready`, preserves all three `noindex,follow` spokes and adds a deterministic Node 22 parity assertion. No deployment. Final main audit must be repeated after this correction merges.\n\n## 1. Current verified state
+> **2026-11-10 Boston #45 post-merge audit correction:** Initial final-main audit identified a stale hub row in `research/routes-200.csv` despite correct approval registry and generated source. This follow-up aligns the hub route with `index,follow,max-image-preview:large` / `pilot-index-ready`, preserves all three `noindex,follow` spokes and adds a deterministic Node 22 parity assertion. No deployment. Final main audit must be repeated after this correction merges.
+
+## 1. Current verified state
 
 | Area | Status | Verified detail |
 |---|---|---|
