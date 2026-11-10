@@ -1,0 +1,32 @@
+{
+  "rank": 100,
+  "name": "Total Solar Eclipse 2027 — August 2",
+  "slug": "total-solar-eclipse-2027-august-2",
+  "start": "2027-08-02",
+  "end": "2027-08-02",
+  "category": "Astronomy",
+  "geo": [
+    "ES",
+    "MA",
+    "DZ",
+    "TN",
+    "LY",
+    "EG",
+    "SA",
+    "YE"
+  ],
+  "source": "https://science.nasa.gov/eclipses/future-eclipses/",
+  "date_status": "confirmed",
+  "job": "Plan a safe and evidence-aware eclipse viewing trip without mistaking regional visibility for local totality or using unverified contact times.",
+  "facets": [
+    "Totality versus partial visibility by geographic region",
+    "Local viewing plan with user-verified contact times",
+    "Solar eye protection and optical equipment safeguards",
+    "Travel buffer and observation checklist",
+    "Offline planning notes and export"
+  ],
+  "state": "draft-research",
+  "verified_on": "2026-11-10",
+  "source_notes": "NASA confirms 2 August 2027 total eclipse and broad geographic visibility. NASA GSFC path tables quantify central-line circumstances but are not location-specific guarantees; lunar limb corrections can move limits. No ticket, hotel, visa, local weather or exact contact time is inferred.",
+  "canonical_root": "https://aafnaipatro.com/events/total-solar-eclipse-2027-august-2/"
+}
