@@ -1,0 +1,25 @@
+{
+  "rank": 171,
+  "name": "Royal Edinburgh Military Tattoo 2027",
+  "slug": "royal-edinburgh-military-tattoo-2027",
+  "start": "2027-08-06",
+  "end": "2027-08-28",
+  "category": "Arts & culture",
+  "geo": [
+    "Edinburgh, Scotland, UK",
+    "International visitors"
+  ],
+  "source": "https://www.edintattoo.co.uk/tickets/tattoo-2027",
+  "date_status": "confirmed",
+  "job": "Help visitors choose a valid published performance, budget with actual quotes and plan realistic Old Town arrival buffers.",
+  "facets": [
+    "Sunday and Friday 27 August exception checks",
+    "Performance time and transfer-buffer calculator",
+    "Editable GBP budget",
+    "Local itinerary and JSON export"
+  ],
+  "state": "draft-research",
+  "verified_on": "2026-11-11",
+  "source_notes": "Official organiser and Edinburgh Castle confirm 6–28 Aug 2027. Official travel office publishes ordinary weekday 21:30, Saturday 18:15/21:30, Friday 27 Aug extra 18:15, no Sunday performances; no live availability or ticket prices assumed.",
+  "canonical_root": "https://aafnaipatro.com/events/royal-edinburgh-military-tattoo-2027/"
+}
