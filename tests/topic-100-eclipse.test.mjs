@@ -1,0 +1,6 @@
+import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';
+const html=fs.readFileSync('content/pilots/total-solar-eclipse-2027-august-2.html','utf8');
+test('draft remains noindex and canonical is exact',()=>{assert.match(html,/<meta name="robots" content="noindex,follow">/);assert.match(html,/https:\/\/aafnaipatro.com\/events\/total-solar-eclipse-2027-august-2\//)});
+test('primary evidence, counterexample and no fabricated timings',()=>{for(const s of ['science.nasa.gov/eclipses/future-eclipses/','eclipse.gsfc.nasa.gov/SEpath/','esa.int/ESA_Multimedia/','Counterexample','does <strong>not<\/strong> calculate'])assert.ok(html.includes(s),s)});
+test('planner has validation, safe output, storage, reset and export',()=>{for(const s of ['new Date(v.end)<=new Date(v.start)','n>1440','textContent=assess','localStorage.setItem','localStorage.removeItem','new Blob','URL.revokeObjectURL','aria-live="polite"'])assert.ok(html.includes(s),s);assert.ok(!html.includes('innerHTML'))});
+test('manifest has unique numeric rank and source verification',()=>{const m=JSON.parse(fs.readFileSync('data/topics/100.json','utf8'));assert.equal(m.rank,100);assert.equal(m.date_status,'confirmed');assert.equal(m.state,'draft-research');assert.equal(m.verified_on,'2026-11-10')});
