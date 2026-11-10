@@ -19,11 +19,13 @@ jobs:
           BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}
           GITHUB_HEAD_REF: ${{ github.head_ref }}
         run: node scripts/check-lanes.mjs
-      - name: FIBA 2027 planner functional and edge tests
-        run: node --test scripts/topic-042-planner.test.mjs scripts/topic-042-integration.test.mjs
+      - name: Verify A–E branch isolation and checkpoint compatibility
+        run: node scripts/test-lane-policy-v2.mjs
       - name: Wimbledon 2027 functional and edge tests
         run: node scripts/test-wimbledon-2027.mjs
       - run: node scripts/build.mjs
+      - name: Automatically execute every topic .test.mjs regression suite
+        run: node --test
       - run: node scripts/validate.mjs
       - name: Enforce updated project checkpoint
         env:
