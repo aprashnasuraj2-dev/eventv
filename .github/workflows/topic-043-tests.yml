@@ -3,6 +3,8 @@ on:
   pull_request:
     paths:
       - 'content/pilots/icc-cricket-world-cup-2027.html'
+      - 'scripts/build.mjs'
+      - 'scripts/validate.mjs'
       - 'content/tools/icc-cwc-2027-planner.mjs'
       - 'tests/icc-cwc-2027-*.test.mjs'
       - '.github/workflows/topic-043-tests.yml'
@@ -19,5 +21,7 @@ jobs:
         run: node --test tests/icc-cwc-2027-planner.test.mjs tests/icc-cwc-2027-browser.test.mjs
       - name: Build static output
         run: node scripts/build.mjs
+      - name: Assert unapproved staging hub parity and noindex spokes
+        run: node tests/icc-cwc-2027-output.test.mjs
       - name: Validate static output
         run: node scripts/validate.mjs
