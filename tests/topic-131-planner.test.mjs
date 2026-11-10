@@ -1,0 +1,8 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {normalizeSession,planSessions,formatInZone,exportPlan} from '../scripts/topic-131-planner.mjs';
+const row=(label,start,end)=>({label,start,end});
+test('confirmed window boundaries and UTC+8',()=>{const a=normalizeSession(row('Opening hypothetical','2027-09-10T00:00','2027-09-10T01:00'));assert.equal(new Date(a.start).toISOString(),'2027-09-09T16:00:00.000Z');assert.match(formatInZone(a.start,'Asia/Shanghai'),/10 Sept 2027/);});
+test('reject obsolete 9 September and post-event 20 September',()=>{for(const date of ['2027-09-09','2027-09-20'])assert.throws(()=>normalizeSession(row('X',date+'T10:00',date+'T11:00')));});
+test('overlap versus buffer',()=>{const a=row('Track','2027-09-10T10:00','2027-09-10T11:00'),b=row('Field','2027-09-10T11:30','2027-09-10T12:00');assert.equal(planSessions([a,b]).conflicts[0].kind,'transfer-buffer');assert.equal(planSessions([a,b],{transferMinutes:20}).conflicts.length,0);});
+test('reject invalid, excessive and unsafe labels',()=>{assert.throws(()=>normalizeSession(row('','2027-09-10T10:00','2027-09-10T11:00')));assert.throws(()=>normalizeSession(row('x'.repeat(101),'2027-09-10T10:00','2027-09-10T11:00')));assert.throws(()=>planSessions(Array(41).fill(row('X','2027-09-10T10:00','2027-09-10T11:00'))));});
+test('reject reversed times and unsupported zone',()=>{assert.throws(()=>normalizeSession(row('X','2027-09-10T12:00','2027-09-10T11:00')));assert.throws(()=>formatInZone(Date.now(),'Mars/Olympus'));});
+test('export explicitly labels scenarios',()=>{const p=planSessions([row('Demo','2027-09-10T10:00','2027-09-10T11:00')]);assert.match(exportPlan(p),/hypothetical/);});
