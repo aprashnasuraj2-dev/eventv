@@ -4,3 +4,9 @@ test("weekday, Saturday and Friday 27 exception",()=>{assert.deepEqual(slots("20
 test("arrival, invalid show and overnight finish",()=>{assert.equal(evaluate({date:"2027-08-06",show:"21:30",arrival:"20:30",transfer:45}).ok,true);assert.equal(evaluate({date:"2027-08-06",show:"21:30",arrival:"21:00",transfer:45}).ok,false);assert.equal(evaluate({date:"2027-08-06",show:"18:15",arrival:"17:00"}).ok,false);assert.equal(evaluate({date:"2027-08-06",show:"21:30",arrival:"19:30"}).finish,"23:00");assert.throws(()=>evaluate({date:"2027-08-06",show:"21:30",arrival:"99:00"}));});
 test("budget rejects invalid prices and counts",()=>{assert.equal(cost({tickets:2,price:70,travel:25}),165);assert.throws(()=>cost({tickets:0,price:70}));assert.throws(()=>cost({tickets:2,price:-1}));});
 test("preview SEO and imported assets",()=>{const h=fs.readFileSync("content/pilots/royal-edinburgh-military-tattoo-2027.html","utf8");assert.match(h,/noindex,follow/);assert.match(h,/rel="canonical"/);assert.ok(h.includes('from "/assets/royal-edinburgh-military-tattoo-2027-logic.mjs"'));assert.ok(fs.existsSync("assets/royal-edinburgh-military-tattoo-2027-logic.mjs"));for(const id of ["planner","date","show","result","budget","costResult","notes","storage"])assert.ok(h.includes('id="'+id+'"'));assert.doesNotMatch(h,/innerHTML\\s*=/);});
+
+test("valid HH:MM parses and malformed clock inputs fail closed",()=>{
+ const base={date:"2027-08-06",show:"21:30",transfer:30};
+ assert.equal(evaluate({...base,arrival:"20:30"}).ok,true);
+ for(const arrival of ["99:00","20:60","8:30","20:xx"])assert.throws(()=>evaluate({...base,arrival}),/HH:MM/);
+});
