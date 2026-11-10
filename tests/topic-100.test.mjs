@@ -1,4 +1,4 @@
-import test from 'node:test';import assert from 'node:assert/strict';import {assess,readSaved,save,KEY} from '../assets/international-museum-day-2027.js';
+import test from 'node:test';import assert from 'node:assert/strict';import {assess,readSaved,save,safeStorage,KEY} from '../assets/international-museum-day-2027.js';
 const v=(o={})=>({name:'Museum A',date:'2027-05-18',start:'10:00',end:'11:00',transfer:30,price:12,currency:'USD',source:'https://museum.example/visit',checked:'2027-05-01',...o});
 test('group price and no false conflict',()=>{const r=assess([v(),v({name:'Museum B',start:'11:30',end:'12:30'})],{group:3});assert.equal(r.totals.USD,72);assert.equal(r.warnings.length,0)});
 test('insufficient transfer flagged, exact boundary accepted',()=>{assert.match(assess([v(),v({name:'B',start:'11:29',end:'12:00'})]).warnings.join(' '),/Time conflict/);assert.doesNotMatch(assess([v(),v({name:'B',start:'11:30',end:'12:00'})]).warnings.join(' '),/Time conflict/)});
@@ -10,3 +10,5 @@ test('rejects invalid group, price and excessive itinerary',()=>{assert.throws((
 
 test('invalid evidence dates and malformed HTTPS URLs rejected',()=>{assert.throws(()=>assess([v({checked:'2027-02-30'})]),/invalid evidence/);assert.throws(()=>assess([v({source:'https://'})]),/HTTPS/)});
 test('private browsing storage denial does not crash planner',()=>{const s={setItem(){throw Error('quota')}};assert.equal(save(s,[v()]),false)});
+
+test('blocked localStorage getter is safely isolated from initial render',()=>{const browser={get localStorage(){throw Error('SecurityError')}};assert.equal(safeStorage(browser),null);assert.deepEqual(readSaved(safeStorage(browser)),[]);assert.equal(save(safeStorage(browser),[v()]),false)});
