@@ -688,6 +688,22 @@
         "https://www.nist.gov/pml/time-and-frequency-division/popular-links/daylight-saving-time-dst",
         "https://www.transportation.gov/regulations/daylight-saving-time"
       ]
+    },
+    {
+      "slug": "fiba-world-cup-2027",
+      "page_type": "hub",
+      "output_path": "events/fiba-world-cup-2027/index.html",
+      "source_path": "content/pilots/fiba-world-cup-2027.html",
+      "robots": "index,follow,max-image-preview:large",
+      "editorial_status": "pilot-index-ready",
+      "source_verified_on": "2026-11-10",
+      "factual_scope": "FIBA-confirmed Doha dates and format, official ticket terms and historically advertised pass categories; visitor-entered scenarios and QAR costs are not fixtures or quotes.",
+      "sources": [
+        "https://www.fiba.basketball/en/events/fiba-basketball-world-cup-2027/event-guide",
+        "https://www.fiba.basketball/en/events/fiba-basketball-world-cup-2027/event-guide/tickets",
+        "https://www.fiba.basketball/en/events/fiba-basketball-world-cup-2027/ticketing-terms-and-conditions",
+        "https://www.fiba.basketball/en/news/fiba-basketball-world-cup-2027-tickets-go-on-sale-as-one-year-to-go-milestone-arrives"
+      ]
     }
   ]
 }
