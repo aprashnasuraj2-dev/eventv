@@ -60,3 +60,11 @@ test('pass evidence UI is wired to conservative engine and source navigation exi
  assert.doesNotMatch(html,/href="#sources"/);
  assert.match(html,/POTENTIALLY COVERED under the entered assumptions/);
 });
+
+test('saved scenarios reject invalid dates, duplicate IDs and out-of-range durations before analysis',()=>{
+ assert.match(html,/const ids=new Set\(\)/);
+ assert.match(html,/ids\.has\(g\.id\)/);
+ assert.match(html,/g\.durationMinutes<1\|\|g\.durationMinutes>600/);
+ assert.match(html,/const t=parseDohaLocal\(g\.dohaStart\)/);
+ assert.match(html,/ids\.add\(g\.id\)/);
+});
