@@ -42,3 +42,10 @@ test('cost estimates reject negative, NaN, absurd or fractional ticket counts',(
  assert.equal(estimateAud({tickets:2,unitPrice:NaN}),null);
  assert.equal(estimateAud({tickets:2,unitPrice:1e12}),null);
 });
+
+test('validated session persistence preserves bounded labels and caps untrusted arrays',()=>{
+ const s={id:'label',label:'A'.repeat(120),date:'2027-01-17',start:'10:00',end:'11:00',venue:'Court'};
+ const result=assessSessions(Array.from({length:120},(_,i)=>({...s,id:String(i)})));
+ assert.equal(result.valid.length,100);
+ assert.equal(result.valid[0].label.length,90);
+});
