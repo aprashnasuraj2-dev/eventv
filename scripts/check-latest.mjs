@@ -26,7 +26,16 @@ try {
   console.error('Could not inspect changed files against '+base+'; fail closed');
   process.exit(1);
 }
-if(files.length && files.some(p=>p!==file) && !files.includes(file)) {
+// Topic feature PRs are deliberately reconciled by a separate docs-only PR after merge.
+// This exemption is limited to named topic branches, not arbitrary PRs or policy changes.
+const headBranch=process.env.GITHUB_HEAD_REF||process.env.GITHUB_REF_NAME||'';
+const topicFeature=/^eventv\/topic-\d{3}-lane-[1-5]$/.test(headBranch);
+const docsOnly=/^eventv\/latest-(?:topic-\d{3}|reconcile-[a-z0-9-]+)$/.test(headBranch);
+if(docsOnly && files.some(p=>p!==file)) {
+  console.error('Checkpoint reconciliation PR must modify latest.md only.');
+  process.exit(1);
+}
+if(files.length && files.some(p=>p!==file) && !files.includes(file) && !topicFeature) {
   console.error('EventV changes require updating latest.md in the same commit/PR. Changed: '+files.join(', '));
   process.exit(1);
 }

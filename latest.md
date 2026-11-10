@@ -1,5 +1,7 @@
 # EventV — latest status and resume point
 
+> **2026-11-10 Worker 5 Topic #50 feature merged; checkpoint reconciliation:** British Grand Prix 2027 verified July 2–4 Silverstone Sprint hub, independent arrival-buffer browser utility, official-source ledger, deterministic edge tests, and approved hub/source/route parity merged via [PR #71](https://github.com/aprashnasuraj2-dev/eventv/pull/71). Exact feature head `05e57001714c676896f8ffec5b4f261473881eb2` passed [Node 22 CI run 42765900120](https://github.com/aprashnasuraj2-dev/eventv/actions/runs/42765900120); feature merge SHA `e1974c1b6a10da9f6061a8d5e32c16ceb741d6c9`. **37 approved hubs**; British GP hub `index,follow,max-image-preview:large`; three unfinished spokes `noindex,follow`. Official session clock times and dynamic ticket/transport availability remain pending. No live deployment or measured indexing/traffic. Next Worker 5 topic: **#55**, subject to independent candidate discovery and duplicate validation. This checkpoint requires its own passing exact-head CI and final-main audit.
+
 > **Single source of truth for current project progress and the next work.**
 > Read this file first whenever resuming EventV. Update it **in the same commit/PR** as every meaningful repository change. Historical research files remain references, not the live project status.
 >
