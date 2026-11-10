@@ -1,0 +1,26 @@
+{
+  "rank": 170,
+  "name": "RHS Chelsea Flower Show 2027",
+  "slug": "rhs-chelsea-flower-show-2027",
+  "start": "2027-05-18",
+  "end": "2027-05-22",
+  "category": "Horticulture",
+  "geo": [
+    "London, England, UK",
+    "International visitors"
+  ],
+  "source": "https://www.rhs.org.uk/shows-events/rhs-chelsea-flower-show",
+  "date_status": "confirmed",
+  "job": "Help RHS Chelsea 2027 visitors choose an eligible admission window, compare membership break-even without treating advertised starting prices as quotes, and build a realistic accessible itinerary.",
+  "facets": [
+    "Member versus public-day eligibility and guest rules",
+    "Friday Chelsea Late and Saturday shortened show window",
+    "Visit duration, transfer and fatigue buffer planner",
+    "Editable GBP budget and membership break-even scenario",
+    "Offline itinerary notes, export and reset"
+  ],
+  "state": "draft-research",
+  "verified_on": "2026-11-10",
+  "source_notes": "Official RHS event page confirms 18–22 May 2027, member-only 18–19 May, public 20–22 May, Chelsea Late Friday 21 May 17:30–22:00 and Saturday closing 17:30; official ticket FAQ confirms member purchase/guest requirements and no guarantee of inventory. Advertised 'from' rates are not quotes; user must confirm availability and ticket conditions at purchase.",
+  "canonical_root": "https://aafnaipatro.com/events/rhs-chelsea-flower-show-2027/"
+}
