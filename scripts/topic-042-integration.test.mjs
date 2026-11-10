@@ -8,8 +8,8 @@ const browser=fs.readFileSync('assets/topic-042-planner.mjs','utf8');
 const engine=fs.readFileSync('scripts/topic-042-planner.mjs','utf8');
 
 test('browser utility matches tested engine exactly',()=>assert.equal(browser,engine));
-test('draft cannot accidentally become indexable',()=>{
- assert.match(html,/<meta name="robots" content="noindex,follow">/);
+test('approved hub has canonical and source-backed index metadata',()=>{
+ assert.match(html,/<meta name="robots" content="index,follow,max-image-preview:large">/);
  assert.match(html,/rel="canonical" href="https:\/\/aafnaipatro\.com\/events\/fiba-world-cup-2027\/"/);
  assert.match(html,/import \{parseDohaLocal,formatInZone,budgetQar,analyzeGames,passCoverage\} from '\/assets\/topic-042-planner\.mjs'/);
  assert.doesNotMatch(html,/innerHTML\s*=/);
@@ -68,3 +68,5 @@ test('saved scenarios reject invalid dates, duplicate IDs and out-of-range durat
  assert.match(html,/const t=parseDohaLocal\(g\.dohaStart\)/);
  assert.match(html,/ids\.add\(g\.id\)/);
 });
+
+test('approved hub route and source parity are explicit; spokes remain noindex',()=>{const approvals=JSON.parse(fs.readFileSync('data/index-approved.json','utf8')).approved;const entry=approvals.find(x=>x.slug==='fiba-world-cup-2027'&&x.page_type==='hub');assert.ok(entry);assert.equal(fs.readFileSync(entry.output_path,'utf8'),html);assert.equal(approvals.filter(x=>x.slug==='fiba-world-cup-2027').length,1);const rows=fs.readFileSync('research/routes-200.csv','utf8').split('\n').filter(x=>x.startsWith('"fiba-world-cup-2027"'));assert.equal(rows.length,4);assert.match(rows[0],/index,follow,max-image-preview:large/);for(const row of rows.slice(1))assert.match(row,/noindex,follow/);assert.match(html,/ticketing-terms-and-conditions/)});
