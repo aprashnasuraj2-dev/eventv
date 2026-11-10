@@ -9,7 +9,7 @@ const routes=readFileSync('research/routes-200.csv','utf8');
 const registry=JSON.parse(readFileSync('data/index-approved.json','utf8'));
 test('Topic 43 generated staging hub exactly matches original browser tool',()=>{
  assert.equal(generated,source,'Build emitted generic scaffold instead of Topic 43 original hub');
- assert.match(generated,/<meta\\s+name="robots"\\s+content="noindex,follow"/i);
+ assert.match(generated,/<meta\s+name="robots"\s+content="noindex,follow"/i);
  assert.match(generated,/https:\/\/aafnaipatro.com\/events\/icc-cricket-world-cup-2027\//);
  assert.match(generated,/id="calculate"/);
 });
