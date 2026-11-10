@@ -738,6 +738,23 @@
         "https://www.fiba.basketball/en/events/fiba-basketball-world-cup-2027/ticketing-terms-and-conditions",
         "https://www.fiba.basketball/en/news/fiba-basketball-world-cup-2027-tickets-go-on-sale-as-one-year-to-go-milestone-arrives"
       ]
+    },
+    {
+      "slug": "wimbledon-2027",
+      "page_type": "hub",
+      "output_path": "events/wimbledon-2027/index.html",
+      "source_path": "content/pilots/wimbledon-2027.html",
+      "robots": "index,follow,max-image-preview:large",
+      "editorial_status": "pilot-index-ready",
+      "source_verified_on": "2026-11-10",
+      "factual_scope": "Wimbledon official 2027 dates and closed ballot window; 2026 Queue rules historical only. User-entered London-local arrival and GBP budget are scenarios, not official prices, inventory, match schedule or broadcaster rights.",
+      "sources": [
+        "https://www.wimbledon.com/en_GB/the_championships/dates",
+        "https://help.wimbledon.com/hc/en-gb/articles/15474338903452-Does-signing-up-for-a-myWimbledon-account-mean-that-I-have-entered-the-ballot",
+        "https://www.wimbledon.com/en_GB/tickets/ballot.html",
+        "https://help.wimbledon.com/hc/en-gb/articles/10571045434012-How-do-I-enter-the-Wheelchair-Ballot",
+        "https://www.wimbledon.com/en_GB/tickets/the_queue"
+      ]
     }
   ]
 }
