@@ -5,7 +5,7 @@ export const windows = Object.freeze({
 "2027-05-21":{label:"Friday · public",start:480,end:1200,member:false},
 "2027-05-22":{label:"Saturday · public",start:480,end:1050,member:false}
 });
-export const minutes = s => {if(!/^([01]\\d|2[0-3]):[0-5]\\d$/.test(s))throw Error("Enter a valid 24-hour time."); const [h,m]=s.split(":").map(Number);return h*60+m};
+export const minutes = s => {if(!/^([01]\d|2[0-3]):[0-5]\d$/.test(s))throw Error("Enter a valid 24-hour time."); const [h,m]=s.split(":").map(Number);return h*60+m};
 export const clock = n => String(Math.floor(n/60)).padStart(2,"0")+":"+String(n%60).padStart(2,"0");
 export function assess({date,arrival,minutesInside,buffer=30,membership="public",ticket="public",guestCount=0}){
  const w=windows[date];if(!w)throw Error("Choose a published 2027 show date.");
