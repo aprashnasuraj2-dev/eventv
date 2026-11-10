@@ -7,3 +7,6 @@ test('accessibility and unverified venue are disclosed',()=>{const r=assess([v({
 test('mixed currencies never converted and budget flags mismatch',()=>{const r=assess([v(),v({name:'B',currency:'EUR',price:10,start:'12:00',end:'13:00'})],{group:2,budget:{currency:'USD',amount:10}});assert.equal(r.totals.USD,24);assert.equal(r.totals.EUR,20);assert.match(r.warnings.join(' '),/not converted/)});
 test('storage handles malformed JSON and roundtrips',()=>{const m=new Map(),s={getItem:k=>m.get(k),setItem:(k,v)=>m.set(k,v)};assert.deepEqual(readSaved(s),[]);save(s,[v()]);assert.equal(readSaved(s).length,1);m.set(KEY,'{broken');assert.deepEqual(readSaved(s),[])});
 test('rejects invalid group, price and excessive itinerary',()=>{assert.throws(()=>assess([v()],{group:0}),/Group/);assert.throws(()=>assess([v({price:-1})]),/price/);assert.throws(()=>assess(Array.from({length:31},()=>v())),/Maximum/)});
+
+test('invalid evidence dates and malformed HTTPS URLs rejected',()=>{assert.throws(()=>assess([v({checked:'2027-02-30'})]),/invalid evidence/);assert.throws(()=>assess([v({source:'https://'})]),/HTTPS/)});
+test('private browsing storage denial does not crash planner',()=>{const s={setItem(){throw Error('quota')}};assert.equal(save(s,[v()]),false)});
