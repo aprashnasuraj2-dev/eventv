@@ -1,7 +1,7 @@
 // British GP 2027: user-entered travel scenarios, not official shuttle timetables.
 export const RACE_DAYS=['2027-07-02','2027-07-03','2027-07-04'];
 export const STATIONS=['Northampton','Milton Keynes','Coventry'];
-export function minutes(t){if(!/^([01]\\d|2[0-3]):[0-5]\\d$/.test(t||''))throw Error('Enter a valid 24-hour clock time');const [h,m]=t.split(':').map(Number);return h*60+m}
+export function minutes(t){if(!/^([01]\d|2[0-3]):[0-5]\d$/.test(t||''))throw Error('Enter a valid 24-hour clock time');const [h,m]=t.split(':').map(Number);return h*60+m}
 export function clock(n){return String(Math.floor(n/60)%24).padStart(2,'0')+':'+String(n%60).padStart(2,'0')}
 export function plan(input){
  const day=String(input.day||'');if(!RACE_DAYS.includes(day))throw Error('Choose an official race-weekend date');
