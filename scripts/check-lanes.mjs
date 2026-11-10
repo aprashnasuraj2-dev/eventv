@@ -11,9 +11,9 @@ for(const l of lanes){
 assert.equal(seen.size,200,'Every ID 1..200 requires exactly one owner');
 const branch=process.env.GITHUB_HEAD_REF||'';
 if(!branch || !branch.startsWith('eventv/topic-')){console.log('Lane partition valid; non-topic branch');process.exit(0);}
-// Historical numeric lane PRs are preserved during migration. New PRs MUST use letters.
+// Historical numeric PR branches remain preserved as evidence, but must not merge under old ownership.
 if(/^eventv\/topic-\d{3}-lane-[1-5]$/.test(branch)){
- console.log('Legacy pre-v2 topic branch — migrate to designated owner on fresh main before completion');process.exit(0);
+ throw new Error('Legacy numeric-lane PR is not merge eligible under v2; preserve and migrate the owned topic into eventv/topic-NNN-lane-A..E on fresh main.');
 }
 const match=branch.match(/^eventv\/topic-(\d{3})-lane-([A-E])$/);
 assert.ok(match,'New topic branches require eventv/topic-NNN-lane-A..E');
