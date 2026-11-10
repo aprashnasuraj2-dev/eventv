@@ -1,0 +1,26 @@
+{
+  "rank": 131,
+  "name": "World Athletics Championships Beijing 2027",
+  "slug": "world-athletics-championships-beijing-2027",
+  "start": "2027-09-10",
+  "end": "2027-09-19",
+  "category": "Athletics",
+  "geo": [
+    "Beijing, China",
+    "Global spectators"
+  ],
+  "facets": [
+    "Beijing session time-zone conversion and date boundaries",
+    "Visitor-entered session overlap and travel buffer planning",
+    "Official-source date revision and uncertainty tracker",
+    "Ticket and venue access evidence checklist",
+    "Offline itinerary export and accessibility planning"
+  ],
+  "job": "Help international athletics spectators distinguish confirmed Beijing 2027 dates from unannounced session times while checking hypothetical itinerary conflicts across time zones.",
+  "source": "https://worldathletics.org/competitions/world-athletics-championships/beijing27",
+  "canonical_root": "https://aafnaipatro.com/events/world-athletics-championships-beijing-2027/",
+  "verified_on": "2026-11-10",
+  "date_status": "confirmed",
+  "state": "draft-research",
+  "source_notes": "World Athletics official Beijing 27 site and 10 September 2026 organizer press release confirm revised 10–19 September 2027 dates, superseding earlier 11–19 September notices. No session-by-session fixtures, ticket inventory or travel access rights inferred."
+}
