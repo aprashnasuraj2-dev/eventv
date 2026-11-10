@@ -20,3 +20,13 @@ assert.equal(check({age:34}).standard,10500);assert.equal(check({age:35}).standa
 assert.equal(check({age:80,category:'nonbinary'}).standard,19200);
 for(const x of [{age:17},{age:''},{drop:-1},{drop:''},{drop:1500.5},{time:'bad'},{date:'2026-02-30'},{category:'wheelchair'}])assert.throws(()=>check(x));
 console.log('Boston 2027 eligibility boundary tests passed');
+// Adversarial parsing and acceptance-counterexample checks.
+for(const bad of ['2:60:00','2:59:60','0:59:59','13:00:00','2:5:00','2:54:00x'])assert.throws(()=>secondsOf(bad));
+for(const bad of ['2026-13-01','2026-00-01','2026-02-29','not-a-date'])assert.throws(()=>check({date:bad}));
+assert.equal(check({time:'2:54:43',applied:false}).competitive,true,'Cutoff screening must not imply a submitted application');
+assert.equal(check({time:'2:54:44',applied:true}).randomPossible,true,'One second beyond cutoff is not competitively accepted');
+assert.equal(check({time:'2:55:00',applied:false}).randomPossible,false,'No submitted application means no random-selection consideration');
+assert.equal(check({drop:2999}).adjustment,300);
+assert.equal(check({drop:3000}).adjustment,600);
+assert.equal(check({drop:5999}).adjustment,600);
+assert.equal(check({drop:6000}).adjustment,null);
