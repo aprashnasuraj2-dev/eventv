@@ -688,6 +688,23 @@
         "https://www.nist.gov/pml/time-and-frequency-division/popular-links/daylight-saving-time-dst",
         "https://www.transportation.gov/regulations/daylight-saving-time"
       ]
+    },
+    {
+      "slug": "boston-marathon-2027",
+      "page_type": "hub",
+      "output_path": "events/boston-marathon-2027/index.html",
+      "source_path": "content/pilots/boston-marathon-2027.html",
+      "robots": "index,follow,max-image-preview:large",
+      "editorial_status": "pilot-index-ready",
+      "source_verified_on": "2026-11-10",
+      "factual_scope": "2027 Boston Marathon date, B.A.A. age/category qualifying standards, qualifying window, course downhill adjustments, confirmed 5:17 competitive cutoff and distinct random-selection consideration; no individual acceptance, 2028 cutoff, wave schedule or transit claims.",
+      "sources": [
+        "https://www.baa.org/races/boston-marathon/qualify/",
+        "https://www.baa.org/news/record-field-of-qualifiers-accepted-into-the-131st-boston-marathon-presented-by-bank-of-america/",
+        "https://www.baa.org/news/registration-updates-and-information-announced-for-2027-boston-marathon-presented-by-bank-of-america/",
+        "https://www.baa.org/news/2027-boston-marathon-presented-by-bank-of-america-registration-update/",
+        "https://www.baa.org/news/qualifier-registration-for-131st-boston-marathon-presented-by-bank-of-america-begins-today/"
+      ]
     }
   ]
 }

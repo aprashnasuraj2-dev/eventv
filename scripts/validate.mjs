@@ -638,3 +638,8 @@ for(const slug of ['rugby-world-cup-2027','tour-de-france-uk-2027']){
  assert.equal(fs.readFileSync('events/'+slug+'/index.html','utf8'),fs.readFileSync(approval.source_path,'utf8'),'Topic 39/40 source/output drift '+slug);
  for(const part of ['planning','during','after'])assert.ok(fs.readFileSync('events/'+slug+'/'+part+'/index.html','utf8').includes('noindex,follow'),'Unfinished Topic 39/40 spoke indexed '+slug+'/'+part);
 }
+
+// Approved Boston 2027 hub: execute its pure boundary/acceptance counterexample tests in the standard CI validator.
+if (approvals.some(x=>x.slug==='boston-marathon-2027' && x.page_type==='hub')) {
+  await import('../tests/boston-marathon-2027.test.mjs');
+}
