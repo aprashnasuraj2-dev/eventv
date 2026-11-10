@@ -14,6 +14,8 @@ jobs:
         with:
           node-version: '22'
       - run: node scripts/test-catalog.mjs
+      - name: FIBA 2027 planner functional and edge tests
+        run: node --test scripts/topic-042-planner.test.mjs scripts/topic-042-integration.test.mjs
       - run: node scripts/build.mjs
       - run: node scripts/validate.mjs
       - name: Enforce updated project checkpoint
