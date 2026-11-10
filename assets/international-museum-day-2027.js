@@ -23,9 +23,15 @@ export function assess(visits,{group=1,budget=null}={}){
   if(v.reservation==='needed'&&!v.reservationConfirmed)warnings.push(label+': timed reservation not confirmed');
   items.push({label,date:v.date,start,end,transfer,cost,currency});
  });
+ // Evaluate conflicts chronologically, even if visits were entered out of order.
+ // Preserve entry order in the returned ledger and warn when it differs.
+ const ordered=[...items].sort((a,b)=>a.date.localeCompare(b.date)||a.start-b.start);
  for(let i=1;i<items.length;i++){
   const prev=items[i-1],cur=items[i];
   if(cur.date<prev.date||cur.date===prev.date&&cur.start<prev.start)warnings.push('Itinerary is not in chronological order near '+cur.label);
+ }
+ for(let i=1;i<ordered.length;i++){
+  const prev=ordered[i-1],cur=ordered[i];
   if(cur.date===prev.date&&cur.start<prev.end+cur.transfer)warnings.push('Time conflict: '+prev.label+' → '+cur.label+' needs '+(prev.end+cur.transfer-cur.start)+' more minutes');
  }
  if(budget&&typeof budget==='object'){const limit=Number(budget.amount);if(!/^[A-Z]{3}$/.test(budget.currency||'')||!Number.isFinite(limit)||limit<0)throw Error('Invalid budget');if((totals[budget.currency]||0)>limit)warnings.push('Budget exceeded in '+budget.currency);if(Object.keys(totals).some(c=>c!==budget.currency))warnings.push('Other currencies are not converted or compared to budget');}

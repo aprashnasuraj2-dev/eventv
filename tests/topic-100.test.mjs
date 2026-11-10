@@ -12,3 +12,5 @@ test('invalid evidence dates and malformed HTTPS URLs rejected',()=>{assert.thro
 test('private browsing storage denial does not crash planner',()=>{const s={setItem(){throw Error('quota')}};assert.equal(save(s,[v()]),false)});
 
 test('blocked localStorage getter is safely isolated from initial render',()=>{const browser={get localStorage(){throw Error('SecurityError')}};assert.equal(safeStorage(browser),null);assert.deepEqual(readSaved(safeStorage(browser)),[]);assert.equal(save(safeStorage(browser),[v()]),false)});
+
+test('out-of-order entry still detects actual overlapping visits',()=>{const r=assess([v({name:'Later',start:'11:00',end:'12:00'}),v({name:'Earlier',start:'10:30',end:'11:30',transfer:15})]);assert.match(r.warnings.join(' '),/not in chronological order/);assert.match(r.warnings.join(' '),/Time conflict/);assert.deepEqual(r.items.map(x=>x.label),['Later','Earlier'])});
