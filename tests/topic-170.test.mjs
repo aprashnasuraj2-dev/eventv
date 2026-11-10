@@ -11,10 +11,10 @@ test("SEO and safe rendering",()=>{const html=fs.readFileSync("content/pilots/rh
 test("inline browser module parses and every wired control exists", async()=>{
  const {Script}=await import("node:vm");
  const html=fs.readFileSync("content/pilots/rhs-chelsea-flower-show-2027.html","utf8");
- const script=html.match(/<script type="module">([\\s\\S]*?)<\\/script>/)?.[1];
+ const script=html.match(/<script type="module">([\s\S]*?)<\/script>/)?.[1];
  assert.ok(script,"expected browser module");
- assert.doesNotThrow(()=>new Script(script.replace(/^\\s*import\\s+\\{[^}]+\\}\\s+from\\s+["'][^"']+["'];?/m,"")));
- const controls=[...script.matchAll(/\\$\\("([A-Za-z][A-Za-z0-9]*)"\\)/g)].map(m=>m[1]);
+ assert.doesNotThrow(()=>new Script(script.replace(/^\s*import\s+\{[^}]+\}\s+from\s+["'][^"']+["'];?/m,"")));
+ const controls=[...script.matchAll(/\$\("([A-Za-z][A-Za-z0-9]*)"\)/g)].map(m=>m[1]);
  for(const id of new Set(controls)) assert.match(html,new RegExp('id="'+id+'"'),"missing DOM control: "+id);
  assert.match(html,/meta name="robots" content="noindex,follow"/);
 });
