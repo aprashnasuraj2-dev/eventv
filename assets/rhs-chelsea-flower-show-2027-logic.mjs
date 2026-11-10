@@ -6,7 +6,7 @@ export const windows = Object.freeze({
 "2027-05-22":{label:"Saturday · public",start:480,end:1050,member:false}
 });
 export const minutes = s => {if(!/^([01]\d|2[0-3]):[0-5]\d$/.test(s))throw Error("Enter a valid 24-hour time."); const [h,m]=s.split(":").map(Number);return h*60+m};
-export const clock = n => String(Math.floor(n/60)).padStart(2,"0")+":"+String(n%60).padStart(2,"0");
+export const clock = n => {if(!Number.isInteger(n)||n<0)throw Error("Invalid clock minutes.");const day=Math.floor(n/1440);const time=String(Math.floor(n%1440/60)).padStart(2,"0")+":"+String(n%60).padStart(2,"0");return time+(day?" (next day)":"");};
 export function assess({date,arrival,minutesInside,buffer=30,membership="public",ticket="public",guestCount=0}){
  const w=windows[date];if(!w)throw Error("Choose a published 2027 show date.");
  const start=minutes(arrival),duration=Number(minutesInside),margin=Number(buffer),guests=Number(guestCount);
@@ -23,7 +23,7 @@ export function assess({date,arrival,minutesInside,buffer=30,membership="public"
  if(start>=w.end)warnings.push("Arrival is at or after closing.");
  if(start+duration+margin>w.end)warnings.push("Planned visit plus buffer exceeds published closing time.");
  if(date==="2027-05-21" && start>=1050)warnings.push("Chelsea Late is a separate Friday 17:30–22:00 offering: standard daytime admission must not be assumed to cover it.");
- return {label:w.label,window:clock(w.start)+"–"+clock(w.end),end:clock(Math.min(start+duration,1439)),remaining:w.end-start-duration-margin,warnings,feasible:warnings.length===0};
+ return {label:w.label,window:clock(w.start)+"–"+clock(w.end),end:clock(start+duration),remaining:w.end-start-duration-margin,warnings,feasible:warnings.length===0};
 }
 export function budget({people,perTicket,memberFee=0,travel=0,food=0,extras=0}){
  const a=[people,perTicket,memberFee,travel,food,extras].map(Number);

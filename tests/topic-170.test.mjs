@@ -18,3 +18,18 @@ test("inline browser module parses and every wired control exists", async()=>{
  for(const id of new Set(controls)) assert.match(html,new RegExp('id="'+id+'"'),"missing DOM control: "+id);
  assert.match(html,/meta name="robots" content="noindex,follow"/);
 });
+
+test("long visits display actual next-day end, never a fabricated 23:59",()=>{
+ const result=assess({date:"2027-05-20",arrival:"23:30",minutesInside:90});
+ assert.equal(result.end,"01:00 (next day)");
+ assert.equal(result.feasible,false);
+ assert.match(result.warnings.join(" "),/closing/);
+});
+test("browser module import resolves to a committed asset and key controls exist",()=>{
+ const html=fs.readFileSync("content/pilots/rhs-chelsea-flower-show-2027.html","utf8");
+ const match=html.match(/import\\s+\\{assess,budget,breakEven\\}\\s+from\\s+["'](\\/assets\\/[^"']+)["']/);
+ assert.ok(match,"expected browser module import");
+ assert.ok(fs.existsSync("."+match[1]),"missing imported browser asset");
+ for(const id of ["visit","costForm","visitResult","costResult","compareResult","storageStatus"])
+  assert.match(html,new RegExp('id="'+id+'"'));
+});
