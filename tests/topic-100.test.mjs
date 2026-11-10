@@ -1,0 +1,16 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {assess,readSaved,save,safeStorage,KEY} from '../assets/international-museum-day-2027.js';
+const v=(o={})=>({name:'Museum A',date:'2027-05-18',start:'10:00',end:'11:00',transfer:30,price:12,currency:'USD',source:'https://museum.example/visit',checked:'2027-05-01',...o});
+test('group price and no false conflict',()=>{const r=assess([v(),v({name:'Museum B',start:'11:30',end:'12:30'})],{group:3});assert.equal(r.totals.USD,72);assert.equal(r.warnings.length,0)});
+test('insufficient transfer flagged, exact boundary accepted',()=>{assert.match(assess([v(),v({name:'B',start:'11:29',end:'12:00'})]).warnings.join(' '),/Time conflict/);assert.doesNotMatch(assess([v(),v({name:'B',start:'11:30',end:'12:00'})]).warnings.join(' '),/Time conflict/)});
+test('rejects overnight, malformed dates and unsafe evidence',()=>{assert.throws(()=>assess([v({end:'09:00'})]),/end must follow/);assert.throws(()=>assess([v({date:'2027-02-30'})]),/invalid/);assert.throws(()=>assess([v({source:'javascript:alert(1)'})]),/HTTPS/)});
+test('accessibility and unverified venue are disclosed',()=>{const r=assess([v({source:'',checked:'',access:'needed',reservation:'needed'})]);assert.equal(r.warnings.length,3)});
+test('mixed currencies never converted and budget flags mismatch',()=>{const r=assess([v(),v({name:'B',currency:'EUR',price:10,start:'12:00',end:'13:00'})],{group:2,budget:{currency:'USD',amount:10}});assert.equal(r.totals.USD,24);assert.equal(r.totals.EUR,20);assert.match(r.warnings.join(' '),/not converted/)});
+test('storage handles malformed JSON and roundtrips',()=>{const m=new Map(),s={getItem:k=>m.get(k),setItem:(k,v)=>m.set(k,v)};assert.deepEqual(readSaved(s),[]);save(s,[v()]);assert.equal(readSaved(s).length,1);m.set(KEY,'{broken');assert.deepEqual(readSaved(s),[])});
+test('rejects invalid group, price and excessive itinerary',()=>{assert.throws(()=>assess([v()],{group:0}),/Group/);assert.throws(()=>assess([v({price:-1})]),/price/);assert.throws(()=>assess(Array.from({length:31},()=>v())),/Maximum/)});
+
+test('invalid evidence dates and malformed HTTPS URLs rejected',()=>{assert.throws(()=>assess([v({checked:'2027-02-30'})]),/invalid evidence/);assert.throws(()=>assess([v({source:'https://'})]),/HTTPS/)});
+test('private browsing storage denial does not crash planner',()=>{const s={setItem(){throw Error('quota')}};assert.equal(save(s,[v()]),false)});
+
+test('blocked localStorage getter is safely isolated from initial render',()=>{const browser={get localStorage(){throw Error('SecurityError')}};assert.equal(safeStorage(browser),null);assert.deepEqual(readSaved(safeStorage(browser)),[]);assert.equal(save(safeStorage(browser),[v()]),false)});
+
+test('out-of-order entry still detects actual overlapping visits',()=>{const r=assess([v({name:'Later',start:'11:00',end:'12:00'}),v({name:'Earlier',start:'10:30',end:'11:30',transfer:15})]);assert.match(r.warnings.join(' '),/not in chronological order/);assert.match(r.warnings.join(' '),/Time conflict/);assert.deepEqual(r.items.map(x=>x.label),['Later','Earlier'])});

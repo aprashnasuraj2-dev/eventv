@@ -1,0 +1,25 @@
+{
+  "rank": 100,
+  "name": "International Museum Day 2027",
+  "slug": "international-museum-day-2027",
+  "start": "2027-05-18",
+  "end": "2027-05-18",
+  "category": "Culture",
+  "geo": [
+    "GLOBAL"
+  ],
+  "source": "https://icom.museum/en/international-museum-day-2/",
+  "date_status": "rule-derived",
+  "job": "Plan museum-by-museum visits using verified opening windows, access needs, timed entry, transfer buffers and local-currency budgets without inventing 2027 programmes.",
+  "facets": [
+    "Museum-specific official evidence and opening ledger",
+    "Timed visit and transfer conflict detection",
+    "Accessibility and reservation confirmation checklist",
+    "Per-currency group cost comparison",
+    "Private offline itinerary and JSON export"
+  ],
+  "state": "draft-research",
+  "verified_on": "2026-11-10",
+  "source_notes": "ICOM confirms recurring observance on or around 18 May, but does not confirm 2027 museum participation, theme, opening hours or free admission. Each venue must be verified separately; no 2027 programme is assumed.",
+  "canonical_root": "https://aafnaipatro.com/events/international-museum-day-2027/"
+}
