@@ -1,0 +1,17 @@
+{
+  "rank": 200,
+  "name": "Festival de Cannes 2027",
+  "slug": "festival-de-cannes-2027",
+  "start": "2027-05-11",
+  "end": "2027-05-22",
+  "category": "Film and culture",
+  "geo": ["France", "United Kingdom", "Europe", "International"],
+  "source": "https://www.festival-cannes.com/en/",
+  "date_status": "confirmed",
+  "job": "Help visitors evaluate unconfirmed accreditation routes, build a personal screening itinerary with transfer buffers, and plan realistic costs without implying access or booking availability.",
+  "facets": ["Festival accreditation versus screening reservation", "Visitor-entered screening clashes and transfer buffers", "Professional and cinephile access evidence tracking", "Editable per-person travel and accommodation costs", "Source-dated planning notes and export"],
+  "state": "draft-research",
+  "verified_on": "2026-11-10",
+  "source_notes": "The official Festival de Cannes website lists 11–22 May 2027. Accreditation and ticketing pages contain 2026 edition deadlines and rules; do not assume that they apply in 2027. Screening programmes and individual availability are unverified.",
+  "canonical_root": "https://aafnaipatro.com/events/festival-de-cannes-2027/"
+}
