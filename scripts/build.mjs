@@ -46,6 +46,14 @@ for(const e of events) for(const p of ['hub','planning','during','after']){
   if(override){
     if(!fs.existsSync(override.source_path)) throw new Error('Missing approved source: '+override.source_path);
     write(pagePath(e,p),fs.readFileSync(override.source_path,'utf8'));
+  } else if (e.slug === 'icc-cricket-world-cup-2027' && p === 'hub') {
+    // Lane 3 staging integration: use the original hub without granting SEO approval.
+    // The approved registry alone controls indexability and sitemap inclusion.
+    const source = 'content/pilots/icc-cricket-world-cup-2027.html';
+    const html = fs.readFileSync(source,'utf8');
+    if (!/<meta\\s+name="robots"\\s+content="noindex,follow"/i.test(html)) throw new Error('Topic 43 unapproved staging hub must remain noindex');
+    if (!html.includes('https://aafnaipatro.com/events/icc-cricket-world-cup-2027/')) throw new Error('Topic 43 staging canonical missing');
+    write(pagePath(e,p),html);
   } else write(pagePath(e,p),render(e,p));
 }
 const indexFor = onlyEvents => {
