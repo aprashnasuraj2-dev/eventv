@@ -1,16 +1,23 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {events,extension,LEGACY_COUNT} from './catalog.mjs';
+import {events,extension,independent,LEGACY_COUNT} from './catalog.mjs';
 assert.equal(LEGACY_COUNT,50);
-assert.equal(events.length,50+extension.events.length);
+assert.equal(events.length,50+extension.events.length+independent.length);
 assert.equal(events[40].rank,41);
 assert.equal(events[40].slug,'fifa-womens-world-cup-2027');
 assert.equal(events[49].rank,50);
 assert.ok(events.length<=200);
+assert.equal(new Set(events.map(e=>e.rank)).size,events.length,'No duplicate IDs');
+for(const e of independent)assert.ok(e.rank>50&&e.rank<=200);
+const lanes=JSON.parse(fs.readFileSync('data/worker-lanes-v2.json','utf8')).lanes;
+const assigned=lanes.flatMap(l=>Array.from({length:l.max-l.min+1},(_,i)=>l.min+i));
+assert.equal(assigned.length,200,'All 200 IDs must be owned');
+assert.equal(new Set(assigned).size,200,'Worker ownership must be non-overlapping');
+for(let i=1;i<=200;i++)assert.ok(assigned.includes(i),'Missing lane topic '+i);
 assert.equal(new Set(events.map(x=>x.slug)).size,events.length);
 const raw=fs.readFileSync('data/events-50.json','utf8');
 assert.equal(JSON.parse(raw).events.length,50);
-const approvals=JSON.parse(fs.readFileSync('data/index-approved.json','utf8')).approved;
+const approvals=(await import('./approval-loader.mjs')).approvals;
 assert.ok(approvals.length>=35,'Do not downgrade baseline approvals');
 for(const a of approvals) assert.ok(events.some(e=>e.slug===a.slug),'Approval orphan: '+a.slug);
 // Approved Eurovision hub must be indexable without exposing its unfinished spokes.

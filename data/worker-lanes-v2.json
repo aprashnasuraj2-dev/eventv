@@ -1,0 +1,42 @@
+{
+  "schema_version": 2,
+  "version": "2026-11-10",
+  "policy": "The v2 contiguous lane ranges supersede the 2026-11-09 modulo-five allocation. Worker E owns existing unfinished #41/PR #67. Distinct per-topic manifests may be present without preceding #51+ IDs. Approval remains evidence-gated.",
+  "lanes": [
+    {
+      "lane": "A",
+      "min": 170,
+      "max": 200,
+      "task": "6af1c5bc67d08191a3ff609d0af2582f",
+      "minute": 1
+    },
+    {
+      "lane": "B",
+      "min": 131,
+      "max": 169,
+      "task": "6af1c5bf7628819188c122426fc9edee",
+      "minute": 13
+    },
+    {
+      "lane": "C",
+      "min": 100,
+      "max": 130,
+      "task": "6af1c5c40be881918d8970d70235902c",
+      "minute": 27
+    },
+    {
+      "lane": "D",
+      "min": 75,
+      "max": 99,
+      "task": "6af1c5c888008191a354b0d4d2b467d7",
+      "minute": 39
+    },
+    {
+      "lane": "E",
+      "min": 1,
+      "max": 74,
+      "task": "6af1c5ccaab48191bb60d7bdc2b0534e",
+      "minute": 52
+    }
+  ]
+}
