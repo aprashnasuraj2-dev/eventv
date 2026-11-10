@@ -638,3 +638,19 @@ for(const slug of ['rugby-world-cup-2027','tour-de-france-uk-2027']){
  assert.equal(fs.readFileSync('events/'+slug+'/index.html','utf8'),fs.readFileSync(approval.source_path,'utf8'),'Topic 39/40 source/output drift '+slug);
  for(const part of ['planning','during','after'])assert.ok(fs.readFileSync('events/'+slug+'/'+part+'/index.html','utf8').includes('noindex,follow'),'Unfinished Topic 39/40 spoke indexed '+slug+'/'+part);
 }
+
+
+// Topic #41: execute pure-tool edge tests in the required Node 22 validation gate.
+// This draft remains unapproved: no accidental indexable source or route promotion.
+if (fs.existsSync('tests/topic-041-core.test.mjs')) {
+  await import('../tests/topic-041-core.test.mjs');
+  const slug='fifa-womens-world-cup-2027';
+  const pilot=fs.readFileSync('content/pilots/'+slug+'.html','utf8');
+  const built=fs.readFileSync('events/'+slug+'/index.html','utf8');
+  assert.equal(built,pilot,'Topic 41 built HTML must equal the reviewed source');
+  assert.ok(pilot.includes('content="noindex,follow"'),'Unapproved Topic 41 must remain noindex');
+  assert.ok(!approvals.some(a=>a.slug===slug),'Topic 41 cannot be index-approved before editorial signoff');
+  for (const phase of ['planning','during','after']) {
+    assert.ok(fs.readFileSync('events/'+slug+'/'+phase+'/index.html','utf8').includes('noindex,follow'),'Topic 41 unfinished spoke must stay noindex: '+phase);
+  }
+}
