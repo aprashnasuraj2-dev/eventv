@@ -1,0 +1,28 @@
+{
+  "rank": 184,
+  "name": "San Diego Comic-Con 2027",
+  "slug": "san-diego-comic-con-2027",
+  "start": "2027-07-21",
+  "end": "2027-07-25",
+  "category": "Pop culture convention",
+  "geo": [
+    "United States",
+    "Canada",
+    "United Kingdom",
+    "International"
+  ],
+  "source": "https://www.comic-con.org/cc/badges/",
+  "date_status": "confirmed",
+  "job": "Help prospective attendees understand official badge prices, Preview Night dependency and the dated open-registration process without promising inventory.",
+  "facets": [
+    "July event dates and separate Preview Night",
+    "Open registration waiting-room and randomized queue",
+    "Per-member badge fee and day pricing",
+    "Preview Night four-day dependency",
+    "Child-to-junior reference date and on-site child badges"
+  ],
+  "state": "draft-research",
+  "verified_on": "2026-11-11",
+  "source_notes": "Comic-Con lists 22\u201325 July 2027 with Preview Night 21 July. Open registration 14 November 2026: waiting room 07:30 PST and sale 09:00 PST. Prices and handling fee are published; inventory and eligibility must be verified with organiser.",
+  "canonical_root": "https://aafnaipatro.com/events/san-diego-comic-con-2027/"
+}
