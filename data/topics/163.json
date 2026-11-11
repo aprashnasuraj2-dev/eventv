@@ -1,0 +1,27 @@
+{
+  "rank": 163,
+  "name": "Tomorrowland Brasil 2027",
+  "slug": "tomorrowland-brasil-2027",
+  "start": "2027-04-30",
+  "end": "2027-05-02",
+  "category": "Music festival",
+  "geo": [
+    "Brazil",
+    "Itu, São Paulo",
+    "International"
+  ],
+  "source": "https://www.tomorrowland.com/events/",
+  "date_status": "confirmed",
+  "job": "Help Tomorrowland Brasil 2027 visitors model actual access conditions and planning risks using an independent browser-side date tool and a transparent group budget.",
+  "facets": [
+    "Primary source evidence and 2027 status",
+    "Access conditions versus assumptions",
+    "Distinct original browser planning tool",
+    "Group budget with transparent input costs",
+    "Counterexamples and safe noindex draft"
+  ],
+  "state": "draft-research",
+  "verified_on": "2026-11-11",
+  "source_notes": "Official sources cited in research/topic-163-sources.md. Organiser states the 2027 dates. Individual access, precise schedules and live inventory remain unverified; these are user-driven tools.",
+  "canonical_root": "https://aafnaipatro.com/events/tomorrowland-brasil-2027/"
+}
