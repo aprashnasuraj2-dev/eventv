@@ -1,0 +1,27 @@
+{
+  "rank": 160,
+  "name": "Frankfurt Book Fair 2027",
+  "slug": "frankfurt-book-fair-2027",
+  "start": "2027-10-06",
+  "end": "2027-10-10",
+  "category": "Publishing trade fair",
+  "geo": [
+    "Germany",
+    "Frankfurt",
+    "International"
+  ],
+  "source": "https://www.buchmesse.de/en/exhibit/information-exhibitors/book-fair-year",
+  "date_status": "confirmed",
+  "job": "Provide a practical 2027 Frankfurt Book Fair 2027 source ledger and original browser-based exhibitor deadline tracker with auditable budget tradeoffs.",
+  "facets": [
+    "Official 2027 date and venue boundaries",
+    "Ticket or eligibility access limitations",
+    "Working original browser-side scenario tool",
+    "Separate visitor and lodging budget model",
+    "Counterexamples and clearly noindex draft"
+  ],
+  "state": "draft-research",
+  "verified_on": "2026-11-11",
+  "source_notes": "Official organiser material establishes the date window, but price inventory, personal eligibility, current individual programmes and accessibility requirements need separate checks. Research ledger records counterexamples.",
+  "canonical_root": "https://aafnaipatro.com/events/frankfurt-book-fair-2027/"
+}
