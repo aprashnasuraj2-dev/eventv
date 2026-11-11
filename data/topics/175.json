@@ -1,0 +1,28 @@
+{
+  "rank": 175,
+  "name": "24 Hours of Le Mans 2027",
+  "slug": "24-hours-le-mans-2027",
+  "start": "2027-06-09",
+  "end": "2027-06-13",
+  "category": "Endurance motorsport",
+  "geo": [
+    "France",
+    "United Kingdom",
+    "Europe",
+    "International"
+  ],
+  "source": "https://www.24h-lemans.com/en/tickets",
+  "date_status": "confirmed",
+  "job": "Help spectators distinguish organiser race-week and WEC calendar ranges, compare admission products and plan a hypothetical 24-hour viewing rotation.",
+  "facets": [
+    "ACO event dates versus WEC calendar range",
+    "Weekend versus week admission",
+    "Assumed 24-hour viewing rotation",
+    "Group ticket and shared expense estimate",
+    "Unverified race start, access and transport"
+  ],
+  "state": "draft-research",
+  "verified_on": "2026-11-11",
+  "source_notes": "ACO ticket page states 9\u201313 June 2027; FIA WEC race page displays 6\u201313 June. Their scopes are not assumed identical. Race start time, live ticket stock and transport are not established.",
+  "canonical_root": "https://aafnaipatro.com/events/24-hours-le-mans-2027/"
+}

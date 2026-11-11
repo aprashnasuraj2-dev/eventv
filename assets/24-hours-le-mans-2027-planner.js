@@ -1,0 +1,4 @@
+function whole(v,label,min,max){let s=String(v??'').trim();if(!/^\d+$/.test(s))throw Error(`${label}: enter a whole number.`);let n=Number(s);if(!Number.isSafeInteger(n)||n<min||n>max)throw Error(`${label} must be between ${min} and ${max}.`);return n}
+function time(s){if(!/^([01]\d|2[0-3]):[0-5]\d$/.test(s??''))throw Error('Enter an assumed 24-hour starting time.');let [h,m]=s.split(':').map(Number);return h*60+m}
+export function clock(n){let day=Math.floor(n/1440),x=n%1440;return `${String(Math.floor(x/60)).padStart(2,'0')}:${String(x%60).padStart(2,'0')}${day?` (+${day} day${day===1?'':'s'})`:''}`}
+export function rotation(v){let start=time(v.start),shift=whole(v.shift,'Shift length',1,12)*60,people=whole(v.people,'People',1,10),rows=[];for(let t=0,i=0;t<1440;t+=shift,i++)rows.push({person:i%people+1,start:clock(start+t),end:clock(start+Math.min(t+shift,1440))});return rows}
