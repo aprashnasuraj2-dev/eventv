@@ -1,4 +1,4 @@
-# San Diego Comic-Con 2027 — source ledger (2026-11-11)
+# San Diego Comic-Con 2027 — source ledger (2026-11-12)
 
 **Editorial state:** researched draft, not approved for indexing or release. EventV independent; no affiliation.
 
@@ -22,3 +22,8 @@ A Sunday badge alone cannot establish a right to enter Preview Night on Wednesda
 
 ## Editorial decision
 Preserve one canonical per distinct 2027 event. Keep this page and unfinished spokes noindex,follow until later independent editorial, browser, citation and output review. No live deploy.
+
+## Registration versus badge coverage
+- https://www.comic-con.org/cc/ announces Comic-Con 2027 Open Registration on Saturday 14 November 2026, as observed 12 November. Registration date does not grant an invitation or guarantee purchase or admission.
+- https://www.comic-con.org/cc/plan-your-visit/ lists Preview Night 21 July and main show 22–25 July 2027.
+- The checker compares user-entered day labels. A matching label is NOT proof a purchase exists, that Preview Night is included in a multi-day product, or that panel access is guaranteed.
