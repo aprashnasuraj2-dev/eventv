@@ -1,0 +1,28 @@
+{
+  "rank": 183,
+  "name": "St. Patrick’s Festival Dublin 2027",
+  "slug": "st-patricks-festival-dublin-2027",
+  "start": "2027-03-13",
+  "end": "2027-03-17",
+  "category": "Cultural festival",
+  "geo": [
+    "Ireland",
+    "United Kingdom",
+    "United States",
+    "International"
+  ],
+  "source": "https://stpatricksfestival.ie/st-patricks-day-parade/",
+  "date_status": "confirmed",
+  "job": "Help Dublin visitors distinguish the festival programme from the national parade and make clear, user-controlled arrival and attendance scenarios.",
+  "facets": [
+    "Five-day festival and 17 March parade",
+    "Parade route and start-location wording",
+    "Free standing and paid grandstand",
+    "Wheelchair and relaxed-space application",
+    "User-entered arrival and group budget"
+  ],
+  "state": "draft-research",
+  "verified_on": "2026-11-11",
+  "source_notes": "Organiser lists festival 13–17 March and 17 March parade start 12:00. Parade page says Parnell Square, FAQ says Granby Row; check current official route. Programme detail, closures, tickets and accessibility applications should be checked directly.",
+  "canonical_root": "https://aafnaipatro.com/events/st-patricks-festival-dublin-2027/"
+}
