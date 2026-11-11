@@ -15,7 +15,8 @@
     "Volunteer-minute feasibility",
     "Learner group sizing",
     "Venue and accessibility evidence warnings",
-    "Offline JSON export"
+    "Offline JSON export",
+    "Facilitator-to-group assignment and shortfall review"
   ],
   "state": "draft-research",
   "verified_on": "2026-11-11",
