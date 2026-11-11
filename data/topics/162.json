@@ -1,0 +1,27 @@
+{
+  "rank": 162,
+  "name": "NRF 2027 Retail's Big Show",
+  "slug": "nrf-retails-big-show-2027",
+  "start": "2027-01-10",
+  "end": "2027-01-12",
+  "category": "Retail industry conference",
+  "geo": [
+    "United States",
+    "New York City",
+    "International"
+  ],
+  "source": "https://nrfbigshow.nrf.com/register",
+  "date_status": "confirmed",
+  "job": "Help NRF 2027 Retail's Big Show visitors model actual access conditions and planning risks using an independent browser-side registration tool and a transparent group budget.",
+  "facets": [
+    "Primary source evidence and 2027 status",
+    "Access conditions versus assumptions",
+    "Distinct original browser planning tool",
+    "Group budget with transparent input costs",
+    "Counterexamples and safe noindex draft"
+  ],
+  "state": "draft-research",
+  "verified_on": "2026-11-11",
+  "source_notes": "Official sources cited in research/topic-162-sources.md. Organiser states the 2027 dates. Individual access, precise schedules and live inventory remain unverified; these are user-driven tools.",
+  "canonical_root": "https://aafnaipatro.com/events/nrf-retails-big-show-2027/"
+}
