@@ -7,3 +7,8 @@
 - [2027 regulations](https://cdn.festival-cannes.com/media/uploads/sites/2/2026/06/reglementsfc2027_en.pdf) refer to a specific short film industry programme and cannot be treated as a general spectator ticket schedule.
 
 2027 programme, ticket inventory, categories, prices, deadlines, eligibility, transport and screening rules are not established by these sources. User-entered itineraries are hypothetical. Existing legacy #1–50 catalog and open PR search showed no Cannes duplicate as checked; recheck before merge because lanes can change.
+
+## 2026-11-11 additional source checks
+- The Festival's accessibility overview https://www.festival-cannes.com/en/the-festival/a-festival-with-a-conscience/for-hospitality/ describes an annual guide to facilities. Confirm current edition, venue and individual arrangements; no particular seat or assistance is promised.
+- Festival welcome information https://www.festival-cannes.com/en/take-part/your-festival-experience/for-a-warm-welcome/ discusses mobility support. Its admission information https://www.festival-cannes.com/en/take-part/your-festival-experience/admission-to-screenings/ includes explicitly 2026 transport dates, which must not be copied into 2027.
+- The 2026 contest announcement https://cinemadedemain.festival-cannes.com/en/2026/video-contest-win-a-3-days-in-cannes-accreditation-2/ mentions 2027 accreditation for its winner. This does not establish open 2027 applications or general eligibility.

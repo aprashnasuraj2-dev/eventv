@@ -1,0 +1,11 @@
+{
+ "slug":"mwc-barcelona-2027",
+ "page_type":"hub",
+ "output_path":"events/mwc-barcelona-2027/index.html",
+ "source_path":"content/pilots/mwc-barcelona-2027.html",
+ "robots":"index,follow,max-image-preview:large",
+ "editorial_status":"pilot-index-ready",
+ "source_verified_on":"2026-11-11",
+ "factual_scope":"GSMA-confirmed dates, venue, 2027 venue area hours and clearly qualified current access guidance; visitor-supplied meeting and budget estimates only. No session, price, visa or transport availability claimed.",
+ "sources":["https://www.mwcbarcelona.com/about/location-venue","https://www.gsma.com/about-us/regions/europe/gsma_events/mwc27-barcelona/","https://www.mwcbarcelona.com/get-in-touch/","https://www.mwcbarcelona.com/attend/first-timers/"]
+}

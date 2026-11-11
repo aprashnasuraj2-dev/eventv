@@ -1,0 +1,30 @@
+{
+  "rank": 75,
+  "name": "MWC Barcelona 2027",
+  "slug": "mwc-barcelona-2027",
+  "start": "2027-03-01",
+  "end": "2027-03-04",
+  "category": "Technology",
+  "geo": [
+    "ES",
+    "EU",
+    "UK",
+    "US",
+    "IN"
+  ],
+  "source": "https://www.mwcbarcelona.com/articles/gsma-mwc27-barcelona-countdown-begins-with-new-dedicated-technology-spaces-for-automotive-health-and-aviation",
+  "date_status": "confirmed",
+  "verified_on": "2026-11-10",
+  "job": "Build an evidence-backed cross-campus meeting and travel-buffer plan for Barcelona's connectivity trade show.",
+  "facets": [
+    "confirmed venue and date verification",
+    "hypothetical meeting collision detection",
+    "walking and transit transfer buffers",
+    "badge and visa evidence checklist",
+    "local timezone and budget scenarios"
+  ],
+  "score": 8.1,
+  "state": "draft-research",
+  "source_notes": "GSMA confirms 1–4 March 2027 at Fira Gran Via; official FAQ has internally contradictory 2–5 March 2027 text, so use dated GSMA 1 Oct 2026 release and independently corroborating GSMA event pages; exact access, schedules and prices require individual verification.",
+  "canonical_root": "https://aafnaipatro.com/events/mwc-barcelona-2027/"
+}
