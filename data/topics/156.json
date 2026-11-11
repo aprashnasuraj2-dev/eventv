@@ -1,0 +1,27 @@
+{
+  "rank": 156,
+  "name": "Australian Grand Prix 2027",
+  "slug": "australian-grand-prix-2027",
+  "start": "2027-04-02",
+  "end": "2027-04-04",
+  "category": "Formula 1",
+  "geo": [
+    "Australia",
+    "Melbourne, Australia",
+    "International"
+  ],
+  "source": "https://www.formula1.com/en/racing/2027/australia",
+  "date_status": "confirmed",
+  "job": "Determine a hypothetical departure time for a verified F1 Sprint-session clock, keeping access, gates and journey assumptions separate.",
+  "facets": [
+    "Event-specific official facts and source ledger",
+    "Published versus unannounced access and dates",
+    "Custom browser tool for practical visitor decisions",
+    "Independent group-budget scenario calculator",
+    "Counterexamples and noindex draft safeguards"
+  ],
+  "state": "draft-research",
+  "verified_on": "2026-11-11",
+  "source_notes": "Official Australian Grand Prix 2027 facts cited 2026-11-11; date 2027-04-02. User-entered times and costs are scenarios, not tickets or live claims. Index approval deferred.",
+  "canonical_root": "https://aafnaipatro.com/events/australian-grand-prix-2027/"
+}
