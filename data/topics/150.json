@@ -10,7 +10,7 @@
     "Singapore",
     "International"
   ],
-  "source": "https://www.formula1.com/en/racing/2027",
+  "source": "https://www.formula1.com/en/racing/2027/singapore",
   "date_status": "confirmed",
   "job": "Use official Singapore Grand Prix 2027 2027 date evidence and an original self-contained lastdeparture scenario planner rather than fabricated future schedules or transport feeds.",
   "facets": [
@@ -21,7 +21,7 @@
     "Counterexample and event-specific FAQs"
   ],
   "state": "draft-research",
-  "verified_on": "2026-11-11",
-  "source_notes": "Formula 1 2027 published race weekend has been checked. Precise future session hours, transport, broadcast rights and actual admission remain contingent. Noindex research draft; not deployed.",
+  "verified_on": "2026-11-12",
+  "source_notes": "F1 confirms 8–10 October 2027. Friday Practice 1/2; Saturday Practice 3/Qualifying; Sunday Race. All individual session clock times TBC. Last transport times and queues are user supplied and date-aware; draft remains noindex.",
   "canonical_root": "https://aafnaipatro.com/events/singapore-grand-prix-2027/"
 }
