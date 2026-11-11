@@ -1,0 +1,28 @@
+{
+  "rank": 182,
+  "name": "99th Oscars 2027",
+  "slug": "oscars-2027",
+  "start": "2027-03-14",
+  "end": "2027-03-14",
+  "category": "Film awards",
+  "geo": [
+    "United States",
+    "United Kingdom",
+    "Canada",
+    "International"
+  ],
+  "source": "https://www.oscars.org/99th-oscars-and-academy-key-dates",
+  "date_status": "confirmed",
+  "job": "Help viewers track Academy milestones and understand a time-zone-label discrepancy without presenting unannounced nominees or winners as fact.",
+  "facets": [
+    "Ceremony date and Academy milestones",
+    "ET/PT versus EST/PST wording",
+    "Time-zone comparison of two interpretations",
+    "Local private film shortlist",
+    "Broadcast rights vary by country"
+  ],
+  "state": "draft-research",
+  "verified_on": "2026-11-11",
+  "source_notes": "Academy lists ceremony 14 March 2027 and nominations announcement 21 January. May release says 7pm ET/4pm PT while April release calls the same wall times EST/PST; 14 March is a US daylight-saving transition date under current time-zone data. Treat absolute instant as needing confirmation.",
+  "canonical_root": "https://aafnaipatro.com/events/oscars-2027/"
+}
