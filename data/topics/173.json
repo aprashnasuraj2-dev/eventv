@@ -1,0 +1,28 @@
+{
+  "rank": 173,
+  "name": "Paris Air Show 2027",
+  "slug": "paris-air-show-2027",
+  "start": "2027-06-14",
+  "end": "2027-06-20",
+  "category": "Aerospace trade show",
+  "geo": [
+    "France",
+    "United Kingdom",
+    "Europe",
+    "International"
+  ],
+  "source": "https://www.siae.fr/en/",
+  "date_status": "confirmed",
+  "job": "Help aerospace visitors distinguish trade days, public weekend and student arrangements while planning user-entered display and meeting scenarios.",
+  "facets": [
+    "Show week and public weekend",
+    "Student Friday registration",
+    "2027 programme pending",
+    "Hypothetical flying-display and appointment overlap",
+    "Group budget"
+  ],
+  "state": "draft-research",
+  "verified_on": "2026-11-11",
+  "source_notes": "Organiser lists 14\u201320 June and public weekend after trade days; its general-public page describes a free Friday for students with online registration. Specific eligibility, programme, prices and inventory require current confirmation.",
+  "canonical_root": "https://aafnaipatro.com/events/paris-air-show-2027/"
+}
