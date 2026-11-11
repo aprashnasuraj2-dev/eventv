@@ -1,0 +1,27 @@
+{
+  "rank": 159,
+  "name": "Edinburgh Festival Fringe 2027",
+  "slug": "edinburgh-fringe-2027",
+  "start": "2027-08-06",
+  "end": "2027-08-30",
+  "category": "Performing arts",
+  "geo": [
+    "United Kingdom",
+    "Edinburgh",
+    "International"
+  ],
+  "source": "https://www.edfringe.com/experience/plan-your-visit/",
+  "date_status": "confirmed",
+  "job": "Provide a practical 2027 Edinburgh Festival Fringe 2027 source ledger and original browser-based show-to-show conflict checker with auditable budget tradeoffs.",
+  "facets": [
+    "Official 2027 date and venue boundaries",
+    "Ticket or eligibility access limitations",
+    "Working original browser-side scenario tool",
+    "Separate visitor and lodging budget model",
+    "Counterexamples and clearly noindex draft"
+  ],
+  "state": "draft-research",
+  "verified_on": "2026-11-11",
+  "source_notes": "Official organiser material establishes the date window, but price inventory, personal eligibility, current individual programmes and accessibility requirements need separate checks. Research ledger records counterexamples.",
+  "canonical_root": "https://aafnaipatro.com/events/edinburgh-fringe-2027/"
+}
