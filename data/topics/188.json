@@ -1,0 +1,28 @@
+{
+  "rank": 188,
+  "name": "Diamond League Final Zurich 2027",
+  "slug": "diamond-league-final-zurich-2027",
+  "start": "2027-08-25",
+  "end": "2027-08-26",
+  "category": "Athletics",
+  "geo": [
+    "Switzerland",
+    "United Kingdom",
+    "United States",
+    "International"
+  ],
+  "source": "https://worldathletics.org/competitions/diamond-league/news/wanda-diamond-league-2027-calendar",
+  "date_status": "confirmed",
+  "job": "Help athletics fans distinguish season-meeting discipline allocations from the Zurich final timetable and compare attendance costs and personal session connections.",
+  "facets": [
+    "Two-day final and official venue listing",
+    "Fourteen meetings and qualification points",
+    "Separate Diamond disciplines from session schedule",
+    "Two-day attendance budget",
+    "Hypothetical session overlap and transfer"
+  ],
+  "state": "draft-research",
+  "verified_on": "2026-11-11",
+  "source_notes": "World Athletics states the final is 25\u201326 August 2027 in Zurich; its competition calendar lists Letzigrund. The 21 October discipline allocation concerns series meetings. Final start lists, day-by-day timetable and ticket inventory are not established.",
+  "canonical_root": "https://aafnaipatro.com/events/diamond-league-final-zurich-2027/"
+}
