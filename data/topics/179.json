@@ -1,0 +1,27 @@
+{
+  "rank": 179,
+  "name": "Mardi Gras New Orleans 2027",
+  "slug": "mardi-gras-new-orleans-2027",
+  "start": "2027-01-06",
+  "end": "2027-02-09",
+  "category": "Carnival and parade",
+  "geo": [
+    "United States",
+    "Canada",
+    "International"
+  ],
+  "source": "https://nola.gov/next/mayors-office/news/articles/july-2026/2026-07-20-mardi-gras-advisory-council-meeting-7-23/",
+  "date_status": "confirmed",
+  "job": "Help visitors distinguish Carnival season from Mardi Gras Day, check current municipal route rules and plan hypothetical parade connections.",
+  "facets": [
+    "Mardi Gras Day and Carnival season",
+    "Tentative parade dates and final routes",
+    "Four-hour setup wording boundary",
+    "Route rules and public rights of way",
+    "Hypothetical parade connections and costs"
+  ],
+  "state": "draft-research",
+  "verified_on": "2026-11-11",
+  "source_notes": "New Orleans city states Mardi Gras 9 February 2027; tourism listing describes season beginning 6 January and says final parade dates/routes coming soon. City route guidance should be rechecked for current rules.",
+  "canonical_root": "https://aafnaipatro.com/events/mardi-gras-new-orleans-2027/"
+}
