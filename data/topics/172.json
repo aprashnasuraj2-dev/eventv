@@ -1,0 +1,27 @@
+{
+  "rank": 172,
+  "name": "National Cherry Blossom Festival 2027",
+  "slug": "national-cherry-blossom-festival-2027",
+  "start": "2027-03-20",
+  "end": "2027-04-11",
+  "category": "Cultural and nature festival",
+  "geo": [
+    "United States",
+    "Japan",
+    "International"
+  ],
+  "source": "https://nationalcherryblossomfestival.org/",
+  "date_status": "confirmed",
+  "job": "Help Washington visitors distinguish festival dates from weather-dependent peak bloom and compare their own date scenarios.",
+  "facets": [
+    "Festival date range versus uncertain bloom",
+    "NPS Yoshino peak definition",
+    "User-entered travel and bloom window intersection",
+    "Event dates versus festival-wide page headers",
+    "Park access and tree protection"
+  ],
+  "state": "draft-research",
+  "verified_on": "2026-11-11",
+  "source_notes": "Festival organiser lists 20 March\u201311 April 2027. NPS defines peak as 70% of Yoshino blossoms open and says development depends on weather. No 2027 peak forecast or parade date is claimed.",
+  "canonical_root": "https://aafnaipatro.com/events/national-cherry-blossom-festival-2027/"
+}
