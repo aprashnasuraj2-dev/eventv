@@ -1,0 +1,26 @@
+{
+  "rank": 190,
+  "name": "Indianapolis 500 2027",
+  "slug": "indianapolis-500-2027",
+  "start": "2027-05-30",
+  "end": "2027-05-30",
+  "category": "Motor racing",
+  "geo": [
+    "United States",
+    "International"
+  ],
+  "source": "https://www.indianapolismotorspeedway.com/events/indy500/event-info/schedule/sunday-may-30-indianapolis-500-2027",
+  "date_status": "confirmed",
+  "job": "Help racegoers separate dated IMS event information from unannounced race-day timings, compare user-supplied ticket costs and work backwards from an assumed arrival.",
+  "facets": [
+    "Race-day date and schedule placeholder",
+    "Qualifying weekend",
+    "Reserved seats and admission distinctions",
+    "User-entered group budget",
+    "Arrival buffer and local time"
+  ],
+  "state": "draft-research",
+  "verified_on": "2026-11-11",
+  "source_notes": "IMS lists the 111th race for Sunday 30 May 2027 and states the race-day schedule is to be announced. Its separate qualifying page gives 22\u201323 May; current prices and availability must be checked directly.",
+  "canonical_root": "https://aafnaipatro.com/events/indianapolis-500-2027/"
+}
