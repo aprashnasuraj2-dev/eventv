@@ -1,0 +1,4 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';import {access,checkout} from '../assets/nba-all-star-2027-planner.js';
+test('included access is directional and tied to listed day',()=>{assert.equal(access('celebrity','fri').jam,true);assert.equal(access('celebrity','sat').jam,false);assert.equal(access('hbcu','sat').jam,true);assert.equal(access('jam','fri').game,false);assert.equal(access('jam','fri').music,false)});
+test('unlisted arena package remains unknown',()=>{assert.equal(access('arena','sun').jam,null);assert.throws(()=>access('bad','fri'));assert.throws(()=>access('jam','other'))});
+test('costs calculate cents and do not infer prices',()=>{assert.equal(checkout({quantity:2,face:'99.95',fees:'10.05',travel:'80',hotel:'300'}),600);for(const x of [{quantity:0,face:0,fees:0,travel:0,hotel:0},{quantity:1,face:'',fees:0,travel:0,hotel:0},{quantity:1,face:'1.999',fees:0,travel:0,hotel:0}])assert.throws(()=>checkout(x))});
