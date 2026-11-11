@@ -10,6 +10,8 @@ export function planMatches(rows,minimumHours=4){
   if(new Date(Date.UTC(year,month-1,day)).toISOString().slice(0,10)!==date)throw Error('Invalid calendar date');
   const tz=CITIES[city];let guess=Date.UTC(year,month-1,day,hour,minute);
   for(let n=0;n<3;n++){const parts=Object.fromEntries(new Intl.DateTimeFormat('en-GB',{timeZone:tz,year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date(guess)).filter(x=>x.type!=='literal').map(x=>[x.type,Number(x.value)]));guess+=Date.UTC(year,month-1,day,hour,minute)-Date.UTC(parts.year,parts.month-1,parts.day,parts.hour,parts.minute)}
+  const check=Object.fromEntries(new Intl.DateTimeFormat('en-GB',{timeZone:tz,year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date(guess)).filter(x=>x.type!=='literal').map(x=>[x.type,Number(x.value)]));
+  if(check.year!==year||check.month!==month||check.day!==day||check.hour!==hour||check.minute!==minute)throw Error('This local time does not exist in the selected timezone');
   return {name,city,time,utc:new Date(guess).toISOString(),index:i};
  }).sort((a,b)=>a.utc.localeCompare(b.utc));
  const warnings=[];for(let i=1;i<results.length;i++){const prev=results[i-1],next=results[i],hours=(Date.parse(next.utc)-Date.parse(prev.utc))/36e5;if(hours<minimumHours)warnings.push('Short gap ('+hours.toFixed(1)+' h) between '+prev.name+' and '+next.name+(prev.city!==next.city?' across different cities':'')+'.');}
