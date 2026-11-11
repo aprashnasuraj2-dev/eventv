@@ -1,0 +1,16 @@
+import assert from 'node:assert/strict';
+import {localMinute,normalizeShow,itinerary,recover,exportData} from '../assets/edinburgh-fringe-2027.js';
+const base={title:'User-selected show',venue:'Venue A',date:'2027-08-06',time:'21:00',duration:90,buffer:30,price:'12.50',status:'candidate'};
+assert.equal(normalizeShow(base).price,12.5);
+assert.equal(itinerary([base,{...base,title:'Later',venue:'Venue B',time:'23:00'}]).conflicts.length,0);
+assert.equal(itinerary([base,{...base,title:'Tight',time:'22:45'}]).conflicts[0].shortfallMinutes,15);
+assert.equal(itinerary([base,{...base,title:'Overlap',time:'22:00'}]).conflicts[0].reason,'overlapping performances');
+assert.equal(itinerary([base,{...base,title:'After midnight',date:'2027-08-07',time:'00:15'}]).conflicts.length,0);
+assert.equal(itinerary([base,{...base,title:'Extra',price:'1.25',time:'23:00'}]).totalGBP,13.75);
+for(const input of [{...base,date:'2027-08-31'},{...base,date:'2027-02-29'},{...base,time:'24:00'},{...base,duration:0},{...base,buffer:-1},{...base,price:'1.234'},{...base,status:'official'},{...base,title:''}])assert.throws(()=>normalizeShow(input));
+assert.throws(()=>localMinute('2027-08-32','10:00'));
+assert.deepEqual(recover('{broken'),[]);
+assert.deepEqual(recover('{"version":2,"shows":[]}'),[]);
+assert.equal(recover(exportData([base]))[0].title,base.title);
+assert.equal(normalizeShow({...base,title:'<img src=x onerror=alert(1)>'}).title,'<img src=x onerror=alert(1)>');
+console.log('Edinburgh Fringe 2027 itinerary engine tests passed');
