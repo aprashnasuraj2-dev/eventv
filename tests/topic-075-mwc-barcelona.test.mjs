@@ -29,8 +29,8 @@ test('reject negative, fractional, excessive and nonnumeric allowances',()=>{
  for(const transfer of ['-1','0.5','241','NaN','Infinity'])assert.equal(assess({...base,transfer}).ok,false);
  for(const buffer of ['-1','0.5','121','abc'])assert.equal(assess({...base,buffer}).ok,false);
 });
-test('explicit noindex, canonical, official citations and no unsafe HTML injection',()=>{
- assert.match(html,/name="robots" content="noindex,follow"/);
+test('approved index directive, canonical, official citations and no unsafe HTML injection',()=>{
+ assert.match(html,/name="robots" content="index,follow,max-image-preview:large"/);
  assert.match(html,/rel="canonical" href="https:\/\/aafnaipatro.com\/events\/mwc-barcelona-2027\/"/);
  assert.match(html,/gsma-mwc27-barcelona-countdown/);
  assert.match(html,/prior organizer FAQ|previously inconsistent/i);
@@ -53,4 +53,18 @@ test('source discrepancy is dated and not presented as an unresolved live FAQ co
  assert.match(html,/Previously inconsistent, now rechecked/);
  assert.match(html,/budgetCheck/);
  assert.match(html,/budgetAssessment/);
+});
+
+test('export packages the actual meeting and budget assumptions without sending them over the network',()=>{
+ const fields={day:'2027-03-01',firstStart:'10:00',firstEnd:'11:00',secondStart:'11:45',transfer:'30',buffer:'15',campus1:'Fira Gran Via',campus2:'Fira Gran Via',attendees:'2',nights:'3',hotel:'180',badge:'0',ground:'60',contingency:'15'};
+ const elements=Object.fromEntries(Object.entries(fields).map(([k,v])=>[k,{value:v}]));
+ for(const id of ['budgetCheck','budgetResult','check','result','save','reset','export'])elements[id]={textContent:''};
+ let payload,downloaded;
+ const fakeDoc={getElementById:id=>elements[id],createElement:()=>({click(){downloaded=this.download}})};
+ const fakeURL={createObjectURL:blob=>{payload=JSON.parse(blob.parts[0]);return 'blob:test'},revokeObjectURL:()=>{}};
+ class FakeBlob{constructor(parts){this.parts=parts}}
+ vm.runInNewContext(script,{document:fakeDoc,localStorage:{getItem:()=>null,setItem:()=>{},removeItem:()=>{}},URL:fakeURL,Blob:FakeBlob,setTimeout:fn=>fn(),Date,JSON,Number,Object,String,Math});
+ elements.export.onclick();
+ assert.equal(downloaded,'mwc27-scenario.json');assert.equal(payload.type,'hypothetical-mwc27-meeting-scenario');
+ assert.equal(payload.scenario.day,'2027-03-01');assert.equal(payload.budgetAssessment.total,1380);
 });

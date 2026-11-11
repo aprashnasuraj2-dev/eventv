@@ -27,3 +27,8 @@ Checked 2026-11-10. Owner: lane D. **Nonpublishing draft; no index approval or l
 ## Additional tool and validation scope (2026-11-10)
 - Added user-supplied EUR group budget sensitivity with hotel nights, attendee count, badge, transport and contingency; no claimed official pricing. Unknown blanks fail closed. Export includes assumptions and computed result. Reset clears both planning tools.
 - Browser review verified current public organizer date text, **not** the unmerged local HTML interaction. Real responsive keyboard and browser-storage QA remain a release gate.
+
+## 2026-11-11 additional primary-source checks
+- GSMA 2027 location page https://www.mwcbarcelona.com/about/location-venue lists visitor exhibition hours 08:30–19:00 Monday–Wednesday, 08:30–16:00 Thursday, and different hospitality/extended-hours windows. Verify area and pass restrictions.
+- GSMA FAQ https://www.mwcbarcelona.com/get-in-touch/ again lists 1–4 March; prior discrepancy remains a historical observation. Current first-timer information https://www.mwcbarcelona.com/attend/first-timers/ describes digital entry and transport pass; terms, accessibility, visa and actual travel service must be checked directly. No promise of session entitlement or specific transit.
+- Browser CI ran the existing Chromium test for mobile overflow, meeting arithmetic, budget, storage and reset. Separate actual keyboard/export behavior remains unverified.
