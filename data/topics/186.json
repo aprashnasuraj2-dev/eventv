@@ -1,0 +1,27 @@
+{
+  "rank": 186,
+  "name": "U.S. Open Golf Championship 2027",
+  "slug": "us-open-golf-2027",
+  "start": "2027-06-17",
+  "end": "2027-06-20",
+  "category": "Golf",
+  "geo": [
+    "United States",
+    "United Kingdom",
+    "International"
+  ],
+  "source": "https://www.usopen.com/2027/articles/fast-facts-2027-us-open-pebble-beach-california.html",
+  "date_status": "confirmed",
+  "job": "Help golf spectators understand championship-round dates versus event week, ticket-product distinctions and user-entered scoring and budget scenarios.",
+  "facets": [
+    "Championship rounds and event week",
+    "Weekly versus championship-round ticket products",
+    "Hypothetical 72-hole scores relative to par",
+    "Group travel budgeting",
+    "Access and return planning"
+  ],
+  "state": "draft-research",
+  "verified_on": "2026-11-11",
+  "source_notes": "USGA lists the 127th U.S. Open championship rounds 17\u201320 June at Pebble Beach Golf Links and a 14\u201320 June event week. Ticket products have distinct conditions. No 2027 field, results, tee times or live price asserted.",
+  "canonical_root": "https://aafnaipatro.com/events/us-open-golf-2027/"
+}
