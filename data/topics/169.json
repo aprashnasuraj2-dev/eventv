@@ -1,0 +1,28 @@
+{
+  "rank": 169,
+  "name": "Oktoberfest Munich 2027",
+  "slug": "oktoberfest-munich-2027",
+  "start": "2027-09-18",
+  "end": "2027-10-03",
+  "category": "Cultural festival",
+  "geo": [
+    "Germany",
+    "United Kingdom",
+    "United States",
+    "International"
+  ],
+  "source": "https://www.oktoberfest.de/en",
+  "date_status": "confirmed",
+  "job": "Help Munich visitors understand free grounds, separate tent reservation and voucher conditions, and estimate a clearly hypothetical prepaid-spend budget.",
+  "facets": [
+    "Festival dates and main grounds",
+    "Tent entry versus reservation",
+    "Separate Oide Wiesn admission",
+    "Prepaid voucher versus extra spending scenario",
+    "Family and accessible-visit checks"
+  ],
+  "state": "draft-research",
+  "verified_on": "2026-11-11",
+  "source_notes": "City of Munich festival site lists 18 September\u20133 October 2027, Theresienwiese. It describes free main-ground entry and tent reservations through individual operators; specific 2027 voucher terms and availability require confirmation.",
+  "canonical_root": "https://aafnaipatro.com/events/oktoberfest-munich-2027/"
+}
