@@ -62,3 +62,28 @@ test("missing prices fail closed rather than silently becoming zero",()=>{
  assert.match(html,/value\(id\)\.trim\(\)===""\?NaN/);
  assert.doesNotMatch(html,/id="mp"[^>]+value="48"/);
 });
+
+test("browser form wiring exercises visit, budget, and storage without network", async()=>{
+ const {runInNewContext}=await import("node:vm");
+ const html=fs.readFileSync("content/pilots/rhs-chelsea-flower-show-2027.html","utf8");
+ const source=html.match(/<script type="module">([\s\S]*?)<\/script>/)?.[1];
+ assert.ok(source);
+ const ids=[...html.matchAll(/id="([^"]+)"/g)].map(x=>x[1]);
+ const elements=Object.fromEntries(ids.map(id=>[id,{value:"",textContent:"",className:"",handlers:{},addEventListener(type,cb){this.handlers[type]=cb},reset(){},click(){}}]));
+ Object.assign(elements.date,{value:"2027-05-20"});Object.assign(elements.arrival,{value:"09:00"});
+ Object.assign(elements.duration,{value:"180"});Object.assign(elements.buffer,{value:"30"});
+ Object.assign(elements.guests,{value:"0"});Object.assign(elements.membership,{value:"public"});
+ Object.assign(elements.ticket,{value:"public"});Object.assign(elements.people,{value:"2"});
+ Object.assign(elements.price,{value:"61"});for(const id of ["fee","travel","food","extras"])elements[id].value="0";
+ for(const id of ["mp","pp","mf"])elements[id].value="10";elements.eligible.value="2";
+ const stored=new Map();
+ const context={assess,budget,breakEven,document:{getElementById:id=>elements[id],createElement:()=>({click(){}})},localStorage:{getItem:k=>stored.get(k)||null,setItem:(k,v)=>stored.set(k,v),removeItem:k=>stored.delete(k)},Blob:class{},URL:{createObjectURL:()=> "blob:test",revokeObjectURL(){}},setTimeout(){}};
+ runInNewContext(source.replace(/^\s*import\s+\{[^}]+\}\s+from\s+["'][^"']+["'];?/m,""),context);
+ const submit=id=>elements[id].handlers.submit({preventDefault(){}});
+ submit("visit");assert.match(elements.visitResult.textContent,/Fits the published daytime window/);
+ elements.date.value="2027-05-22";elements.arrival.value="16:00";submit("visit");assert.match(elements.visitResult.textContent,/exceeds published closing time/);
+ submit("costForm");assert.match(elements.costResult.textContent,/Total £122.00/);
+ elements.price.value="";submit("costForm");assert.match(elements.costResult.textContent,/valid party/);
+ elements.notes.value="Garden route";elements.save.handlers.click();assert.equal(JSON.parse([...stored.values()][0]).notes,"Garden route");
+ elements.clear.handlers.click();assert.equal(stored.size,0);
+});
