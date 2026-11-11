@@ -1,0 +1,27 @@
+{
+  "rank": 165,
+  "name": "Roland-Garros 2027",
+  "slug": "roland-garros-2027",
+  "start": "2027-05-17",
+  "end": "2027-06-06",
+  "category": "Grand Slam tennis",
+  "geo": [
+    "France",
+    "Paris",
+    "International"
+  ],
+  "source": "https://travel.rolandgarros.com/en/conditions",
+  "date_status": "confirmed",
+  "job": "Help Roland-Garros 2027 visitors model actual access conditions and planning risks using an independent browser-side pass tool and a transparent group budget.",
+  "facets": [
+    "Primary source evidence and 2027 status",
+    "Access conditions versus assumptions",
+    "Distinct original browser planning tool",
+    "Group budget with transparent input costs",
+    "Counterexamples and safe noindex draft"
+  ],
+  "state": "draft-research",
+  "verified_on": "2026-11-11",
+  "source_notes": "Official sources cited in research/topic-165-sources.md. Organiser states the 2027 dates. Individual access, precise schedules and live inventory remain unverified; these are user-driven tools.",
+  "canonical_root": "https://aafnaipatro.com/events/roland-garros-2027/"
+}
