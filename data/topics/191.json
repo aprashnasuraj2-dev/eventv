@@ -1,0 +1,27 @@
+{
+  "rank": 191,
+  "name": "Tour de France Femmes avec Zwift 2027",
+  "slug": "tour-de-france-femmes-2027",
+  "start": "2027-07-30",
+  "end": "2027-08-07",
+  "category": "Cycling",
+  "geo": [
+    "United Kingdom",
+    "France",
+    "International"
+  ],
+  "source": "https://www.letourfemmes.fr/en/overall-route",
+  "date_status": "confirmed",
+  "job": "Help spectators distinguish the announced nine-stage route from unconfirmed timing, access and travel arrangements and explore transparent hypothetical passage windows.",
+  "facets": [
+    "Nine stage route before homologation",
+    "UK and France local times",
+    "Team time trial viewing caveat",
+    "User-supplied passage scenarios",
+    "Road closure and accessibility checks"
+  ],
+  "state": "draft-research",
+  "verified_on": "2026-11-11",
+  "source_notes": "Organiser lists 30 July–7 August 2027 and nine stages totalling 1,156 km before homologation. Actual passage times, road access and team time-trial start intervals are not established here.",
+  "canonical_root": "https://aafnaipatro.com/events/tour-de-france-femmes-2027/"
+}
