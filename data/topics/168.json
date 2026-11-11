@@ -1,0 +1,28 @@
+{
+  "rank": 168,
+  "name": "HANNOVER MESSE 2027",
+  "slug": "hannover-messe-2027",
+  "start": "2027-04-05",
+  "end": "2027-04-08",
+  "category": "Industrial technology trade fair",
+  "geo": [
+    "Germany",
+    "Europe",
+    "United Kingdom",
+    "International"
+  ],
+  "source": "https://www.hannovermesse.de/en/press/press-releases/hannover-messe/hannover-messe-strengthens-focus-on-drive-and-fluid-technology",
+  "date_status": "confirmed",
+  "job": "Help industrial visitors compare four-day attendance options, transport and meeting assumptions without treating organiser marketing as procurement outcomes.",
+  "facets": [
+    "Four-day duration and partner country",
+    "Day versus full-event ticket arithmetic",
+    "Admission ticket versus transit",
+    "Hall 12 Motion and Drives announcement",
+    "Qualified meeting cost scenario"
+  ],
+  "state": "draft-research",
+  "verified_on": "2026-11-11",
+  "source_notes": "Organiser states 5\u20138 April 2027, Spain partner country and Motion & Drives in Hall 12. Ticket page says admission is not a public transport ticket. Current prices, exhibitors, access and meeting outcomes require verification.",
+  "canonical_root": "https://aafnaipatro.com/events/hannover-messe-2027/"
+}
