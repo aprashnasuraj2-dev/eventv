@@ -1,0 +1,6 @@
+{
+ "rank":199,"name":"Expo 2027 Belgrade","slug":"expo-2027-belgrade","start":"2027-05-15","end":"2027-08-15","category":"International exhibition","geo":["Serbia","Europe","International"],
+ "source":"https://www.expobelgrade2027.org/en/experience/programme","date_status":"confirmed","job":"Help visitors compare user-entered one-day and multi-day exhibition plans, account for queues and rest, and distinguish official programme announcements from projections.",
+ "facets":["One-day versus multiple-day pavilion capacity","Queue, rest and accessibility buffer scenarios","Visitor-entered trip and accommodation budgets","Programme evidence and ticket release checks","Belgrade to Surčin transport verification"],
+ "state":"draft-research","verified_on":"2026-11-11","source_notes":"The Expo organiser and BIE confirm 15 May–15 August 2027 and the specialised exhibition in Belgrade; organiser identifies Surčin and lists tickets available soon. Timed event schedules, prices, opening hours and public transport availability are not verified.","canonical_root":"https://aafnaipatro.com/events/expo-2027-belgrade/"
+}
