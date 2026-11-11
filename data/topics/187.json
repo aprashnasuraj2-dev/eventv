@@ -1,0 +1,26 @@
+{
+  "rank": 187,
+  "name": "GREEN×EXPO 2027 Yokohama",
+  "slug": "green-expo-yokohama-2027",
+  "start": "2027-03-19",
+  "end": "2027-09-26",
+  "category": "World horticultural exhibition",
+  "geo": [
+    "Japan",
+    "International"
+  ],
+  "source": "https://expo2027yokohama.or.jp/en/about/overview/",
+  "date_status": "confirmed",
+  "job": "Help visitors choose the applicable ticket age reference, compare published day and pass prices, and understand separate admission and transport reservations.",
+  "facets": [
+    "Dates and venue",
+    "March versus April age reference",
+    "Advance and regular one-day tickets",
+    "Season and summer pass arithmetic",
+    "Admission and shuttle reservation distinction"
+  ],
+  "state": "draft-research",
+  "verified_on": "2026-11-11",
+  "source_notes": "Official organiser lists 19 March–26 September, Kamiseya Yokohama. Published ticket age is as of 1 April 2026 for March visits and 1 April 2027 otherwise. Advance day, regular day, season and summer products have distinct terms; check current availability and booking.",
+  "canonical_root": "https://aafnaipatro.com/events/green-expo-yokohama-2027/"
+}
