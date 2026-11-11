@@ -1,0 +1,28 @@
+{
+  "rank": 180,
+  "name": "IBC2027 Amsterdam",
+  "slug": "ibc-amsterdam-2027",
+  "start": "2027-09-10",
+  "end": "2027-09-13",
+  "category": "Media technology trade show",
+  "geo": [
+    "Netherlands",
+    "United Kingdom",
+    "United States",
+    "International"
+  ],
+  "source": "https://show.ibc.org/2027-exhibiting-opportunities",
+  "date_status": "confirmed",
+  "job": "Help media-technology visitors and exhibitors compare dated show hours, hypothetical meeting transfers and event costs without implying access or business outcomes.",
+  "facets": [
+    "Four show days and posted venue hours",
+    "Visitor registration versus exhibitor enquiry",
+    "Two-meeting transition and show hours",
+    "Trip cost per qualified meeting scenario",
+    "Exhibition package scope and unknown pricing"
+  ],
+  "state": "draft-research",
+  "verified_on": "2026-11-11",
+  "source_notes": "IBC states RAI Amsterdam 10\u201313 September 2027; its contact page lists show hours that differ on the first and last days. Costs and meeting assumptions are user-entered, not official quotes or forecasts.",
+  "canonical_root": "https://aafnaipatro.com/events/ibc-amsterdam-2027/"
+}
