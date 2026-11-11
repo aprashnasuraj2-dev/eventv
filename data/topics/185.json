@@ -1,0 +1,28 @@
+{
+  "rank": 185,
+  "name": "Roland-Garros 2027",
+  "slug": "roland-garros-2027",
+  "start": "2027-05-17",
+  "end": "2027-06-06",
+  "category": "Tennis",
+  "geo": [
+    "France",
+    "United Kingdom",
+    "United States",
+    "International"
+  ],
+  "source": "https://travel.rolandgarros.com/en/conditions",
+  "date_status": "confirmed",
+  "job": "Explain the opening and final phases and date-sensitive outside-court terms, while separating individual ticket sales from hospitality and travel packages.",
+  "facets": [
+    "Opening week versus final phase",
+    "Changing outside-court definitions",
+    "Individual sales and travel-package distinctions",
+    "Day and night session boundaries",
+    "Group package arithmetic"
+  ],
+  "state": "draft-research",
+  "verified_on": "2026-11-11",
+  "source_notes": "Organiser travel terms date the tournament 17 May\u20136 June and final phase 23 May\u20136 June. Outside-court definition changes on 30 May and 1 June for the specific terms. September 2026 notice says individual tickets not yet on sale; current status must be checked.",
+  "canonical_root": "https://aafnaipatro.com/events/roland-garros-2027/"
+}
