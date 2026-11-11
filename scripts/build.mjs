@@ -4,6 +4,7 @@ import path from 'node:path';
 import {events,LEGACY_COUNT} from './catalog.mjs';
 import {compareTopicScore, formatTopicScore} from './catalog-score.mjs';
 import {approvals as approvalEntries} from './approval-loader.mjs';
+import {validateDraftHub} from './draft-hub.mjs';
 const esc=s=>String(s??"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;");
 const when=e=>e.start?(e.end&&e.end!==e.start?`${e.start}–${e.end}`:e.start):"Date not announced";
 const root=e=>`/events/${e.slug}/`;
@@ -47,7 +48,16 @@ for(const e of events) for(const p of ['hub','planning','during','after']){
   if(override){
     if(!fs.existsSync(override.source_path)) throw new Error('Missing approved source: '+override.source_path);
     write(pagePath(e,p),fs.readFileSync(override.source_path,'utf8'));
-  } else write(pagePath(e,p),render(e,p));
+  } else {
+    // A complete draft may be reviewed without granting search-index approval.
+    // Until an approval exists, only explicitly noindex hub sources are eligible.
+    const draftPath = `content/pilots/${e.slug}.html`;
+    if (p === 'hub' && fs.existsSync(draftPath)) {
+      const draft = fs.readFileSync(draftPath, 'utf8');
+      validateDraftHub(draft, e.slug);
+      write(pagePath(e,p), draft);
+    } else write(pagePath(e,p),render(e,p));
+  }
 }
 const indexFor = onlyEvents => {
   const html = renderIndex(events,onlyEvents);
