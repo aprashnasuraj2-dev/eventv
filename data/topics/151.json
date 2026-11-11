@@ -1,0 +1,27 @@
+{
+  "rank": 151,
+  "name": "Japanese Grand Prix 2027",
+  "slug": "japanese-grand-prix-2027",
+  "start": "2027-04-09",
+  "end": "2027-04-11",
+  "category": "Formula 1",
+  "geo": [
+    "Japan",
+    "Suzuka",
+    "International"
+  ],
+  "source": "https://www.formula1.com/en/racing/2027",
+  "date_status": "confirmed",
+  "job": "Use official Japanese Grand Prix 2027 2027 date evidence and an original self-contained timezone scenario planner rather than fabricated future schedules or transport feeds.",
+  "facets": [
+    "Verified organiser calendar window",
+    "Unannounced session-specific clock times",
+    "Original date-aware offline planning utility",
+    "Editable group budget and storage",
+    "Counterexample and event-specific FAQs"
+  ],
+  "state": "draft-research",
+  "verified_on": "2026-11-11",
+  "source_notes": "Formula 1 2027 published race weekend has been checked. Precise future session hours, transport, broadcast rights and actual admission remain contingent. Noindex research draft; not deployed.",
+  "canonical_root": "https://aafnaipatro.com/events/japanese-grand-prix-2027/"
+}
