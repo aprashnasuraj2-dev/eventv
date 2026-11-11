@@ -1,0 +1,28 @@
+{
+  "rank": 174,
+  "name": "Berlinale 2027",
+  "slug": "berlinale-2027",
+  "start": "2027-02-10",
+  "end": "2027-02-21",
+  "category": "Film festival",
+  "geo": [
+    "Germany",
+    "United Kingdom",
+    "Europe",
+    "International"
+  ],
+  "source": "https://www.berlinale.de/en/dates.html",
+  "date_status": "confirmed",
+  "job": "Help visitors distinguish the festival, industry programmes and audience days, and compare screening transfers without assuming accreditation guarantees entry.",
+  "facets": [
+    "Festival and industry programme date ranges",
+    "Awards and audience days",
+    "Accreditation versus advance screening tickets",
+    "Inclusive day lookup",
+    "Hypothetical screening transfer"
+  ],
+  "state": "draft-research",
+  "verified_on": "2026-11-11",
+  "source_notes": "Berlinale lists festival 10\u201321 February, European Film Market 10\u201316, Co-Production Market 13\u201316, Talents 12\u201317; awards 19 February and audience days 20\u201321. Specific programme and ticket availability require official verification.",
+  "canonical_root": "https://aafnaipatro.com/events/berlinale-2027/"
+}
