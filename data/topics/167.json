@@ -1,0 +1,28 @@
+{
+  "rank": 167,
+  "name": "Art Basel in Basel 2027",
+  "slug": "art-basel-basel-2027",
+  "start": "2027-06-15",
+  "end": "2027-06-20",
+  "category": "Art fair",
+  "geo": [
+    "Switzerland",
+    "Europe",
+    "United Kingdom",
+    "International"
+  ],
+  "source": "https://www.artbasel.com/stories/art-basel-2026-closes-with-strong-sales-and-global-engagement",
+  "date_status": "confirmed",
+  "job": "Help visitors distinguish preview dates from the main fair, guided-tour tickets from admission and user-entered visit costs.",
+  "facets": [
+    "Preview days versus fair dates",
+    "Guided-tour ticket and admission distinction",
+    "Date classification without access guarantee",
+    "User-entered admission and tour budget",
+    "Visitor accessibility and rights"
+  ],
+  "state": "draft-research",
+  "verified_on": "2026-11-11",
+  "source_notes": "Art Basel lists preview 15\u201316 June and fair 17\u201320 June 2027; visitor page states guided tour ticket does not include admission. Specific 2027 prices, programme, access and inventory require verification.",
+  "canonical_root": "https://aafnaipatro.com/events/art-basel-basel-2027/"
+}
