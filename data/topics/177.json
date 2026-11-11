@@ -1,0 +1,28 @@
+{
+  "rank": 177,
+  "name": "UEFA Women’s Champions League Final 2027",
+  "slug": "womens-champions-league-final-2027",
+  "start": "2027-05-29",
+  "end": "2027-05-29",
+  "category": "Football",
+  "geo": [
+    "Poland",
+    "United Kingdom",
+    "Europe",
+    "International"
+  ],
+  "source": "https://www.uefa.com/womenschampionsleague/finals/",
+  "date_status": "confirmed",
+  "job": "Explain the women’s final in Warsaw, the published knockout structure and uncertain time-zone label while modelling user-supplied return-travel scenarios.",
+  "facets": [
+    "Women’s final date and venue",
+    "CET label versus Warsaw summer clock",
+    "Knockout structure and final rules",
+    "Match-night duration assumptions",
+    "Official ticket channel and pending finalists"
+  ],
+  "state": "draft-research",
+  "verified_on": "2026-11-11",
+  "source_notes": "UEFA lists 29 May 2027 Warsaw National Stadium and calls the final 18:00 CET. Warsaw uses summer time in late May under current zone data; confirm whether UEFA means fixed CET or local clock. Finalists, tickets and broadcasting remain subject to official updates.",
+  "canonical_root": "https://aafnaipatro.com/events/womens-champions-league-final-2027/"
+}
