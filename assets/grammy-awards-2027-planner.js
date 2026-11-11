@@ -1,0 +1,3 @@
+function date(v,label){let s=String(v??'');if(!/^\d{4}-\d{2}-\d{2}$/.test(s))throw Error(`Enter a valid ${label} date.`);let d=new Date(s+'T00:00:00Z');if(!Number.isFinite(d.valueOf())||d.toISOString().slice(0,10)!==s)throw Error(`Enter a valid ${label} date.`);return s}
+export function windows(v){let release=date(v.release,'release'),entry=date(v.entry,'entry');return {releaseInWindow:release>='2025-08-31'&&release<='2026-08-28',entryInWindow:entry>='2026-07-07'&&entry<='2026-08-21'}}
+export function times(zone){try{let f=new Intl.DateTimeFormat('en-GB',{timeZone:zone,dateStyle:'full',timeStyle:'short'});return {nomination:f.format(new Date('2026-11-16T12:45:00Z')),ceremony:f.format(new Date('2027-02-08T00:00:00Z'))}}catch{throw Error('Choose a supported time zone.')}}
