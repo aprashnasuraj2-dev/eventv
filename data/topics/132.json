@@ -1,0 +1,27 @@
+{
+  "rank": 132,
+  "name": "Tour de France 2027",
+  "slug": "tour-de-france-2027",
+  "start": "2027-07-02",
+  "end": "2027-07-25",
+  "category": "Cycling",
+  "geo": [
+    "Edinburgh, Scotland",
+    "France",
+    "United Kingdom"
+  ],
+  "facets": [
+    "Official stage-route and rest-day itinerary",
+    "Travel day and multi-stage transfer warnings",
+    "Opening ceremony versus roadside access distinction",
+    "Local budget and timezone planning",
+    "Roadside accessibility and local transport verification checklist"
+  ],
+  "job": "Help spectators distinguish announced stage towns from unannounced road passage times and plan plausible multi-day travel.",
+  "source": "https://www.letour.fr/en/overall-route",
+  "canonical_root": "https://aafnaipatro.com/events/tour-de-france-2027/",
+  "verified_on": "2026-11-11",
+  "date_status": "confirmed",
+  "state": "draft-research",
+  "source_notes": "A.S.O. official route confirms July 2–25, 21 stages and three rest days; Edinburgh City Council confirms opening 184 km Edinburgh–Carlisle. Roadside passage times, road closures and entry conditions require local updates."
+}
