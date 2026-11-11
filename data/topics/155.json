@@ -1,0 +1,27 @@
+{
+  "rank": 155,
+  "name": "Tomorrowland Winter 2027",
+  "slug": "tomorrowland-winter-2027",
+  "start": "2027-03-20",
+  "end": "2027-03-27",
+  "category": "Music festival",
+  "geo": [
+    "France",
+    "Alpe d'Huez, France",
+    "International"
+  ],
+  "source": "https://winter.tomorrowland.com/en/welcome/",
+  "date_status": "confirmed",
+  "job": "Compare the money implications of a festival ticket with ski-lift inclusion versus extra lodging and transfer assumptions.",
+  "facets": [
+    "Event-specific official facts and source ledger",
+    "Published versus unannounced access and dates",
+    "Custom browser tool for practical visitor decisions",
+    "Independent group-budget scenario calculator",
+    "Counterexamples and noindex draft safeguards"
+  ],
+  "state": "draft-research",
+  "verified_on": "2026-11-11",
+  "source_notes": "Official Tomorrowland Winter 2027 facts cited 2026-11-11; date 2027-03-20. User-entered times and costs are scenarios, not tickets or live claims. Index approval deferred.",
+  "canonical_root": "https://aafnaipatro.com/events/tomorrowland-winter-2027/"
+}
