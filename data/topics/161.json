@@ -1,0 +1,27 @@
+{
+  "rank": 161,
+  "name": "Tokyo Marathon 2027",
+  "slug": "tokyo-marathon-2027",
+  "start": "2027-03-07",
+  "end": "2027-03-07",
+  "category": "Marathon",
+  "geo": [
+    "Japan",
+    "Tokyo",
+    "International"
+  ],
+  "source": "https://www.marathon.tokyo/en/",
+  "date_status": "confirmed",
+  "job": "Provide a practical 2027 Tokyo Marathon 2027 source ledger and original browser-based constant-pace calculator with auditable budget tradeoffs.",
+  "facets": [
+    "Official 2027 date and venue boundaries",
+    "Ticket or eligibility access limitations",
+    "Working original browser-side scenario tool",
+    "Separate visitor and lodging budget model",
+    "Counterexamples and clearly noindex draft"
+  ],
+  "state": "draft-research",
+  "verified_on": "2026-11-11",
+  "source_notes": "Official organiser material establishes the date window, but price inventory, personal eligibility, current individual programmes and accessibility requirements need separate checks. Research ledger records counterexamples.",
+  "canonical_root": "https://aafnaipatro.com/events/tokyo-marathon-2027/"
+}
