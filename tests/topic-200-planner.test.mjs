@@ -25,3 +25,10 @@ test('page handlers add, retain, flag and clear visitor-entered entries',async()
  assert.equal(nodes['#entries'].children.length,2);assert.equal(nodes['#warnings'].children.length,2);assert.equal(JSON.parse(saved['eventv-cannes-2027-itinerary-v1']).length,2);
  nodes['#clear'].listeners.click();assert.equal(JSON.parse(saved['eventv-cannes-2027-itinerary-v1']).length,0);
 });
+
+test('export contains only visitor-entered hypothetical itinerary data',async()=>{
+ const fs=await import('node:fs'),vm=await import('node:vm');const html=fs.readFileSync(new URL('../content/pilots/festival-de-cannes-2027.html',import.meta.url),'utf8');const source=html.match(/<script type="module">([\s\S]*?)<\/script>/)?.[1];const code=source.replace(/import\s*\{[^}]*\}\s*from\s*['"][^'"]+['"];?/,'');
+ const el=()=>({children:[],textContent:'',listeners:{},append(...x){this.children.push(...x)},replaceChildren(){this.children=[]},setAttribute(){},addEventListener(t,f){this.listeners[t]=f},click(){this.clicked=true}});const nodes=Object.fromEntries(['#entries','#warnings','#status','#add-form','#budget-form','#clear','#export','#budget-result'].map(k=>[k,el()]));let payload,download;
+ const document={querySelector:k=>nodes[k],createElement:t=>{const a=el();if(t==='a')a.click=function(){download=this.download};return a}};const saved=JSON.stringify([item('Private scenario','11:00')]);const localStorage={getItem:()=>saved,setItem(){}};class Blob{constructor(parts){this.parts=parts}}const fakeURL={createObjectURL:b=>{payload=JSON.parse(b.parts[0]);return 'blob:local'},revokeObjectURL(){}};
+ vm.runInNewContext(code,{document,localStorage,FormData:class{},parseEntry,conflicts,estimate,JSON,String,Number,Object,Blob,URL:fakeURL,setTimeout:f=>f()});nodes['#export'].listeners.click();assert.equal(download,'cannes-2027-itinerary.json');assert.equal(payload.length,1);assert.equal(payload[0].title,'Private scenario');assert.doesNotMatch(code,/fetch\s*\(|XMLHttpRequest/);
+});
