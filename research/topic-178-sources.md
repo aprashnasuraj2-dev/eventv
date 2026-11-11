@@ -1,0 +1,6 @@
+# World Aquatics Championships Budapest 2027 — sources checked 2026-11-11
+
+- [World Aquatics sport-by-sport schedule](https://www.worldaquatics.com/news/4441229/world-aquatics-announces-competition-schedule-for-the-world-aquatics-championships-and-world-aquatics-masters-championships-budapest-2027): elite 26 June–18 July; lists six elite and five Masters discipline ranges. These are inclusive date ranges, not detailed session times or evidence of daily competition in each range.
+- [World Aquatics venue announcement](https://www.worldaquatics.com/news/4420368/mvm-dome-and-duna-arena-confirmed-as-main-venues-for-world-aquatics-championships-budapest-2027): MVM Dome swimming and water polo, Duna Arena diving and artistic swimming for championships; open water and high diving venues were pending in that announcement. Do not automatically transfer elite venue assignments to Masters.
+- [Official competition page](https://www.worldaquatics.com/competitions/5546/world-aquatics-championships-budapest-2027): concurrent elite and Masters championships; check current entries, venues, ticketing and programme.
+- Date lookup is based on published sport windows and does not claim a session, event, final, ticket, athlete, venue access or broadcast on each day.

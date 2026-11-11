@@ -1,0 +1,29 @@
+{
+  "rank": 178,
+  "name": "World Aquatics Championships Budapest 2027",
+  "slug": "world-aquatics-budapest-2027",
+  "start": "2027-06-26",
+  "end": "2027-07-18",
+  "category": "Aquatics championships",
+  "geo": [
+    "Hungary",
+    "United Kingdom",
+    "United States",
+    "Canada",
+    "International"
+  ],
+  "source": "https://www.worldaquatics.com/news/4441229/world-aquatics-announces-competition-schedule-for-the-world-aquatics-championships-and-world-aquatics-masters-championships-budapest-2027",
+  "date_status": "confirmed",
+  "job": "Help spectators distinguish elite and Masters discipline date ranges and understand venue and detailed-session uncertainty.",
+  "facets": [
+    "Elite and Masters dates displayed separately",
+    "Eleven discipline date ranges",
+    "Main venue assignments and unknown venues",
+    "Inclusive date lookup",
+    "User-supplied venue transfer allowance"
+  ],
+  "state": "draft-research",
+  "verified_on": "2026-11-11",
+  "source_notes": "World Aquatics lists elite championships 26 June\u201318 July and separate concurrent Masters date ranges; MVM Dome is assigned swimming and water polo, Duna Arena diving and artistic swimming for elite championships. Verify sessions, tickets and other venues.",
+  "canonical_root": "https://aafnaipatro.com/events/world-aquatics-budapest-2027/"
+}
