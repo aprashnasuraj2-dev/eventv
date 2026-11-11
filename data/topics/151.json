@@ -10,7 +10,7 @@
     "Suzuka",
     "International"
   ],
-  "source": "https://www.formula1.com/en/racing/2027",
+  "source": "https://www.formula1.com/en/racing/2027/japan",
   "date_status": "confirmed",
   "job": "Use official Japanese Grand Prix 2027 2027 date evidence and an original self-contained timezone scenario planner rather than fabricated future schedules or transport feeds.",
   "facets": [
@@ -21,7 +21,7 @@
     "Counterexample and event-specific FAQs"
   ],
   "state": "draft-research",
-  "verified_on": "2026-11-11",
-  "source_notes": "Formula 1 2027 published race weekend has been checked. Precise future session hours, transport, broadcast rights and actual admission remain contingent. Noindex research draft; not deployed.",
+  "verified_on": "2026-11-12",
+  "source_notes": "F1 confirms Suzuka 9–11 April 2027 as a Sprint weekend and publishes session days (Friday Practice 1 / Sprint Qualifying, Saturday Sprint / Qualifying, Sunday Race). All session clock times TBC; viewer conversion requires a user-entered time. Noindex draft, not deployed.",
   "canonical_root": "https://aafnaipatro.com/events/japanese-grand-prix-2027/"
 }
