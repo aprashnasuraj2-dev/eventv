@@ -4,4 +4,16 @@ const stamp=v=>{if(!/^\d{4}-\d{2}-\d{2}$/.test(v??""))throw Error("Enter a valid
 const clock=(v,label)=>{if(!/^([01]\d|2[0-3]):[0-5]\d$/.test(v??""))throw Error("Enter a valid "+label+" in 24-hour HH:MM");return Number(v.slice(0,2))*60+Number(v.slice(3))};
 const hm=n=>{const x=((n%1440)+1440)%1440;return String(Math.floor(x/60)).padStart(2,"0")+":"+String(x%60).padStart(2,"0")};
 export function budget(v){const p=number(v.people,"People",1,50),a=money(v.ticket,"Ticket per person"),n=number(v.nights,"Nights",0,30),h=money(v.hotel,"Group lodging per night"),t=money(v.transport,"Shared transport"),c=money(v.contingency,"Shared contingency");const total=p*a+n*h+t+c;if(!Number.isSafeInteger(total))throw Error("Scenario too large");return {total:total/100,share:total/p/100}};
-export function plan(v){const s=String(v.date??"");stamp(s);if(s>="2027-07-21"&&s<="2027-07-21")return "Preview Night: 2027-07-21 through 2027-07-21. Classification only; specific access and tickets are not established.";if(s>="2027-07-22"&&s<="2027-07-25")return "Main convention: 2027-07-22 through 2027-07-25. Your actual ticket must cover that day.";return "Outside the organiser-cited San Diego Comic-Con 2027 ranges. This does not establish any other edition's dates.";}
+
+export function plan(v){
+ const s=String(v.date??"");stamp(s);
+ const covers={preview:"2027-07-21",thursday:"2027-07-22",friday:"2027-07-23",saturday:"2027-07-24",sunday:"2027-07-25",multi:null,unknown:null};
+ const badge=String(v.badgeDay??"unknown");if(!Object.hasOwn(covers,badge))throw Error("Select a supported badge-day label.");
+ if(s<"2027-07-21"||s>"2027-07-25")return "Outside the official Comic-Con 2027 Preview Night and main-convention dates. This does not evaluate off-site or other events.";
+ const isPreview=s==="2027-07-21";
+ const dayType=isPreview?"Preview Night":"main convention";
+ if(badge==="unknown")return s+" is a "+dayType+" date. Badge-day coverage is unverified; calendar classification cannot authorize admission.";
+ if(badge==="multi")return s+" is a "+dayType+" date. Multi-day badge contents and Preview Night entitlement must be checked on the exact 2027 product; no access guarantee is inferred.";
+ if(covers[badge]!==s)return "POTENTIAL BADGE-DAY MISMATCH: the selected "+badge+" day label corresponds to "+covers[badge]+", while the intended "+dayType+" visit is "+s+". Check the registered badge, transfer and pickup rules.";
+ return "Day labels match for "+s+" ("+dayType+"). A valid acquired badge and individual venue rules are still required; panel seats and capacity-controlled activities are not guaranteed.";
+}
