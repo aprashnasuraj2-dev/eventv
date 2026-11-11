@@ -1,0 +1,26 @@
+{
+  "rank": 189,
+  "name": "TCS London Marathon 2027",
+  "slug": "london-marathon-2027",
+  "start": "2027-04-24",
+  "end": "2027-04-25",
+  "category": "Marathon",
+  "geo": [
+    "United Kingdom",
+    "International"
+  ],
+  "source": "https://www.londonmarathonevents.co.uk/london-marathon/2027-tcs-london-marathon-double-faqs",
+  "date_status": "confirmed",
+  "job": "Explain the one-off 2027 two-day marathon, day-specific finish boundaries and user-entered pace scenarios without claiming entry or a start wave.",
+  "facets": [
+    "Saturday versus Sunday finish rules",
+    "Closed ballot and other entry routes",
+    "Day allocation and transfer limits",
+    "User-entered pace and hypothetical finish",
+    "Road access and spectator planning"
+  ],
+  "state": "draft-research",
+  "verified_on": "2026-11-11",
+  "source_notes": "Official overview and FAQ list 24\u201325 April; Saturday Mall finish closes 17:30 and Sunday secondary Green Park finish closes 23:59:59. The initial ballot closed and will not reopen. Confirm your own entry, day and wave directly.",
+  "canonical_root": "https://aafnaipatro.com/events/london-marathon-2027/"
+}
