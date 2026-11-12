@@ -19,3 +19,7 @@ Two venues a short distance apart may still be infeasible between performances b
 
 ## Calculations
 Primary: Show-to-show conflict checker; every input supplied by reader. Budget: people × entry + nights × group hotel + shared transport and contingency. Values are examples, not official offers.
+
+## Expanded three-show itinerary, 12 November 2026
+- [Official Fringe plan-your-visit](https://www.edfringe.com/experience/plan-your-visit/) confirms the 2027 Fringe spans 6–30 August and shows can be added until and during the event. Source does **not** verify an individual performance duration, a transfer time, guaranteed seat or accessibility route.
+- The additional A→B and B→C independent transfer checks use visitor-entered times and buffers. They are same-day Edinburgh-local hypothetical arithmetic; a positive margin does not prove venue access or permit late arrival.
