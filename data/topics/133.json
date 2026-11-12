@@ -1,0 +1,27 @@
+{
+  "rank": 133,
+  "name": "Men’s Rugby World Cup 2027",
+  "slug": "mens-rugby-world-cup-2027",
+  "start": "2027-10-01",
+  "end": "2027-11-13",
+  "category": "Rugby",
+  "geo": [
+    "Australia",
+    "United Kingdom",
+    "New Zealand"
+  ],
+  "facets": [
+    "Official match schedule and local kickoff times",
+    "Seven host cities and timezone differences",
+    "Match-to-match travel buffer planner",
+    "Ticketing phase versus actual availability",
+    "Knockout bracket uncertainty and accessibility"
+  ],
+  "job": "Help international supporters compare officially announced fixtures and avoid impossible cross-city itineraries without claiming tickets or transport access.",
+  "source": "https://www.world.rugby/news/1020949/mens-rugby-world-cup-2027-schedule-revealed-with-first-tickets-available-from-18-february",
+  "canonical_root": "https://aafnaipatro.com/events/mens-rugby-world-cup-2027/",
+  "verified_on": "2026-11-11",
+  "date_status": "confirmed",
+  "state": "draft-research",
+  "source_notes": "World Rugby 2 Feb 2026: 52 fixtures and kickoffs announced; tournament 1 Oct–13 Nov, 24 teams, seven cities. Historical presale began 18 Feb 2026; not a statement of current inventory."
+}
