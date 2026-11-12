@@ -1,4 +1,4 @@
-# Roland-Garros 2027 — source ledger (2026-11-11)
+# Roland-Garros 2027 — source ledger (2026-11-12)
 
 **Editorial state:** researched draft, not approved for indexing or release. EventV independent; no affiliation.
 
@@ -22,3 +22,9 @@ A Philippe-Chatrier day-session ticket is not automatically valid for a separate
 
 ## Editorial decision
 Preserve one canonical per distinct 2027 event. Keep this page and unfinished spokes noindex,follow until later independent editorial, browser, citation and output review. No live deploy.
+
+## Precise 2027 session boundary
+- FFT official terms https://travel.rolandgarros.com/en/conditions identify 17 May–6 June as tournament dates, 23 May–6 June as final phase and **23 May–2 June (inclusive)** as the 11 dates on which Philippe-Chatrier has separately ticketed Day Session and Night Session.
+- Day Session refers to the first three daytime matches and Night Session the evening match on Philippe-Chatrier in that scope. Starting clock times remain subject to change if daytime matches overrun.
+- The tool does not apply this specific split to Opening Week 17–22 May or to 3–6 June, and it does not confer rights on Suzanne-Lenglen or outside courts.
+- The organiser's ticket scam notice dated September 18 2026 is historical evidence of that date's sales status, not an assertion about live stock on 12 November.
