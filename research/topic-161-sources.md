@@ -19,3 +19,7 @@ A pace consistent with a general participant limit cannot qualify a runner for a
 
 ## Calculations
 Primary: Constant-pace calculator; every input supplied by reader. Budget: people × entry + nights × group hotel + shared transport and contingency. Values are examples, not official offers.
+
+## Primary-source pickup details checked 12 November 2026
+- [Tokyo Marathon 2027 entry information](https://www.marathon.tokyo/en/participants/guideline/): runner packet pickup 4/5 March 10:00–20:30 JST; 6 March 10:00–17:30 JST at Tokyo Big Sight South Exhibition Halls. Personal runner collection and photo ID required; no race-day pickup.
+- [Official Tokyo Marathon FAQ](https://www.marathon.tokyo/en/faq/): wheelchair pickup arrangement differs and must be read separately; no accepted entrant can skip official personal registration. Arrival-versus-closing model assumes a visitor-selected waiting-time cushion and **does not** know check-in throughput.
