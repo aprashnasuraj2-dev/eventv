@@ -14,3 +14,7 @@ Confirmed / historical / uncertainty boundaries:
 Counterexample: A spectator with Sunday-only admission cannot presume Friday Sprint-qualifying access.
 
 Unknown: real-time inventory, future changed terms, individual eligibility, exact service/queue/route conditions. All calculation inputs are user assumptions. No publishing, indexing or browser QA sign-off.
+
+## 12 November 2026 event-specific Sprint day cross-check
+- [Formula 1 official Australian Grand Prix 2027 page](https://www.formula1.com/en/racing/2027/australia): 2 April practice and Sprint qualifying; 3 April Sprint and Qualifying; 4 April Race. All individual session clock times TBC.
+- Session-day checker must not be treated as ticket entitlement or live availability. Arrival buffer runs from user-entered clock and travel/queue estimates; previous-day and multi-day negative offsets are reported explicitly.
