@@ -1,0 +1,17 @@
+{
+  "rank": 148,
+  "name": "Salone del Mobile.Milano 2027",
+  "slug": "salone-del-mobile-milano-2027",
+  "start": "2027-04-13",
+  "end": "2027-04-18",
+  "category": "Design trade fair",
+  "geo": ["Italy", "Europe", "International"],
+  "source": "https://www.salonemilano.it/en/exhibitions",
+  "date_status": "confirmed",
+  "job": "Help visitors distinguish category-specific access days and build a realistic self-entered exhibition itinerary.",
+  "facets": ["Trade versus public access", "Student and furniture supplier access", "Children and public-day exceptions", "Available exhibition time", "2027 ticket rates versus historical prices"],
+  "state": "draft-research",
+  "verified_on": "2026-11-13",
+  "source_notes": "Organiser lists 13–18 April at Fiera Milano Rho; trade all days, furniture suppliers and students 16–18, public 17–18. Visitor hours 09:30–18:30; child rules differ on public days. Admission, eligibility and 2027 prices must be verified.",
+  "canonical_root": "https://aafnaipatro.com/events/salone-del-mobile-milano-2027/"
+}
