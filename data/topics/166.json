@@ -1,0 +1,28 @@
+{
+  "rank": 166,
+  "name": "FITUR Madrid 2027",
+  "slug": "fitur-madrid-2027",
+  "start": "2027-01-20",
+  "end": "2027-01-24",
+  "category": "Tourism trade fair",
+  "geo": [
+    "Spain",
+    "Europe",
+    "United Kingdom",
+    "International"
+  ],
+  "source": "https://www.ifema.es/en/fitur/activities-schedule",
+  "date_status": "confirmed",
+  "job": "Help visitors distinguish professional and public days, compare their intended visit with published hours, and surface conflicting partner-country descriptions.",
+  "facets": [
+    "Professional versus public dates",
+    "Daily closing-hour differences",
+    "User-entered visit window and access category",
+    "Partner-country source discrepancy",
+    "Admission versus transport and programme"
+  ],
+  "state": "draft-research",
+  "verified_on": "2026-11-13",
+  "source_notes": "IFEMA lists 20\u201322 January professional 10:00\u201319:00; 23 January professional/public 10:00\u201320:00; 24 January professional/public 10:00\u201318:00. Its 2027 press announcement says Puerto Rico partner while generic FAQ says Mexico; preserve discrepancy.",
+  "canonical_root": "https://aafnaipatro.com/events/fitur-madrid-2027/"
+}
